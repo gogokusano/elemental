@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
+  m_Name: Fire
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: 
+  cost: 1
+  cardType: 0
+  damage: 3
+  block: 0
+  rarity: 0
+  elementType: 2
+  description: 
+  cardImage: {fileID: 3474067006189152780, guid: f60dba5bff6f1a743a984d5b71b3601b, type: 3}
+  isUnusable: 0
