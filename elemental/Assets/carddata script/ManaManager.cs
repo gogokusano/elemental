@@ -37,7 +37,7 @@ public class ManaManager : MonoBehaviour
     {
         if (manaText != null)
         {
-            manaText.text = "cost: " + currentMana + " / " + maxMana;
+            manaText.text = currentMana + " / " + maxMana;
         }
     }
 }
