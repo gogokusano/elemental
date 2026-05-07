@@ -345,7 +345,7 @@ Canvas:
   m_GameObject: {fileID: 495547772}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -999,6 +999,7 @@ MonoBehaviour:
   allEvents:
   - {fileID: 11400000, guid: 69c5229b48f63c94795afd6b352b6ed1, type: 2}
   - {fileID: 11400000, guid: 26c4544d2199717468af67ac6d3491c8, type: 2}
+  - {fileID: 11400000, guid: 1d491246b12197048a9f676dd201be39, type: 2}
 --- !u!1 &1327486603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1009,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1327486606}
-  - component: {fileID: 1327486605}
   - component: {fileID: 1327486604}
   m_Layer: 0
   m_Name: MockMapManager
@@ -1029,19 +1029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b821fdf604cf9d740ae3c5260e3d54b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapSceneManager
---- !u!114 &1327486605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327486603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8570f7338238ce428416bf7c574e709, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MockMapManager
-  eventSceneName: Event
 --- !u!4 &1327486606
 Transform:
   m_ObjectHideFlags: 0

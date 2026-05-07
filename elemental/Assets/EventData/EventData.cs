@@ -4,7 +4,10 @@ using UnityEngine;
 public class EventOption
 {
     public string buttonText; // ボタンに表示するテキスト
-    public int hpChange;      // 例：HP増減値（マイナスならダメージ。後々アイテム獲得などに拡張できます）
+
+    [Header("ステータス変動")]
+    public int hpChange;      //HP増減値（マイナスならダメージ。後々アイテム獲得などに拡張できます）
+    public int maxHpChange;   // ★追加：最大HPの増減（+で増加、-で減少）
 }
 
 [CreateAssetMenu(fileName = "NewEvent", menuName = "CardGame/EventData")]
