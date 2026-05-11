@@ -3,6 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class EventOption
 {
+    [TextArea(2,5)]
     public string buttonText; // ボタンに表示するテキスト
 
     [Header("ステータス変動")]
