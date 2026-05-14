@@ -886,6 +886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122130005}
   - component: {fileID: 1122130006}
+  - component: {fileID: 1122130007}
   m_Layer: 0
   m_Name: EventPoolManager
   m_TagString: Untagged
@@ -929,6 +930,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35b91de39283e0a42ba4f5e78b662f5d, type: 2}
   - {fileID: 11400000, guid: 389362f2314a47a45abd23e3405b99fe, type: 2}
   - {fileID: 11400000, guid: 85e567ce78532314aa3c4103ae2b09f5, type: 2}
+--- !u!114 &1122130007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122130004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce65072432315b458eeb3ed63e8e515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
+  maxHp: 50
+  currentHp: 0
+  gold: 100
+  hasCounter: 0
+  deckCards: []
+  startingDeck:
+  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+  ownedRelics: []
 --- !u!1 &1327486603
 GameObject:
   m_ObjectHideFlags: 0

@@ -93,6 +93,10 @@ public class EventManager : MonoBehaviour
             }
         }
         
+        if (option.rewardRelic != null)
+        {
+            PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+        }
 
         // ここにマップ画面へ戻る処理を書きます
         // Object.FindFirstObjectByType<GameManager>().BackToTitle(); // とりあえずの遷移例
