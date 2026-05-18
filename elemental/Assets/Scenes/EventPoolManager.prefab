@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4145583393102281259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3257981656874785856}
+  - component: {fileID: 6314779652911283614}
+  - component: {fileID: 496167374814708121}
+  m_Layer: 0
+  m_Name: EventPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3257981656874785856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145583393102281259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6314779652911283614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145583393102281259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820492a3b9412c440ae5eb8551779302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventPoolManager
+  allEvents:
+  - {fileID: 11400000, guid: 69c5229b48f63c94795afd6b352b6ed1, type: 2}
+  - {fileID: 11400000, guid: 26c4544d2199717468af67ac6d3491c8, type: 2}
+  - {fileID: 11400000, guid: 1d491246b12197048a9f676dd201be39, type: 2}
+  - {fileID: 11400000, guid: b6fa89834c6c1be47b97a55055a1ae88, type: 2}
+  - {fileID: 11400000, guid: 9ac9f303fa7fa4a44947970a8c8dfe1e, type: 2}
+  - {fileID: 11400000, guid: 35b91de39283e0a42ba4f5e78b662f5d, type: 2}
+  - {fileID: 11400000, guid: 389362f2314a47a45abd23e3405b99fe, type: 2}
+  - {fileID: 11400000, guid: 85e567ce78532314aa3c4103ae2b09f5, type: 2}
+--- !u!114 &496167374814708121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145583393102281259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce65072432315b458eeb3ed63e8e515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
+  maxHp: 50
+  currentHp: 0
+  gold: 100
+  hasCounter: 0
+  deckCards: []
+  startingDeck:
+  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+  ownedRelics: []

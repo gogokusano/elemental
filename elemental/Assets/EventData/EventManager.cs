@@ -93,6 +93,10 @@ public class EventManager : MonoBehaviour
             }
         }
         
+        if (option.rewardRelic != null)
+        {
+            PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+        }
 
         // ここにマップ画面へ戻る処理を書きます
         // Object.FindFirstObjectByType<GameManager>().BackToTitle(); // とりあえずの遷移例
@@ -103,6 +107,6 @@ public class EventManager : MonoBehaviour
     {
         Debug.Log("マップシーンへ帰還します。");
         // "Map" の部分は、実際の仮Mapシーンの名前に合わせて変更してください
-        SceneManager.LoadScene("KariMap"); 
+        SceneManager.LoadScene("Map"); 
     }
 }
