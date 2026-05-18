@@ -3,11 +3,13 @@ using UnityEngine;
 [System.Serializable]
 public class EventOption
 {
+    [TextArea(2,5)]
     public string buttonText; // ボタンに表示するテキスト
 
     [Header("ステータス変動")]
     public int hpChange;      //HP増減値（マイナスならダメージ。後々アイテム獲得などに拡張できます）
     public int maxHpChange;   // ★追加：最大HPの増減（+で増加、-で減少）
+    public RelicData rewardRelic; // ★この選択肢で手に入る奇物を設定
 }
 
 [CreateAssetMenu(fileName = "NewEvent", menuName = "CardGame/EventData")]

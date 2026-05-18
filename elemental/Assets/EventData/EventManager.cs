@@ -92,6 +92,7 @@ public class EventManager : MonoBehaviour
                 // 回復処理が必要な場合はここに追加（playerManager.Heal(...)など）
             }
         }
+        
 
         // ここにマップ画面へ戻る処理を書きます
         // Object.FindFirstObjectByType<GameManager>().BackToTitle(); // とりあえずの遷移例
