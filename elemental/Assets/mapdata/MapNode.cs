@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MapNode : MonoBehaviour
 {
     [Header("基本設定")]
-    public string sceneName;       // 遷移先のシーン名（空ならデバッグクリア）
+    public string sceneName;
     public Button nodeButton;
     public Image nodeIcon;
 
@@ -26,16 +26,22 @@ public class MapNode : MonoBehaviour
 
     public void OnClickNode()
     {
-        // 中ボスにチェックが入っている場合、スライドを開始
+        // 1. 中ボスならスライドを開始
         if (isMidBoss)
         {
-            MapSlideHandler.Instance.StartSlide();
+            if (MapSlideHandler.Instance != null)
+            {
+                MapSlideHandler.Instance.StartSlide();
+            }
         }
-        // 1. このマスの名前を保存
-        PlayerPrefs.SetString("LastClearedNode", this.name);
-        PlayerPrefs.Save(); // 確実に保存
 
-        // 2. シーン遷移判定
+        // 2. 【重要】選んだこのマスの「次の選択肢だけ」を有効にし、他はすべてロックする
+        if (MapManager.Instance != null)
+        {
+            MapManager.Instance.OpenNextNodesOnly(nextNodes);
+        }
+
+        // シーン遷移判定
         if (!string.IsNullOrEmpty(sceneName))
         {
             Debug.Log($"{this.name} を開始: {sceneName} へ遷移します。");
@@ -43,10 +49,7 @@ public class MapNode : MonoBehaviour
         }
         else
         {
-            // デバッグ用：シーン名がなければ即座にマップを再読み込みして「次」を開放
-            Debug.Log($"{this.name} はシーン名がないため、即時クリア扱いとしてマップを更新します。");
-            // 現在のマップシーンを再読み込み（MapManagerが再判定してくれる）
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            Debug.Log($"{this.name} はシーン名がないため、デバッグ用としてその場で次のルートのみを開放しました。");
         }
     }
 }

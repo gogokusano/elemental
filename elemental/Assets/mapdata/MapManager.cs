@@ -3,56 +3,53 @@ using System.Collections.Generic;
 
 public class MapManager : MonoBehaviour
 {
+    public static MapManager Instance;
+
     [Header("全てのマス（ヒエラルキーから全て入れる）")]
     public List<MapNode> allNodes;
 
     [Header("最初の3マス")]
     public List<MapNode> startNodes;
 
+    void Awake() => Instance = this;
+
     void Start()
     {
-        RefreshMap();
+        // 毎回必ず初期状態（最初の3マスだけ押せる）からスタート
+        ResetToStart();
     }
 
-    public void RefreshMap()
+    public void ResetToStart()
     {
-        // 最後にクリアしたマスの名前を取得
-        string lastCleared = PlayerPrefs.GetString("LastClearedNode", "");
-
         // 1. 一旦すべてのボタンをロック
         foreach (var node in allNodes)
         {
             node.SetState(false);
         }
 
-        if (string.IsNullOrEmpty(lastCleared))
+        // 2. スタートの3マスだけを有効化
+        foreach (var st in startNodes)
         {
-            // 初回：スタートの3マスを有効化
-            foreach (var st in startNodes) st.SetState(true);
-        }
-        else
-        {
-            // 前回クリアしたマスの「次」を有効化
-            MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
-            if (lastNode != null)
-            {
-                foreach (var next in lastNode.nextNodes)
-                {
-                    next.SetState(true);
-                }
-            }
-            else
-            {
-                // 万が一見つからない（セーブデータが古い等）場合はリセット
-                foreach (var st in startNodes) st.SetState(true);
-            }
+            st.SetState(true);
         }
     }
 
-    // デバッグ用：進捗リセットボタンから呼ぶ用
-    public void ResetProgress()
+    // 次のマスを開放し、それ以外をすべてロックする
+    public void OpenNextNodesOnly(List<MapNode> nextNodes)
     {
-        PlayerPrefs.DeleteKey("LastClearedNode");
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // 1. まず全てのマスを一旦非アクティブ（ロック）にする
+        foreach (var node in allNodes)
+        {
+            node.SetState(false);
+        }
+
+        // 2. 今回進んだルートの「次のマス」だけをピンポイントで有効化する
+        foreach (var next in nextNodes)
+        {
+            if (next != null)
+            {
+                next.SetState(true);
+            }
+        }
     }
 }
