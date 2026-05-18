@@ -107,6 +107,6 @@ public class EventManager : MonoBehaviour
     {
         Debug.Log("マップシーンへ帰還します。");
         // "Map" の部分は、実際の仮Mapシーンの名前に合わせて変更してください
-        SceneManager.LoadScene("KariMap"); 
+        SceneManager.LoadScene("Map"); 
     }
 }
