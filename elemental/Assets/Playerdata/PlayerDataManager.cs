@@ -55,4 +55,14 @@ public class PlayerDataManager : MonoBehaviour
         deckCards.Add(newCard);
         Debug.Log($"カード獲得: {newCard.cardName} / 現在の枚数: {deckCards.Count}");
     }
+
+    public void AddRelic(RelicData newRelic)
+    {
+        if (newRelic == null) return;
+        
+        ownedRelics.Add(newRelic);
+        Debug.Log($"<color=cyan>奇物獲得: {newRelic.relicName}</color>");
+        
+        // ここで「獲得した瞬間に最大HPを増やす」などの特殊効果を呼ぶこともできます
+    }
 }

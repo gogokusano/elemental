@@ -2513,7 +2513,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 3.48, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3465,7 +3465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 662667709}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -3610,6 +3610,13 @@ MonoBehaviour:
   - {fileID: 1433549470}
   - {fileID: 1573544092}
   - {fileID: 298179902}
+<<<<<<< HEAD
+=======
+  - {fileID: 745475062}
+  - {fileID: 893646909}
+<<<<<<< HEAD
+  - {fileID: 662667712}
+>>>>>>> 48355c0febe76f362cdf71364d15bec9576a1b72
   - {fileID: 575242392}
   - {fileID: 2123693787}
   - {fileID: 688789204}
@@ -3628,8 +3635,14 @@ MonoBehaviour:
   - {fileID: 337706439}
   - {fileID: 893646909}
   - {fileID: 1564321436}
+<<<<<<< HEAD
   - {fileID: 745475062}
   - {fileID: 874586665}
+=======
+=======
+  - {fileID: 1080489936}
+>>>>>>> event
+>>>>>>> 48355c0febe76f362cdf71364d15bec9576a1b72
   startNodes:
   - {fileID: 1561190490}
   - {fileID: 1315195232}
@@ -3649,6 +3662,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &670422870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,6 +3889,7 @@ RectTransform:
   m_AnchoredPosition: {x: -614.4276, y: -42.185677}
   m_SizeDelta: {x: 153.2, y: 28.98}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!114 &688789209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3890,6 +3905,67 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0.2, y: -0.2}
   m_UseGraphicAlpha: 1
+=======
+=======
+--- !u!1001 &689248153
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.30937
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.32514
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145583393102281259, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_Name
+      value: EventPoolManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+>>>>>>> event
+>>>>>>> 48355c0febe76f362cdf71364d15bec9576a1b72
 --- !u!1 &691506121
 GameObject:
   m_ObjectHideFlags: 0
@@ -4036,7 +4112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 691506123}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -9517,3 +9593,4 @@ SceneRoots:
   - {fileID: 669871690}
   - {fileID: 10991274}
   - {fileID: 324288193}
+  - {fileID: 689248153}
