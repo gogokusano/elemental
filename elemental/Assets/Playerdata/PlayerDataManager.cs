@@ -56,6 +56,7 @@ public class PlayerDataManager : MonoBehaviour
         Debug.Log($"カード獲得: {newCard.cardName} / 現在の枚数: {deckCards.Count}");
     }
 
+    // 奇物を追加する
     public void AddRelic(RelicData newRelic)
     {
         if (newRelic == null) return;
@@ -63,6 +64,7 @@ public class PlayerDataManager : MonoBehaviour
         ownedRelics.Add(newRelic);
         Debug.Log($"<color=cyan>奇物獲得: {newRelic.relicName}</color>");
         
-        // ここで「獲得した瞬間に最大HPを増やす」などの特殊効果を呼ぶこともできます
+        // ★修正点: 獲得した瞬間の固有効果（最大HPアップなど）があれば即座に実行する
+        newRelic.OnAcquire();
     }
 }
