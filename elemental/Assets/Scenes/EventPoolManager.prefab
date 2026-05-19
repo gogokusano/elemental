@@ -54,6 +54,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35b91de39283e0a42ba4f5e78b662f5d, type: 2}
   - {fileID: 11400000, guid: 389362f2314a47a45abd23e3405b99fe, type: 2}
   - {fileID: 11400000, guid: 85e567ce78532314aa3c4103ae2b09f5, type: 2}
+  allBonusEvents:
+  - {fileID: 0}
 --- !u!114 &496167374814708121
 MonoBehaviour:
   m_ObjectHideFlags: 0
