@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85e567ce78532314aa3c4103ae2b09f5, type: 2}
   allBonusEvents:
   - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &496167374814708121
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1051,6 +1051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventPoolManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'allBonusEvents.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: aea18271509fb6d4fa970f26601bbcba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
