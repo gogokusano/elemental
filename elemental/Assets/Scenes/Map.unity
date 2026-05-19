@@ -507,7 +507,7 @@ MonoBehaviour:
   nodeIcon: {fileID: 0}
   nextNodes:
   - {fileID: 1089394239}
-  - {fileID: 1433549470}
+  - {fileID: 1690896754}
   isMidBoss: 0
   isBoss: 0
   availableColor: {r: 1, g: 1, b: 1, a: 1}
