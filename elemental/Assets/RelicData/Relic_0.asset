@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccec80516ee083408cb92f6df81da86, type: 3}
   m_Name: Relic_0
   m_EditorClassIdentifier: Assembly-CSharp::RelicData
-  relicName: "\u6700\u5F37\uFF01\u5947\u7269\u6700\u5F37\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8"
-  description: "\u6700\u5F31"
-  relicIcon: {fileID: -3675840262037605285, guid: e142a60ec48c45e45bcfe4908b776f57, type: 3}
+  relicName: "\u308A\u3093\u3054"
+  description: "\u304A\u3044\u3057\u3044\u308A\u3093\u3054"
+  relicIcon: {fileID: 7233151579186739914, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 0
