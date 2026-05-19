@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1345f9589a2394eb28952923445a78, type: 3}
+  m_Name: bonus3
+  m_EditorClassIdentifier: Assembly-CSharp::EventData
+  eventName: "\u795E\u3005\u306E\u935B\u51B6\u5834"
+  eventText: "\u9EC4\u91D1\u306E\u708E\u304C\u9759\u304B\u306B\u71C3\u3048\u7D9A\u3051\u308B\u3001\u795E\u8056\u306A\u7A7A\u6C17\u306E\u6F02\u3046\u935B\u51B6\u5834\u3002"
+  eventImage: {fileID: -3626347860755492930, guid: 9e2c43f4b4a16e84b868bb1c9b676de4, type: 3}
+  options:
+  - buttonText: "\u4E0D\u6EC5\u306E\u5263\uFF1A\u5F37\u529B\u306A\u653B\u6483\u5947\u7269\u3092\u624B\u306B\u3059\u308B\u3002"
+    hpChange: 0
+    maxHpChange: 0
+    rewardRelic: {fileID: 0}
+  - buttonText: "\u4E0D\u58CA\u306E\u76FE\uFF1A\u5F37\u529B\u306A\u9632\u5FA1\u5947\u7269\u3092\u624B\u306B\u3059\u308B\u3002"
+    hpChange: 0
+    maxHpChange: 0
+    rewardRelic: {fileID: 0}
+  - buttonText: "\u6B66\u5668\u306E\u8907\u88FD\uFF1B\u30C7\u30C3\u30AD\u306E\u30AB\u30FC\u30C9\u30921\u679A\u9078\u3073\u3001\u305D\u306E\u30AB\u30FC\u30C9\u3092\u30B3\u30D4\u30FC\u3059\u308B\u3002"
+    hpChange: 0
+    maxHpChange: 0
+    rewardRelic: {fileID: 0}
