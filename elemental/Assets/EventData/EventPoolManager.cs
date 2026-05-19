@@ -3,22 +3,27 @@ using UnityEngine;
 
 public class EventPoolManager : MonoBehaviour
 {
-    // どこからでもアクセスできるようにする（シングルトン）
     public static EventPoolManager Instance { get; private set; }
 
-    [Header("ゲーム内に登場する全イベントリスト")]
+    [Header("通常イベントのリスト")]
     public List<EventData> allEvents;
-
-    // 現在の「山札」（引けるイベントの残り）
     private List<EventData> remainingEvents = new List<EventData>();
+
+    // ★追加：ボーナスイベントのリスト
+    [Header("ボーナスイベントのリスト")]
+    public List<EventData> allBonusEvents;
+    private List<EventData> remainingBonusEvents = new List<EventData>();
 
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // シーン遷移しても消さない
-            ResetPool(); // 初期化時に山札を作る
+            DontDestroyOnLoad(gameObject);
+            
+            // ★初期化時に両方の山札を作る
+            ResetPool();
+            ResetBonusPool(); 
         }
         else
         {
@@ -26,31 +31,51 @@ public class EventPoolManager : MonoBehaviour
         }
     }
 
-    // 山札を初期化する（全イベントを補充）
+    // 通常イベントの山札リセット
     public void ResetPool()
     {
         remainingEvents = new List<EventData>(allEvents);
     }
 
-    // ランダムなイベントを引き、山札から除外する
+    // ★追加：ボーナスイベントの山札リセット
+    public void ResetBonusPool()
+    {
+        remainingBonusEvents = new List<EventData>(allBonusEvents);
+    }
+
+    // 通常イベントを引く
     public EventData GetRandomEvent()
     {
         if (allEvents == null || allEvents.Count == 0) return null;
 
-        // 山札が空になったら、すべてのイベントを補充してリセット
         if (remainingEvents.Count == 0)
         {
-            Debug.Log("すべてのイベントが出尽くしました。山札をリセットします。");
+            Debug.Log("すべての通常イベントが出尽くしました。山札をリセットします。");
             ResetPool();
         }
 
-        // 残っている中からランダムに1つ選ぶ
         int randomIndex = Random.Range(0, remainingEvents.Count);
         EventData selectedEvent = remainingEvents[randomIndex];
-
-        // 選ばれたイベントを山札から削除（次回以降出なくする）
         remainingEvents.RemoveAt(randomIndex);
 
         return selectedEvent;
+    }
+
+    // ★追加：ボーナスイベントを引く
+    public EventData GetRandomBonus()
+    {
+        if (allBonusEvents == null || allBonusEvents.Count == 0) return null;
+
+        if (remainingBonusEvents.Count == 0)
+        {
+            Debug.Log("すべてのボーナスが出尽くしました。山札をリセットします。");
+            ResetBonusPool();
+        }
+
+        int randomIndex = Random.Range(0, remainingBonusEvents.Count);
+        EventData selectedBonus = remainingBonusEvents[randomIndex];
+        remainingBonusEvents.RemoveAt(randomIndex);
+
+        return selectedBonus;
     }
 }
