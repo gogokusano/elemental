@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MapNode : MonoBehaviour
 {
     [Header("基本設定")]
-    public string sceneName;
+    public string sceneName;       // 遷移先のシーン名（空ならデバッグクリア）
     public Button nodeButton;
     public Image nodeIcon;
 
@@ -35,13 +35,13 @@ public class MapNode : MonoBehaviour
             }
         }
 
-        // 2. 【重要】選んだこのマスの「次の選択肢だけ」を有効にし、他はすべてロックする
+        // 2. 管理者にセーブと次のマスの開放を命令
         if (MapManager.Instance != null)
         {
-            MapManager.Instance.OpenNextNodesOnly(nextNodes);
+            MapManager.Instance.OpenNextNodesOnly(this);
         }
 
-        // シーン遷移判定
+        // 3. シーン遷移判定
         if (!string.IsNullOrEmpty(sceneName))
         {
             Debug.Log($"{this.name} を開始: {sceneName} へ遷移します。");
@@ -49,7 +49,7 @@ public class MapNode : MonoBehaviour
         }
         else
         {
-            Debug.Log($"{this.name} はシーン名がないため、デバッグ用としてその場で次のルートのみを開放しました。");
+            Debug.Log($"{this.name} はシーン名がないため、その場で進捗を保存して次のルートのみを開放しました。");
         }
     }
 }
