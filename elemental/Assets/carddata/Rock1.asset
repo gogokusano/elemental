@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
-  m_Name: thunder
+  m_Name: Rock1
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: 
+  cardName: "\u30ED\u30C3\u30AF"
   cost: 1
   cardType: 0
-  damage: 5
+  damage: 6
   block: 0
   rarity: 0
-  elementType: 8
+  elementType: 9
   description: 
-  cardImage: {fileID: 8074540266664585525, guid: 6b3851af61faebc4188641873fa8326b, type: 3}
+  cardImage: {fileID: 4557553568616797241, guid: 5173133d8a5c8214bb14c7004da9eb4c, type: 3}
   isUnusable: 0

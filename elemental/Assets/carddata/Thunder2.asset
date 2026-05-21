@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
-  m_Name: jet
+  m_Name: Thunder2
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: 
+  cardName: "\u30E9\u30A4\u30C8\u30CB\u30F3\u30B0"
   cost: 2
   cardType: 0
-  damage: 8
+  damage: 10
   block: 0
-  rarity: 2
-  elementType: 3
+  rarity: 0
+  elementType: 8
   description: 
-  cardImage: {fileID: 6488645268042717141, guid: 9a48bfca65f27a945b93fb61a90f71bf, type: 3}
+  cardImage: {fileID: -9102750444654901101, guid: 72c11bd80d4417d4f8a70a27395345e2, type: 3}
   isUnusable: 0

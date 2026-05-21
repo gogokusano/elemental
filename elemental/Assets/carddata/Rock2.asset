@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
-  m_Name: ice
+  m_Name: Rock2
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: 
-  cost: 1
+  cardName: "\u30E2\u30CE\u30EA\u30B9"
+  cost: 2
   cardType: 0
-  damage: 3
+  damage: 10
   block: 0
   rarity: 0
-  elementType: 7
+  elementType: 9
   description: 
-  cardImage: {fileID: -8257955226981222241, guid: e197193d0fdd7534982a0326d2ce3f6c, type: 3}
+  cardImage: {fileID: -5596680243305097608, guid: 34bac08d587425c408fc92ffe2c69910, type: 3}
   isUnusable: 0

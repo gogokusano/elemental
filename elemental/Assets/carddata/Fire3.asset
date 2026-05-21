@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
-  m_Name: Strike
+  m_Name: Fire3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: 
-  cost: 1
+  cardName: "\u7344\u708E"
+  cost: 3
   cardType: 0
-  damage: 5
+  damage: 8
   block: 0
   rarity: 0
-  elementType: 1
+  elementType: 2
   description: 
-  cardImage: {fileID: 4028799778182388043, guid: 5f9add9c16b424445bc0d3743ce02e0f, type: 3}
+  cardImage: {fileID: -5126642833348997626, guid: a74a0c8f65efc9645a77fae09f445b21, type: 3}
   isUnusable: 0

@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
-  m_Name: Defend
+  m_Name: Water3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\u5927\u76FE"
-  cost: 1
-  cardType: 1
-  damage: 0
-  block: 10
-  heal: 0
-  cardDraw: 0
+  cardName: "\u9ED2\u6F6E"
+  cost: 3
+  cardType: 0
+  damage: 8
+  block: 0
   rarity: 0
-  elementType: 1
+  elementType: 3
   description: 
-  cardImage: {fileID: -1481660604995479452, guid: 7de2fb84cd725f34493887c406b710d3, type: 3}
+  cardImage: {fileID: 8511678900910199364, guid: 9b1dbeb1faef14948b69b10c8d3654ab, type: 3}
   isUnusable: 0
