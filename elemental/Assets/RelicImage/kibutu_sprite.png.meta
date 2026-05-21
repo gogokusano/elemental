@@ -1,0 +1,1430 @@
+fileFormatVersion: 2
+guid: 01d964ae77a306a40ad25fa06e63f4e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7233151579186739914
+    second: kibutu_sprite_0
+  - first:
+      213: 2738824826199089121
+    second: kibutu_sprite_1
+  - first:
+      213: -5574981415055886895
+    second: kibutu_sprite_2
+  - first:
+      213: 8184775395216136658
+    second: kibutu_sprite_3
+  - first:
+      213: 1880115036164830049
+    second: kibutu_sprite_4
+  - first:
+      213: 3458132939692992932
+    second: kibutu_sprite_5
+  - first:
+      213: -6758263674213812285
+    second: kibutu_sprite_6
+  - first:
+      213: 6787071901202935155
+    second: kibutu_sprite_7
+  - first:
+      213: 5224052062788257168
+    second: kibutu_sprite_8
+  - first:
+      213: -7078851214724172031
+    second: kibutu_sprite_9
+  - first:
+      213: -5273810571259814418
+    second: kibutu_sprite_10
+  - first:
+      213: -4183246809813352076
+    second: kibutu_sprite_11
+  - first:
+      213: 777898925178264342
+    second: kibutu_sprite_12
+  - first:
+      213: -1270719694626963691
+    second: kibutu_sprite_13
+  - first:
+      213: 2728420704928487869
+    second: kibutu_sprite_14
+  - first:
+      213: -351304235208992969
+    second: kibutu_sprite_15
+  - first:
+      213: 7635458252036574846
+    second: kibutu_sprite_16
+  - first:
+      213: 3700405464027715891
+    second: kibutu_sprite_17
+  - first:
+      213: 4150126326892669510
+    second: kibutu_sprite_18
+  - first:
+      213: 4682328765377222898
+    second: kibutu_sprite_19
+  - first:
+      213: -7099808573825760948
+    second: kibutu_sprite_20
+  - first:
+      213: 5378923078614283994
+    second: kibutu_sprite_21
+  - first:
+      213: 4750151830980022443
+    second: kibutu_sprite_22
+  - first:
+      213: 4490166011883313797
+    second: kibutu_sprite_23
+  - first:
+      213: 5175915353423427256
+    second: kibutu_sprite_24
+  - first:
+      213: -2085628706617320675
+    second: kibutu_sprite_25
+  - first:
+      213: 4426921937212309611
+    second: kibutu_sprite_26
+  - first:
+      213: 5709701928660549552
+    second: kibutu_sprite_27
+  - first:
+      213: 8101470924020757805
+    second: kibutu_sprite_28
+  - first:
+      213: 1397434129499226615
+    second: kibutu_sprite_29
+  - first:
+      213: 3374279853437797811
+    second: kibutu_sprite_30
+  - first:
+      213: 251649437402707159
+    second: kibutu_sprite_31
+  - first:
+      213: -2075047816028959637
+    second: kibutu_sprite_32
+  - first:
+      213: -89539232619216679
+    second: kibutu_sprite_33
+  - first:
+      213: 3630783459082579045
+    second: kibutu_sprite_34
+  - first:
+      213: -5390749304598043427
+    second: kibutu_sprite_35
+  - first:
+      213: 4601462978666183830
+    second: kibutu_sprite_36
+  - first:
+      213: 1659994017312582435
+    second: kibutu_sprite_37
+  - first:
+      213: 1287656513014712633
+    second: kibutu_sprite_38
+  - first:
+      213: 1401370208308913344
+    second: kibutu_sprite_39
+  - first:
+      213: -5859759048962132144
+    second: kibutu_sprite_40
+  - first:
+      213: -6812148572515066441
+    second: kibutu_sprite_41
+  - first:
+      213: 3566918084706220323
+    second: kibutu_sprite_42
+  - first:
+      213: -8577711558440307489
+    second: kibutu_sprite_43
+  - first:
+      213: 6632537439649964522
+    second: kibutu_sprite_44
+  - first:
+      213: 1537725998371791426
+    second: kibutu_sprite_45
+  - first:
+      213: -2244271784547877802
+    second: kibutu_sprite_46
+  - first:
+      213: -7770461066074187132
+    second: kibutu_sprite_47
+  - first:
+      213: 2235275345171532405
+    second: kibutu_sprite_48
+  - first:
+      213: -6372229063314198863
+    second: kibutu_sprite_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kibutu_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 719
+        width: 88
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca3bf3d901516460800000000000000
+      internalID: 7233151579186739914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 716
+        width: 93
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef1e932ba2420620800000000000000
+      internalID: 2738824826199089121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 718
+        width: 86
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d57036c0ffa1a2b0800000000000000
+      internalID: -5574981415055886895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 714
+        width: 84
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9173e6bd9269170800000000000000
+      internalID: 8184775395216136658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 700
+        width: 94
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163b9730aa2871a10800000000000000
+      internalID: 1880115036164830049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 717
+        width: 82
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a96a703691cdff20800000000000000
+      internalID: 3458132939692992932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 714
+        width: 91
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c73f00cef2d532a0800000000000000
+      internalID: -6758263674213812285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 710
+        width: 89
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d6c384fe5803e50800000000000000
+      internalID: 6787071901202935155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 600
+        width: 83
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09504a24caf8f7840800000000000000
+      internalID: 5224052062788257168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 607
+        width: 94
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107f588535ed2cd90800000000000000
+      internalID: -7078851214724172031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 605
+        width: 90
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeddb5f2a39afc6b0800000000000000
+      internalID: -5273810571259814418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 606
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4710a45b03f12f5c0800000000000000
+      internalID: -4183246809813352076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 600
+        width: 96
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b986273f6abca00800000000000000
+      internalID: 777898925178264342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 596
+        width: 88
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fbaa89b2f7d5ee0800000000000000
+      internalID: -1270719694626963691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 602
+        width: 89
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db95513ec2c4dd520800000000000000
+      internalID: 2728420704928487869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 597
+        width: 95
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737174cc8aaef1bf0800000000000000
+      internalID: -351304235208992969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 465
+        width: 85
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e07f963d896f960800000000000000
+      internalID: 7635458252036574846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 481
+        width: 91
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3395948f92b7a5330800000000000000
+      internalID: 3700405464027715891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 472
+        width: 95
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a2f6fe7e5389930800000000000000
+      internalID: 4150126326892669510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 478
+        width: 56
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f817ed3439faf040800000000000000
+      internalID: 4682328765377222898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 474
+        width: 94
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41c7dfe7b9687d90800000000000000
+      internalID: -7099808573825760948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 478
+        width: 89
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad674fe8a06c5aa40800000000000000
+      internalID: 5378923078614283994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 498
+        width: 89
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba05cb24cedebe140800000000000000
+      internalID: 4750151830980022443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 473
+        width: 79
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a56d8a236405e30800000000000000
+      internalID: 4490166011883313797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 333
+        width: 85
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b63b4c379b84d740800000000000000
+      internalID: 5175915353423427256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 329
+        width: 76
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b97b0ddbb5e03e0800000000000000
+      internalID: -2085628706617320675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 321
+        width: 85
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b608ceb0c069f6d30800000000000000
+      internalID: 4426921937212309611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 318
+        width: 66
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bfbc2f17afec3f40800000000000000
+      internalID: 5709701928660549552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 322
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d25b968c1e43e6070800000000000000
+      internalID: 8101470924020757805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 296
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f10fc5dfeea46310800000000000000
+      internalID: 1397434129499226615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_30
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 312
+        width: 96
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b5cae426a9d3de20800000000000000
+      internalID: 3374279853437797811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 332
+        width: 91
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4b05c74d90e7300800000000000000
+      internalID: 251649437402707159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_32
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 190
+        width: 92
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6cc4a16103f333e0800000000000000
+      internalID: -2075047816028959637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_33
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 197
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d04546da84e1cef0800000000000000
+      internalID: -89539232619216679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_34
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 194
+        width: 95
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c2bfeb152236230800000000000000
+      internalID: 3630783459082579045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_35
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 196
+        width: 88
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4ef32a1163035b0800000000000000
+      internalID: -5390749304598043427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_36
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 198
+        width: 92
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c3282133eabdf30800000000000000
+      internalID: 4601462978666183830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_37
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 172
+        width: 93
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ba03383cb790710800000000000000
+      internalID: 1659994017312582435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_38
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 190
+        width: 91
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939c5fab6ccaed110800000000000000
+      internalID: 1287656513014712633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_39
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 198
+        width: 79
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4611997caa27310800000000000000
+      internalID: 1401370208308913344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_40
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 204
+        width: 78
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0573b39f034fdaea0800000000000000
+      internalID: -5859759048962132144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_41
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 67
+        width: 88
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd1e0237f26671a0800000000000000
+      internalID: -6812148572515066441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_42
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 65
+        width: 87
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329b4d5891d308130800000000000000
+      internalID: 3566918084706220323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_43
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 66
+        width: 89
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd43765c8c8d5f880800000000000000
+      internalID: -8577711558440307489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_44
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 64
+        width: 88
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1a0d129a18b0c50800000000000000
+      internalID: 6632537439649964522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_45
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 59
+        width: 90
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24265d6f5a9175510800000000000000
+      internalID: 1537725998371791426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_46
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 60
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65c779ed3bebad0e0800000000000000
+      internalID: -2244271784547877802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_47
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 51
+        width: 91
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a15af74d6c92490800000000000000
+      internalID: -7770461066074187132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_48
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 57
+        width: 91
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a432c551b450f10800000000000000
+      internalID: 2235275345171532405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kibutu_sprite_49
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 74
+        width: 96
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1beacbdad6b4197a0800000000000000
+      internalID: -6372229063314198863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      kibutu_sprite_0: 7233151579186739914
+      kibutu_sprite_1: 2738824826199089121
+      kibutu_sprite_10: -5273810571259814418
+      kibutu_sprite_11: -4183246809813352076
+      kibutu_sprite_12: 777898925178264342
+      kibutu_sprite_13: -1270719694626963691
+      kibutu_sprite_14: 2728420704928487869
+      kibutu_sprite_15: -351304235208992969
+      kibutu_sprite_16: 7635458252036574846
+      kibutu_sprite_17: 3700405464027715891
+      kibutu_sprite_18: 4150126326892669510
+      kibutu_sprite_19: 4682328765377222898
+      kibutu_sprite_2: -5574981415055886895
+      kibutu_sprite_20: -7099808573825760948
+      kibutu_sprite_21: 5378923078614283994
+      kibutu_sprite_22: 4750151830980022443
+      kibutu_sprite_23: 4490166011883313797
+      kibutu_sprite_24: 5175915353423427256
+      kibutu_sprite_25: -2085628706617320675
+      kibutu_sprite_26: 4426921937212309611
+      kibutu_sprite_27: 5709701928660549552
+      kibutu_sprite_28: 8101470924020757805
+      kibutu_sprite_29: 1397434129499226615
+      kibutu_sprite_3: 8184775395216136658
+      kibutu_sprite_30: 3374279853437797811
+      kibutu_sprite_31: 251649437402707159
+      kibutu_sprite_32: -2075047816028959637
+      kibutu_sprite_33: -89539232619216679
+      kibutu_sprite_34: 3630783459082579045
+      kibutu_sprite_35: -5390749304598043427
+      kibutu_sprite_36: 4601462978666183830
+      kibutu_sprite_37: 1659994017312582435
+      kibutu_sprite_38: 1287656513014712633
+      kibutu_sprite_39: 1401370208308913344
+      kibutu_sprite_4: 1880115036164830049
+      kibutu_sprite_40: -5859759048962132144
+      kibutu_sprite_41: -6812148572515066441
+      kibutu_sprite_42: 3566918084706220323
+      kibutu_sprite_43: -8577711558440307489
+      kibutu_sprite_44: 6632537439649964522
+      kibutu_sprite_45: 1537725998371791426
+      kibutu_sprite_46: -2244271784547877802
+      kibutu_sprite_47: -7770461066074187132
+      kibutu_sprite_48: 2235275345171532405
+      kibutu_sprite_49: -6372229063314198863
+      kibutu_sprite_5: 3458132939692992932
+      kibutu_sprite_6: -6758263674213812285
+      kibutu_sprite_7: 6787071901202935155
+      kibutu_sprite_8: 5224052062788257168
+      kibutu_sprite_9: -7078851214724172031
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
