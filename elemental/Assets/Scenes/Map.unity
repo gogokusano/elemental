@@ -4511,7 +4511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: battlescene
   nodeButton: {fileID: 759159471}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -6109,6 +6109,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: startingDeck.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'startingDeck.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'startingDeck.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'startingDeck.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'startingDeck.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'startingDeck.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'startingDeck.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
     - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.76212
