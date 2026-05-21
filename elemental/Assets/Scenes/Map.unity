@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 298179903}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -2325,7 +2325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 423064083}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -2686,7 +2686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 524603703}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -4170,7 +4170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 691506123}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -4511,7 +4511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: battlescene
+  sceneName: 
   nodeButton: {fileID: 759159471}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -5283,7 +5283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 951987542}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -6101,6 +6101,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265928694}
   m_CullTransparentMesh: 1
+--- !u!1001 &1271264973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.76212
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.00703
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145583393102281259, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: m_Name
+      value: EventPoolManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
 --- !u!1 &1311720578
 GameObject:
   m_ObjectHideFlags: 0
@@ -6322,7 +6379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 1315195229}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -6642,7 +6699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 1433549467}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -6699,7 +6756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 1442167726}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -6963,7 +7020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 1479905758}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -7983,7 +8040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 1573544089}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -8153,7 +8210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 1577537511}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -8552,65 +8609,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657502114}
   m_CullTransparentMesh: 1
---- !u!1 &1682561518
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1682561520}
-  - component: {fileID: 1682561519}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1682561519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682561518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce65072432315b458eeb3ed63e8e515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
-  maxHp: 50
-  currentHp: 0
-  gold: 100
-  hasCounter: 0
-  deckCards:
-  - {fileID: 0}
-  startingDeck:
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  ownedRelics: []
---- !u!4 &1682561520
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682561518}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690896752
 GameObject:
   m_ObjectHideFlags: 0
@@ -8663,7 +8661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Event
   nodeButton: {fileID: 1690896755}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -9846,4 +9844,4 @@ SceneRoots:
   - {fileID: 669871690}
   - {fileID: 10991274}
   - {fileID: 324288193}
-  - {fileID: 1682561520}
+  - {fileID: 1271264973}
