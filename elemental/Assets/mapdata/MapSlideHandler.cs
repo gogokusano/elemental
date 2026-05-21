@@ -4,11 +4,11 @@ public class MapSlideHandler : MonoBehaviour
 {
     public static MapSlideHandler Instance;
 
-    [Header("スライドさせる親オブジェクト（MAP 1）")]
+    [Header("スライドさせる親オブジェクト（MapContainer）")]
     public RectTransform mapContainer;
 
-    [Header("スライド後のX座標（例: -1920）")]
-    public float targetX = -1920f;
+    [Header("ステージ2のスライド先X座標")]
+    public float targetX = -2436f;
 
     public float speed = 5f;
     private float currentTargetX;
@@ -18,21 +18,22 @@ public class MapSlideHandler : MonoBehaviour
 
     void Start()
     {
-        string lastCleared = PlayerPrefs.GetString("LastClearedNode", "");
-
-        // もし最後にクリアしたのが「中ボス」なら、最初からTargetXの位置にする
-        // ※"MidBossNodeName" は、ヒエラルキー上の中ボスボタンの名前に書き換えてください
-        if (lastCleared == "MidBossNodeName")
-        {
-            Vector2 pos = mapContainer.anchoredPosition;
-            pos.x = targetX;
-            mapContainer.anchoredPosition = pos;
-            currentTargetX = targetX;
-        }
-        else
+        if (mapContainer != null)
         {
             currentTargetX = mapContainer.anchoredPosition.x;
         }
+    }
+
+    // ★修正：保存されたX座標に直接セットする関数
+    public void RestorePosition(float savedX)
+    {
+        if (mapContainer == null) return;
+
+        Vector2 pos = mapContainer.anchoredPosition;
+        pos.x = savedX;
+        mapContainer.anchoredPosition = pos;
+
+        currentTargetX = savedX;
     }
 
     void Update()
@@ -40,19 +41,28 @@ public class MapSlideHandler : MonoBehaviour
         if (isMoving)
         {
             Vector2 pos = mapContainer.anchoredPosition;
-            // 滑らかに移動させる
             pos.x = Mathf.Lerp(pos.x, currentTargetX, Time.deltaTime * speed);
             mapContainer.anchoredPosition = pos;
 
-            // 十分近づいたら停止
-            if (Mathf.Abs(pos.x - currentTargetX) < 0.1f) isMoving = false;
+            if (Mathf.Abs(pos.x - currentTargetX) < 0.1f)
+            {
+                pos.x = currentTargetX;
+                mapContainer.anchoredPosition = pos;
+                isMoving = false;
+            }
         }
     }
 
-    // 中ボスを倒した時などにこれを呼ぶ
     public void StartSlide()
     {
         currentTargetX = targetX;
         isMoving = true;
+    }
+
+    // ★追加：現在のマップのX座標を外から取得するための関数
+    public float GetCurrentX()
+    {
+        if (mapContainer == null) return 0f;
+        return mapContainer.anchoredPosition.x;
     }
 }
