@@ -27,8 +27,18 @@ public class DeckManager : MonoBehaviour
     [Header("状態管理")]
     public bool isEnemyTurn = false; 
 
-    void Start() 
+void Start() 
     { 
+        // ★ここを追加：メインマネージャーから所持デッキをコピーして山札を作る
+        if (PlayerDataManager.Instance != null)
+        {
+            drawPile = new List<CardData>(PlayerDataManager.Instance.deckCards);
+        }
+        else
+        {
+            Debug.LogWarning("PlayerDataManagerが見つかりません。インスペクターのdrawPileを使用します。");
+        }
+
         Shuffle(drawPile); 
         StartFirstTurn(); 
         UpdateDeckUI();

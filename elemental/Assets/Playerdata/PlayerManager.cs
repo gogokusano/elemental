@@ -3,12 +3,10 @@ using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
-    [Header("プレイヤーステータス")]
-    public int maxHp = 50;
-    public int currentHp;
+    [Header("プレイヤーステータス (※HPはPlayerDataManagerで管理)")]
     public int currentBlock;
 
-    // ★追加：カウンター状態を判定するフラグ
+    // ★カウンター状態を判定するフラグ
     public bool hasCounter = false; 
 
     [Header("UI設定")]
@@ -17,7 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        currentHp = maxHp;
+        // 以前あった currentHp = maxHp; は削除！（戦闘のたびに全回復してしまうため）
         currentBlock = 0;
         UpdateUI();
     }
@@ -30,7 +28,7 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // ★追加：ダメージを受ける前に、まずカウンターが発動するか判定
+        // 1. カウンター判定
         if (hasCounter) 
         {
             hasCounter = false;
@@ -39,12 +37,12 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("<color=orange>カウンター発動！ダメージを無効化して2.0倍にして返した！</color>");
                 enemy.TakeDamage(damage * 2); 
             }
-            return; // カウンター発動時はここで処理を終了し、自分はダメージや画面揺れを受けない
+            return; // カウンター発動時はここで処理を終了
         }
 
         if (damage <= 0) return;
 
-        // 元々の実装：カメラシェイク演出
+        // カメラシェイク演出
         GameObject container = GameObject.Find("ShakeContainer");
         if (container != null)
         {
@@ -55,22 +53,23 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        // 1. まずブロックで受ける
+        // 2. まずブロックで受ける
         if (currentBlock > 0)
         {
             if (currentBlock >= damage) { currentBlock -= damage; damage = 0; }
             else { damage -= currentBlock; currentBlock = 0; }
         }
 
-        // 2. 残ったダメージがあればHPを減らす
-        if (damage > 0)
+        // 3. 残ったダメージがあればHPを減らす（★PlayerDataManagerを直接操作！）
+        if (damage > 0 && PlayerDataManager.Instance != null)
         {
-            currentHp -= damage;
+            int newHp = PlayerDataManager.Instance.currentHp - damage;
+            PlayerDataManager.Instance.SaveHp(newHp); // マイナスにならないようにSaveHp経由で保存
         }
         
-        if (currentHp <= 0) 
+        // 4. 死亡判定（★これもPlayerDataManagerのHPを見る）
+        if (PlayerDataManager.Instance != null && PlayerDataManager.Instance.currentHp <= 0) 
         {
-            currentHp = 0;
             GameManager gm = Object.FindFirstObjectByType<GameManager>();
             if (gm != null) gm.LoseGame();
             
@@ -89,7 +88,12 @@ public class PlayerManager : MonoBehaviour
 
     void UpdateUI()
     {
-        if (hpText != null) hpText.text = "Player HP: " + currentHp + " / " + maxHp;
+        // ★UI表示もPlayerDataManagerから最新の情報を取ってくる
+        if (hpText != null && PlayerDataManager.Instance != null) 
+        {
+            hpText.text = "Player HP: " + PlayerDataManager.Instance.currentHp + " / " + PlayerDataManager.Instance.maxHp;
+        }
+
         if (blockText != null)
         {
             blockText.text = "Block: " + currentBlock;
