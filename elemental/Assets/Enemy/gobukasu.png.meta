@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 98200b3531d4b2e48a53485dd4c52a26
+guid: 364ebbb88d13d1747b08b0d0639d5195
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7410752581977185877
-    second: "ChatGPT Image 2026\u5E745\u670818\u65E5 10_03_59_0"
+      213: 8484990790730304144
+    second: gobukasu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\u5E745\u670818\u65E5 10_03_59_0"
+      name: gobukasu_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55e1f0f953848d660800000000000000
-      internalID: 7410752581977185877
+      spriteID: 09ac0f33b2eb0c570800000000000000
+      internalID: 8484990790730304144
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ChatGPT Image 2026\u5E745\u670818\u65E5 10_03_59_0": 7410752581977185877
+      gobukasu_0: 8484990790730304144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

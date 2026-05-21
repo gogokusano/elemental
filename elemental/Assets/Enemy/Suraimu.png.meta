@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: a8add676db72939479467b0139638679
+guid: e6ba58a9549011343bbe8d37e0d32701
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7235519274049146859
-    second: "ChatGPT Image 2026\u5E745\u670819\u65E5 14_10_03 (1)_0"
+      213: 5791124475601671289
+    second: Suraimu_0
   - first:
-      213: -6830253340916156300
-    second: "ChatGPT Image 2026\u5E745\u670819\u65E5 14_10_03 (1)_1"
+      213: 2591755099940467650
+    second: Suraimu_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\u5E745\u670819\u65E5 14_10_03 (1)_0"
+      name: Suraimu_0
       rect:
         serializedVersion: 2
-        x: 213
-        y: 107
-        width: 888
-        height: 930
+        x: 0
+        y: 0
+        width: 1353
+        height: 1162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 510fec04e85469b90800000000000000
-      internalID: -7235519274049146859
+      spriteID: 974de4227053e5050800000000000000
+      internalID: 5791124475601671289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\u5E745\u670819\u65E5 14_10_03 (1)_1"
+      name: Suraimu_1
       rect:
         serializedVersion: 2
-        x: 1122
-        y: 502
-        width: 30
-        height: 40
+        x: 501
+        y: 988
+        width: 34
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47874c056c01631a0800000000000000
-      internalID: -6830253340916156300
+      spriteID: 2c332cc1883c7f320800000000000000
+      internalID: 2591755099940467650
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ChatGPT Image 2026\u5E745\u670819\u65E5 14_10_03 (1)_0": -7235519274049146859
-      "ChatGPT Image 2026\u5E745\u670819\u65E5 14_10_03 (1)_1": -6830253340916156300
+      Suraimu_0: 5791124475601671289
+      Suraimu_1: 2591755099940467650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e01f32081e656094489e1ffda5520346
+guid: 74270a6b0448be44b926d534a5d4d300
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3651523820285438029
-    second: "ChatGPT Image 2026\u5E745\u670819\u65E5 13_45_47_0"
-  - first:
-      213: -3298952091165560905
-    second: "ChatGPT Image 2026\u5E745\u670819\u65E5 13_45_47_1"
+      213: -4215099794538360693
+    second: ei_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\u5E745\u670819\u65E5 13_45_47_0"
+      name: ei_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1
-        width: 1367
-        height: 1023
+        x: 0
+        y: 0
+        width: 1341
+        height: 1173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b7520b9e6e235dc0800000000000000
-      internalID: -3651523820285438029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ChatGPT Image 2026\u5E745\u670819\u65E5 13_45_47_1"
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 263
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bf6b0b3d84c732d0800000000000000
-      internalID: -3298952091165560905
+      spriteID: b8018b5c115f085c0800000000000000
+      internalID: -4215099794538360693
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ChatGPT Image 2026\u5E745\u670819\u65E5 13_45_47_0": -3651523820285438029
-      "ChatGPT Image 2026\u5E745\u670819\u65E5 13_45_47_1": -3298952091165560905
+      ei_0: -4215099794538360693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

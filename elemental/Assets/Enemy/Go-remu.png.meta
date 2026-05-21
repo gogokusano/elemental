@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ca813cc83d2751943a6058ccd5725724
+guid: 196dfba2c9a302849aa946f52e7d7d71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6579067375321130911
-    second: "ChatGPT Image 2026\u5E745\u670818\u65E5 09_56_31_0"
+      213: 8362141439872144987
+    second: Go-remu_0
+  - first:
+      213: 9082689345049398583
+    second: Go-remu_1
+  - first:
+      213: 9143980311141907639
+    second: Go-remu_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ChatGPT Image 2026\u5E745\u670818\u65E5 09_56_31_0"
+      name: Go-remu_0
       rect:
         serializedVersion: 2
-        x: 107
-        y: 57
-        width: 899
-        height: 962
+        x: 0
+        y: 0
+        width: 1343
+        height: 1171
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f97a063abea8d4b50800000000000000
-      internalID: 6579067375321130911
+      spriteID: b561725c55b4c0470800000000000000
+      internalID: 8362141439872144987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Go-remu_1
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 558
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d05e056d13c0e70800000000000000
+      internalID: 9082689345049398583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Go-remu_2
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 503
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc77c665a1f5ee70800000000000000
+      internalID: 9143980311141907639
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ChatGPT Image 2026\u5E745\u670818\u65E5 09_56_31_0": 6579067375321130911
+      Go-remu_0: 8362141439872144987
+      Go-remu_1: 9082689345049398583
+      Go-remu_2: 9143980311141907639
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
