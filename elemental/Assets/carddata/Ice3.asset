@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
-  m_Name: Defend
+  m_Name: Ice3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\u5927\u76FE"
-  cost: 1
-  cardType: 1
-  damage: 0
-  block: 10
-  heal: 0
-  cardDraw: 0
+  cardName: "\u7D76\u5BFE\u96F6\u5EA6"
+  cost: 3
+  cardType: 0
+  damage: 8
+  block: 0
   rarity: 0
-  elementType: 1
+  elementType: 7
   description: 
-  cardImage: {fileID: -1481660604995479452, guid: 7de2fb84cd725f34493887c406b710d3, type: 3}
+  cardImage: {fileID: -6355166125635082911, guid: 0a6cfb809ff61aa4ba167cc43d1c57cb, type: 3}
   isUnusable: 0

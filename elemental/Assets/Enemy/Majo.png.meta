@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ee43a99d5dab6124b8de9123cbfa0668
+guid: bc4520b77d0150f49af59a26d3b83960
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7716940765424196088
-    second: "\u8CA0\u50B7_0"
+      213: -6388631313821095912
+    second: Majo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u8CA0\u50B7_0"
+      name: Majo_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 9
-        width: 408
-        height: 581
+        y: 0
+        width: 1149
+        height: 1369
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 806e82c824be7e490800000000000000
-      internalID: -7716940765424196088
+      spriteID: 818a1c22ba50757a0800000000000000
+      internalID: -6388631313821095912
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u8CA0\u50B7_0": -7716940765424196088
+      Majo_0: -6388631313821095912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

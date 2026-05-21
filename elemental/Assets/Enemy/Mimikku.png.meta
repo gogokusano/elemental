@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ee43a99d5dab6124b8de9123cbfa0668
+guid: 2a86b54570e825f429470638dbb45e6f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7716940765424196088
-    second: "\u8CA0\u50B7_0"
+      213: -5329161265166857734
+    second: Mimikku_0
+  - first:
+      213: 7413284549775081652
+    second: Mimikku_1
+  - first:
+      213: 8216180798465404766
+    second: Mimikku_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +115,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u8CA0\u50B7_0"
+      name: Mimikku_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 9
-        width: 408
-        height: 581
+        x: 105
+        y: 109
+        width: 1431
+        height: 915
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 806e82c824be7e490800000000000000
-      internalID: -7716940765424196088
+      spriteID: af945fe70140b06b0800000000000000
+      internalID: -5329161265166857734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mimikku_1
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 380
+        width: 61
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b04c30550741e660800000000000000
+      internalID: 7413284549775081652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mimikku_2
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 368
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f6aeea7ecb50270800000000000000
+      internalID: 8216180798465404766
       vertices: []
       indices: 
       edges: []
@@ -161,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u8CA0\u50B7_0": -7716940765424196088
+      Mimikku_0: -5329161265166857734
+      Mimikku_1: 7413284549775081652
+      Mimikku_2: 8216180798465404766
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
