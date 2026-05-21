@@ -56,6 +56,15 @@ public class PlayerDataManager : MonoBehaviour
         Debug.Log($"カード獲得: {newCard.cardName} / 現在の枚数: {deckCards.Count}");
     }
 
+    public void RemoveCard(CardData cardToRemove)
+    {
+        if (deckCards.Contains(cardToRemove))
+        {
+            deckCards.Remove(cardToRemove);
+            Debug.Log($"カード削除: {cardToRemove.cardName} / 現在の枚数: {deckCards.Count}");
+        }
+    }
+
     // 奇物を追加する
     public void AddRelic(RelicData newRelic)
     {
