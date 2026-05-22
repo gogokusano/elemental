@@ -15,4 +15,4 @@ MonoBehaviour:
   relicName: "\u5E78\u904B\u306E\u53E4\u92AD"
   description: "\u30AB\u30FC\u30C9\u3092\u6368\u3066\u308B\u969B\u3001\u4E00\u5EA6\u306B2\u679A\u6368\u3066\u3089\u308C\u308B\u3002"
   relicIcon: {fileID: 3458132939692992932, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
-  rarity: 0
+  rarity: 4
