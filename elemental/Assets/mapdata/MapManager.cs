@@ -1,15 +1,26 @@
 using UnityEngine;
+using UnityEngine.UI; // ★追加
 using System.Collections.Generic;
+
+// ランダムに割り当てるイベントのデータ構造（修正なし）
+[System.Serializable]
+public struct MapEventData
+{
+    public string eventName;    // 識別用
+    public Sprite iconSprite;   // インスペクターで設定する画像
+    public string sceneName;    // 移動先のシーン名
+}
 
 public class MapManager : MonoBehaviour
 {
+    // --- 略（Instance, allNodes, startNodes, availableEvents はそのまま） ---
     public static MapManager Instance;
-
-    [Header("全てのマス（ヒエラルキーから全て入れる）")]
+    [Header("全てのマス")]
     public List<MapNode> allNodes;
-
     [Header("最初の3マス")]
     public List<MapNode> startNodes;
+    [Header("ランダム用イベントの種類")]
+    public List<MapEventData> availableEvents;
 
     void Awake() => Instance = this;
 
@@ -18,27 +29,26 @@ public class MapManager : MonoBehaviour
         RefreshMap();
     }
 
-    // セーブデータを読み込んでマップの状態を復元する
+    // --- RefreshMap 関数 ---
     public void RefreshMap()
     {
-        // 1. まず全てのマスを一旦非アクティブ（ロック）にする
         foreach (var node in allNodes)
         {
             if (node != null) node.SetState(false);
         }
 
-        // 2. セーブデータ（最後にクリアしたマスの名前）を取得
         string lastCleared = PlayerPrefs.GetString("LastClearedNode", "");
 
         if (string.IsNullOrEmpty(lastCleared))
         {
-            // セーブデータがない場合：初期状態（最初の3マスを有効化）
+            // ★新規開始時のみランダム化する（ロード時はすでにランダム化されていると仮定するが、今回は簡易的にロード時もランダム化させる）
+            RandomizeMapNodes();
+
             foreach (var st in startNodes)
             {
                 if (st != null) st.SetState(true);
             }
 
-            // 初期位置（0）に戻す
             if (MapSlideHandler.Instance != null)
             {
                 MapSlideHandler.Instance.RestorePosition(0f);
@@ -46,7 +56,9 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            // セーブデータがある場合：前回クリアしたマスの「次のマス」だけを有効化
+            // ロード時も見た目を反映させる
+            RandomizeMapNodes();
+
             MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
             if (lastNode != null)
             {
@@ -61,7 +73,6 @@ public class MapManager : MonoBehaviour
                 return;
             }
 
-            // ★修正：保存されていたマップのX座標を読み込んで完全に復元する
             if (MapSlideHandler.Instance != null)
             {
                 float savedX = PlayerPrefs.GetFloat("MapSavedX", 0f);
@@ -70,29 +81,55 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    // 選んだルートの次だけを開放し、進捗をセーブする
+    // ★修正：通常マスの中身をランダムに入れ替える関数
+    private void RandomizeMapNodes()
+    {
+        if (allNodes == null || allNodes.Count == 0) return;
+        if (availableEvents == null || availableEvents.Count == 0) return;
+
+        foreach (var node in allNodes)
+        {
+            if (node == null) continue;
+            // 中ボスとボスは除外
+            if (node.isMidBoss || node.isBoss) continue;
+
+            // ランダムに1つ選ぶ
+            int randomIndex = Random.Range(0, availableEvents.Count);
+            MapEventData selectedEvent = availableEvents[randomIndex];
+
+            // マスの中身を書き換える（修正あり）
+            node.sceneName = selectedEvent.sceneName;
+
+            // ★修正点：アイコン画像の差し替え（ImageコンポーネントのSpriteをセットする）
+            if (node.nodeIcon != null)
+            {
+                // imageコンポーネントに直接spriteを渡すことで、表示が更新される
+                node.nodeIcon.sprite = selectedEvent.iconSprite;
+            }
+            else
+            {
+                Debug.LogError($"{node.name} に Image (nodeIcon) が設定されていません！");
+            }
+
+            // マスの名前も変更
+            node.gameObject.name = $"{selectedEvent.eventName}_{System.Guid.NewGuid().ToString().Substring(0, 4)}";
+        }
+    }
+
+    // --- OpenNextNodesOnly 関数 ---
     public void OpenNextNodesOnly(MapNode clearedNode)
     {
-        // 1. 進捗（マスの名前）を保存
         PlayerPrefs.SetString("LastClearedNode", clearedNode.name);
 
-        // ★追加：移動後の「現在のマップのX座標」を取得して保存する
         if (MapSlideHandler.Instance != null)
         {
             float currentX = MapSlideHandler.Instance.GetCurrentX();
-
-            // もし「中ボスを押した瞬間」なら、これからスライドする先(targetX)の座標を先読みして保存する
-            if (clearedNode.isMidBoss)
-            {
-                currentX = MapSlideHandler.Instance.targetX;
-            }
-
+            if (clearedNode.isMidBoss) currentX = MapSlideHandler.Instance.targetX;
             PlayerPrefs.SetFloat("MapSavedX", currentX);
         }
 
-        PlayerPrefs.Save(); // 確実に即時保存
+        PlayerPrefs.Save();
 
-        // 2. 全てのマスを一旦ロックし、クリアしたマスの「次」だけを光らせる
         foreach (var node in allNodes)
         {
             if (node != null) node.SetState(false);
@@ -104,20 +141,18 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    // 【便利！】最初からの動きをテストしたい時に呼び出す関数
+    // --- ResetProgress 関数 ---
     public void ResetProgress()
     {
         PlayerPrefs.DeleteKey("LastClearedNode");
-        PlayerPrefs.DeleteKey("MapSavedX"); // 座標データも削除
+        PlayerPrefs.DeleteKey("MapSavedX");
         PlayerPrefs.Save();
 
-        // 位置を初期位置に戻す
         if (MapSlideHandler.Instance != null)
         {
             MapSlideHandler.Instance.RestorePosition(0f);
         }
 
-        // 現在のマップシーンを再読み込みして初期状態（最初の3マス）に戻す
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
