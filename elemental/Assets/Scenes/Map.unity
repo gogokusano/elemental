@@ -644,8 +644,7 @@ MonoBehaviour:
   - {fileID: 1690896754}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &85985294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,8 +1058,7 @@ MonoBehaviour:
   - {fileID: 1433549470}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &176559362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,8 +1114,7 @@ MonoBehaviour:
   - {fileID: 1564321436}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &183132232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,8 +1452,7 @@ MonoBehaviour:
   - {fileID: 893646909}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &298179903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,8 +1715,7 @@ MonoBehaviour:
   - {fileID: 388242758}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &323681893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,8 +1817,7 @@ MonoBehaviour:
   nextNodes: []
   isMidBoss: 0
   isBoss: 1
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &337706440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2256,8 +2250,7 @@ MonoBehaviour:
   - {fileID: 1577537514}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &388242759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,8 +2325,7 @@ MonoBehaviour:
   - {fileID: 688789204}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &423064083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2694,8 +2686,7 @@ MonoBehaviour:
   - {fileID: 1525655121}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &524603703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2939,8 +2930,7 @@ MonoBehaviour:
   - {fileID: 524603702}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &575242393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3608,8 +3598,7 @@ MonoBehaviour:
   - {fileID: 2123693787}
   isMidBoss: 1
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &662667713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3768,6 +3757,19 @@ MonoBehaviour:
   - {fileID: 1561190490}
   - {fileID: 1315195232}
   - {fileID: 323681892}
+  availableEvents:
+  - eventName: 
+    iconSprite: {fileID: 21300000, guid: d31e0f15092fcfb47bd6e1a8defa5cbc, type: 3}
+    sceneName: 
+    eventColor: {r: 1, g: 0, b: 0, a: 1}
+  - eventName: 
+    iconSprite: {fileID: 21300000, guid: dfa7573a6acf9e143a09725f05116e1a, type: 3}
+    sceneName: 
+    eventColor: {r: 0.9453459, g: 1, b: 0, a: 1}
+  - eventName: Event
+    iconSprite: {fileID: 21300000, guid: af265b2fbc97a2045ac7f630d1214705, type: 3}
+    sceneName: Event
+    eventColor: {r: 0.09492421, g: 1, b: 0, a: 1}
 --- !u!4 &669871690
 Transform:
   m_ObjectHideFlags: 0
@@ -3894,8 +3896,7 @@ MonoBehaviour:
   - {fileID: 951987541}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &688789205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4178,8 +4179,7 @@ MonoBehaviour:
   - {fileID: 2070330860}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &691506127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4254,8 +4254,7 @@ MonoBehaviour:
   - {fileID: 893646909}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &745475063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4518,8 +4517,7 @@ MonoBehaviour:
   - {fileID: 1577537514}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &759159475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4950,8 +4948,7 @@ MonoBehaviour:
   - {fileID: 1564321436}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &874586666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5233,8 +5230,7 @@ MonoBehaviour:
   - {fileID: 662667712}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 1
 --- !u!114 &893646910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,8 +5286,7 @@ MonoBehaviour:
   - {fileID: 1089394239}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &951987542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5610,8 +5605,7 @@ MonoBehaviour:
   - {fileID: 874586665}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1089394240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6386,8 +6380,7 @@ MonoBehaviour:
   - {fileID: 759159474}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1315195233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6706,8 +6699,7 @@ MonoBehaviour:
   - {fileID: 2085830302}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1433549471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6763,8 +6755,7 @@ MonoBehaviour:
   - {fileID: 1479905757}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1442167726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7027,8 +7018,7 @@ MonoBehaviour:
   - {fileID: 1564321436}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1479905758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7253,8 +7243,7 @@ MonoBehaviour:
   - {fileID: 1442167725}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1525655122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7424,8 +7413,7 @@ MonoBehaviour:
   - {fileID: 951987541}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1544663227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7707,8 +7695,7 @@ MonoBehaviour:
   - {fileID: 691506126}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1561190491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7764,8 +7751,7 @@ MonoBehaviour:
   - {fileID: 337706439}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 1
 --- !u!114 &1564321437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8047,8 +8033,7 @@ MonoBehaviour:
   - {fileID: 298179902}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1573544093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8217,8 +8202,7 @@ MonoBehaviour:
   - {fileID: 1847200307}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1577537515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8668,8 +8652,7 @@ MonoBehaviour:
   - {fileID: 183132231}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1690896755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8932,8 +8915,7 @@ MonoBehaviour:
   - {fileID: 745475062}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &1847200308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9327,8 +9309,7 @@ MonoBehaviour:
   - {fileID: 1573544092}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &2070330861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9497,8 +9478,7 @@ MonoBehaviour:
   - {fileID: 893646909}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &2085830303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9723,8 +9703,7 @@ MonoBehaviour:
   - {fileID: 1544663226}
   isMidBoss: 0
   isBoss: 0
-  availableColor: {r: 1, g: 1, b: 1, a: 1}
-  lockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isFixedNode: 0
 --- !u!114 &2123693788
 MonoBehaviour:
   m_ObjectHideFlags: 0

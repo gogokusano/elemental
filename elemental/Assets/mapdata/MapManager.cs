@@ -1,24 +1,25 @@
 using UnityEngine;
-using UnityEngine.UI; // ★追加
 using System.Collections.Generic;
 
-// ランダムに割り当てるイベントのデータ構造（修正なし）
 [System.Serializable]
 public struct MapEventData
 {
-    public string eventName;    // 識別用
-    public Sprite iconSprite;   // インスペクターで設定する画像
-    public string sceneName;    // 移動先のシーン名
+    public string eventName;
+    public Sprite iconSprite;
+    public string sceneName;
+    public Color eventColor;
 }
 
 public class MapManager : MonoBehaviour
 {
-    // --- 略（Instance, allNodes, startNodes, availableEvents はそのまま） ---
     public static MapManager Instance;
-    [Header("全てのマス")]
+
+    [Header("全てのマス（ヒエラルキーから全て入れる）")]
     public List<MapNode> allNodes;
+
     [Header("最初の3マス")]
     public List<MapNode> startNodes;
+
     [Header("ランダム用イベントの種類")]
     public List<MapEventData> availableEvents;
 
@@ -29,9 +30,9 @@ public class MapManager : MonoBehaviour
         RefreshMap();
     }
 
-    // --- RefreshMap 関数 ---
     public void RefreshMap()
     {
+        // 1. まず全てのマスを一旦非アクティブ（半透明化）にする
         foreach (var node in allNodes)
         {
             if (node != null) node.SetState(false);
@@ -41,9 +42,17 @@ public class MapManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(lastCleared))
         {
-            // ★新規開始時のみランダム化する（ロード時はすでにランダム化されていると仮定するが、今回は簡易的にロード時もランダム化させる）
-            RandomizeMapNodes();
+            // ■ 完全な新規ゲーム開始時
 
+            // 新しいシード値（ランダムな数字）を生成して保存
+            int newSeed = Random.Range(1, 999999);
+            PlayerPrefs.SetInt("MapSeed", newSeed);
+            PlayerPrefs.Save();
+
+            // ★そのシード値を使ってマップを生成
+            RandomizeMapNodes(newSeed);
+
+            // 最初の3マスをアクティブに
             foreach (var st in startNodes)
             {
                 if (st != null) st.SetState(true);
@@ -56,12 +65,18 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            // ロード時も見た目を反映させる
-            RandomizeMapNodes();
+            // ■ シーン遷移から戻ってきた、または続きからロード時
+
+            // 保存されているシード値を読み出す（なければとりあえず0）
+            int savedSeed = PlayerPrefs.GetInt("MapSeed", 0);
+
+            // ★【重要】戻ってきた時も「同じシード値」で生成するため、必ず前回と同じ配置になる！
+            RandomizeMapNodes(savedSeed);
 
             MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
             if (lastNode != null)
             {
+                // クリアしたマスの次のマスたちをアクティブ（不透明）にする
                 foreach (var next in lastNode.nextNodes)
                 {
                     if (next != null) next.SetState(true);
@@ -81,43 +96,50 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    // ★修正：通常マスの中身をランダムに入れ替える関数
-    private void RandomizeMapNodes()
+    // ★修正：引数に「seed」を受け取り、それに基づいてランダムを固定化する
+    private void RandomizeMapNodes(int seed)
     {
         if (allNodes == null || allNodes.Count == 0) return;
         if (availableEvents == null || availableEvents.Count == 0) return;
 
+        Random.InitState(seed);
+
         foreach (var node in allNodes)
         {
             if (node == null) continue;
-            // 中ボスとボスは除外
-            if (node.isMidBoss || node.isBoss) continue;
 
-            // ランダムに1つ選ぶ
+            // ★修正：中ボス、ボス、または「固定マス」にチェックがある場合はランダム化をスキップ！
+            if (node.isMidBoss || node.isBoss || node.isFixedNode)
+            {
+                // 固定マスの場合は、セーブデータが迷子にならないように名前だけ一意の固定名にする
+                node.gameObject.name = $"Fixed_{node.transform.parent.name}_{node.transform.GetSiblingIndex()}";
+                continue;
+            }
+
             int randomIndex = Random.Range(0, availableEvents.Count);
             MapEventData selectedEvent = availableEvents[randomIndex];
 
-            // マスの中身を書き換える
             node.sceneName = selectedEvent.sceneName;
 
-            // ★アイコン画像の差し替え（ImageコンポーネントのSpriteをセットする）
             if (node.nodeIcon == null)
             {
-                node.nodeIcon = node.GetComponent<Image>();
+                node.nodeIcon = node.GetComponent<UnityEngine.UI.Image>();
             }
 
             if (node.nodeIcon != null)
             {
-                // ここでプロジェクトファイルのアイコン（例：赤い剣）をセットする
-                // ★ nodeIcon.color は一切触らない
                 node.nodeIcon.sprite = selectedEvent.iconSprite;
+
+                float currentAlpha = node.nodeIcon.color.a;
+                Color finalColor = selectedEvent.eventColor;
+                finalColor.a = currentAlpha;
+                node.nodeIcon.color = finalColor;
             }
 
-            // マスの名前も変更
-            node.gameObject.name = $"{selectedEvent.eventName}_{System.Guid.NewGuid().ToString().Substring(0, 4)}";
+            node.gameObject.name = $"{selectedEvent.eventName}_{node.transform.GetSiblingIndex()}_{randomIndex}";
         }
     }
-    // --- OpenNextNodesOnly 関数 ---
+
     public void OpenNextNodesOnly(MapNode clearedNode)
     {
         PlayerPrefs.SetString("LastClearedNode", clearedNode.name);
@@ -142,11 +164,11 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    // --- ResetProgress 関数 ---
     public void ResetProgress()
     {
         PlayerPrefs.DeleteKey("LastClearedNode");
         PlayerPrefs.DeleteKey("MapSavedX");
+        PlayerPrefs.DeleteKey("MapSeed"); // ★追加：シード値もリセット
         PlayerPrefs.Save();
 
         if (MapSlideHandler.Instance != null)

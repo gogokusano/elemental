@@ -7,8 +7,6 @@ public class MapNode : MonoBehaviour
     [Header("基本設定")]
     public string sceneName;
     public Button nodeButton;
-
-    // ★インスペクターで空っぽのままでOKになります！
     public Image nodeIcon;
 
     [Header("進行管理")]
@@ -16,23 +14,30 @@ public class MapNode : MonoBehaviour
     public bool isMidBoss;
     public bool isBoss;
 
-    // ★修正：色の設定は不要になったので削除（またはコメントアウト）
-    // public Color availableColor = Color.white;
-    // public Color lockedColor = Color.gray;
+    // ★追加：このマスをランダム化せず、インスペクターの設定で固定にするか
+    [Header("特定のイベントに固定する")]
+    public bool isFixedNode;
 
     private void Awake()
     {
-        // 自動取得
         if (nodeButton == null) nodeButton = GetComponent<Button>();
         if (nodeIcon == null) nodeIcon = GetComponent<Image>();
     }
 
-    // ★修正：色を一切触らず、Interactableだけを切り替える
     public void SetState(bool canClick)
     {
-        if (nodeButton != null) nodeButton.interactable = canClick;
-        // ↓↓↓ 色を触る処理をすべて削除 ↓↓↓
-        // if (nodeIcon != null) nodeIcon.color = canClick ? Color.white : Color.gray;
+        if (nodeButton != null)
+        {
+            nodeButton.interactable = canClick;
+        }
+
+        if (nodeIcon != null)
+        {
+            Color c = nodeIcon.color;
+            if (canClick) c.a = 1.0f;
+            else c.a = 0.25f;
+            nodeIcon.color = c;
+        }
     }
 
     public void OnClickNode()
