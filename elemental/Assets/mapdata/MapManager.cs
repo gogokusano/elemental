@@ -97,25 +97,26 @@ public class MapManager : MonoBehaviour
             int randomIndex = Random.Range(0, availableEvents.Count);
             MapEventData selectedEvent = availableEvents[randomIndex];
 
-            // マスの中身を書き換える（修正あり）
+            // マスの中身を書き換える
             node.sceneName = selectedEvent.sceneName;
 
-            // ★修正点：アイコン画像の差し替え（ImageコンポーネントのSpriteをセットする）
+            // ★アイコン画像の差し替え（ImageコンポーネントのSpriteをセットする）
+            if (node.nodeIcon == null)
+            {
+                node.nodeIcon = node.GetComponent<Image>();
+            }
+
             if (node.nodeIcon != null)
             {
-                // imageコンポーネントに直接spriteを渡すことで、表示が更新される
+                // ここでプロジェクトファイルのアイコン（例：赤い剣）をセットする
+                // ★ nodeIcon.color は一切触らない
                 node.nodeIcon.sprite = selectedEvent.iconSprite;
-            }
-            else
-            {
-                Debug.LogError($"{node.name} に Image (nodeIcon) が設定されていません！");
             }
 
             // マスの名前も変更
             node.gameObject.name = $"{selectedEvent.eventName}_{System.Guid.NewGuid().ToString().Substring(0, 4)}";
         }
     }
-
     // --- OpenNextNodesOnly 関数 ---
     public void OpenNextNodesOnly(MapNode clearedNode)
     {
