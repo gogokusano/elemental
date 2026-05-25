@@ -3,8 +3,8 @@ guid: b140b4d8e92385448a5747eefa4afe20
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5687615679212508578
-    second: kyuukei_0
+      213: -7593389055599273749
+    second: Camp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kyuukei_0
+      name: Camp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5aa89d8ca78111b0800000000000000
-      internalID: -5687615679212508578
+      spriteID: be89aaba2ecde9690800000000000000
+      internalID: -7593389055599273749
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      kyuukei_0: -5687615679212508578
+      Camp_0: -7593389055599273749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
