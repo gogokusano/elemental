@@ -20,11 +20,14 @@ MonoBehaviour:
     hpChange: 0
     maxHpChange: 0
     rewardRelic: {fileID: 0}
+    giveRandomRelic: 1
   - buttonText: "\u5BCC\u306E\u5206\u914D\uFF1A\u30AB\u30FC\u30C9\u30923\u679A\u6368\u3066\u308B\u3002"
     hpChange: 0
     maxHpChange: 0
     rewardRelic: {fileID: 0}
+    giveRandomRelic: 0
   - buttonText: "\u6B32\u5F35\u308A\u306A\u53CE\u96C6\uFF1A\u30E9\u30F3\u30C0\u30E0\u306A\u5947\u72692\u500B\u7372\u5F97\u3059\u308B\u3002"
     hpChange: 0
     maxHpChange: 0
     rewardRelic: {fileID: 0}
+    giveRandomRelic: 1

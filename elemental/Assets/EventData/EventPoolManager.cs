@@ -9,10 +9,14 @@ public class EventPoolManager : MonoBehaviour
     public List<EventData> allEvents;
     private List<EventData> remainingEvents = new List<EventData>();
 
-    // ★追加：ボーナスイベントのリスト
     [Header("ボーナスイベントのリスト")]
     public List<EventData> allBonusEvents;
     private List<EventData> remainingBonusEvents = new List<EventData>();
+
+    // ★追加：休息イベント（Camp）のリスト
+    [Header("休息イベントのリスト")]
+    public List<EventData> allCampEvents;
+    private List<EventData> remainingCampEvents = new List<EventData>();
 
     void Awake()
     {
@@ -21,9 +25,10 @@ public class EventPoolManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             
-            // ★初期化時に両方の山札を作る
+            // ★初期化時にすべての山札を作る
             ResetPool();
             ResetBonusPool(); 
+            ResetCampPool(); // ★追加
         }
         else
         {
@@ -37,10 +42,16 @@ public class EventPoolManager : MonoBehaviour
         remainingEvents = new List<EventData>(allEvents);
     }
 
-    // ★追加：ボーナスイベントの山札リセット
+    // ボーナスイベントの山札リセット
     public void ResetBonusPool()
     {
         remainingBonusEvents = new List<EventData>(allBonusEvents);
+    }
+
+    // ★追加：休息イベントの山札リセット
+    public void ResetCampPool()
+    {
+        remainingCampEvents = new List<EventData>(allCampEvents);
     }
 
     // 通常イベントを引く
@@ -61,7 +72,7 @@ public class EventPoolManager : MonoBehaviour
         return selectedEvent;
     }
 
-    // ★追加：ボーナスイベントを引く
+    // ボーナスイベントを引く
     public EventData GetRandomBonus()
     {
         if (allBonusEvents == null || allBonusEvents.Count == 0) return null;
@@ -77,5 +88,23 @@ public class EventPoolManager : MonoBehaviour
         remainingBonusEvents.RemoveAt(randomIndex);
 
         return selectedBonus;
+    }
+
+    // ★追加：休息イベントを引く（CampManagerから呼ばれる関数）
+    public EventData GetRandomCamp()
+    {
+        if (allCampEvents == null || allCampEvents.Count == 0) return null;
+
+        if (remainingCampEvents.Count == 0)
+        {
+            Debug.Log("すべての休息イベントが出尽くしました。山札をリセットします。");
+            ResetCampPool();
+        }
+
+        int randomIndex = Random.Range(0, remainingCampEvents.Count);
+        EventData selectedCamp = remainingCampEvents[randomIndex];
+        remainingCampEvents.RemoveAt(randomIndex);
+
+        return selectedCamp;
     }
 }

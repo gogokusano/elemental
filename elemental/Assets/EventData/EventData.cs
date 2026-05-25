@@ -10,6 +10,7 @@ public class EventOption
     public int hpChange;      //HP増減値（マイナスならダメージ。後々アイテム獲得などに拡張できます）
     public int maxHpChange;   // ★追加：最大HPの増減（+で増加、-で減少）
     public RelicData rewardRelic; // ★この選択肢で手に入る奇物を設定
+    public bool giveRandomRelic = false;
 }
 
 [CreateAssetMenu(fileName = "NewEvent", menuName = "CardGame/EventData")]

@@ -13,15 +13,10 @@ public class BonusManager : MonoBehaviour
     [Header("選択肢ボタン (Sentaku1, 2, 3を登録)")]
     public Button[] optionButtons; 
 
-    private PlayerManager playerManager;
-
     void Start()
     {
-        playerManager = Object.FindFirstObjectByType<PlayerManager>();
-
         if (EventPoolManager.Instance != null)
         {
-            // ★ここが通常イベントと違います！GetRandomBonus()を呼ぶ
             EventData currentBonus = EventPoolManager.Instance.GetRandomBonus();
             if (currentBonus != null)
             {
@@ -71,31 +66,41 @@ public class BonusManager : MonoBehaviour
     {
         Debug.Log($"ボーナス選択肢「{option.buttonText}」が選ばれました！");
 
-        if (playerManager != null && option.hpChange != 0)
+        if (PlayerDataManager.Instance != null)
         {
-            if (option.hpChange < 0)
+            // 1. 最大HPの増減
+            if (option.maxHpChange != 0)
             {
-                playerManager.TakeDamage(-option.hpChange);
+                PlayerDataManager.Instance.maxHp += option.maxHpChange;
+                if (PlayerDataManager.Instance.maxHp < 1) PlayerDataManager.Instance.maxHp = 1; // 0以下防止
+                
+                if (option.maxHpChange > 0)
+                {
+                    PlayerDataManager.Instance.currentHp += option.maxHpChange;
+                }
             }
-            else
-            {
-                // ★ボーナスなので回復処理（必要に応じてplayerManager.Healなどを実装）
-                playerManager.currentHp = Mathf.Min(playerManager.currentHp + option.hpChange, playerManager.maxHp);
-            }
-        }
 
-        // 最大HPの増減
-        if (option.maxHpChange != 0 && PlayerDataManager.Instance != null)
-        {
-            PlayerDataManager.Instance.maxHp += option.maxHpChange;
-            // 最大HPが増えた分、現在HPも回復させるなどの処理を入れても良いです
-            PlayerDataManager.Instance.currentHp += Mathf.Max(0, option.maxHpChange);
+            // 2. 現在HPの増減
+            if (option.hpChange != 0)
+            {
+                int newHp = PlayerDataManager.Instance.currentHp + option.hpChange;
+                PlayerDataManager.Instance.SaveHp(newHp);
+            }
+
+            // 3. 奇物の獲得（特定の奇物が指定されている場合）
+            if (option.rewardRelic != null)
+            {
+                PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+            }
+            // ★追加：ランダムな奇物を獲得する設定になっている場合
+            else if (option.giveRandomRelic)
+            {
+                PlayerDataManager.Instance.AddRandomRelic();
+            }
         }
-        
-        // 奇物の獲得
-        if (option.rewardRelic != null && PlayerDataManager.Instance != null)
+        else
         {
-            PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+            Debug.LogError("PlayerDataManagerが存在しません！");
         }
 
         ReturnToMap();
@@ -104,6 +109,6 @@ public class BonusManager : MonoBehaviour
     void ReturnToMap()
     {
         Debug.Log("マップシーンへ帰還します。");
-        SceneManager.LoadScene("Map"); // 環境に合わせて "TempMapScene" などに変更してください
+        SceneManager.LoadScene("Map"); 
     }
 }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
+  m_Name: arcana
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: "\u30A2\u30EB\u30AB\u30CA"
+  cost: 1
+  cardType: 3
+  damage: 0
+  block: 0
+  heal: 0
+  cardDraw: 2
+  rarity: 0
+  elementType: 0
+  description: 
+  cardImage: {fileID: 5661961455421672365, guid: d75043a5f71955a4d81d6c9167acca17, type: 3}
+  isUnusable: 0
