@@ -80,17 +80,22 @@ public class EventManager : MonoBehaviour
                 }
             }
 
-            // 2. 現在HPの増減（回復もダメージもこれで処理）
+            // 2. 現在HPの増減
             if (option.hpChange != 0)
             {
                 int newHp = PlayerDataManager.Instance.currentHp + option.hpChange;
                 PlayerDataManager.Instance.SaveHp(newHp);
             }
             
-            // 3. 奇物の獲得
+            // 3. 奇物の獲得（特定の奇物が指定されている場合）
             if (option.rewardRelic != null)
             {
                 PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+            }
+            // ★追加：ランダムな奇物を獲得する設定になっている場合
+            else if (option.giveRandomRelic)
+            {
+                PlayerDataManager.Instance.AddRandomRelic();
             }
         }
         else

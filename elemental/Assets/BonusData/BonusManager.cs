@@ -74,24 +74,28 @@ public class BonusManager : MonoBehaviour
                 PlayerDataManager.Instance.maxHp += option.maxHpChange;
                 if (PlayerDataManager.Instance.maxHp < 1) PlayerDataManager.Instance.maxHp = 1; // 0以下防止
                 
-                // 最大HPが増えた場合は、その分現在HPも回復させる
                 if (option.maxHpChange > 0)
                 {
                     PlayerDataManager.Instance.currentHp += option.maxHpChange;
                 }
             }
 
-            // 2. 現在HPの増減（回復もダメージもこれで処理）
+            // 2. 現在HPの増減
             if (option.hpChange != 0)
             {
                 int newHp = PlayerDataManager.Instance.currentHp + option.hpChange;
                 PlayerDataManager.Instance.SaveHp(newHp);
             }
 
-            // 3. 奇物の獲得
+            // 3. 奇物の獲得（特定の奇物が指定されている場合）
             if (option.rewardRelic != null)
             {
                 PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+            }
+            // ★追加：ランダムな奇物を獲得する設定になっている場合
+            else if (option.giveRandomRelic)
+            {
+                PlayerDataManager.Instance.AddRandomRelic();
             }
         }
         else

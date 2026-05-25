@@ -17,7 +17,6 @@ public class CampManager : MonoBehaviour
     {
         if (EventPoolManager.Instance != null)
         {
-            // EventPoolManagerに実装されている（または今後追加する）GetRandomCampからデータを取得
             EventData currentCamp = EventPoolManager.Instance.GetRandomCamp();
             if (currentCamp != null)
             {
@@ -69,30 +68,34 @@ public class CampManager : MonoBehaviour
 
         if (PlayerDataManager.Instance != null)
         {
-            // 1. 最大HPの増減（「最大HPを+5して肉体を強化する」などの選択肢用）
+            // 1. 最大HPの増減
             if (option.maxHpChange != 0)
             {
                 PlayerDataManager.Instance.maxHp += option.maxHpChange;
-                if (PlayerDataManager.Instance.maxHp < 1) PlayerDataManager.Instance.maxHp = 1; // 0以下防止
+                if (PlayerDataManager.Instance.maxHp < 1) PlayerDataManager.Instance.maxHp = 1; 
                 
-                // 最大HPが増えた場合は、その分現在HPも回復させる
                 if (option.maxHpChange > 0)
                 {
                     PlayerDataManager.Instance.currentHp += option.maxHpChange;
                 }
             }
 
-            // 2. 現在HPの増減（「焚き火で休む：HPを15回復する」などのメイン処理用）
+            // 2. 現在HPの増減
             if (option.hpChange != 0)
             {
                 int newHp = PlayerDataManager.Instance.currentHp + option.hpChange;
                 PlayerDataManager.Instance.SaveHp(newHp);
             }
 
-            // 3. 奇物の獲得（「落ちていたお守りを拾う」などの選択肢用）
+            // 3. 奇物の獲得（特定の奇物が指定されている場合）
             if (option.rewardRelic != null)
             {
                 PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+            }
+            // ★追加：ランダムな奇物を獲得する設定になっている場合
+            else if (option.giveRandomRelic)
+            {
+                PlayerDataManager.Instance.AddRandomRelic();
             }
         }
         else
