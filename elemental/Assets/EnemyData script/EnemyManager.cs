@@ -61,6 +61,7 @@ public class EnemyManager : MonoBehaviour
         {
             case EnemyActionType.Attack:
                 PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
+                // プレイヤーのTakeDamage内で自動的に奇物の被ダメージ軽減が適用されます
                 if (player != null) player.TakeDamage(chosenAction.value);
                 break;
             case EnemyActionType.Defend:
@@ -77,10 +78,22 @@ public class EnemyManager : MonoBehaviour
         UpdateUI();
     }
 
-    // ★追加：カードの属性を受け取ってダメージやコンボを計算する処理
+    // ★カードの属性を受け取ってダメージやコンボを計算する処理
     public void ProcessAttack(CardData card)
     {
+        PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
+        
+        // 1. まずカードの元のダメージを取得
         float damageFloat = card.damage;
+
+        // ==========================================
+        // ★修正：プレイヤーが持つ奇物の攻撃アップ効果（筋力など）を適用
+        // ==========================================
+        if (player != null)
+        {
+            damageFloat = player.CalculateFinalDamage(Mathf.RoundToInt(damageFloat));
+        }
+
         ElementType incomingElement = card.elementType; 
 
         // 物理弱体（氷×雷）の消費判定
@@ -122,7 +135,6 @@ public class EnemyManager : MonoBehaviour
             // カウンター準備 (岩×岩)
             else if (currentElement == ElementType.Rock && incomingElement == ElementType.Rock)
             {
-                PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
                 if (player != null) player.hasCounter = true;
                 comboTriggered = true;
                 Debug.Log("<color=orange>カウンター準備完了！次の敵の攻撃を2.0倍で跳ね返す！</color>");
@@ -157,19 +169,16 @@ public class EnemyManager : MonoBehaviour
         TakeDamage(Mathf.RoundToInt(damageFloat));
     }
 
-    // ★追加：組み合わせの判定を簡単にするヘルパー関数
     private bool IsCombo(ElementType a, ElementType b, ElementType current, ElementType incoming) {
         return (current == a && incoming == b) || (current == b && incoming == a);
     }
 
-    // ★変更：アイコンの画像と色を同時に切り替える処理
     private void SetElement(ElementType el)
     {
         currentElement = el;
         if (elementIconDisplay != null) {
             elementIconDisplay.gameObject.SetActive(el != ElementType.None && el != ElementType.Normal);
             
-            // 属性に合わせてSprite（画像）と色（Color）を同時に設定する
             if (el == ElementType.Fire) 
             {
                 elementIconDisplay.sprite = fireIcon;
@@ -193,7 +202,6 @@ public class EnemyManager : MonoBehaviour
             else if (el == ElementType.Rock) 
             {
                 elementIconDisplay.sprite = rockIcon;
-                // 岩属性用の茶色をRGBで指定
                 elementIconDisplay.color = new Color(0.5f, 0.3f, 0.1f); 
             }
         }
