@@ -5223,7 +5223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Camp
   nodeButton: {fileID: 893646906}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -6219,6 +6219,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventPoolManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: allEvents.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'allEvents.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: cd79c1a89e4838941938bab356a1086d, type: 2}
     - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: allCampEvents.Array.size
       value: 1

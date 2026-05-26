@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Bonus.unity
     guid: be37810a2197c4840900c275bbf6632c
   - enabled: 1
+    path: Assets/Scenes/Camp.unity
+    guid: 769628e993edae54dbd336fff8811b10
+  - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 9c206adbbfe94d345b1ec20dd9762894
   m_configObjects:
