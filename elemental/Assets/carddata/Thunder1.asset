@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
   m_Name: Thunder1
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\u30B5\u30F3\u30C0\u30FC"
+  cardName: 
   cost: 1
   cardType: 0
   damage: 6
   block: 0
+  heal: 0
+  cardDraw: 0
   rarity: 0
   elementType: 8
   description: 

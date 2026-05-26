@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
   m_Name: Ice3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\u7D76\u5BFE\u96F6\u5EA6"
+  cardName: 
   cost: 3
   cardType: 0
   damage: 8
   block: 0
+  heal: 0
+  cardDraw: 0
   rarity: 0
   elementType: 7
   description: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b140b4d8e92385448a5747eefa4afe20
+guid: 2b6a5cc0937c8a54c8812fd3a61b0317
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7593389055599273749
-    second: Camp_0
+      213: -2356956837136225644
+    second: syuuryoubotan_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Camp_0
+      name: syuuryoubotan_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 995
-        height: 627
+        x: 58
+        y: 185
+        width: 1628
+        height: 570
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be89aaba2ecde9690800000000000000
-      internalID: -7593389055599273749
+      spriteID: 49a219b8e386a4fd0800000000000000
+      internalID: -2356956837136225644
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Camp_0: -7593389055599273749
+      syuuryoubotan_0: -2356956837136225644
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

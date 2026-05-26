@@ -19,6 +19,14 @@ public class EnemyManager : MonoBehaviour
     public bool isFrozen = false;       // ★追加：凍結フラグ
     public bool isPhysicalWeak = false; // ★追加：物理弱体フラグ
 
+    // ★新規追加：各属性のアイコン画像をインスペクターから設定する枠
+    [Header("属性アイコン画像")]
+    public Sprite fireIcon;
+    public Sprite waterIcon;
+    public Sprite iceIcon;
+    public Sprite thunderIcon;
+    public Sprite rockIcon;
+
     void Start() { SetupEnemy(); }
 
     public void SetupEnemy()
@@ -69,7 +77,7 @@ public class EnemyManager : MonoBehaviour
         UpdateUI();
     }
 
-    // ★新規追加：カードの属性を受け取ってダメージやコンボを計算する処理
+    // ★追加：カードの属性を受け取ってダメージやコンボを計算する処理
     public void ProcessAttack(CardData card)
     {
         float damageFloat = card.damage;
@@ -149,24 +157,45 @@ public class EnemyManager : MonoBehaviour
         TakeDamage(Mathf.RoundToInt(damageFloat));
     }
 
-    // ★新規追加：組み合わせの判定を簡単にするヘルパー関数
+    // ★追加：組み合わせの判定を簡単にするヘルパー関数
     private bool IsCombo(ElementType a, ElementType b, ElementType current, ElementType incoming) {
         return (current == a && incoming == b) || (current == b && incoming == a);
     }
 
-    // ★新規追加：アイコンの表示と色（または画像）を切り替える処理
+    // ★変更：アイコンの画像と色を同時に切り替える処理
     private void SetElement(ElementType el)
     {
         currentElement = el;
         if (elementIconDisplay != null) {
             elementIconDisplay.gameObject.SetActive(el != ElementType.None && el != ElementType.Normal);
             
-            // アイコン画像を用意するまでの仮の色分けです。後で画像を差し替える処理に変更できます。
-            if (el == ElementType.Fire) elementIconDisplay.color = Color.red;
-            else if (el == ElementType.Water) elementIconDisplay.color = Color.blue;
-            else if (el == ElementType.Ice) elementIconDisplay.color = Color.cyan;
-            else if (el == ElementType.Thunder) elementIconDisplay.color = Color.yellow;
-            else if (el == ElementType.Rock) elementIconDisplay.color = new Color(0.5f, 0.3f, 0.1f);
+            // 属性に合わせてSprite（画像）と色（Color）を同時に設定する
+            if (el == ElementType.Fire) 
+            {
+                elementIconDisplay.sprite = fireIcon;
+                elementIconDisplay.color = Color.red;
+            }
+            else if (el == ElementType.Water) 
+            {
+                elementIconDisplay.sprite = waterIcon;
+                elementIconDisplay.color = Color.blue;
+            }
+            else if (el == ElementType.Ice) 
+            {
+                elementIconDisplay.sprite = iceIcon;
+                elementIconDisplay.color = Color.cyan;
+            }
+            else if (el == ElementType.Thunder) 
+            {
+                elementIconDisplay.sprite = thunderIcon;
+                elementIconDisplay.color = Color.yellow;
+            }
+            else if (el == ElementType.Rock) 
+            {
+                elementIconDisplay.sprite = rockIcon;
+                // 岩属性用の茶色をRGBで指定
+                elementIconDisplay.color = new Color(0.5f, 0.3f, 0.1f); 
+            }
         }
     }
 

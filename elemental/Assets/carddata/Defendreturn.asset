@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
   m_Name: Defendreturn
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\u5B88\u308A\u306E\u4E00\u624B"
+  cardName: 
   cost: 1
   cardType: 1
   damage: 0
