@@ -1,0 +1,1140 @@
+fileFormatVersion: 2
+guid: 038f698dcfbb3764c911d70c179f4b4b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7222504825055908973
+    second: GI_haikei_0
+  - first:
+      213: 7174079583988017480
+    second: GI_haikei_1
+  - first:
+      213: -7285249285347578575
+    second: GI_haikei_2
+  - first:
+      213: 8567852452607858423
+    second: GI_haikei_3
+  - first:
+      213: 6939530878467495104
+    second: GI_haikei_4
+  - first:
+      213: -3516404910450934752
+    second: GI_haikei_5
+  - first:
+      213: -3178744416933494272
+    second: GI_haikei_6
+  - first:
+      213: -5748128802327262510
+    second: GI_haikei_7
+  - first:
+      213: -1768598538598343262
+    second: GI_haikei_8
+  - first:
+      213: -4804592868232065264
+    second: GI_haikei_9
+  - first:
+      213: 2147967341642224925
+    second: GI_haikei_10
+  - first:
+      213: 1945330158663790811
+    second: GI_haikei_11
+  - first:
+      213: 5921141080666658912
+    second: GI_haikei_12
+  - first:
+      213: 8426696798937051317
+    second: GI_haikei_13
+  - first:
+      213: 3392071619985662541
+    second: GI_haikei_14
+  - first:
+      213: 2610758583290595181
+    second: GI_haikei_15
+  - first:
+      213: 217301323454637143
+    second: GI_haikei_16
+  - first:
+      213: -4188669530339101310
+    second: GI_haikei_17
+  - first:
+      213: -6305357541386177982
+    second: GI_haikei_18
+  - first:
+      213: -4251465224430386972
+    second: GI_haikei_19
+  - first:
+      213: 7138074088385425814
+    second: GI_haikei_20
+  - first:
+      213: 7948727412843716341
+    second: GI_haikei_21
+  - first:
+      213: -4281700943519767373
+    second: GI_haikei_22
+  - first:
+      213: -8581008377411553021
+    second: GI_haikei_23
+  - first:
+      213: -5293223794173639594
+    second: GI_haikei_24
+  - first:
+      213: 4707154763115356691
+    second: GI_haikei_25
+  - first:
+      213: -3724589478994490594
+    second: GI_haikei_26
+  - first:
+      213: -7794287945024322446
+    second: GI_haikei_27
+  - first:
+      213: -4876194613828801919
+    second: GI_haikei_28
+  - first:
+      213: 5312451488378093762
+    second: GI_haikei_29
+  - first:
+      213: 261919742217771234
+    second: GI_haikei_30
+  - first:
+      213: -1547745981205265485
+    second: GI_haikei_31
+  - first:
+      213: 3700333920219334154
+    second: GI_haikei_32
+  - first:
+      213: 6411648566415880305
+    second: GI_haikei_33
+  - first:
+      213: 7757863218421791577
+    second: GI_haikei_34
+  - first:
+      213: -8197033883835680222
+    second: GI_haikei_35
+  - first:
+      213: 8316783448123858037
+    second: GI_haikei_36
+  - first:
+      213: 219738327433458084
+    second: GI_haikei_37
+  - first:
+      213: 5065021598910261474
+    second: GI_haikei_38
+  - first:
+      213: -676198885775574833
+    second: GI_haikei_39
+  - first:
+      213: -223372552426985175
+    second: GI_haikei_40
+  - first:
+      213: 2151750910238923129
+    second: GI_haikei_41
+  - first:
+      213: 322646228282959595
+    second: GI_haikei_42
+  - first:
+      213: 4707544554073536673
+    second: GI_haikei_43
+  - first:
+      213: -4871914589917159897
+    second: GI_haikei_44
+  - first:
+      213: 5794467072832852460
+    second: GI_haikei_45
+  - first:
+      213: -7137700779756216929
+    second: GI_haikei_46
+  - first:
+      213: 5139253648731796727
+    second: GI_haikei_47
+  - first:
+      213: 3019335324269192289
+    second: GI_haikei_48
+  - first:
+      213: 750736585235654221
+    second: GI_haikei_49
+  - first:
+      213: 8278335398764860602
+    second: GI_haikei_50
+  - first:
+      213: 651123611179184576
+    second: GI_haikei_51
+  - first:
+      213: 9204033319178167301
+    second: GI_haikei_52
+  - first:
+      213: -4051289039885569902
+    second: GI_haikei_53
+  - first:
+      213: -6611310825948529219
+    second: GI_haikei_54
+  - first:
+      213: -590882087469871177
+    second: GI_haikei_55
+  - first:
+      213: -1297765047314812666
+    second: GI_haikei_56
+  - first:
+      213: -1196465633619634751
+    second: GI_haikei_57
+  - first:
+      213: 4620990573097693344
+    second: GI_haikei_58
+  - first:
+      213: -2466077705071006204
+    second: GI_haikei_59
+  - first:
+      213: 1644953480256645422
+    second: GI_haikei_60
+  - first:
+      213: 3582922538050273021
+    second: GI_haikei_61
+  - first:
+      213: -6039541786055300501
+    second: GI_haikei_62
+  - first:
+      213: 1607625397805400311
+    second: GI_haikei_63
+  - first:
+      213: 5316364374174091802
+    second: GI_haikei_64
+  - first:
+      213: 134301129957760541
+    second: GI_haikei_65
+  - first:
+      213: -4004040756287232625
+    second: GI_haikei_66
+  - first:
+      213: -8995100761126918422
+    second: GI_haikei_67
+  - first:
+      213: -9155076121815142209
+    second: GI_haikei_68
+  - first:
+      213: 8091058307971267133
+    second: GI_haikei_69
+  - first:
+      213: 8303889777998235241
+    second: GI_haikei_70
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GI_haikei_1
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1425
+        width: 653
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849ecf92f537f8360800000000000000
+      internalID: 7174079583988017480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_8
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1350
+        width: 601
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad1294effca477e0800000000000000
+      internalID: -1768598538598343262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_9
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 996
+        width: 279
+        height: 539
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f07aefd38a25db0800000000000000
+      internalID: -4804592868232065264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_14
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1224
+        width: 188
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42ede99a2f031f20800000000000000
+      internalID: 3392071619985662541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_17
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1173
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285b2a2314bded5c0800000000000000
+      internalID: -4188669530339101310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_18
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1176
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242b8db29bede78a0800000000000000
+      internalID: -6305357541386177982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_19
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1173
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e086e257e2cff4c0800000000000000
+      internalID: -4251465224430386972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_21
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1126
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe95f2c77d8f4e60800000000000000
+      internalID: 7948727412843716341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_22
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1128
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b4ac036da75494c0800000000000000
+      internalID: -4281700943519767373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_23
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1126
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309bbb948522ae880800000000000000
+      internalID: -8581008377411553021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_25
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1081
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3126746415c235140800000000000000
+      internalID: 4707154763115356691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_26
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1090
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1b40624a999f4cc0800000000000000
+      internalID: -3724589478994490594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_27
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1082
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27447bfe86025d390800000000000000
+      internalID: -7794287945024322446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_33
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 973
+        width: 791
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1707cd99660caf850800000000000000
+      internalID: 6411648566415880305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_35
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 942
+        width: 383
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a3226cc194e3e80800000000000000
+      internalID: -8197033883835680222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_36
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 940
+        width: 383
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c554b5b762b6370800000000000000
+      internalID: 8316783448123858037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_37
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 925
+        width: 775
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1b53638daac0300800000000000000
+      internalID: 219738327433458084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_39
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 831
+        width: 922
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8f4df22b8ad96f0800000000000000
+      internalID: -676198885775574833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_43
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 765
+        width: 141
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8b0ed84de845140800000000000000
+      internalID: 4707544554073536673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_45
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 737
+        width: 289
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce156e23a151a6050800000000000000
+      internalID: 5794467072832852460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_50
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 642
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab4dbe64f2e82e270800000000000000
+      internalID: 8278335398764860602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_51
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 641
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1743d7971490900800000000000000
+      internalID: 651123611179184576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_52
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 646
+        width: 42
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504697ae98b4bbf70800000000000000
+      internalID: 9204033319178167301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_53
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 646
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290ff27351ee6c7c0800000000000000
+      internalID: -4051289039885569902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_58
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 590
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0bae3717e012040800000000000000
+      internalID: 4620990573097693344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_59
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 589
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e6bb0a46bb6cdd0800000000000000
+      internalID: -2466077705071006204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_60
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 590
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e296db6997c04d610800000000000000
+      internalID: 1644953480256645422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_61
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 590
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe3a32b01919b130800000000000000
+      internalID: 3582922538050273021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_62
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 605
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6aab049ebc3f2ca0800000000000000
+      internalID: -6039541786055300501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_63
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 598
+        width: 101
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0461028ce6f4610800000000000000
+      internalID: 1607625397805400311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_64
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 45
+        width: 68
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a40332b3587c940800000000000000
+      internalID: 5316364374174091802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_65
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 44
+        width: 359
+        height: 594
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ed0188a222dd100800000000000000
+      internalID: 134301129957760541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GI_haikei_70
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 52
+        width: 599
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 40, z: 40, w: 40}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9660597d1c75d3370800000000000000
+      internalID: 8303889777998235241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7ae3f6fb42766684392d0cee549ad6cb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GI_haikei_0: 7222504825055908973
+      GI_haikei_1: 7174079583988017480
+      GI_haikei_10: 2147967341642224925
+      GI_haikei_11: 1945330158663790811
+      GI_haikei_12: 5921141080666658912
+      GI_haikei_13: 8426696798937051317
+      GI_haikei_14: 3392071619985662541
+      GI_haikei_15: 2610758583290595181
+      GI_haikei_16: 217301323454637143
+      GI_haikei_17: -4188669530339101310
+      GI_haikei_18: -6305357541386177982
+      GI_haikei_19: -4251465224430386972
+      GI_haikei_2: -7285249285347578575
+      GI_haikei_20: 7138074088385425814
+      GI_haikei_21: 7948727412843716341
+      GI_haikei_22: -4281700943519767373
+      GI_haikei_23: -8581008377411553021
+      GI_haikei_24: -5293223794173639594
+      GI_haikei_25: 4707154763115356691
+      GI_haikei_26: -3724589478994490594
+      GI_haikei_27: -7794287945024322446
+      GI_haikei_28: -4876194613828801919
+      GI_haikei_29: 5312451488378093762
+      GI_haikei_3: 8567852452607858423
+      GI_haikei_30: 261919742217771234
+      GI_haikei_31: -1547745981205265485
+      GI_haikei_32: 3700333920219334154
+      GI_haikei_33: 6411648566415880305
+      GI_haikei_34: 7757863218421791577
+      GI_haikei_35: -8197033883835680222
+      GI_haikei_36: 8316783448123858037
+      GI_haikei_37: 219738327433458084
+      GI_haikei_38: 5065021598910261474
+      GI_haikei_39: -676198885775574833
+      GI_haikei_4: 6939530878467495104
+      GI_haikei_40: -223372552426985175
+      GI_haikei_41: 2151750910238923129
+      GI_haikei_42: 322646228282959595
+      GI_haikei_43: 4707544554073536673
+      GI_haikei_44: -4871914589917159897
+      GI_haikei_45: 5794467072832852460
+      GI_haikei_46: -7137700779756216929
+      GI_haikei_47: 5139253648731796727
+      GI_haikei_48: 3019335324269192289
+      GI_haikei_49: 750736585235654221
+      GI_haikei_5: -3516404910450934752
+      GI_haikei_50: 8278335398764860602
+      GI_haikei_51: 651123611179184576
+      GI_haikei_52: 9204033319178167301
+      GI_haikei_53: -4051289039885569902
+      GI_haikei_54: -6611310825948529219
+      GI_haikei_55: -590882087469871177
+      GI_haikei_56: -1297765047314812666
+      GI_haikei_57: -1196465633619634751
+      GI_haikei_58: 4620990573097693344
+      GI_haikei_59: -2466077705071006204
+      GI_haikei_6: -3178744416933494272
+      GI_haikei_60: 1644953480256645422
+      GI_haikei_61: 3582922538050273021
+      GI_haikei_62: -6039541786055300501
+      GI_haikei_63: 1607625397805400311
+      GI_haikei_64: 5316364374174091802
+      GI_haikei_65: 134301129957760541
+      GI_haikei_66: -4004040756287232625
+      GI_haikei_67: -8995100761126918422
+      GI_haikei_68: -9155076121815142209
+      GI_haikei_69: 8091058307971267133
+      GI_haikei_7: -5748128802327262510
+      GI_haikei_70: 8303889777998235241
+      GI_haikei_8: -1768598538598343262
+      GI_haikei_9: -4804592868232065264
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

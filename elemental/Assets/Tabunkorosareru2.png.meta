@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 9976930acaab9a644a36e01544ce46b8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2907386469784216805
+    second: Tabunkorosareru2_0
+  - first:
+      213: 3653963502543052069
+    second: Tabunkorosareru2_1
+  - first:
+      213: -781084782829786869
+    second: Tabunkorosareru2_2
+  - first:
+      213: -8879331755622783280
+    second: Tabunkorosareru2_3
+  - first:
+      213: 5116978875200636583
+    second: Tabunkorosareru2_4
+  - first:
+      213: -7792879239631374760
+    second: Tabunkorosareru2_5
+  - first:
+      213: 5666095915113874123
+    second: Tabunkorosareru2_6
+  - first:
+      213: 3328726949375427918
+    second: Tabunkorosareru2_7
+  - first:
+      213: 5880440340744654465
+    second: Tabunkorosareru2_8
+  - first:
+      213: -5719117898700375156
+    second: Tabunkorosareru2_9
+  - first:
+      213: -7294410821921726792
+    second: Tabunkorosareru2_10
+  - first:
+      213: 1077854690288961655
+    second: Tabunkorosareru2_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tabunkorosareru2_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 73
+        width: 928
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b1cb3e863e6a7d0800000000000000
+      internalID: -2907386469784216805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_1
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 474
+        width: 220
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d125f227c75b230800000000000000
+      internalID: 3653963502543052069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_2
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 377
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09a7f347870925f0800000000000000
+      internalID: -781084782829786869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_3
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 377
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6224f10d646c480800000000000000
+      internalID: -8879331755622783280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_4
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 377
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a603831d29230740800000000000000
+      internalID: 5116978875200636583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_5
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 295
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8567148be912ad390800000000000000
+      internalID: -7792879239631374760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_6
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 295
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc287abe63402ae40800000000000000
+      internalID: 5666095915113874123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_7
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 295
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45cacb2683023e20800000000000000
+      internalID: 3328726949375427918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_8
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 295
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e46f085558b9150800000000000000
+      internalID: 5880440340744654465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_9
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 196
+        width: 315
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8bb263829c91a0b0800000000000000
+      internalID: -5719117898700375156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_10
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 63
+        width: 121
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be1791410c05ca90800000000000000
+      internalID: -7294410821921726792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tabunkorosareru2_11
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 63
+        width: 120
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 778892e412f45fe00800000000000000
+      internalID: 1077854690288961655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ccdce342d073ccf419a0ba362d46714d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tabunkorosareru2_0: -2907386469784216805
+      Tabunkorosareru2_1: 3653963502543052069
+      Tabunkorosareru2_10: -7294410821921726792
+      Tabunkorosareru2_11: 1077854690288961655
+      Tabunkorosareru2_2: -781084782829786869
+      Tabunkorosareru2_3: -8879331755622783280
+      Tabunkorosareru2_4: 5116978875200636583
+      Tabunkorosareru2_5: -7792879239631374760
+      Tabunkorosareru2_6: 5666095915113874123
+      Tabunkorosareru2_7: 3328726949375427918
+      Tabunkorosareru2_8: 5880440340744654465
+      Tabunkorosareru2_9: -5719117898700375156
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

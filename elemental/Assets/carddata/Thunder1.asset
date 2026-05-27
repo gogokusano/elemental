@@ -23,4 +23,6 @@ MonoBehaviour:
   elementType: 8
   description: 
   cardImage: {fileID: 6220558588361786860, guid: 3904a5e7499c41e48a21c60b5cceebfa, type: 3}
+  cardNameS: "\u30B5\u30F3\u30C0\u30FC"
+  cardTextS: "\u6575\u5358\u4F53\u306B6\u30C0\u30E1\u30FC\u30B8\u4E0E\u3048\u3001\u96F7\u5C5E\u6027\u3092\u4ED8\u4E0E\u3059\u308B\u3002"
   isUnusable: 0
