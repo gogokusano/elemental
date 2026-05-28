@@ -3764,7 +3764,7 @@ MonoBehaviour:
     eventColor: {r: 1, g: 0, b: 0, a: 1}
   - eventName: 
     iconSprite: {fileID: 21300000, guid: dfa7573a6acf9e143a09725f05116e1a, type: 3}
-    sceneName: 
+    sceneName: Bonus
     eventColor: {r: 0.9453459, g: 1, b: 0, a: 1}
   - eventName: Event
     iconSprite: {fileID: 21300000, guid: af265b2fbc97a2045ac7f630d1214705, type: 3}
@@ -6232,9 +6232,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: allBonusEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'allCampEvents.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: cd79c1a89e4838941938bab356a1086d, type: 2}
+    - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'allBonusEvents.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: aea18271509fb6d4fa970f26601bbcba, type: 2}
+    - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'allBonusEvents.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 13f66be98f72b6944aa722d49e017377, type: 2}
+    - target: {fileID: 6314779652911283614, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'allBonusEvents.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 93f39f317dd5aa74791adf384253b945, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7832,7 +7848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Camp
   nodeButton: {fileID: 1564321437}
   nodeIcon: {fileID: 0}
   nextNodes:
