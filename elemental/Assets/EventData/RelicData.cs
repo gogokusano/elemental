@@ -44,10 +44,20 @@ public class RelicData : ScriptableObject
     /// <summary>
     /// 与えるダメージを計算する時に書き換える効果（すべてのダメージ+5など）
     /// </summary>
-    public virtual float OnModifyModifyDamage(float baseDamage) { return baseDamage; }
+    public virtual float OnModifyModifyDamage(float baseDamage, CardData card) { return baseDamage; }
 
     /// <summary>
     /// 受けるダメージを計算する時に書き換える効果（受けるダメージ軽減など）
     /// </summary>
     public virtual int OnModifyTakeDamage(int incomingDamage) { return incomingDamage; }
+
+    /// <summary>
+    /// ★新規追加：属性反応が発生した瞬間に呼ばれるフック
+    /// </summary>
+    public virtual void OnElementReaction() { }
+
+    /// <summary>
+    /// ★新規追加：ターンのドロー枚数を書き換えるフック
+    /// </summary>
+    public virtual int OnModifyDrawAmount(int baseAmount) { return baseAmount; }
 }

@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     // ==========================================
     // ★追加：敵にダメージを与える時、奇物の効果（筋力など）を乗せるための関数
     // ==========================================
-    public int CalculateFinalDamage(int baseDamage)
+public int CalculateFinalDamage(int baseDamage, CardData card)
     {
         float finalDamage = baseDamage;
 
@@ -36,7 +36,8 @@ public class PlayerManager : MonoBehaviour
         {
             foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
             {
-                finalDamage = relic.OnModifyModifyDamage(finalDamage);
+                // 引数に card を渡すように変更
+                finalDamage = relic.OnModifyModifyDamage(finalDamage, card);
             }
         }
         

@@ -19,8 +19,18 @@ MonoBehaviour:
   maxHpBonus: 0
   initialGoldBonus: 0
   startBlock: 0
+  applyRandomElementOnStart: 0
   turnStartHeal: 0
+  turnStartBlock: 0
   turnEndBlock: 0
+  turnEndHeal: 0
   flatDamageBonus: 0
   damageMultiplier: 1
   damageReduction: 0
+  flatDamageTakenIncrease: 0
+  firstTurnDamageBonus: 0
+  cost3DamageBonus: 2
+  drawAmountBonus: 0
+  elementReactionBlock: 0
+  killEnemyManaRecover: 0
+  doubleDiscard: 0

@@ -92,8 +92,8 @@ public class EventManager : MonoBehaviour
             {
                 PlayerDataManager.Instance.AddRelic(option.rewardRelic);
             }
-            // ★追加：ランダムな奇物を獲得する設定になっている場合
-            else if (option.giveRandomRelic)
+
+            if (option.giveRandomRelic)
             {
                 PlayerDataManager.Instance.AddRandomRelic();
             }

@@ -53,6 +53,9 @@ void Start()
     {
         if (isEnemyTurn) return; 
 
+        GameManager gm = Object.FindFirstObjectByType<GameManager>();
+        if (gm != null) gm.PlayerTurnEnd();
+
         if(endTurnButton != null) endTurnButton.interactable = false;
 
         List<CardMovement> keptCards = new List<CardMovement>();
@@ -99,8 +102,20 @@ void Start()
         if (mm != null) mm.ResetMana();
         PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
         if (pm != null) pm.ResetBlock();
+        GameManager gm = Object.FindFirstObjectByType<GameManager>();
+        if (gm != null) gm.PlayerTurnStart();
+        
+        int finalDrawAmount = drawAmount;
+        if (PlayerDataManager.Instance != null)
+        {
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                finalDrawAmount = relic.OnModifyDrawAmount(finalDrawAmount);
+            }
+        }
 
-        for (int i = 0; i < drawAmount; i++)
+        // drawAmount だった部分を finalDrawAmount に変更
+        for (int i = 0; i < finalDrawAmount; i++)
         {
             DrawCard();
         }

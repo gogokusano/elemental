@@ -91,9 +91,8 @@ public class EnemyManager : MonoBehaviour
         // ==========================================
         if (player != null)
         {
-            damageFloat = player.CalculateFinalDamage(Mathf.RoundToInt(damageFloat));
+            damageFloat = player.CalculateFinalDamage(Mathf.RoundToInt(damageFloat),card);
         }
-
         ElementType incomingElement = card.elementType; 
 
         // 物理弱体（氷×雷）の消費判定
@@ -157,6 +156,13 @@ public class EnemyManager : MonoBehaviour
                 Debug.Log("<color=magenta>爆発/感電発生！周囲にもダメージ！</color>");
             }
         }
+        if (PlayerDataManager.Instance != null)
+        {
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                relic.OnElementReaction(); // 古帽子の効果が発動
+            }
+        }
 
         // コンボが発動したら属性を消す、発動しなかったら新しい属性を付与する
         if (comboTriggered) {
@@ -218,9 +224,21 @@ public class EnemyManager : MonoBehaviour
         }
         currentHP -= damage;
         
-        if (currentHP <= 0) 
+if (currentHP <= 0) 
         { 
             currentHP = 0; 
+
+            // ==========================================
+            // ★追加：敵が倒れた瞬間に奇物効果（エナジー回復など）を発動
+            // ==========================================
+            if (PlayerDataManager.Instance != null)
+            {
+                foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+                {
+                    relic.OnEnemyKilled();
+                }
+            }
+
             GameManager gm = Object.FindFirstObjectByType<GameManager>();
             if (gm != null) gm.WinGame();
             gameObject.SetActive(false); 
