@@ -13,6 +13,47 @@ public class GameManager : MonoBehaviour
         // 最初はパネルを隠しておく
         if (victoryPanel != null) victoryPanel.SetActive(false);
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
+
+        // ==========================================
+        // ★追加：【戦闘開始時】の奇物効果（初期ブロック付与など）を一斉発動
+        // ==========================================
+        if (PlayerDataManager.Instance != null)
+        {
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                relic.OnBattleStart();
+            }
+        }
+    }
+
+    // ==========================================
+    // ★追加：【プレイヤーのターン開始時】の奇物効果（リジェネなど）を発動する関数
+    // 毎ターン、カードをドローさせる直前などにこの関数を呼び出してください
+    // ==========================================
+    public void PlayerTurnStart()
+    {
+        if (PlayerDataManager.Instance != null)
+        {
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                relic.OnTurnStart();
+            }
+        }
+    }
+
+    // ==========================================
+    // ★追加：【プレイヤーのターン終了時】の奇物効果（ターン終了時ブロックなど）を発動する関数
+    // 「ターン終了ボタン」を押したときの処理などにこの関数を呼び出してください
+    // ==========================================
+    public void PlayerTurnEnd()
+    {
+        if (PlayerDataManager.Instance != null)
+        {
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                relic.OnTurnEnd();
+            }
+        }
     }
 
     // 勝利した時に呼ばれる
@@ -29,12 +70,9 @@ public class GameManager : MonoBehaviour
         if (gameOverPanel != null) gameOverPanel.SetActive(true);
     }
 
-    // ボタンから呼ぶ用：タイトル画面に戻る（後でシーン名を入れる）
+    // ボタンから呼ぶ用：タイトル画面に戻る
     public void BackToTitle()
     {
-        // タイトルシーンができたら、ここの名前を変えるだけ
-        // SceneManager.LoadScene("TitleScene");
-        
         // 今はとりあえず今のシーンをリロード（やり直し）にします
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

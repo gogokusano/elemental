@@ -459,18 +459,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeckManager
   drawPile:
-  - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
-  - {fileID: 11400000, guid: bd92c36de2d4c6349921313a65b5155e, type: 2}
-  - {fileID: 11400000, guid: a1f97c2663cb0904fac2a493a2333821, type: 2}
-  - {fileID: 11400000, guid: d2017ff7bd8e3eb4cbc5b32b64892843, type: 2}
-  - {fileID: 11400000, guid: 193afa9afc2177144bf5a7b658a2117a, type: 2}
-  - {fileID: 11400000, guid: a1f97c2663cb0904fac2a493a2333821, type: 2}
-  - {fileID: 11400000, guid: 45c81cdc5794b684caa1fb648c990561, type: 2}
-  - {fileID: 11400000, guid: a245494b1a57fac4690ccabc8fb69952, type: 2}
-  - {fileID: 11400000, guid: a1f97c2663cb0904fac2a493a2333821, type: 2}
-  - {fileID: 11400000, guid: 45c81cdc5794b684caa1fb648c990561, type: 2}
-  - {fileID: 11400000, guid: 38be08a7addaa8343b9243ae5e787ed7, type: 2}
-  - {fileID: 11400000, guid: c58b7b713a91f8040afec2a6c04d2ee3, type: 2}
+  - {fileID: 11400000, guid: d4c86d0397a3bfe40b2c794f4d16a663, type: 2}
+  - {fileID: 11400000, guid: a3296bfe3a884414f895c0ee8c0f7572, type: 2}
+  - {fileID: 11400000, guid: a3296bfe3a884414f895c0ee8c0f7572, type: 2}
+  - {fileID: 11400000, guid: d16a573af23f6d84981045d6810f1c60, type: 2}
+  - {fileID: 11400000, guid: 64e1bcea8f540ac438e62118e9d04b67, type: 2}
+  - {fileID: 11400000, guid: 6da7186f7dc8d3d4e9028287380ef03d, type: 2}
+  - {fileID: 11400000, guid: 958b070eb1da01c478c64608516de778, type: 2}
+  - {fileID: 11400000, guid: 4850fcf4332139748b103751886e69f1, type: 2}
+  - {fileID: 11400000, guid: 2839ee7f00e3b3445a43a55f7b478e69, type: 2}
+  - {fileID: 11400000, guid: da0df03f750e6ee49b0a1c81c4b4f702, type: 2}
+  - {fileID: 11400000, guid: 1b7306fe85eca2f44ae4517823537f29, type: 2}
+  - {fileID: 11400000, guid: 64e1bcea8f540ac438e62118e9d04b67, type: 2}
   discardPile: []
   cardPrefab: {fileID: 433583276474188335, guid: 4bdb8fa7d5e3eae4db24ba978f3ed5e9, type: 3}
   handArea: {fileID: 314473442}
@@ -522,8 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb9bda009255dc42b860b76b62c873e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  maxHp: 50
-  currentHp: 0
   currentBlock: 0
   hasCounter: 0
   hpText: {fileID: 930934721}
@@ -2811,6 +2809,11 @@ MonoBehaviour:
   currentElement: 0
   isFrozen: 0
   isPhysicalWeak: 1
+  fireIcon: {fileID: 21300000, guid: a4d6c044f84dbc94bb8b075cf70e1722, type: 3}
+  waterIcon: {fileID: 21300000, guid: 9f85365ebeb1cb64f9f315f7c4610e35, type: 3}
+  iceIcon: {fileID: 21300000, guid: 6d4e35b3b5ef1f941a22542ed27efa43, type: 3}
+  thunderIcon: {fileID: 21300000, guid: c3f6d1d9e749c304fbed322ba33b225b, type: 3}
+  rockIcon: {fileID: 21300000, guid: a1a1dc01f1aefb644b328792baa6b782, type: 3}
 --- !u!114 &2073812570
 MonoBehaviour:
   m_ObjectHideFlags: 0

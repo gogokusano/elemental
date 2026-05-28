@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
   m_Name: Heal1
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\u4E07\u80FD\u888B"
+  cardName: 
   cost: 1
   cardType: 2
   damage: 0
   block: 0
   heal: 5
+  cardDraw: 0
   rarity: 0
   elementType: 0
   description: 
   cardImage: {fileID: 183280206986842679, guid: aa20edaf11f75d24a84559a2095ba67e, type: 3}
+  cardNameS: "\u4E07\u80FD\u888B"
+  cardTextS: "HP\u30925\u56DE\u5FA9\u3059\u308B\u3002"
   isUnusable: 0

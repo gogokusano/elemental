@@ -9,10 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ccec80516ee083408cb92f6df81da86, type: 3}
+  m_Script: {fileID: 11500000, guid: c92a3053483bfdd4a874cd06dd9467b0, type: 3}
   m_Name: kibutu4
-  m_EditorClassIdentifier: Assembly-CSharp::RelicData
+  m_EditorClassIdentifier: Assembly-CSharp::RelicCore
   relicName: "\u8AF8\u5203\u306E\u79D8\u85AC"
   description: "\u5E38\u6642\u3001\u30AB\u30FC\u30C9\u306E\u30C0\u30E1\u30FC\u30B8\u304C+2\u3055\u308C\u308B\u304C\u3001\u53D7\u3051\u308B\u30C0\u30E1\u30FC\u30B8\u3082+2\u3055\u308C\u308B\u3002"
   relicIcon: {fileID: 1880115036164830049, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 0
+  maxHpBonus: 0
+  initialGoldBonus: 0
+  startBlock: 0
+  turnStartHeal: 0
+  turnEndBlock: 0
+  flatDamageBonus: 2
+  damageMultiplier: 1
+  damageReduction: 0

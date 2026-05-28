@@ -2,9 +2,22 @@ using UnityEngine;
 
 // Attack, Skill に加えて Heal, Special を追加
 public enum CardType { Attack, Skill, Heal, Special }
-public enum Rarity { Common, Uncommon, Rare, Epic, Legendary, Special } 
-// 属性定義：ご提示いただいたリストを使用します
-public enum ElementType { None, Normal, Fire, Water, Wood, Light, Dark, Ice, Thunder, Rock } 
+public enum Rarity { Common, Uncommon, Rare, Epic, Legendary, Special }
+
+// 属性定義
+public enum ElementType
+{
+    None,
+    Normal,
+    Fire,
+    Water,
+    Wood,
+    Light,
+    Dark,
+    Ice,
+    Thunder,
+    Rock
+}
 
 [CreateAssetMenu(fileName = "NewCard", menuName = "Card/CardData")]
 public class CardData : ScriptableObject
@@ -16,17 +29,24 @@ public class CardData : ScriptableObject
     public int damage;
     public int block;
     public int heal;
-    public int cardDraw; // ★ここに追加：カードをドローする枚数
-    
+    public int cardDraw;
+
     [Header("レアリティ・属性")]
     public Rarity rarity;
-    public ElementType elementType; // ★EnemyManager側もこれに合わせます
+    public ElementType elementType;
 
-    [Header("見た目")]
+    [Header("カード画像用")]
     [TextArea]
     public string description;
     public Sprite cardImage;
 
+    // ★追加
+    [Header("詳細画面用")]
+    public string cardNameS;
+
+    [TextArea(3, 10)]
+    public string cardTextS;
+
     [Header("特殊設定")]
-    public bool isUnusable; 
+    public bool isUnusable;
 }

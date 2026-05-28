@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974b9519148be9d47867c130f8e0b9a9, type: 3}
   m_Name: Rock3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\u5929\u661F"
+  cardName: 
   cost: 3
   cardType: 0
   damage: 8
   block: 0
+  heal: 0
+  cardDraw: 0
   rarity: 0
   elementType: 9
   description: 
   cardImage: {fileID: 224483356083980325, guid: 55dd19f1761ab5e44b572c795b616874, type: 3}
+  cardNameS: "\u5929\u661F"
+  cardTextS: "\u6575\u5168\u4F53\u306B8\u30C0\u30E1\u30FC\u30B8\u4E0E\u3048\u3001\u5CA9\u5C5E\u6027\u3092\u4ED8\u4E0E\u3059\u308B\u3002"
   isUnusable: 0

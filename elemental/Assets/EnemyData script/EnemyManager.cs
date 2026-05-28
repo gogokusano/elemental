@@ -19,6 +19,14 @@ public class EnemyManager : MonoBehaviour
     public bool isFrozen = false;       // ★追加：凍結フラグ
     public bool isPhysicalWeak = false; // ★追加：物理弱体フラグ
 
+    // ★新規追加：各属性のアイコン画像をインスペクターから設定する枠
+    [Header("属性アイコン画像")]
+    public Sprite fireIcon;
+    public Sprite waterIcon;
+    public Sprite iceIcon;
+    public Sprite thunderIcon;
+    public Sprite rockIcon;
+
     void Start() { SetupEnemy(); }
 
     public void SetupEnemy()
@@ -53,6 +61,7 @@ public class EnemyManager : MonoBehaviour
         {
             case EnemyActionType.Attack:
                 PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
+                // プレイヤーのTakeDamage内で自動的に奇物の被ダメージ軽減が適用されます
                 if (player != null) player.TakeDamage(chosenAction.value);
                 break;
             case EnemyActionType.Defend:
@@ -69,10 +78,22 @@ public class EnemyManager : MonoBehaviour
         UpdateUI();
     }
 
-    // ★新規追加：カードの属性を受け取ってダメージやコンボを計算する処理
+    // ★カードの属性を受け取ってダメージやコンボを計算する処理
     public void ProcessAttack(CardData card)
     {
+        PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
+        
+        // 1. まずカードの元のダメージを取得
         float damageFloat = card.damage;
+
+        // ==========================================
+        // ★修正：プレイヤーが持つ奇物の攻撃アップ効果（筋力など）を適用
+        // ==========================================
+        if (player != null)
+        {
+            damageFloat = player.CalculateFinalDamage(Mathf.RoundToInt(damageFloat));
+        }
+
         ElementType incomingElement = card.elementType; 
 
         // 物理弱体（氷×雷）の消費判定
@@ -114,7 +135,6 @@ public class EnemyManager : MonoBehaviour
             // カウンター準備 (岩×岩)
             else if (currentElement == ElementType.Rock && incomingElement == ElementType.Rock)
             {
-                PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
                 if (player != null) player.hasCounter = true;
                 comboTriggered = true;
                 Debug.Log("<color=orange>カウンター準備完了！次の敵の攻撃を2.0倍で跳ね返す！</color>");
@@ -149,24 +169,41 @@ public class EnemyManager : MonoBehaviour
         TakeDamage(Mathf.RoundToInt(damageFloat));
     }
 
-    // ★新規追加：組み合わせの判定を簡単にするヘルパー関数
     private bool IsCombo(ElementType a, ElementType b, ElementType current, ElementType incoming) {
         return (current == a && incoming == b) || (current == b && incoming == a);
     }
 
-    // ★新規追加：アイコンの表示と色（または画像）を切り替える処理
     private void SetElement(ElementType el)
     {
         currentElement = el;
         if (elementIconDisplay != null) {
             elementIconDisplay.gameObject.SetActive(el != ElementType.None && el != ElementType.Normal);
             
-            // アイコン画像を用意するまでの仮の色分けです。後で画像を差し替える処理に変更できます。
-            if (el == ElementType.Fire) elementIconDisplay.color = Color.red;
-            else if (el == ElementType.Water) elementIconDisplay.color = Color.blue;
-            else if (el == ElementType.Ice) elementIconDisplay.color = Color.cyan;
-            else if (el == ElementType.Thunder) elementIconDisplay.color = Color.yellow;
-            else if (el == ElementType.Rock) elementIconDisplay.color = new Color(0.5f, 0.3f, 0.1f);
+            if (el == ElementType.Fire) 
+            {
+                elementIconDisplay.sprite = fireIcon;
+                elementIconDisplay.color = Color.red;
+            }
+            else if (el == ElementType.Water) 
+            {
+                elementIconDisplay.sprite = waterIcon;
+                elementIconDisplay.color = Color.blue;
+            }
+            else if (el == ElementType.Ice) 
+            {
+                elementIconDisplay.sprite = iceIcon;
+                elementIconDisplay.color = Color.cyan;
+            }
+            else if (el == ElementType.Thunder) 
+            {
+                elementIconDisplay.sprite = thunderIcon;
+                elementIconDisplay.color = Color.yellow;
+            }
+            else if (el == ElementType.Rock) 
+            {
+                elementIconDisplay.sprite = rockIcon;
+                elementIconDisplay.color = new Color(0.5f, 0.3f, 0.1f); 
+            }
         }
     }
 

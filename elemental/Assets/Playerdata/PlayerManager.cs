@@ -15,7 +15,6 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        // 以前あった currentHp = maxHp; は削除！（戦闘のたびに全回復してしまうため）
         currentBlock = 0;
         UpdateUI();
     }
@@ -26,9 +25,40 @@ public class PlayerManager : MonoBehaviour
         UpdateUI();
     }
 
+    // ==========================================
+    // ★追加：敵にダメージを与える時、奇物の効果（筋力など）を乗せるための関数
+    // ==========================================
+    public int CalculateFinalDamage(int baseDamage)
+    {
+        float finalDamage = baseDamage;
+
+        if (PlayerDataManager.Instance != null)
+        {
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                finalDamage = relic.OnModifyModifyDamage(finalDamage);
+            }
+        }
+        
+        return Mathf.RoundToInt(finalDamage); 
+    }
+
     public void TakeDamage(int damage)
     {
-        // 1. カウンター判定
+        // ==========================================
+        // ★追加：1. 一番最初に、持っている奇物の効果で受けるダメージを軽減する
+        // ==========================================
+        if (PlayerDataManager.Instance != null)
+        {
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                damage = relic.OnModifyTakeDamage(damage);
+            }
+        }
+
+        if (damage <= 0) return;
+
+        // 2. カウンター判定
         if (hasCounter) 
         {
             hasCounter = false;
@@ -37,10 +67,8 @@ public class PlayerManager : MonoBehaviour
                 Debug.Log("<color=orange>カウンター発動！ダメージを無効化して2.0倍にして返した！</color>");
                 enemy.TakeDamage(damage * 2); 
             }
-            return; // カウンター発動時はここで処理を終了
+            return; 
         }
-
-        if (damage <= 0) return;
 
         // カメラシェイク演出
         GameObject container = GameObject.Find("ShakeContainer");
@@ -53,27 +81,26 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        // 2. まずブロックで受ける
+        // 3. まずブロックで受ける
         if (currentBlock > 0)
         {
             if (currentBlock >= damage) { currentBlock -= damage; damage = 0; }
             else { damage -= currentBlock; currentBlock = 0; }
         }
 
-        // 3. 残ったダメージがあればHPを減らす（★PlayerDataManagerを直接操作！）
+        // 4. 残ったダメージがあればHPを減らす
         if (damage > 0 && PlayerDataManager.Instance != null)
         {
             int newHp = PlayerDataManager.Instance.currentHp - damage;
-            PlayerDataManager.Instance.SaveHp(newHp); // マイナスにならないようにSaveHp経由で保存
+            PlayerDataManager.Instance.SaveHp(newHp); 
         }
         
-        // 4. 死亡判定（★これもPlayerDataManagerのHPを見る）
+        // 5. 死亡判定
         if (PlayerDataManager.Instance != null && PlayerDataManager.Instance.currentHp <= 0) 
         {
             GameManager gm = Object.FindFirstObjectByType<GameManager>();
             if (gm != null) gm.LoseGame();
             
-            // プレイヤー非表示
             gameObject.SetActive(false);
         }
 
@@ -88,7 +115,6 @@ public class PlayerManager : MonoBehaviour
 
     void UpdateUI()
     {
-        // ★UI表示もPlayerDataManagerから最新の情報を取ってくる
         if (hpText != null && PlayerDataManager.Instance != null) 
         {
             hpText.text = "Player HP: " + PlayerDataManager.Instance.currentHp + " / " + PlayerDataManager.Instance.maxHp;
