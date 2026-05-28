@@ -68,7 +68,7 @@ public class RelicCore : RelicData
             {
                 // NoneとNormalを除いたランダムな属性を付与
                 ElementType randomElement = (ElementType)Random.Range(2, System.Enum.GetValues(typeof(ElementType)).Length);
-                em.currentElement = randomElement;
+                em.SetElement(randomElement);
                 // EnemyManagerにUI更新メソッドがあれば呼ぶ（なければTakeDamage等で自動更新される想定）
                 Debug.Log($"{relicName} の効果: 敵に {randomElement} 属性を付着させた！");
             }

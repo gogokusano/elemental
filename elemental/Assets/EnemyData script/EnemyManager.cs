@@ -179,7 +179,7 @@ public class EnemyManager : MonoBehaviour
         return (current == a && incoming == b) || (current == b && incoming == a);
     }
 
-    private void SetElement(ElementType el)
+    public void SetElement(ElementType el)
     {
         currentElement = el;
         if (elementIconDisplay != null) {
