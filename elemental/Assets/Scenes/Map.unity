@@ -7926,6 +7926,10 @@ PrefabInstance:
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: ownedRelics.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'deckCards.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 7be1658040b9b174d9b65c369745b796, type: 2}
@@ -8040,31 +8044,31 @@ PrefabInstance:
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'startingDeck.Array.data[6]'
       value: 
-      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+      objectReference: {fileID: 11400000, guid: d4c86d0397a3bfe40b2c794f4d16a663, type: 2}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'startingDeck.Array.data[7]'
       value: 
-      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+      objectReference: {fileID: 11400000, guid: d4c86d0397a3bfe40b2c794f4d16a663, type: 2}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'startingDeck.Array.data[8]'
       value: 
-      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+      objectReference: {fileID: 11400000, guid: fb28a3e15ec823e42aefb011e5596035, type: 2}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'startingDeck.Array.data[9]'
       value: 
-      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+      objectReference: {fileID: 11400000, guid: fb28a3e15ec823e42aefb011e5596035, type: 2}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'startingDeck.Array.data[10]'
       value: 
-      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+      objectReference: {fileID: 11400000, guid: da0df03f750e6ee49b0a1c81c4b4f702, type: 2}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'startingDeck.Array.data[11]'
       value: 
-      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+      objectReference: {fileID: 11400000, guid: 60ff7cddc280ad943a35de546287d6b4, type: 2}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'startingDeck.Array.data[12]'
       value: 
-      objectReference: {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
+      objectReference: {fileID: 11400000, guid: 6da7186f7dc8d3d4e9028287380ef03d, type: 2}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: allAvailableRelics.Array.size
       value: 10

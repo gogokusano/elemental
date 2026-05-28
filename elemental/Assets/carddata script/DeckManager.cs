@@ -26,6 +26,7 @@ public class DeckManager : MonoBehaviour
 
     [Header("状態管理")]
     public bool isEnemyTurn = false; 
+    private int nextTurnDrawBonus = 0;
 
 void Start() 
     { 
@@ -108,18 +109,12 @@ void Start()
         if (pm != null) pm.ResetBlock();
         GameManager gm = Object.FindFirstObjectByType<GameManager>();
         if (gm != null) gm.PlayerTurnStart();
-        
-        int finalDrawAmount = drawAmount;
-        if (PlayerDataManager.Instance != null)
-        {
-            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
-            {
-                finalDrawAmount = relic.OnModifyDrawAmount(finalDrawAmount);
-            }
-        }
 
-        // drawAmount だった部分を finalDrawAmount に変更
-        for (int i = 0; i < finalDrawAmount; i++)
+        int totalDraw = drawAmount + nextTurnDrawBonus;
+        nextTurnDrawBonus = 0;
+
+
+        for (int i = 0; i < totalDraw; i++)
         {
             DrawCard();
         }
@@ -127,6 +122,20 @@ void Start()
         if(endTurnButton != null) endTurnButton.interactable = true;
         UpdateHandLayout();
         UpdateDeckUI();
+    }
+
+    public void ApplyImmediateDraw(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            DrawCard();
+        }
+        UpdateHandLayout();
+    }
+
+    public void AddNextTurnDrawBonus(int amount)
+    {
+        nextTurnDrawBonus += amount;
     }
 
     public void DrawCard()
