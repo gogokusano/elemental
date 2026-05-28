@@ -25,7 +25,7 @@ MonoBehaviour:
   turnEndBlock: 0
   turnEndHeal: 0
   flatDamageBonus: 0
-  damageMultiplier: 1
+  damageMultiplier: 0
   damageReduction: 0
   flatDamageTakenIncrease: 0
   firstTurnDamageBonus: 0

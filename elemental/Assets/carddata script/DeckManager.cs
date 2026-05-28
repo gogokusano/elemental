@@ -29,14 +29,18 @@ public class DeckManager : MonoBehaviour
 
 void Start() 
     { 
-        // ★ここを追加：メインマネージャーから所持デッキをコピーして山札を作る
         if (PlayerDataManager.Instance != null)
         {
             drawPile = new List<CardData>(PlayerDataManager.Instance.deckCards);
-        }
-        else
-        {
-            Debug.LogWarning("PlayerDataManagerが見つかりません。インスペクターのdrawPileを使用します。");
+            
+            // ★追記：10.知識の巻物などのドロー数ボーナスを適用
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                if (relic is RelicCore core)
+                {
+                    drawAmount += core.drawAmountBonus;
+                }
+            }
         }
 
         Shuffle(drawPile); 

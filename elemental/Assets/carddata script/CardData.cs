@@ -11,9 +11,6 @@ public enum ElementType
     Normal,
     Fire,
     Water,
-    Wood,
-    Light,
-    Dark,
     Ice,
     Thunder,
     Rock

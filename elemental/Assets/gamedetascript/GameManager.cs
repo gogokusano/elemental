@@ -73,7 +73,11 @@ public class GameManager : MonoBehaviour
     // ボタンから呼ぶ用：タイトル画面に戻る
     public void BackToTitle()
     {
-        // 今はとりあえず今のシーンをリロード（やり直し）にします
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("title");
+    }
+
+    public void ResultOnMap()
+    {
+        SceneManager.LoadScene("Map");
     }
 }
