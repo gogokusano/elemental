@@ -15,12 +15,23 @@ MonoBehaviour:
   relicName: "\u77E5\u8B58\u306E\u5DFB\u7269"
   description: "\u6226\u95D8\u6642\u624B\u672D\u306E\u679A\u6570\u304C+1\u679A\u5897\u3048\u308B\u3002"
   relicIcon: {fileID: -7078851214724172031, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
-  rarity: 0
+  rarity: 4
+  relicType: 3
   maxHpBonus: 0
   initialGoldBonus: 0
   startBlock: 0
+  applyRandomElementOnStart: 0
   turnStartHeal: 0
+  turnStartBlock: 0
   turnEndBlock: 0
+  turnEndHeal: 0
   flatDamageBonus: 0
-  damageMultiplier: 1
+  damageMultiplier: 0
   damageReduction: 0
+  flatDamageTakenIncrease: 0
+  firstTurnDamageBonus: 0
+  cost3DamageBonus: 0
+  drawAmountBonus: 1
+  elementReactionBlock: 0
+  killEnemyManaRecover: 0
+  doubleDiscard: 0

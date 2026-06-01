@@ -100,22 +100,37 @@ public class CardMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             yield return null;
         }
 
-        // ★ここが唯一の変更点です
+// 各種カードタイプに応じた基本処理
         if (display.cardData.cardType == CardType.Attack) {
             EnemyManager enemy = Object.FindFirstObjectByType<EnemyManager>();
-            // 単なるTakeDamageではなく、属性も渡すProcessAttackを呼び出します
             if (enemy != null) enemy.ProcessAttack(display.cardData);
         } else if (display.cardData.cardType == CardType.Skill) {
             PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
             if (player != null) player.AddBlock(display.cardData.block);
+        } else if (display.cardData.cardType == CardType.Heal) {
+            // （必要であればここに回復処理などを追加）
+        } else if (display.cardData.cardType == CardType.Special) {
+            // （Special特有の処理が他に必要であればここに記述）
         }
 
-        // ★後処理：DeckManagerの SendToDiscard を使って捨て札へ送る
+        // ★追加：ドロー効果の汎用処理（カードタイプを問わず、数値が設定されていれば発動）
         DeckManager dm = Object.FindFirstObjectByType<DeckManager>();
         if (dm != null)
         {
+            // 即時ドロー効果がある場合
+            if (display.cardData.immediateDraw > 0)
+            {
+                dm.ApplyImmediateDraw(display.cardData.immediateDraw);
+            }
+
+            // 次ターン追加ドロー効果がある場合
+            if (display.cardData.nextTurnDraw > 0)
+            {
+                dm.AddNextTurnDrawBonus(display.cardData.nextTurnDraw);
+            }
+
+            // 後処理：捨て札へ送る
             dm.SendToDiscard(display.cardData);
-            dm.UpdateHandLayout();
         }
         
         Destroy(gameObject);

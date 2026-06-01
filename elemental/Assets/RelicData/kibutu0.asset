@@ -13,14 +13,25 @@ MonoBehaviour:
   m_Name: kibutu0
   m_EditorClassIdentifier: Assembly-CSharp::RelicCore
   relicName: "\u751F\u547D\u306E\u8D64\u30EA\u30F3\u30B4"
-  description: "\u6226\u95D8\u7D42\u4E86\u6642\u3001\u4F53\u529B\u304C2\u56DE\u5FA9\u3059\u308B\u3002"
+  description: "\u81EA\u8EAB\u306E\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u3001\u4F53\u529B\u304C2\u56DE\u5FA9\u3059\u308B\u3002"
   relicIcon: {fileID: 7233151579186739914, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
-  rarity: 0
+  rarity: 2
+  relicType: 2
   maxHpBonus: 0
   initialGoldBonus: 0
   startBlock: 0
-  turnStartHeal: 2
+  applyRandomElementOnStart: 0
+  turnStartHeal: 0
+  turnStartBlock: 0
   turnEndBlock: 0
+  turnEndHeal: 2
   flatDamageBonus: 0
   damageMultiplier: 1
   damageReduction: 0
+  flatDamageTakenIncrease: 0
+  firstTurnDamageBonus: 0
+  cost3DamageBonus: 0
+  drawAmountBonus: 0
+  elementReactionBlock: 0
+  killEnemyManaRecover: 0
+  doubleDiscard: 0

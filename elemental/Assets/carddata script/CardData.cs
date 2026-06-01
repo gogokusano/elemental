@@ -11,9 +11,6 @@ public enum ElementType
     Normal,
     Fire,
     Water,
-    Wood,
-    Light,
-    Dark,
     Ice,
     Thunder,
     Rock
@@ -29,7 +26,8 @@ public class CardData : ScriptableObject
     public int damage;
     public int block;
     public int heal;
-    public int cardDraw;
+    public int immediateDraw;
+    public int nextTurnDraw;
 
     [Header("レアリティ・属性")]
     public Rarity rarity;

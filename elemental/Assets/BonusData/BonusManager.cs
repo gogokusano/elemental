@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class EventManager : MonoBehaviour
+public class BonusManager : MonoBehaviour
 {
     [Header("UIの割り当て")]
     public TextMeshProUGUI eventNameText;
@@ -17,10 +17,10 @@ public class EventManager : MonoBehaviour
     {
         if (EventPoolManager.Instance != null)
         {
-            EventData currentEvent = EventPoolManager.Instance.GetRandomEvent();
-            if (currentEvent != null)
+            EventData currentBonus = EventPoolManager.Instance.GetRandomBonus();
+            if (currentBonus != null)
             {
-                SetupEventUI(currentEvent);
+                SetupEventUI(currentBonus);
             }
         }
         else

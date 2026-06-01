@@ -26,17 +26,22 @@ public class DeckManager : MonoBehaviour
 
     [Header("状態管理")]
     public bool isEnemyTurn = false; 
+    private int nextTurnDrawBonus = 0;
 
 void Start() 
     { 
-        // ★ここを追加：メインマネージャーから所持デッキをコピーして山札を作る
         if (PlayerDataManager.Instance != null)
         {
             drawPile = new List<CardData>(PlayerDataManager.Instance.deckCards);
-        }
-        else
-        {
-            Debug.LogWarning("PlayerDataManagerが見つかりません。インスペクターのdrawPileを使用します。");
+            
+            // ★追記：10.知識の巻物などのドロー数ボーナスを適用
+            foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
+            {
+                if (relic is RelicCore core)
+                {
+                    drawAmount += core.drawAmountBonus;
+                }
+            }
         }
 
         Shuffle(drawPile); 
@@ -52,6 +57,9 @@ void Start()
     public void EndTurn()
     {
         if (isEnemyTurn) return; 
+
+        GameManager gm = Object.FindFirstObjectByType<GameManager>();
+        if (gm != null) gm.PlayerTurnEnd();
 
         if(endTurnButton != null) endTurnButton.interactable = false;
 
@@ -99,8 +107,14 @@ void Start()
         if (mm != null) mm.ResetMana();
         PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
         if (pm != null) pm.ResetBlock();
+        GameManager gm = Object.FindFirstObjectByType<GameManager>();
+        if (gm != null) gm.PlayerTurnStart();
 
-        for (int i = 0; i < drawAmount; i++)
+        int totalDraw = drawAmount + nextTurnDrawBonus;
+        nextTurnDrawBonus = 0;
+
+
+        for (int i = 0; i < totalDraw; i++)
         {
             DrawCard();
         }
@@ -108,6 +122,20 @@ void Start()
         if(endTurnButton != null) endTurnButton.interactable = true;
         UpdateHandLayout();
         UpdateDeckUI();
+    }
+
+    public void ApplyImmediateDraw(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            DrawCard();
+        }
+        UpdateHandLayout();
+    }
+
+    public void AddNextTurnDrawBonus(int amount)
+    {
+        nextTurnDrawBonus += amount;
     }
 
     public void DrawCard()

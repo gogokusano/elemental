@@ -1,105 +1,65 @@
 using UnityEngine;
 
-// メニューからこの「汎用奇物」を作成できるようにします
-[CreateAssetMenu(fileName = "NewRelicCore", menuName = "CardGame/Relics/RelicCore (汎用奇物)")]
-public class RelicCore : RelicData
+public enum RelicType { None, Attack, Defense, Special }
+// [CreateAssetMenu] を追加してエディタ上から作成できるようにしています
+[CreateAssetMenu(fileName = "NewRelic", menuName = "CardGame/RelicData")]
+public class RelicData : ScriptableObject
 {
-    [Header("【取得時効果】(1回だけ)")]
-    public int maxHpBonus = 0;       // 最大HPの増加量
-    public int initialGoldBonus = 0; // 獲得時の追加ゴールド
+    [Header("基本情報")]
+    public string relicName;      // 奇物の名前
+    [TextArea]
+    public string description;    // 効果の説明文
+    public Sprite relicIcon;      // 画面に表示するアイコン
+    public Rarity rarity;         // レアリティ（微妙な奇物Common、不利奇物Uncommon、★Rare、★★Epic、★★★legendaryとする）
+    public RelicType relicType;
 
-    [Header("【戦闘開始時効果】")]
-    public int startBlock = 0;       // 戦闘開始時に得るブロック
+    // ==========================================
+    // 効果を発動するタイミング（フック）
+    // 派生先で上書き（override）して使います。
+    // ==========================================
 
-    [Header("【毎ターン効果】")]
-    public int turnStartHeal = 0;    // 自分のターン開始時のHP回復量
-    public int turnEndBlock = 0;     // 自分のターン終了時に得るブロック
+    /// <summary>
+    /// 奇物を手に入れた瞬間に一度だけ実行される効果（最大HPアップなど）
+    /// </summary>
+    public virtual void OnAcquire() { }
 
-    [Header("【パッシブ効果】(常時)")]
-    public float flatDamageBonus = 0f; // 与えるダメージの固定値アップ (+2など)
-    public float damageMultiplier = 1f; // 与えるダメージの倍率 (1ならそのまま、1.5なら1.5倍)
-    public int damageReduction = 0;    // 受けるダメージの固定値カット
+    /// <summary>
+    /// 戦闘が始まった瞬間に実行される効果（初期シールド付与、バフ付与など）
+    /// </summary>
+    public virtual void OnBattleStart() { }
 
-    // =====================================================
-    // 以下、設定された数値が 0 (または 1) でなければ効果を発動する処理
-    // =====================================================
+    /// <summary>
+    /// 自分のターンが始まった時に実行される効果
+    /// </summary>
+    public virtual void OnTurnStart() { }
 
-    public override void OnAcquire()
-    {
-        if (PlayerDataManager.Instance != null)
-        {
-            if (maxHpBonus != 0)
-            {
-                PlayerDataManager.Instance.maxHp += maxHpBonus;
-                PlayerDataManager.Instance.currentHp += maxHpBonus;
-                Debug.Log($"{relicName} の効果: 最大HPが {maxHpBonus} 増えた！");
-            }
+    /// <summary>
+    /// 自分のターンが終わった時に実行される効果（シールド付与など）
+    /// </summary>
+    public virtual void OnTurnEnd() { }
 
-            if (initialGoldBonus != 0)
-            {
-                PlayerDataManager.Instance.gold += initialGoldBonus;
-                Debug.Log($"{relicName} の効果: ゴールドを {initialGoldBonus} 獲得！");
-            }
-        }
-    }
+    /// <summary>
+    /// 敵を倒した瞬間に実行される効果（コスト回復など）
+    /// </summary>
+    public virtual void OnEnemyKilled() { }
 
-    public override void OnBattleStart()
-    {
-        if (startBlock > 0)
-        {
-            PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
-            if (pm != null)
-            {
-                pm.AddBlock(startBlock);
-                Debug.Log($"{relicName} の効果: 戦闘開始時にブロック {startBlock} を獲得！");
-            }
-        }
-    }
+    /// <summary>
+    /// 与えるダメージを計算する時に書き換える効果（すべてのダメージ+5など）
+    /// </summary>
+    public virtual float OnModifyModifyDamage(float baseDamage, CardData card) { return baseDamage; }
 
-    public override void OnTurnStart()
-    {
-        if (turnStartHeal > 0 && PlayerDataManager.Instance != null)
-        {
-            int newHp = PlayerDataManager.Instance.currentHp + turnStartHeal;
-            PlayerDataManager.Instance.SaveHp(newHp);
-            Debug.Log($"{relicName} の効果: ターン開始時にHPを {turnStartHeal} 回復！");
-        }
-    }
+    /// <summary>
+    /// 受けるダメージを計算する時に書き換える効果（受けるダメージ軽減など）
+    /// </summary>
+    public virtual int OnModifyTakeDamage(int incomingDamage) { return incomingDamage; }
 
-    public override void OnTurnEnd()
-    {
-        if (turnEndBlock > 0)
-        {
-            PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
-            if (pm != null)
-            {
-                pm.AddBlock(turnEndBlock);
-                Debug.Log($"{relicName} の効果: ターン終了時にブロック {turnEndBlock} を獲得！");
-            }
-        }
-    }
+    /// <summary>
+    /// ★新規追加：属性反応が発生した瞬間に呼ばれるフック
+    /// </summary>
+    public virtual void OnElementReaction() { }
 
-    public override float OnModifyModifyDamage(float baseDamage)
-    {
-        // まず固定値を足して、そのあとに倍率を掛ける計算式
-        float finalDamage = (baseDamage + flatDamageBonus) * damageMultiplier;
-        
-        if (flatDamageBonus != 0 || damageMultiplier != 1f)
-        {
-            Debug.Log($"{relicName} の効果: ダメージが {baseDamage} から {finalDamage} に変化！");
-        }
-        
-        return finalDamage;
-    }
-
-    public override int OnModifyTakeDamage(int incomingDamage)
-    {
-        if (damageReduction > 0)
-        {
-            int reduced = Mathf.Max(0, incomingDamage - damageReduction);
-            Debug.Log($"{relicName} の効果: 受けるダメージを {damageReduction} 軽減！");
-            return reduced;
-        }
-        return incomingDamage;
-    }
+    /// <summary>
+    /// ★新規追加：ターンのドロー枚数を書き換えるフック
+    /// </summary>
+    public virtual int OnModifyDrawAmount(int baseAmount) { return baseAmount; }
 }

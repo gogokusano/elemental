@@ -20,7 +20,7 @@ MonoBehaviour:
   heal: 0
   cardDraw: 0
   rarity: 0
-  elementType: 9
+  elementType: 6
   description: 
   cardImage: {fileID: 224483356083980325, guid: 55dd19f1761ab5e44b572c795b616874, type: 3}
   cardNameS: "\u5929\u661F"
