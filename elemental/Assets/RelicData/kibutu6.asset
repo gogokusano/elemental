@@ -15,7 +15,8 @@ MonoBehaviour:
   relicName: "\u5FC5\u4E2D\u306E\u53E4\u77E2"
   description: "\u30B3\u30B9\u30C83\u30AB\u30FC\u30C9\u306E\u5A01\u529B\u304C\u3001\u3055\u3089\u306B+2\u3055\u308C\u308B\u3002"
   relicIcon: {fileID: -6758263674213812285, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
-  rarity: 0
+  rarity: 3
+  relicType: 1
   maxHpBonus: 0
   initialGoldBonus: 0
   startBlock: 0

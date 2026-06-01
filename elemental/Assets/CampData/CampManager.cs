@@ -64,43 +64,88 @@ public class CampManager : MonoBehaviour
 
     void OnOptionSelected(EventOption option)
     {
-        Debug.Log($"休息選択肢「{option.buttonText}」が選ばれました！");
+        Debug.Log($"選択肢「{option.buttonText}」が選ばれました！");
 
         if (PlayerDataManager.Instance != null)
         {
-            // 1. 最大HPの増減
-            if (option.maxHpChange != 0)
+            // ギャンブルの判定
+            bool isSuccess = true;
+            if (option.isGambleOption)
             {
-                PlayerDataManager.Instance.maxHp += option.maxHpChange;
-                if (PlayerDataManager.Instance.maxHp < 1) PlayerDataManager.Instance.maxHp = 1; 
-                
-                if (option.maxHpChange > 0)
+                if (Random.value <= option.gambleSuccessChance)
                 {
-                    PlayerDataManager.Instance.currentHp += option.maxHpChange;
+                    isSuccess = true;
+                    Debug.Log("<color=green>ギャンブル成功！報酬を獲得します。</color>");
+                }
+                else
+                {
+                    isSuccess = false;
+                    Debug.Log("<color=red>ギャンブル失敗…デメリットが適用されます。</color>");
                 }
             }
 
-            // 2. 現在HPの増減
-            if (option.hpChange != 0)
+            // パターンA：成功、または通常の選択肢
+            if (isSuccess)
             {
-                int newHp = PlayerDataManager.Instance.currentHp + option.hpChange;
-                PlayerDataManager.Instance.SaveHp(newHp);
-            }
+                if (!option.isGambleOption)
+                {
+                    if (option.maxHpChange != 0)
+                    {
+                        PlayerDataManager.Instance.maxHp += option.maxHpChange;
+                        if (PlayerDataManager.Instance.maxHp < 1) PlayerDataManager.Instance.maxHp = 1;
+                        if (option.maxHpChange > 0) PlayerDataManager.Instance.currentHp += option.maxHpChange;
+                    }
+                    if (option.hpChange != 0)
+                    {
+                        PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp + option.hpChange);
+                    }
+                }
 
-            // 3. 奇物の獲得（特定の奇物が指定されている場合）
-            if (option.rewardRelic != null)
-            {
-                PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+                // ★固定獲得
+                if (option.rewardRelic != null)
+                {
+                    PlayerDataManager.Instance.AddRelic(option.rewardRelic);
+                }
+                
+                // ★統合ランダム獲得（単発も複数も、絞り込みも全てここで処理！）
+                if (option.giveRandomRelic)
+                {
+                    int count = Random.Range(option.minRelicCount, option.maxRelicCount + 1);
+                    
+                    PlayerDataManager.Instance.AddRandomRelicsAdvanced(
+                        count, 
+                        option.allowedRarities, 
+                        option.filterByType, 
+                        option.targetRelicType, 
+                        option.canUpgradeRarity, 
+                        option.upgradeChance, 
+                        option.upgradedRarity
+                    );
+                }
             }
-            // ★追加：ランダムな奇物を獲得する設定になっている場合
-            else if (option.giveRandomRelic)
+            // パターンB：ギャンブル失敗時
+            else
             {
-                PlayerDataManager.Instance.AddRandomRelic();
+                switch (option.penaltyType)
+                {
+                    case EventPenaltyType.HpLoss:
+                        PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp - option.penaltyValue);
+                        break;
+
+                    case EventPenaltyType.MaxHpLoss:
+                        PlayerDataManager.Instance.maxHp -= option.penaltyValue;
+                        if (PlayerDataManager.Instance.maxHp < 1) PlayerDataManager.Instance.maxHp = 1;
+                        if (PlayerDataManager.Instance.currentHp > PlayerDataManager.Instance.maxHp)
+                        {
+                            PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.maxHp);
+                        }
+                        break;
+
+                    case EventPenaltyType.GoldLoss:
+                        PlayerDataManager.Instance.gold = Mathf.Max(0, PlayerDataManager.Instance.gold - option.penaltyValue);
+                        break;
+                }
             }
-        }
-        else
-        {
-            Debug.LogError("PlayerDataManagerが存在しません！");
         }
 
         ReturnToMap();

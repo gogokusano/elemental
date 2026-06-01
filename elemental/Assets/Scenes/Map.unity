@@ -4752,7 +4752,7 @@ MonoBehaviour:
     eventColor: {r: 1, g: 0, b: 0, a: 1}
   - eventName: 
     iconSprite: {fileID: 21300000, guid: dfa7573a6acf9e143a09725f05116e1a, type: 3}
-    sceneName: 
+    sceneName: Bonus
     eventColor: {r: 0.9453459, g: 1, b: 0, a: 1}
   - eventName: Event
     iconSprite: {fileID: 21300000, guid: af265b2fbc97a2045ac7f630d1214705, type: 3}
@@ -6608,7 +6608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Camp
   nodeButton: {fileID: 893646906}
   nodeIcon: {fileID: 0}
   nextNodes:
@@ -10335,7 +10335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: Camp
   nodeButton: {fileID: 1564321437}
   nodeIcon: {fileID: 0}
   nextNodes:

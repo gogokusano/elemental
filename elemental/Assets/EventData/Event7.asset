@@ -21,13 +21,49 @@ MonoBehaviour:
     maxHpChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 1
+    minRelicCount: 1
+    maxRelicCount: 1
+    allowedRarities: 020000000300000004000000
+    filterByType: 0
+    targetRelicType: 0
+    canUpgradeRarity: 0
+    upgradeChance: 0.5
+    upgradedRarity: 0
+    isGambleOption: 0
+    gambleSuccessChance: 0.5
+    penaltyType: 0
+    penaltyValue: 0
   - buttonText: "\u5B9D\u3092\u5DEE\u3057\u51FA\u3059\uFF1A\u5947\u7269\u3092\u30E9\u30F3\u30C0\u30E0\u3067\u6368\u3066\u3001\u30AB\u30FC\u30C9\u3092\u4E00\u679A\u9078\u629E\u3057\u5F97\u308B"
     hpChange: 0
     maxHpChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
+    minRelicCount: 2
+    maxRelicCount: 3
+    allowedRarities: 
+    filterByType: 0
+    targetRelicType: 0
+    canUpgradeRarity: 0
+    upgradeChance: 0.5
+    upgradedRarity: 0
+    isGambleOption: 0
+    gambleSuccessChance: 0.5
+    penaltyType: 0
+    penaltyValue: 0
   - buttonText: "\u7ACB\u3061\u53BB\u308B: \u4F55\u3082\u8D77\u304D\u306A\u3044\u3002"
     hpChange: 0
     maxHpChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
+    minRelicCount: 2
+    maxRelicCount: 3
+    allowedRarities: 
+    filterByType: 0
+    targetRelicType: 0
+    canUpgradeRarity: 0
+    upgradeChance: 0.5
+    upgradedRarity: 0
+    isGambleOption: 0
+    gambleSuccessChance: 0.5
+    penaltyType: 0
+    penaltyValue: 0
