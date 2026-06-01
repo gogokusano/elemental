@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: slime
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: slime
-  maxHP: 300
+  maxHP: 60
   enemyImage: {fileID: -4215099794538360693, guid: 74270a6b0448be44b926d534a5d4d300, type: 3}
   actionList:
   - actionName: 
