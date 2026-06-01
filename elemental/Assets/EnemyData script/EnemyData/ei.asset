@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54db40a7330f0fe4bae16ddbeff0c794, type: 3}
-  m_Name: slime
+  m_Name: ei
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: slime
-  maxHP: 60
-  enemyImage: {fileID: 5791124475601671289, guid: e6ba58a9549011343bbe8d37e0d32701, type: 3}
+  enemyName: 
+  maxHP: 0
+  enemyImage: {fileID: -4215099794538360693, guid: 74270a6b0448be44b926d534a5d4d300, type: 3}
   actionList:
   - actionName: 
-    actionType: 1
+    actionType: 0
     value: 5
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
   - actionName: 
     actionType: 0
-    value: 10
+    value: 15
     statusCard: {fileID: 0}
-    isPhase2Only: 0
-    isOneTimeOnly: 1
+    isPhase2Only: 1
+    isOneTimeOnly: 0
   - actionName: 
-    actionType: 2
-    value: 12
+    actionType: 0
+    value: 0
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0

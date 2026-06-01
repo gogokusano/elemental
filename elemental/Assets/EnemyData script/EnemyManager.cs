@@ -13,6 +13,8 @@ public class EnemyManager : MonoBehaviour
     public TextMeshProUGUI hpText;
     public Image enemyImage;
     public TextMeshProUGUI blockText;
+    public Slider hpSlider; 
+    public Slider blockSlider; // ★追加：シールド（ブロック）用のスライダー
 
     [Header("属性・状態異常システム")]
     public Image elementIconDisplay; 
@@ -59,6 +61,10 @@ public class EnemyManager : MonoBehaviour
             lastAction2 = null;
             usedOneTimeActions.Clear();
 
+            // HPバーとシールドバーの最大値を設定
+            if (hpSlider != null) hpSlider.maxValue = enemyData.maxHP;
+            if (blockSlider != null) blockSlider.maxValue = enemyData.maxHP; // ★追加
+
             // ゲーム開始時に最初の行動を決定する
             DetermineNextAction();
             
@@ -76,19 +82,13 @@ public class EnemyManager : MonoBehaviour
 
         foreach (var action in enemyData.actionList)
         {
-            // ① HP50%以下専用の技なのに、まだHPが50%より多い場合は候補から外す
             if (action.isPhase2Only && hpPercentage > 0.5f) continue;
-
-            // ② 1回限りの技で、すでに使用済みの場合は候補から外す
             if (action.isOneTimeOnly && usedOneTimeActions.Contains(action)) continue;
-
-            // ③ まったく同じ行動を3回連続で行うのを防ぐ
             if (lastAction1 == action && lastAction2 == action) continue;
 
             availableActions.Add(action);
         }
 
-        // 候補がなくなってしまったら、リストの最初の行動を強制的に選ぶ
         if (availableActions.Count == 0) availableActions.Add(enemyData.actionList[0]);
 
         int randomIndex = Random.Range(0, availableActions.Count);
@@ -97,7 +97,6 @@ public class EnemyManager : MonoBehaviour
         UpdateIntentUI();
     }
 
-    // ★修正：行動予測のUI表示と色を更新する
     private void UpdateIntentUI()
     {
         if (intentIconDisplay == null || intentText == null || nextAction == null) return;
@@ -109,18 +108,18 @@ public class EnemyManager : MonoBehaviour
         {
             case EnemyActionType.Attack:
                 intentIconDisplay.sprite = attackIntentIcon;
-                intentIconDisplay.color = Color.red; // Attackアイコンは赤色
+                intentIconDisplay.color = Color.red; 
                 intentText.text = nextAction.value.ToString(); 
                 break;
             case EnemyActionType.Defend:
                 intentIconDisplay.sprite = defendIntentIcon;
-                intentIconDisplay.color = Color.blue; // ブロックアイコンは青色
+                intentIconDisplay.color = Color.blue; 
                 intentText.text = nextAction.value.ToString(); 
                 break;
             case EnemyActionType.AddStatusCard:
                 intentIconDisplay.sprite = statusIntentIcon;
-                intentIconDisplay.color = Color.green; // 異常アイコンは緑色
-                intentText.text = ""; // 状態異常などは数値を出さない
+                intentIconDisplay.color = Color.green; 
+                intentText.text = ""; 
                 break;
         }
     }
@@ -136,7 +135,7 @@ public class EnemyManager : MonoBehaviour
             isFrozen = false; 
             if (Random.value <= 0.5f) {
                 Debug.Log("<color=cyan>敵は凍結していて動けない！</color>");
-                DetermineNextAction(); // 行動をスキップしても次の行動は決める
+                DetermineNextAction(); 
                 return; 
             }
         }
@@ -184,7 +183,6 @@ public class EnemyManager : MonoBehaviour
         
         ElementType incomingElement = card.elementType; 
 
-        // 物理弱体（氷×雷）の消費判定
         if (isPhysicalWeak && incomingElement == ElementType.Normal)
         {
             damageFloat *= 2.5f;
@@ -194,7 +192,6 @@ public class EnemyManager : MonoBehaviour
 
         bool comboTriggered = false;
 
-        // コンボ判定（None/Normal以外同士で判定）
         if (currentElement != ElementType.None && currentElement != ElementType.Normal &&
             incomingElement != ElementType.None && incomingElement != ElementType.Normal)
         {
@@ -240,7 +237,6 @@ public class EnemyManager : MonoBehaviour
             }
         }
 
-        // 奇物による属性反応時の効果発動
         if (PlayerDataManager.Instance != null)
         {
             foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
@@ -249,14 +245,12 @@ public class EnemyManager : MonoBehaviour
             }
         }
 
-        // コンボ処理による属性のクリア/付与
         if (comboTriggered) {
             SetElement(ElementType.None);
         } else if (incomingElement != ElementType.None && incomingElement != ElementType.Normal) {
             SetElement(incomingElement);
         }
 
-        // 最終的なダメージを与える
         TakeDamage(Mathf.RoundToInt(damageFloat));
     }
 
@@ -313,7 +307,6 @@ public class EnemyManager : MonoBehaviour
         { 
             currentHP = 0; 
 
-            // 敵死亡時の奇物効果発動
             if (PlayerDataManager.Instance != null)
             {
                 foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
@@ -334,7 +327,18 @@ public class EnemyManager : MonoBehaviour
     private void UpdateUI()
     {
         if (hpText != null && enemyData != null)
-            hpText.text = "Enemy HP: " + currentHP + " / " + enemyData.maxHP;
+            hpText.text = currentHP + " / " + enemyData.maxHP; // ★前回の修正（"Enemy HP: "を削除）を維持
+
+        if (hpSlider != null) hpSlider.value = currentHP;
+        
+        // ★追加：シールドバーの値を更新（HPと合算して表示幅を決める）
+        if (blockSlider != null)
+        {
+            blockSlider.value = currentHP + currentBlock; 
+            // ブロックが0の時はスライダー自体を非表示にしてスッキリさせる
+            blockSlider.gameObject.SetActive(currentBlock > 0);
+        }
+
         if (blockText != null) {
             blockText.text = "Block: " + currentBlock;
             blockText.gameObject.SetActive(currentBlock > 0);
