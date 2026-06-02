@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1585288856654208099}
   - component: {fileID: 303965520743862849}
   - component: {fileID: 4751163460224772324}
-  - component: {fileID: -6123831002279596072}
+  - component: {fileID: -7212425978904130817}
   m_Layer: 5
-  m_Name: CardImage
+  m_Name: ShowCardImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,8 +34,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 140, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -67,9 +67,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7233151579186739914, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-6123831002279596072
+--- !u!114 &-7212425978904130817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7315777553480449573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbcc297f624f4134dbc9ce644f8035e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fffb5a87ecbc4244bbeadf798dc7e3a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatusItemSlot
+  m_EditorClassIdentifier: Assembly-CSharp::EventSelectItem
   iconImage: {fileID: 303965520743862849}
-  slotButton: {fileID: 4751163460224772324}
+  nameText: {fileID: 0}

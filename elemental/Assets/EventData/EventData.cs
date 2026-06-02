@@ -1,12 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum EventPenaltyType
-{
-    HpLoss,       
-    MaxHpLoss,    
-    GoldLoss      
-}
+public enum EventPenaltyType { HpLoss, MaxHpLoss, GoldLoss }
+
+public enum TargetSelectionMethod { None, Random, Select }
 
 [System.Serializable]
 public class EventOption
@@ -41,6 +38,33 @@ public class EventOption
     [Range(0f, 1f)]
     public float upgradeChance = 0.5f; 
     public Rarity upgradedRarity; 
+
+    [Header("奇物の喪失")]
+    public int loseRelicCount = 0;
+    public TargetSelectionMethod loseRelicMethod = TargetSelectionMethod.None;
+
+    [Header("カードの獲得")]
+    public int gainCardCount = 0;
+    public TargetSelectionMethod gainCardMethod = TargetSelectionMethod.None;
+    [Tooltip("特定条件のカードをプールから引っ張る設定")]
+    public bool filterCardByElement = false;
+    public ElementType targetCardElement;
+    public bool filterCardByCost = false;
+    public int targetCardCost;
+    public bool filterCardByRarity = false;
+    public Rarity targetCardRarity;
+
+    [Header("カードの削除")]
+    public int removeCardCount = 0;
+    public TargetSelectionMethod removeCardMethod = TargetSelectionMethod.None;
+
+    [Header("カードの変化")]
+    public int transformCardCount = 0;
+    public TargetSelectionMethod transformCardMethod = TargetSelectionMethod.None;
+
+    [Header("カードのコピー")]
+    public int duplicateCardCount = 0;
+    public TargetSelectionMethod duplicateCardMethod = TargetSelectionMethod.None;
 
     [Header("確率（ギャンブル）設定")]
     public bool isGambleOption = false;

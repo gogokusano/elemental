@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca3539201919f2409c51906c182b2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventManager
-  eventCategory: 2
+  eventCategory: 3
   eventNameText: {fileID: 1373810662}
   eventDescriptionText: {fileID: 763571368}
   eventImageView: {fileID: 1773527552}
