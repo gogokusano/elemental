@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
   currentBlock: 0
-  hasCounter: 0
+  hasCounter: 1
   hpText: {fileID: 930934721}
   blockText: {fileID: 1746271343}
 --- !u!114 &359837573
