@@ -23,6 +23,12 @@ public class MapManager : MonoBehaviour
     [Header("ランダム用イベントの種類")]
     public List<MapEventData> availableEvents;
 
+    // ========================================================
+    // ★追加：1つしか出現させたくないイベントの「eventName」をインスペクターで指定
+    // ========================================================
+    [Header("1マス限定にするイベントの設定")]
+    public string uniqueEventName = "レア宝箱"; // ここに実際のeventNameを入れます
+
     void Awake() => Instance = this;
 
     void Start()
@@ -142,6 +148,44 @@ public class MapManager : MonoBehaviour
 
         Random.InitState(seed);
 
+        // --- ① 1マス限定イベントを通常プールから分別 ---
+        List<MapEventData> normalEvents = new List<MapEventData>();
+        MapEventData uniqueEvent = default;
+        bool hasUniqueEvent = false;
+
+        foreach (var ev in availableEvents)
+        {
+            if (ev.eventName == uniqueEventName)
+            {
+                uniqueEvent = ev;
+                hasUniqueEvent = true;
+            }
+            else
+            {
+                normalEvents.Add(ev);
+            }
+        }
+
+        if (normalEvents.Count == 0) normalEvents = availableEvents;
+
+        // --- ② ランダム化するマス（固定以外）から「限定マス」を1つだけ事前抽選 ---
+        List<MapNode> randomizableNodes = new List<MapNode>();
+        foreach (var node in allNodes)
+        {
+            if (node != null && !node.isMidBoss && !node.isBoss && !node.isFixedNode)
+            {
+                randomizableNodes.Add(node);
+            }
+        }
+
+        MapNode chosenUniqueNode = null;
+        if (hasUniqueEvent && randomizableNodes.Count > 0)
+        {
+            int uniqueNodeIndex = Random.Range(0, randomizableNodes.Count);
+            chosenUniqueNode = randomizableNodes[uniqueNodeIndex];
+        }
+
+        // --- ③ 配置処理 ---
         foreach (var node in allNodes)
         {
             if (node == null) continue;
@@ -153,8 +197,20 @@ public class MapManager : MonoBehaviour
                 continue;
             }
 
-            int randomIndex = Random.Range(0, availableEvents.Count);
-            MapEventData selectedEvent = availableEvents[randomIndex];
+            MapEventData selectedEvent;
+            int randomIndex = -1;
+
+            // 抽選された限定マスであれば確定でねじ込む
+            if (node == chosenUniqueNode)
+            {
+                selectedEvent = uniqueEvent;
+                randomIndex = 999; // 限定マス用の識別コード
+            }
+            else
+            {
+                randomIndex = Random.Range(0, normalEvents.Count);
+                selectedEvent = normalEvents[randomIndex];
+            }
 
             node.sceneName = selectedEvent.sceneName;
 
@@ -173,9 +229,7 @@ public class MapManager : MonoBehaviour
                 node.nodeIcon.color = finalColor;
             }
 
-            // ========================================================
-            // ★重要修正：マスの所属する親（層）の名前を合体させて名前の重複を100%防ぐ！
-            // ========================================================
+            // マスの所属する親（層）の名前を合体させて名前の重複を100%防ぐ
             string layerName = node.transform.parent != null ? node.transform.parent.name : "Layer";
             node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}_{randomIndex}";
         }
