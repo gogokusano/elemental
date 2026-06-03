@@ -8,6 +8,9 @@ public struct MapEventData
     public Sprite iconSprite;
     public string sceneName;
     public Color eventColor;
+    public int weight;
+    // ★追加：このイベントを各層に「最低でも何マス出現させたいか」の設定
+    public int minCountPerLayer;
 }
 
 public class MapManager : MonoBehaviour
@@ -23,11 +26,11 @@ public class MapManager : MonoBehaviour
     [Header("ランダム用イベントの種類")]
     public List<MapEventData> availableEvents;
 
-    // ========================================================
-    // ★修正：各層に1マスずつ出現させたいイベント名（例：「ショップ」）
-    // ========================================================
     [Header("各層に1マス限定にするイベントの設定")]
     public string uniqueEventName = "ショップ";
+
+    [Header("最初の3マスで出現を禁止するイベント（複数指定可能）")]
+    public List<string> forbiddenEventNamesForStart = new List<string> { "ショップ", "Bonus" };
 
     void Awake() => Instance = this;
 
@@ -162,7 +165,34 @@ public class MapManager : MonoBehaviour
 
         if (normalEvents.Count == 0) normalEvents = availableEvents;
 
-        // --- ② 【超重要】マスを「親オブジェクト（層）」ごとにグループ分けする ---
+        // --- 最初の3マス専用のプールを作る ---
+        List<MapEventData> startNodeAvailableEvents = new List<MapEventData>();
+        int totalWeightForStart = 0;
+
+        foreach (var ev in availableEvents)
+        {
+            if (!forbiddenEventNamesForStart.Contains(ev.eventName))
+            {
+                startNodeAvailableEvents.Add(ev);
+                totalWeightForStart += Mathf.Max(1, ev.weight);
+            }
+        }
+
+        if (startNodeAvailableEvents.Count == 0)
+        {
+            startNodeAvailableEvents = normalEvents;
+            totalWeightForStart = 0;
+            foreach (var ev in normalEvents) totalWeightForStart += Mathf.Max(1, ev.weight);
+        }
+
+        // --- 通常マス用の合計Weight（重み）を計算しておく ---
+        int totalWeight = 0;
+        foreach (var ev in normalEvents)
+        {
+            totalWeight += Mathf.Max(1, ev.weight);
+        }
+
+        // --- ② マスを「親オブジェクト（層）」ごとにグループ分けする ---
         Dictionary<Transform, List<MapNode>> layerGroups = new Dictionary<Transform, List<MapNode>>();
 
         foreach (var node in allNodes)
@@ -179,17 +209,63 @@ public class MapManager : MonoBehaviour
             layerGroups[parent].Add(node);
         }
 
-        // --- ③ 各層ごとに、ショップを配置するマスを1つずつ抽選して記憶する ---
-        HashSet<MapNode> chosenShopNodes = new HashSet<MapNode>();
+        // --- ③ 各マスの役割を確定させる事前抽選フェーズ ---
+        // 各マスをキーとして、どのイベントを割り当てるかを記録する辞書
+        Dictionary<MapNode, MapEventData> forcedNodeEvents = new Dictionary<MapNode, MapEventData>();
 
-        if (hasUniqueEvent)
+        foreach (var pair in layerGroups)
         {
-            foreach (var layer in layerGroups.Values)
+            List<MapNode> availableNodesInLayer = new List<MapNode>(pair.Value);
+            if (availableNodesInLayer.Count == 0) continue;
+
+            // A. 各層に1マスのショップ（UniqueEvent）を最優先で割り当て
+            if (hasUniqueEvent)
             {
-                if (layer.Count > 0)
+                List<MapNode> shopCandidates = availableNodesInLayer.FindAll(n => !startNodes.Contains(n));
+                MapNode shopNode = null;
+
+                if (shopCandidates.Count > 0)
                 {
-                    int randomIndexForShop = Random.Range(0, layer.Count);
-                    chosenShopNodes.Add(layer[randomIndexForShop]);
+                    shopNode = shopCandidates[Random.Range(0, shopCandidates.Count)];
+                }
+                else
+                {
+                    shopNode = availableNodesInLayer[Random.Range(0, availableNodesInLayer.Count)];
+                }
+
+                forcedNodeEvents[shopNode] = uniqueEvent;
+                availableNodesInLayer.Remove(shopNode);
+            }
+
+            // B. ★修正：インスペクターで指定された「最低保証数（minCountPerLayer）」を満たすように割り当て
+            foreach (var ev in availableEvents)
+            {
+                // ショップ（Unique）は上で処理済みなのと、最低保証数が0以下のものはスルー
+                if (ev.eventName == uniqueEventName || ev.minCountPerLayer <= 0) continue;
+
+                for (int i = 0; i < ev.minCountPerLayer; i++)
+                {
+                    if (availableNodesInLayer.Count == 0) break; // 空きマスがなくなったら終了
+
+                    // 最初の3マスの制限リストに入っているイベントの場合、startNodesを避けて選ぶ
+                    MapNode targetNode = null;
+                    if (forbiddenEventNamesForStart.Contains(ev.eventName))
+                    {
+                        List<MapNode> safeCandidates = availableNodesInLayer.FindAll(n => !startNodes.Contains(n));
+                        if (safeCandidates.Count > 0)
+                        {
+                            targetNode = safeCandidates[Random.Range(0, safeCandidates.Count)];
+                        }
+                    }
+
+                    // 適切な退避先がない、または制限のないイベントなら残りからランダム選出
+                    if (targetNode == null)
+                    {
+                        targetNode = availableNodesInLayer[Random.Range(0, availableNodesInLayer.Count)];
+                    }
+
+                    forcedNodeEvents[targetNode] = ev;
+                    availableNodesInLayer.Remove(targetNode); // 確定したので候補から消す
                 }
             }
         }
@@ -206,20 +282,44 @@ public class MapManager : MonoBehaviour
                 continue;
             }
 
-            MapEventData selectedEvent;
-            int randomIndex = -1;
+            MapEventData selectedEvent = default;
 
-            // ★このマスが「その層の中で抽選されたショップマス」なら確定でショップにする
-            if (chosenShopNodes.Contains(node))
+            // 事前抽選（ショップや最低保証枠）で確定しているマスか判定
+            if (forcedNodeEvents.ContainsKey(node))
             {
-                selectedEvent = uniqueEvent;
-                randomIndex = 888; // 各層限定マス用の識別コード
+                selectedEvent = forcedNodeEvents[node];
+            }
+            else if (startNodes.Contains(node))
+            {
+                // 最初の3マスのうち、最低保証で埋まらなかった残りの通常マスを抽選
+                int rolledValue = Random.Range(0, totalWeightForStart);
+                int currentWeightSum = 0;
+
+                for (int i = 0; i < startNodeAvailableEvents.Count; i++)
+                {
+                    currentWeightSum += Mathf.Max(1, startNodeAvailableEvents[i].weight);
+                    if (rolledValue < currentWeightSum)
+                    {
+                        selectedEvent = startNodeAvailableEvents[i];
+                        break;
+                    }
+                }
             }
             else
             {
-                // それ以外の通常マスはショップを除外したリストからランダム
-                randomIndex = Random.Range(0, normalEvents.Count);
-                selectedEvent = normalEvents[randomIndex];
+                // 最低保証枠から外れた、残りの完全フリーな通常マスをWeight確率で抽選
+                int rolledValue = Random.Range(0, totalWeight);
+                int currentWeightSum = 0;
+
+                for (int i = 0; i < normalEvents.Count; i++)
+                {
+                    currentWeightSum += Mathf.Max(1, normalEvents[i].weight);
+                    if (rolledValue < currentWeightSum)
+                    {
+                        selectedEvent = normalEvents[i];
+                        break;
+                    }
+                }
             }
 
             node.sceneName = selectedEvent.sceneName;
@@ -239,9 +339,8 @@ public class MapManager : MonoBehaviour
                 node.nodeIcon.color = finalColor;
             }
 
-            // 親（層）の名前を合体させて名前の重複を完全に防ぐ
             string layerName = node.transform.parent != null ? node.transform.parent.name : "Layer";
-            node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}_{randomIndex}";
+            node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}";
         }
     }
 
