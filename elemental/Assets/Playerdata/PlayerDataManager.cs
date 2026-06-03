@@ -22,6 +22,10 @@ public class PlayerDataManager : MonoBehaviour
     public List<RelicData> allAvailableRelics = new List<RelicData>(); 
     private List<RelicData> unownedRelics = new List<RelicData>(); 
 
+
+
+    // ★追加：全カードのデータベース（GetRewardCardsでカードを抽出するために必要です）
+
     [Header("全カードのデータベース（すべてのカードを登録）")]
     public List<CardData> allAvailableCards = new List<CardData>();
 
@@ -128,6 +132,7 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
 
+
     public void LoseRandomRelics(int count)
     {
         for (int i = 0; i < count; i++)
@@ -190,5 +195,47 @@ public class PlayerDataManager : MonoBehaviour
             unownedRelics.Add(relic); // 山札に戻す
             Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
         }
+        }
+    
+
+    // ==========================================
+    // ▼ ここから今回追加した報酬用のメソッド ▼
+    // ==========================================
+
+    // ゴールドを加算するメソッド
+    public void AddGold(int amount)
+    {
+        gold += amount;
+        Debug.Log($"ゴールド獲得: {amount} / 現在のゴールド: {gold}");
+    }
+
+    // 報酬画面用に、重複しないN枚のカードをランダムに取得するメソッド
+    public List<CardData> GetRewardCards(int count = 3)
+    {
+        List<CardData> rewardCards = new List<CardData>();
+        
+        // エラー回避：もしインスペクターでallAvailableCardsに何も登録されていなかった場合
+        if (allAvailableCards == null || allAvailableCards.Count == 0)
+        {
+            Debug.LogError("全カードリスト(allAvailableCards)が設定されていないか、空です！インスペクターからカードを登録してください。");
+            return rewardCards;
+        }
+
+        // 全カードリストのコピーを作成（本体を破壊しないため）
+        List<CardData> pool = new List<CardData>(allAvailableCards); 
+
+        for (int i = 0; i < count; i++)
+        {
+            if (pool.Count == 0) break;
+
+            int randomIndex = Random.Range(0, pool.Count);
+            rewardCards.Add(pool[randomIndex]);
+            
+            // 選ばれたカードをプールから削除し、重複提示を防ぐ
+            pool.RemoveAt(randomIndex); 
+        }
+
+        return rewardCards;
+
     }
 }

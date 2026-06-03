@@ -22,6 +22,10 @@ public class EventPoolManager : MonoBehaviour
     public List<EventData> allAnomalyEvents;
     private List<EventData> remainingAnomalyEvents = new List<EventData>();
 
+    [Header("ショップイベントのリスト")]
+    public List<EventData> allShopEvents;
+    private List<EventData> remainingShopEvents = new List<EventData>();
+
     void Awake()
     {
         if (Instance == null)
@@ -34,6 +38,7 @@ public class EventPoolManager : MonoBehaviour
             ResetBonusPool(); 
             ResetCampPool();
             ResetAnomalyPool();
+            ResetShopPool();
         }
         else
         {
@@ -62,6 +67,11 @@ public class EventPoolManager : MonoBehaviour
     public void ResetAnomalyPool()
     {
         remainingAnomalyEvents = new List<EventData>(allAnomalyEvents);
+    }
+
+        public void ResetShopPool()
+    {
+        remainingShopEvents = new List<EventData>(allShopEvents);
     }
 
     // 通常イベントを引く
@@ -132,5 +142,22 @@ public class EventPoolManager : MonoBehaviour
         remainingAnomalyEvents.RemoveAt(randomIndex);
 
         return selectedAnomaly;
+    }
+
+    public EventData GetRandomShop()
+    {
+        if (allShopEvents == null || allShopEvents.Count == 0) return null;
+
+        if (remainingShopEvents.Count == 0)
+        {
+            Debug.Log("すべてのショップイベントが出尽くしました。山札をリセットします。");
+            ResetShopPool();
+        }
+
+        int randomIndex = Random.Range(0, remainingShopEvents.Count);
+        EventData selectedShop = remainingShopEvents[randomIndex];
+        remainingShopEvents.RemoveAt(randomIndex);
+
+        return selectedShop;
     }
 }

@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Bonus.unity
     guid: be37810a2197c4840900c275bbf6632c
   - enabled: 1
+    path: Assets/Scenes/Anomaly.unity
+    guid: 0a161ab5e6894a242a691d95202f7ba0
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 21be1c4a692162046a79463d2876d4bd
+  - enabled: 1
     path: Assets/Scenes/Camp.unity
     guid: 769628e993edae54dbd336fff8811b10
   - enabled: 1

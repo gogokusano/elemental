@@ -8,6 +8,6 @@ public class MapSceneManager : MonoBehaviour
     {
         Debug.Log("イベントマスを踏みました！イベントシーンへ遷移します。");
         // "Event" の部分は、実際のEventシーンの名前に合わせて変更してください
-        SceneManager.LoadScene("Event"); 
+        SceneManager.LoadScene("Shop"); 
     }
 }

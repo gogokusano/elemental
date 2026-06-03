@@ -27,7 +27,7 @@ MonoBehaviour:
     value: 10
     statusCard: {fileID: 0}
     isPhase2Only: 0
-    isOneTimeOnly: 1
+    isOneTimeOnly: 0
   - actionName: 
     actionType: 2
     value: 12

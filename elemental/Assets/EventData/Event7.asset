@@ -65,7 +65,7 @@ MonoBehaviour:
     loseRelicCount: 1
     loseRelicMethod: 1
     gainCardCount: 1
-    gainCardMethod: 1
+    gainCardMethod: 2
     filterCardByElement: 0
     targetCardElement: 0
     filterCardByCost: 0

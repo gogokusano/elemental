@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum EventCategory { Normal, Bonus, Camp, Anomaly }
+public enum EventCategory { Normal, Bonus, Camp, Anomaly, Shop}
 
 public class EventManager : MonoBehaviour
 {
@@ -29,6 +29,7 @@ public class EventManager : MonoBehaviour
     public Image cardDetailImage;               // カードの画像表示用
     public TextMeshProUGUI cardDetailText;      // 詳細用の効果テキスト（cardTextSを表示）
     public Button cardConfirmButton;            // カード用の「OK」ボタン
+    public Button cardCancelButton;             // ★キャンセルボタン
 
     [Header("★奇物選択用UI")]
     public GameObject relicSelectionPanel;      // 奇物選択画面全体の親
@@ -42,11 +43,19 @@ public class EventManager : MonoBehaviour
     public TextMeshProUGUI relicDetailName;     // 奇物の名前テキスト
     public TextMeshProUGUI relicDetailText;     // 奇物の効果テキスト
     public Button relicConfirmButton;           // 奇物用の「OK」ボタン
+    public Button relicCancelButton;            // ★キャンセルボタン
 
     // 内部管理用変数
     private bool isSelectionWaiting = false;
+    private bool isCanceled = false;
     private CardData lastSelectedCard = null;
     private RelicData lastSelectedRelic = null;
+
+    // ショップの商品リストと現在のアクション
+    private List<RelicData> shopRelics = new List<RelicData>();
+    private List<CardData> shopCards = new List<CardData>();
+    private ShopActionType currentShopAction = ShopActionType.None;
+    private EventData currentEventData;
 
     void Start()
     {
@@ -70,33 +79,115 @@ public class EventManager : MonoBehaviour
             relicConfirmButton.interactable = false;
         }
 
+        // ★キャンセルボタンのリスナー登録（常時クリック可能）
+        if (cardCancelButton != null)
+        {
+            cardCancelButton.onClick.RemoveAllListeners();
+            cardCancelButton.onClick.AddListener(OnCancelClicked);
+            cardCancelButton.interactable = true;
+        }
+        if (relicCancelButton != null)
+        {
+            relicCancelButton.onClick.RemoveAllListeners();
+            relicCancelButton.onClick.AddListener(OnCancelClicked);
+            relicCancelButton.interactable = true;
+        }
+
         if (EventPoolManager.Instance != null)
         {
-            EventData currentEvent = null;
-
             switch (eventCategory)
             {
                 case EventCategory.Normal:
-                    currentEvent = EventPoolManager.Instance.GetRandomEvent();
+                    currentEventData = EventPoolManager.Instance.GetRandomEvent();
                     break;
                 case EventCategory.Bonus:
-                    currentEvent = EventPoolManager.Instance.GetRandomBonus();
+                    currentEventData = EventPoolManager.Instance.GetRandomBonus();
                     break;
                 case EventCategory.Camp:
-                    currentEvent = EventPoolManager.Instance.GetRandomCamp();
+                    currentEventData = EventPoolManager.Instance.GetRandomCamp();
                     break;
                 case EventCategory.Anomaly:
-                    currentEvent = EventPoolManager.Instance.GetRandomAnomaly();
+                    currentEventData = EventPoolManager.Instance.GetRandomAnomaly();
+                    break;
+                case EventCategory.Shop: 
+                    currentEventData = EventPoolManager.Instance.GetRandomShop(); 
+                    if (currentEventData != null) GenerateShopItems(currentEventData.shopConfig); 
                     break;
             }
 
-            if (currentEvent != null) 
-                SetupEventUI(currentEvent);
+            if (currentEventData != null) 
+                SetupEventUI(currentEventData);
         }
         else
         {
             Debug.LogWarning("EventPoolManagerが見つかりません。");
         }
+    }
+
+    void GenerateShopItems(ShopConfig config)
+    {
+        if (config == null) return;
+
+        // 【奇物】
+        List<RelicData> poolR = new List<RelicData>(PlayerDataManager.Instance.allAvailableRelics);
+        poolR.RemoveAll(r => PlayerDataManager.Instance.ownedRelics.Contains(r)); 
+        
+        if (config.allowedRelicRarities != null && config.allowedRelicRarities.Count > 0)
+        {
+            poolR.RemoveAll(r => !config.allowedRelicRarities.Contains(r.rarity));
+        }
+        
+        for (int i = 0; i < config.relicCount; i++)
+        {
+            if (poolR.Count > 0)
+            {
+                int idx = Random.Range(0, poolR.Count);
+                shopRelics.Add(poolR[idx]);
+                poolR.RemoveAt(idx);
+            }
+        }
+
+        // 【カード】
+        List<CardData> poolC = new List<CardData>(PlayerDataManager.Instance.allAvailableCards);
+        
+        if (config.allowedCardRarities != null && config.allowedCardRarities.Count > 0)
+        {
+            poolC.RemoveAll(c => !config.allowedCardRarities.Contains(c.rarity));
+        }
+
+        for (int i = 0; i < config.cardCount; i++)
+        {
+            if (poolC.Count > 0)
+            {
+                int idx = Random.Range(0, poolC.Count);
+                shopCards.Add(poolC[idx]);
+                poolC.RemoveAt(idx);
+            }
+        }
+    }
+
+    int GetRelicPrice(Rarity rarity)
+    {
+        if (currentEventData != null && currentEventData.shopConfig != null && currentEventData.shopConfig.relicPrices != null)
+        {
+            foreach (var p in currentEventData.shopConfig.relicPrices)
+            {
+                if (p != null && p.rarity == rarity) return p.price;
+            }
+        }
+        return 150;
+    }
+
+    int GetCardPrice(Rarity rarity)
+    {
+        if (currentEventData != null && currentEventData.shopConfig != null && currentEventData.shopConfig.cardPrices != null)
+        {
+            foreach (var p in currentEventData.shopConfig.cardPrices)
+            {
+                if (p != null && p.rarity == rarity) return p.price;
+            }
+        }
+        return 75;
     }
 
     void SetupEventUI(EventData ev)
@@ -128,11 +219,109 @@ public class EventManager : MonoBehaviour
 
     void OnOptionSelected(EventOption option)
     {
-        // 他のボタンを押せないように全て非表示にする
         foreach (var btn in optionButtons) btn.gameObject.SetActive(false);
+        currentShopAction = option.shopAction;
 
-        // ★非同期（コルーチン）でイベント処理を開始
-        StartCoroutine(ProcessOptionCoroutine(option));
+        if (currentShopAction != ShopActionType.None)
+        {
+            StartCoroutine(ProcessShopCoroutine(option));
+        }
+        else
+        {
+            StartCoroutine(ProcessOptionCoroutine(option));
+        }
+    }
+
+    // ショップ専用の処理コルーチン
+    IEnumerator ProcessShopCoroutine(EventOption option)
+    {
+        isCanceled = false; // フラグ初期化
+
+        if (option.shopAction == ShopActionType.Leave)
+        {
+            ReturnToMap();
+            yield break;
+        }
+
+        if (option.shopAction == ShopActionType.BuyRelic)
+        {
+            if (shopRelics.Count == 0) Debug.Log("奇物は売り切れです！");
+            else
+            {
+                yield return StartCoroutine(OpenRelicSelectionWindow("購入する奇物を選んでください", shopRelics));
+                
+                // ★修正：キャンセルされず、かつアイテムが正しく選ばれている場合のみ購入
+                if (!isCanceled && lastSelectedRelic != null)
+                {
+                    int price = GetRelicPrice(lastSelectedRelic.rarity);
+                    if (PlayerDataManager.Instance.gold >= price)
+                    {
+                        PlayerDataManager.Instance.gold -= price;
+                        PlayerDataManager.Instance.AddRelic(lastSelectedRelic);
+                        shopRelics.Remove(lastSelectedRelic); 
+                        Debug.Log($"<color=yellow>{lastSelectedRelic.relicName} を購入しました！ 残りGold: {PlayerDataManager.Instance.gold}</color>");
+                    }
+                    else Debug.Log("Goldが足りません！");
+                }
+                else if (isCanceled)
+                {
+                    Debug.Log("奇物の購入をキャンセルしました。");
+                }
+            }
+        }
+        else if (option.shopAction == ShopActionType.BuyCard)
+        {
+            if (shopCards.Count == 0) Debug.Log("カードは売り切れです！");
+            else
+            {
+                yield return StartCoroutine(OpenCardSelectionWindow("購入するカードを選んでください", shopCards));
+                
+                // ★修正：キャンセルされず、かつアイテムが正しく選ばれている場合のみ購入
+                if (!isCanceled && lastSelectedCard != null)
+                {
+                    int price = GetCardPrice(lastSelectedCard.rarity);
+                    if (PlayerDataManager.Instance.gold >= price)
+                    {
+                        PlayerDataManager.Instance.gold -= price;
+                        PlayerDataManager.Instance.AddCard(lastSelectedCard);
+                        shopCards.Remove(lastSelectedCard); 
+                        Debug.Log($"<color=yellow>{lastSelectedCard.cardName} を購入しました！ 残りGold: {PlayerDataManager.Instance.gold}</color>");
+                    }
+                    else Debug.Log("Goldが足りません！");
+                }
+                else if (isCanceled)
+                {
+                    Debug.Log("カードの購入をキャンセルしました。");
+                }
+            }
+        }
+        else if (option.shopAction == ShopActionType.RemoveCard)
+        {
+            if (PlayerDataManager.Instance.deckCards.Count == 0) Debug.Log("削除するカードがありません！");
+            else
+            {
+                yield return StartCoroutine(OpenCardSelectionWindow($"削除するカードを選んでください (費用: {option.removeCardPrice}G)", PlayerDataManager.Instance.deckCards));
+                
+                // ★修正：キャンセルされず、かつアイテムが正しく選ばれている場合のみ削除
+                if (!isCanceled && lastSelectedCard != null)
+                {
+                    if (PlayerDataManager.Instance.gold >= option.removeCardPrice)
+                    {
+                        PlayerDataManager.Instance.gold -= option.removeCardPrice;
+                        PlayerDataManager.Instance.RemoveCard(lastSelectedCard);
+                        Debug.Log($"<color=yellow>{lastSelectedCard.cardName} を削除しました！ 残りGold: {PlayerDataManager.Instance.gold}</color>");
+                    }
+                    else Debug.Log("Goldが足りません！");
+                }
+                else if (isCanceled)
+                {
+                    Debug.Log("カードの削除をキャンセルしました。");
+                }
+            }
+        }
+
+        // 買い物が終わった、あるいは「すぐキャンセルした」場合もここへ来てボタンを再表示
+        SetupEventUI(currentEventData);
     }
 
     IEnumerator ProcessOptionCoroutine(EventOption option)
@@ -141,7 +330,6 @@ public class EventManager : MonoBehaviour
 
         bool isSuccess = true;
 
-        // 1. ギャンブル判定
         if (option.isGambleOption)
         {
             isSuccess = (Random.value <= option.gambleSuccessChance);
@@ -150,7 +338,6 @@ public class EventManager : MonoBehaviour
 
         if (isSuccess)
         {
-            // 2. ステータス変動
             if (!option.isGambleOption)
             {
                 if (option.maxHpChange != 0)
@@ -164,7 +351,6 @@ public class EventManager : MonoBehaviour
                 }
             }
 
-            // 3. 固定奇物獲得＆ランダム奇物獲得
             if (option.rewardRelic != null) PlayerDataManager.Instance.AddRelic(option.rewardRelic);
             if (option.giveRandomRelic)
             {
@@ -177,11 +363,7 @@ public class EventManager : MonoBehaviour
                 PlayerDataManager.Instance.AddRandomRelicsAdvanced(count, currentRarities, option.filterByType, option.targetRelicType, false, 0, Rarity.Common);
             }
 
-            // ==========================================
-            // ★UIを伴う処理群（1つずつ順番にUIを開いて待機する）
-            // ==========================================
-
-            // [奇物の喪失]
+            // 通常イベントでの選択系処理（今回は仕様上キャンセルは想定しない、またはスキップ処理）
             if (option.loseRelicCount > 0)
             {
                 if (option.loseRelicMethod == TargetSelectionMethod.Random)
@@ -192,12 +374,11 @@ public class EventManager : MonoBehaviour
                     {
                         if (PlayerDataManager.Instance.ownedRelics.Count == 0) break;
                         yield return StartCoroutine(OpenRelicSelectionWindow("捨てる奇物を選んでください", PlayerDataManager.Instance.ownedRelics));
-                        PlayerDataManager.Instance.LoseRelic(lastSelectedRelic);
+                        if(lastSelectedRelic != null) PlayerDataManager.Instance.LoseRelic(lastSelectedRelic);
                     }
                 }
             }
 
-            // [カードの削除]
             if (option.removeCardCount > 0)
             {
                 if (option.removeCardMethod == TargetSelectionMethod.Random)
@@ -208,38 +389,35 @@ public class EventManager : MonoBehaviour
                     {
                         if (PlayerDataManager.Instance.deckCards.Count == 0) break;
                         yield return StartCoroutine(OpenCardSelectionWindow("削除するカードを選んでください", PlayerDataManager.Instance.deckCards));
-                        PlayerDataManager.Instance.RemoveCard(lastSelectedCard);
+                        if(lastSelectedCard != null) PlayerDataManager.Instance.RemoveCard(lastSelectedCard);
                     }
                 }
             }
 
-            // [カードの変化 (Transformation)]
-            // 選んだカードを消して、全カードの中から好きなカードを選ぶ
             if (option.transformCardCount > 0 && option.transformCardMethod == TargetSelectionMethod.Select)
             {
                 for (int i = 0; i < option.transformCardCount; i++)
                 {
                     if (PlayerDataManager.Instance.deckCards.Count == 0) break;
                     yield return StartCoroutine(OpenCardSelectionWindow("変化させるカードを選んでください", PlayerDataManager.Instance.deckCards));
+                    if (lastSelectedCard == null) continue;
                     PlayerDataManager.Instance.RemoveCard(lastSelectedCard);
 
                     yield return StartCoroutine(OpenCardSelectionWindow("新しく手に入れるカードを選んでください", PlayerDataManager.Instance.allAvailableCards));
-                    PlayerDataManager.Instance.AddCard(lastSelectedCard);
+                    if (lastSelectedCard != null) PlayerDataManager.Instance.AddCard(lastSelectedCard);
                 }
             }
 
-            // [カードのコピー (Duplicate)]
             if (option.duplicateCardCount > 0 && option.duplicateCardMethod == TargetSelectionMethod.Select)
             {
                 for (int i = 0; i < option.duplicateCardCount; i++)
                 {
                     if (PlayerDataManager.Instance.deckCards.Count == 0) break;
                     yield return StartCoroutine(OpenCardSelectionWindow("コピーするカードを選んでください", PlayerDataManager.Instance.deckCards));
-                    PlayerDataManager.Instance.AddCard(lastSelectedCard);
+                    if (lastSelectedCard != null) PlayerDataManager.Instance.AddCard(lastSelectedCard);
                 }
             }
 
-            // [カードの獲得]
             if (option.gainCardCount > 0)
             {
                 if (option.gainCardMethod == TargetSelectionMethod.Random)
@@ -248,17 +426,15 @@ public class EventManager : MonoBehaviour
                 {
                     for (int i = 0; i < option.gainCardCount; i++)
                     {
-                        // 獲得時はデッキではなく「候補」から選ばせる (今回は全カードからランダムに3枚抽出して提示)
                         List<CardData> candidates = GetRandomCardCandidates(option, 3);
                         yield return StartCoroutine(OpenCardSelectionWindow("獲得するカードを選んでください", candidates));
-                        PlayerDataManager.Instance.AddCard(lastSelectedCard);
+                        if (lastSelectedCard != null) PlayerDataManager.Instance.AddCard(lastSelectedCard);
                     }
                 }
             }
         }
         else
         {
-            // デメリット処理
             switch (option.penaltyType)
             {
                 case EventPenaltyType.HpLoss: PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp - option.penaltyValue); break;
@@ -270,13 +446,9 @@ public class EventManager : MonoBehaviour
             }
         }
 
-        // すべての処理（UI選択含む）が完了したらマップへ戻る
         ReturnToMap();
     }
 
-    // ==========================================
-    // UI待機用のコルーチン群
-    // ==========================================
     IEnumerator OpenCardSelectionWindow(string title, List<CardData> cards)
     {
         foreach (Transform child in cardContentArea) Destroy(child.gameObject);
@@ -285,21 +457,22 @@ public class EventManager : MonoBehaviour
         {
             if (card == null) continue;
             GameObject obj = Instantiate(selectableCardPrefab, cardContentArea);
-            // ※EventSelectItem側に、このスクリプト(this)を渡してセットアップするよう調整してください
             obj.GetComponent<EventSelectItem>().SetupCard(card, this); 
         }
 
         if (cardSelectionTitle != null) cardSelectionTitle.text = title;
         
-        // パネル初期状態リセット
         cardSelectionPanel.SetActive(true);
         if (cardDetailPanel != null) cardDetailPanel.SetActive(false);
         if (cardConfirmButton != null) cardConfirmButton.interactable = false;
+        
+        // ★追加：キャンセルボタンは開いた瞬間から絶対に押せるようにする
+        if (cardCancelButton != null) cardCancelButton.interactable = true;
 
         isSelectionWaiting = true;
         lastSelectedCard = null;
 
-        // OKボタンが押されるまでここで待機
+        // OKまたはキャンセルボタンが押されるまで待機
         yield return new WaitUntil(() => !isSelectionWaiting);
         
         cardSelectionPanel.SetActive(false);
@@ -318,58 +491,78 @@ public class EventManager : MonoBehaviour
 
         if (relicSelectionTitle != null) relicSelectionTitle.text = title;
 
-        // パネル初期状態リセット
         relicSelectionPanel.SetActive(true);
         if (relicDetailPanel != null) relicDetailPanel.SetActive(false);
         if (relicConfirmButton != null) relicConfirmButton.interactable = false;
+        
+        // ★追加：キャンセルボタンは開いた瞬間から絶対に押せるようにする
+        if (relicCancelButton != null) relicCancelButton.interactable = true;
 
         isSelectionWaiting = true;
         lastSelectedRelic = null;
 
-        // OKボタンが押されるまでここで待機
+        // OKまたはキャンセルボタンが押されるまで待機
         yield return new WaitUntil(() => !isSelectionWaiting);
         
         relicSelectionPanel.SetActive(false);
     }
 
-    // アイテム側のボタンから呼ばれるコールバック
     public void OnCardSelected(CardData card) 
     { 
         lastSelectedCard = card; 
-        lastSelectedRelic = null; // 奇物の選択はクリア
+        lastSelectedRelic = null;
 
-        // 右側のカード詳細パネルを表示・更新
         if (cardDetailPanel != null)
         {
             cardDetailPanel.SetActive(true);
             if (cardDetailImage != null) cardDetailImage.sprite = card.cardImage;
             
-            // カードは画像内に名前があるので、効果テキスト(cardTextS)のみを設定
-            if (cardDetailText != null)
+            string priceText = "";
+            if (currentShopAction == ShopActionType.BuyCard && shopCards.Contains(card))
             {
-                cardDetailText.text = string.IsNullOrEmpty(card.cardTextS) ? card.description : card.cardTextS;
+                priceText = $"\n\n<color=yellow>価格: {GetCardPrice(card.rarity)} Gold</color>";
             }
+            else if (currentShopAction == ShopActionType.RemoveCard)
+            {
+                int removePrice = 75; 
+                if (currentEventData != null)
+                {
+                    foreach (var opt in currentEventData.options)
+                    {
+                        if (opt.shopAction == ShopActionType.RemoveCard)
+                        {
+                            removePrice = opt.removeCardPrice;
+                            break;
+                        }
+                    }
+                }
+                priceText = $"\n\n<color=yellow>削除費用: {removePrice} Gold</color>";
+            }
+
+            if (cardDetailText != null) cardDetailText.text = (string.IsNullOrEmpty(card.cardTextS) ? card.description : card.cardTextS) + priceText;
         }
 
-        // 選択されたのでカード用のOKボタンを押せるようにする
         if (cardConfirmButton != null) cardConfirmButton.interactable = true;
     }
 
     public void OnRelicSelected(RelicData relic) 
     { 
         lastSelectedRelic = relic; 
-        lastSelectedCard = null; // カードの選択はクリア
+        lastSelectedCard = null;
 
-        // 右側の奇物詳細パネルを表示・更新
         if (relicDetailPanel != null)
         {
             relicDetailPanel.SetActive(true);
             if (relicDetailImage != null) relicDetailImage.sprite = relic.relicIcon;
-            if (relicDetailName != null) relicDetailName.text = relic.relicName;   // 名前を表示
-            if (relicDetailText != null) relicDetailText.text = relic.description; // 効果を表示
+            if (relicDetailName != null) relicDetailName.text = relic.relicName;
+            
+            string priceText = "";
+            if (currentShopAction == ShopActionType.BuyRelic && shopRelics.Contains(relic))
+                priceText = $"\n\n<color=yellow>価格: {GetRelicPrice(relic.rarity)} Gold</color>";
+
+            if (relicDetailText != null) relicDetailText.text = relic.description + priceText;
         }
 
-        // 選択されたので奇物用のOKボタンを押せるようにする
         if (relicConfirmButton != null) relicConfirmButton.interactable = true;
     }
 
@@ -377,10 +570,8 @@ public class EventManager : MonoBehaviour
     {
         if (lastSelectedCard != null || lastSelectedRelic != null)
         {
-            // 待機フラグを折って、コルーチン(WaitUntil)を進める
             isSelectionWaiting = false; 
 
-            // 詳細パネルを閉じてボタンを初期化
             if (cardDetailPanel != null) cardDetailPanel.SetActive(false);
             if (relicDetailPanel != null) relicDetailPanel.SetActive(false);
             if (cardConfirmButton != null) cardConfirmButton.interactable = false;
@@ -388,7 +579,20 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    // 報酬として提示するカードをランダム生成
+    public void OnCancelClicked()
+    {
+        // ★修正：アイテム未選択でもここに来るので、即座に終了処理に移行させる
+        isCanceled = true;
+        isSelectionWaiting = false; 
+        lastSelectedCard = null;
+        lastSelectedRelic = null;
+
+        if (cardDetailPanel != null) cardDetailPanel.SetActive(false);
+        if (relicDetailPanel != null) relicDetailPanel.SetActive(false);
+        if (cardConfirmButton != null) cardConfirmButton.interactable = false;
+        if (relicConfirmButton != null) relicConfirmButton.interactable = false;
+    }
+
     List<CardData> GetRandomCardCandidates(EventOption option, int count)
     {
         List<CardData> pool = new List<CardData>(PlayerDataManager.Instance.allAvailableCards);
@@ -403,7 +607,7 @@ public class EventManager : MonoBehaviour
             {
                 int idx = Random.Range(0, pool.Count);
                 result.Add(pool[idx]);
-                pool.RemoveAt(idx); // 被りなしにする
+                pool.RemoveAt(idx); 
             }
         }
         return result;

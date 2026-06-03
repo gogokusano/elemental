@@ -14,7 +14,7 @@ public class EnemyManager : MonoBehaviour
     public Image enemyImage;
     public TextMeshProUGUI blockText;
     public Slider hpSlider; 
-    public Slider blockSlider; // ★追加：シールド（ブロック）用のスライダー
+    public Slider blockSlider; // シールド（ブロック）用のスライダー
 
     [Header("属性・状態異常システム")]
     public Image elementIconDisplay; 
@@ -63,7 +63,7 @@ public class EnemyManager : MonoBehaviour
 
             // HPバーとシールドバーの最大値を設定
             if (hpSlider != null) hpSlider.maxValue = enemyData.maxHP;
-            if (blockSlider != null) blockSlider.maxValue = enemyData.maxHP; // ★追加
+            if (blockSlider != null) blockSlider.maxValue = enemyData.maxHP; 
 
             // ゲーム開始時に最初の行動を決定する
             DetermineNextAction();
@@ -317,6 +317,17 @@ public class EnemyManager : MonoBehaviour
 
             GameManager gm = Object.FindFirstObjectByType<GameManager>();
             if (gm != null) gm.WinGame();
+
+            // ==========================================
+            // ★追加：シーン内からRewardManagerを探して報酬画面を表示する
+            // ==========================================
+            RewardManager rm = Object.FindFirstObjectByType<RewardManager>();
+            if (rm != null) 
+            {
+                rm.ShowReward();
+            }
+            // ==========================================
+
             gameObject.SetActive(false); 
         }
         UpdateUI();
@@ -327,15 +338,13 @@ public class EnemyManager : MonoBehaviour
     private void UpdateUI()
     {
         if (hpText != null && enemyData != null)
-            hpText.text = currentHP + " / " + enemyData.maxHP; // ★前回の修正（"Enemy HP: "を削除）を維持
+            hpText.text = currentHP + " / " + enemyData.maxHP; 
 
         if (hpSlider != null) hpSlider.value = currentHP;
         
-        // ★追加：シールドバーの値を更新（HPと合算して表示幅を決める）
         if (blockSlider != null)
         {
             blockSlider.value = currentHP + currentBlock; 
-            // ブロックが0の時はスライダー自体を非表示にしてスッキリさせる
             blockSlider.gameObject.SetActive(currentBlock > 0);
         }
 
