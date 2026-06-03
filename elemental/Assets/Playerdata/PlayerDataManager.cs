@@ -22,10 +22,10 @@ public class PlayerDataManager : MonoBehaviour
     public List<RelicData> allAvailableRelics = new List<RelicData>(); 
     private List<RelicData> unownedRelics = new List<RelicData>(); 
 
-<<<<<<< HEAD
-=======
+
+
     // ★追加：全カードのデータベース（GetRewardCardsでカードを抽出するために必要です）
->>>>>>> battle
+
     [Header("全カードのデータベース（すべてのカードを登録）")]
     public List<CardData> allAvailableCards = new List<CardData>();
 
@@ -132,7 +132,7 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
+
     public void LoseRandomRelics(int count)
     {
         for (int i = 0; i < count; i++)
@@ -195,7 +195,9 @@ public class PlayerDataManager : MonoBehaviour
             unownedRelics.Add(relic); // 山札に戻す
             Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
         }
-=======
+        }
+    
+
     // ==========================================
     // ▼ ここから今回追加した報酬用のメソッド ▼
     // ==========================================
@@ -234,6 +236,6 @@ public class PlayerDataManager : MonoBehaviour
         }
 
         return rewardCards;
->>>>>>> battle
+
     }
 }
