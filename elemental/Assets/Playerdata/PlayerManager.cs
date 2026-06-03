@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI; // ★追加：Slider（UI）を動かすために必要です
 
 public class PlayerManager : MonoBehaviour
 {
@@ -12,10 +13,22 @@ public class PlayerManager : MonoBehaviour
     [Header("UI設定")]
     public TextMeshProUGUI hpText;
     public TextMeshProUGUI blockText;
+    
+    // ★追加：プレイヤー用のHPバーとブロックバー
+    public Slider hpSlider; 
+    public Slider blockSlider; // シールド（ブロック）用のスライダー
 
     void Start()
     {
         currentBlock = 0;
+
+        // ★追加：戦闘開始時に、スライダーの「最大値」をプレイヤーの最大HPに設定する
+        if (PlayerDataManager.Instance != null)
+        {
+            if (hpSlider != null) hpSlider.maxValue = PlayerDataManager.Instance.maxHp;
+            if (blockSlider != null) blockSlider.maxValue = PlayerDataManager.Instance.maxHp;
+        }
+
         UpdateUI();
     }
 
@@ -26,9 +39,9 @@ public class PlayerManager : MonoBehaviour
     }
 
     // ==========================================
-    // ★追加：敵にダメージを与える時、奇物の効果（筋力など）を乗せるための関数
+    // ★敵にダメージを与える時、奇物の効果（筋力など）を乗せるための関数
     // ==========================================
-public int CalculateFinalDamage(int baseDamage, CardData card)
+    public int CalculateFinalDamage(int baseDamage, CardData card)
     {
         float finalDamage = baseDamage;
 
@@ -36,7 +49,6 @@ public int CalculateFinalDamage(int baseDamage, CardData card)
         {
             foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
             {
-                // 引数に card を渡すように変更
                 finalDamage = relic.OnModifyModifyDamage(finalDamage, card);
             }
         }
@@ -47,7 +59,7 @@ public int CalculateFinalDamage(int baseDamage, CardData card)
     public void TakeDamage(int damage)
     {
         // ==========================================
-        // ★追加：1. 一番最初に、持っている奇物の効果で受けるダメージを軽減する
+        // ★1. 一番最初に、持っている奇物の効果で受けるダメージを軽減する
         // ==========================================
         if (PlayerDataManager.Instance != null)
         {
@@ -116,11 +128,26 @@ public int CalculateFinalDamage(int baseDamage, CardData card)
 
     void UpdateUI()
     {
+        // 1. テキストの更新
         if (hpText != null && PlayerDataManager.Instance != null) 
         {
-            hpText.text = "Player HP: " + PlayerDataManager.Instance.currentHp + " / " + PlayerDataManager.Instance.maxHp;
+            hpText.text = PlayerDataManager.Instance.currentHp + " / " + PlayerDataManager.Instance.maxHp;
         }
 
+        // ★追加：2. HPスライダーの値を更新
+        if (hpSlider != null && PlayerDataManager.Instance != null)
+        {
+            hpSlider.value = PlayerDataManager.Instance.currentHp;
+        }
+        
+        // ★追加：3. ブロックスライダーの値を更新（敵と同じで HP + ブロック の長さにする）
+        if (blockSlider != null && PlayerDataManager.Instance != null)
+        {
+            blockSlider.value = PlayerDataManager.Instance.currentHp + currentBlock; 
+            blockSlider.gameObject.SetActive(currentBlock > 0);
+        }
+
+        // 4. ブロックテキストの更新
         if (blockText != null)
         {
             blockText.text = "Block: " + currentBlock;
