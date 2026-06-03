@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -68,6 +68,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("敗北...");
         if (gameOverPanel != null) gameOverPanel.SetActive(true);
+
+        // ★追加：完全に敗北が確定したため、データをリセット（最初からやり直し）にする
+        PlayerPrefs.DeleteKey("LastClearedNode");
+        PlayerPrefs.DeleteKey("CurrentChallengingNode");
+        PlayerPrefs.DeleteKey("MapSavedX");
+        PlayerPrefs.DeleteKey("MapSeed");
+        PlayerPrefs.Save();
     }
 
     // ボタンから呼ぶ用：タイトル画面に戻る
@@ -76,8 +83,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("title");
     }
 
+    // ★重要修正：クリア後のポップアップボタンから呼ばれる関数
     public void ResultOnMap()
     {
+        // ==========================================
+        // ★追加：この場（GameManager内）で直接セーブデータを書き換え、クリアを確定させます
+        // ==========================================
+        string challenging = PlayerPrefs.GetString("CurrentChallengingNode", "");
+
+        if (!string.IsNullOrEmpty(challenging))
+        {
+            // 「挑戦中」だった現在のマスを「クリア済み」に昇格させ、ロックを解除する
+            PlayerPrefs.SetString("LastClearedNode", challenging);
+            PlayerPrefs.DeleteKey("CurrentChallengingNode");
+            PlayerPrefs.Save();
+
+            Debug.Log($"GameManager側で直接クリアを確定しました: {challenging}");
+        }
+        else
+        {
+            Debug.LogWarning("挑戦中のマス（CurrentChallengingNode）のデータが見つかりませんでした。");
+        }
+
+        // データの書き換えが終わってから安全にマップシーンへ戻る
         SceneManager.LoadScene("Map");
     }
 }

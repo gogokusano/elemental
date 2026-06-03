@@ -39,20 +39,32 @@ public class MapManager : MonoBehaviour
         }
 
         string lastCleared = PlayerPrefs.GetString("LastClearedNode", "");
+        string currentChallenging = PlayerPrefs.GetString("CurrentChallengingNode", "");
+        int savedSeed = PlayerPrefs.GetInt("MapSeed", 0);
+
+        // --- ★修正：マップシード（配置）の生成・ロード判定を最適化 ---
+        if (savedSeed == 0)
+        {
+            // 完全な新規ゲーム開始時のみシード値を新しく作る
+            savedSeed = Random.Range(1, 999999);
+            PlayerPrefs.SetInt("MapSeed", savedSeed);
+            PlayerPrefs.Save();
+        }
+
+        // 常に保存された（または今作った）同じシード値で生成するため配置が固定化される
+        RandomizeMapNodes(savedSeed);
+
+        // --- ★最重要：バトル中の不正な離脱（タスクキル）があった場合はデータを即リセット！ ---
+        if (!string.IsNullOrEmpty(currentChallenging))
+        {
+            Debug.LogWarning($"バトル中の不正な離脱を検知しました（未クリアマス: {currentChallenging}）。データをリセットします。");
+            ResetProgress();
+            return;
+        }
 
         if (string.IsNullOrEmpty(lastCleared))
         {
-            // ■ 完全な新規ゲーム開始時
-
-            // 新しいシード値（ランダムな数字）を生成して保存
-            int newSeed = Random.Range(1, 999999);
-            PlayerPrefs.SetInt("MapSeed", newSeed);
-            PlayerPrefs.Save();
-
-            // ★そのシード値を使ってマップを生成
-            RandomizeMapNodes(newSeed);
-
-            // 最初の3マスをアクティブに
+            // ■ 初期状態：最初の3マスをアクティブに
             foreach (var st in startNodes)
             {
                 if (st != null) st.SetState(true);
@@ -65,18 +77,11 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            // ■ シーン遷移から戻ってきた、または続きからロード時
-
-            // 保存されているシード値を読み出す（なければとりあえず0）
-            int savedSeed = PlayerPrefs.GetInt("MapSeed", 0);
-
-            // ★【重要】戻ってきた時も「同じシード値」で生成するため、必ず前回と同じ配置になる！
-            RandomizeMapNodes(savedSeed);
-
+            // ■ シーン遷移から正常に戻ってきた時
             MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
             if (lastNode != null)
             {
-                // クリアしたマスの次のマスたちをアクティブ（不透明）にする
+                // クリアしたマスの次のマスたちをアクティブにする
                 foreach (var next in lastNode.nextNodes)
                 {
                     if (next != null) next.SetState(true);
@@ -84,6 +89,7 @@ public class MapManager : MonoBehaviour
             }
             else
             {
+                // セーブされたマス名がヒエラルキーに見つからない場合は不整合防止のため最初から
                 ResetProgress();
                 return;
             }
@@ -96,7 +102,39 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    // ★修正：引数に「seed」を受け取り、それに基づいてランダムを固定化する
+    // ★バトルマスを押した瞬間に呼ばれる、挑戦中を記録する関数
+    public void SaveChallengingNode(MapNode node)
+    {
+        PlayerPrefs.SetString("CurrentChallengingNode", node.name);
+        SaveCameraPosition(node);
+        PlayerPrefs.Save();
+    }
+
+    // ★本当のバトル勝利時に呼び出す、クリア確定関数（GameManager側の予備としても機能）
+    public void ClearCurrentNode()
+    {
+        string challengingNodeName = PlayerPrefs.GetString("CurrentChallengingNode", "");
+        if (!string.IsNullOrEmpty(challengingNodeName))
+        {
+            PlayerPrefs.SetString("LastClearedNode", challengingNodeName);
+            PlayerPrefs.DeleteKey("CurrentChallengingNode"); // 挑戦中ロックを解除
+            PlayerPrefs.Save();
+            Debug.Log($"バトルクリア確定: {challengingNodeName}");
+        }
+    }
+
+    // カメラ位置を保存する共通処理
+    private void SaveCameraPosition(MapNode node)
+    {
+        if (MapSlideHandler.Instance != null)
+        {
+            float currentX = MapSlideHandler.Instance.GetCurrentX();
+            if (node.isMidBoss) currentX = MapSlideHandler.Instance.targetX;
+            PlayerPrefs.SetFloat("MapSavedX", currentX);
+        }
+    }
+
+    // 引数に「seed」を受け取り、それに基づいてランダムを固定化する
     private void RandomizeMapNodes(int seed)
     {
         if (allNodes == null || allNodes.Count == 0) return;
@@ -108,10 +146,9 @@ public class MapManager : MonoBehaviour
         {
             if (node == null) continue;
 
-            // ★修正：中ボス、ボス、または「固定マス」にチェックがある場合はランダム化をスキップ！
+            // 中ボス、ボス、または「固定マス」にチェックがある場合はランダム化をスキップ
             if (node.isMidBoss || node.isBoss || node.isFixedNode)
             {
-                // 固定マスの場合は、セーブデータが迷子にならないように名前だけ一意の固定名にする
                 node.gameObject.name = $"Fixed_{node.transform.parent.name}_{node.transform.GetSiblingIndex()}";
                 continue;
             }
@@ -140,17 +177,11 @@ public class MapManager : MonoBehaviour
         }
     }
 
+    // 非戦闘マス（宝箱・イベントなど）用の即時開放処理
     public void OpenNextNodesOnly(MapNode clearedNode)
     {
         PlayerPrefs.SetString("LastClearedNode", clearedNode.name);
-
-        if (MapSlideHandler.Instance != null)
-        {
-            float currentX = MapSlideHandler.Instance.GetCurrentX();
-            if (clearedNode.isMidBoss) currentX = MapSlideHandler.Instance.targetX;
-            PlayerPrefs.SetFloat("MapSavedX", currentX);
-        }
-
+        SaveCameraPosition(clearedNode);
         PlayerPrefs.Save();
 
         foreach (var node in allNodes)
@@ -167,8 +198,9 @@ public class MapManager : MonoBehaviour
     public void ResetProgress()
     {
         PlayerPrefs.DeleteKey("LastClearedNode");
+        PlayerPrefs.DeleteKey("CurrentChallengingNode");
         PlayerPrefs.DeleteKey("MapSavedX");
-        PlayerPrefs.DeleteKey("MapSeed"); // ★追加：シード値もリセット
+        PlayerPrefs.DeleteKey("MapSeed");
         PlayerPrefs.Save();
 
         if (MapSlideHandler.Instance != null)

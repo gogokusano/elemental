@@ -47,9 +47,25 @@ public class MapNode : MonoBehaviour
             MapSlideHandler.Instance.StartSlide();
         }
 
-        if (MapManager.Instance != null)
+        // ========================================================
+        // ★修正：実際のシーン名「battlescene」に完全一致させました
+        // ========================================================
+        if (sceneName == "battlescene")
         {
-            MapManager.Instance.OpenNextNodesOnly(this);
+            if (MapManager.Instance != null)
+            {
+                // バトルシーンの場合は、途中で落としたらリセットするロックをかける
+                MapManager.Instance.SaveChallengingNode(this);
+            }
+        }
+        else
+        {
+            // ■ バトル以外のマス（宝箱、イベントなど）
+            // 遷移した時点で即座に「次のマスを開放」してセーブする
+            if (MapManager.Instance != null)
+            {
+                MapManager.Instance.OpenNextNodesOnly(this);
+            }
         }
 
         if (!string.IsNullOrEmpty(sceneName))
