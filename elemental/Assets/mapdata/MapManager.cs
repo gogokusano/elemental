@@ -24,10 +24,10 @@ public class MapManager : MonoBehaviour
     public List<MapEventData> availableEvents;
 
     // ========================================================
-    // ★追加：1つしか出現させたくないイベントの「eventName」をインスペクターで指定
+    // ★修正：各層に1マスずつ出現させたいイベント名（例：「ショップ」）
     // ========================================================
-    [Header("1マス限定にするイベントの設定")]
-    public string uniqueEventName = "レア宝箱"; // ここに実際のeventNameを入れます
+    [Header("各層に1マス限定にするイベントの設定")]
+    public string uniqueEventName = "ショップ";
 
     void Awake() => Instance = this;
 
@@ -51,13 +51,12 @@ public class MapManager : MonoBehaviour
         // --- マップシード（配置）の生成・ロード判定を最適化 ---
         if (savedSeed == 0)
         {
-            // 完全な新規ゲーム開始時のみシード値を新しく作る
             savedSeed = Random.Range(1, 999999);
             PlayerPrefs.SetInt("MapSeed", savedSeed);
             PlayerPrefs.Save();
         }
 
-        // 常に保存された（または今作った）同じシード値で生成するため配置が固定化される
+        // 常に保存された同じシード値で生成
         RandomizeMapNodes(savedSeed);
 
         // --- ★最重要：バトル中の不正な離脱（タスクキル）があった場合はデータを即リセット！ ---
@@ -70,7 +69,7 @@ public class MapManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(lastCleared))
         {
-            // ■ 初期状態：最初の3マスをアクティブに
+            // ■ 初期状態
             foreach (var st in startNodes)
             {
                 if (st != null) st.SetState(true);
@@ -87,7 +86,6 @@ public class MapManager : MonoBehaviour
             MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
             if (lastNode != null)
             {
-                // クリアしたマスの次のマスたちをアクティブにする
                 foreach (var next in lastNode.nextNodes)
                 {
                     if (next != null) next.SetState(true);
@@ -95,7 +93,6 @@ public class MapManager : MonoBehaviour
             }
             else
             {
-                // セーブされたマス名がヒエラルキーに見つからない場合は不整合防止のため最初から
                 ResetProgress();
                 return;
             }
@@ -108,7 +105,6 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    // ★バトルマスを押した瞬間に呼ばれる、挑戦中を記録する関数
     public void SaveChallengingNode(MapNode node)
     {
         PlayerPrefs.SetString("CurrentChallengingNode", node.name);
@@ -116,20 +112,18 @@ public class MapManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    // ★本当のバトル勝利時に呼び出す、クリア確定関数（GameManager側の予備としても機能）
     public void ClearCurrentNode()
     {
         string challengingNodeName = PlayerPrefs.GetString("CurrentChallengingNode", "");
         if (!string.IsNullOrEmpty(challengingNodeName))
         {
             PlayerPrefs.SetString("LastClearedNode", challengingNodeName);
-            PlayerPrefs.DeleteKey("CurrentChallengingNode"); // 挑戦中ロックを解除
+            PlayerPrefs.DeleteKey("CurrentChallengingNode");
             PlayerPrefs.Save();
             Debug.Log($"バトルクリア確定: {challengingNodeName}");
         }
     }
 
-    // カメラ位置を保存する共通処理
     private void SaveCameraPosition(MapNode node)
     {
         if (MapSlideHandler.Instance != null)
@@ -148,7 +142,7 @@ public class MapManager : MonoBehaviour
 
         Random.InitState(seed);
 
-        // --- ① 1マス限定イベントを通常プールから分別 ---
+        // --- ① ショップ（限定イベント）を通常プールから分別 ---
         List<MapEventData> normalEvents = new List<MapEventData>();
         MapEventData uniqueEvent = default;
         bool hasUniqueEvent = false;
@@ -168,24 +162,39 @@ public class MapManager : MonoBehaviour
 
         if (normalEvents.Count == 0) normalEvents = availableEvents;
 
-        // --- ② ランダム化するマス（固定以外）から「限定マス」を1つだけ事前抽選 ---
-        List<MapNode> randomizableNodes = new List<MapNode>();
+        // --- ② 【超重要】マスを「親オブジェクト（層）」ごとにグループ分けする ---
+        Dictionary<Transform, List<MapNode>> layerGroups = new Dictionary<Transform, List<MapNode>>();
+
         foreach (var node in allNodes)
         {
-            if (node != null && !node.isMidBoss && !node.isBoss && !node.isFixedNode)
+            if (node == null || node.isMidBoss || node.isBoss || node.isFixedNode) continue;
+
+            Transform parent = node.transform.parent;
+            if (parent == null) continue;
+
+            if (!layerGroups.ContainsKey(parent))
             {
-                randomizableNodes.Add(node);
+                layerGroups[parent] = new List<MapNode>();
+            }
+            layerGroups[parent].Add(node);
+        }
+
+        // --- ③ 各層ごとに、ショップを配置するマスを1つずつ抽選して記憶する ---
+        HashSet<MapNode> chosenShopNodes = new HashSet<MapNode>();
+
+        if (hasUniqueEvent)
+        {
+            foreach (var layer in layerGroups.Values)
+            {
+                if (layer.Count > 0)
+                {
+                    int randomIndexForShop = Random.Range(0, layer.Count);
+                    chosenShopNodes.Add(layer[randomIndexForShop]);
+                }
             }
         }
 
-        MapNode chosenUniqueNode = null;
-        if (hasUniqueEvent && randomizableNodes.Count > 0)
-        {
-            int uniqueNodeIndex = Random.Range(0, randomizableNodes.Count);
-            chosenUniqueNode = randomizableNodes[uniqueNodeIndex];
-        }
-
-        // --- ③ 配置処理 ---
+        // --- ④ 実際の配置と命名処理 ---
         foreach (var node in allNodes)
         {
             if (node == null) continue;
@@ -200,14 +209,15 @@ public class MapManager : MonoBehaviour
             MapEventData selectedEvent;
             int randomIndex = -1;
 
-            // 抽選された限定マスであれば確定でねじ込む
-            if (node == chosenUniqueNode)
+            // ★このマスが「その層の中で抽選されたショップマス」なら確定でショップにする
+            if (chosenShopNodes.Contains(node))
             {
                 selectedEvent = uniqueEvent;
-                randomIndex = 999; // 限定マス用の識別コード
+                randomIndex = 888; // 各層限定マス用の識別コード
             }
             else
             {
+                // それ以外の通常マスはショップを除外したリストからランダム
                 randomIndex = Random.Range(0, normalEvents.Count);
                 selectedEvent = normalEvents[randomIndex];
             }
@@ -229,13 +239,12 @@ public class MapManager : MonoBehaviour
                 node.nodeIcon.color = finalColor;
             }
 
-            // マスの所属する親（層）の名前を合体させて名前の重複を100%防ぐ
+            // 親（層）の名前を合体させて名前の重複を完全に防ぐ
             string layerName = node.transform.parent != null ? node.transform.parent.name : "Layer";
             node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}_{randomIndex}";
         }
     }
 
-    // 非戦闘マス（宝箱・イベントなど）用の即時開放処理
     public void OpenNextNodesOnly(MapNode clearedNode)
     {
         PlayerPrefs.SetString("LastClearedNode", clearedNode.name);
