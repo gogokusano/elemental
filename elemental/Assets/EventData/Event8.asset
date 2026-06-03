@@ -73,8 +73,8 @@ MonoBehaviour:
     targetCardCost: 0
     filterCardByRarity: 0
     targetCardRarity: 0
-    removeCardCount: 0
-    removeCardMethod: 0
+    removeCardCount: 1
+    removeCardMethod: 2
     transformCardCount: 0
     transformCardMethod: 0
     duplicateCardCount: 0

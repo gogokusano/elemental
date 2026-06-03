@@ -5,11 +5,42 @@ public enum EventPenaltyType { HpLoss, MaxHpLoss, GoldLoss }
 
 public enum TargetSelectionMethod { None, Random, Select }
 
+public enum ShopActionType { None, BuyRelic, BuyCard, RemoveCard, Leave }
+
+[System.Serializable]
+public class RarityPrice
+{
+    public Rarity rarity;
+    public int price;
+}
+
+[System.Serializable]
+public class ShopConfig
+{
+    [Header("陳列数")]
+    public int relicCount = 3;
+    public int cardCount = 3;
+
+    [Header("ショップに並ぶレアリティ (チェックしたものだけ出現)")]
+    public List<Rarity> allowedRelicRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };
+    public List<Rarity> allowedCardRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };
+
+    [Header("奇物のレアリティ別価格")]
+    public List<RarityPrice> relicPrices = new List<RarityPrice>();
+
+    [Header("カードのレアリティ別価格")]
+    public List<RarityPrice> cardPrices = new List<RarityPrice>();
+}
+
 [System.Serializable]
 public class EventOption
 {
     [TextArea(2,5)]
     public string buttonText;
+
+    [Header("ショップ設定")]
+    public ShopActionType shopAction = ShopActionType.None;
+    public int removeCardPrice = 75;
 
     [Header("ステータス変動 (通常時)")]
     public int hpChange;
@@ -82,4 +113,7 @@ public class EventData : ScriptableObject
     public string eventText;
     public Sprite eventImage;
     public EventOption[] options; 
+
+    [Header("★ショップ専用設定 (ショップマスの時のみ有効)")]
+    public ShopConfig shopConfig;
 }
