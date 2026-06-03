@@ -21,17 +21,30 @@ MonoBehaviour:
     maxHpChange: 10
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
-    giveRandomRelicByType: 0
-    targetRelicType: 0
-    giveRandomRelicByRarity: 0
-    targetRarity: 0
-    canUpgradeRarity: 0
-    upgradeChance: 0.5
-    upgradedRarity: 0
-    giveMultipleRandomRelics: 0
     minRelicCount: 2
     maxRelicCount: 3
     allowedRarities: 
+    filterByType: 0
+    targetRelicType: 0
+    canUpgradeRarity: 0
+    upgradeChance: 0.5
+    upgradedRarity: 0
+    loseRelicCount: 0
+    loseRelicMethod: 0
+    gainCardCount: 0
+    gainCardMethod: 0
+    filterCardByElement: 0
+    targetCardElement: 0
+    filterCardByCost: 0
+    targetCardCost: 0
+    filterCardByRarity: 0
+    targetCardRarity: 0
+    removeCardCount: 0
+    removeCardMethod: 0
+    transformCardCount: 0
+    transformCardMethod: 0
+    duplicateCardCount: 0
+    duplicateCardMethod: 0
     isGambleOption: 0
     gambleSuccessChance: 0.5
     penaltyType: 0
@@ -41,17 +54,30 @@ MonoBehaviour:
     maxHpChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
-    giveRandomRelicByType: 0
-    targetRelicType: 0
-    giveRandomRelicByRarity: 0
-    targetRarity: 0
-    canUpgradeRarity: 0
-    upgradeChance: 0.5
-    upgradedRarity: 0
-    giveMultipleRandomRelics: 0
     minRelicCount: 2
     maxRelicCount: 3
     allowedRarities: 
+    filterByType: 0
+    targetRelicType: 0
+    canUpgradeRarity: 0
+    upgradeChance: 0.5
+    upgradedRarity: 0
+    loseRelicCount: 0
+    loseRelicMethod: 0
+    gainCardCount: 0
+    gainCardMethod: 0
+    filterCardByElement: 0
+    targetCardElement: 0
+    filterCardByCost: 0
+    targetCardCost: 0
+    filterCardByRarity: 0
+    targetCardRarity: 0
+    removeCardCount: 2
+    removeCardMethod: 2
+    transformCardCount: 2
+    transformCardMethod: 2
+    duplicateCardCount: 0
+    duplicateCardMethod: 0
     isGambleOption: 0
     gambleSuccessChance: 0.5
     penaltyType: 0

@@ -29,6 +29,22 @@ MonoBehaviour:
     canUpgradeRarity: 0
     upgradeChance: 0.5
     upgradedRarity: 0
+    loseRelicCount: 0
+    loseRelicMethod: 0
+    gainCardCount: 0
+    gainCardMethod: 0
+    filterCardByElement: 0
+    targetCardElement: 0
+    filterCardByCost: 0
+    targetCardCost: 0
+    filterCardByRarity: 0
+    targetCardRarity: 0
+    removeCardCount: 1
+    removeCardMethod: 2
+    transformCardCount: 0
+    transformCardMethod: 0
+    duplicateCardCount: 0
+    duplicateCardMethod: 0
     isGambleOption: 0
     gambleSuccessChance: 0.5
     penaltyType: 0
@@ -46,6 +62,22 @@ MonoBehaviour:
     canUpgradeRarity: 0
     upgradeChance: 0.5
     upgradedRarity: 0
+    loseRelicCount: 1
+    loseRelicMethod: 1
+    gainCardCount: 1
+    gainCardMethod: 1
+    filterCardByElement: 0
+    targetCardElement: 0
+    filterCardByCost: 0
+    targetCardCost: 0
+    filterCardByRarity: 0
+    targetCardRarity: 0
+    removeCardCount: 0
+    removeCardMethod: 0
+    transformCardCount: 0
+    transformCardMethod: 0
+    duplicateCardCount: 0
+    duplicateCardMethod: 0
     isGambleOption: 0
     gambleSuccessChance: 0.5
     penaltyType: 0
@@ -63,6 +95,22 @@ MonoBehaviour:
     canUpgradeRarity: 0
     upgradeChance: 0.5
     upgradedRarity: 0
+    loseRelicCount: 0
+    loseRelicMethod: 0
+    gainCardCount: 0
+    gainCardMethod: 0
+    filterCardByElement: 0
+    targetCardElement: 0
+    filterCardByCost: 0
+    targetCardCost: 0
+    filterCardByRarity: 0
+    targetCardRarity: 0
+    removeCardCount: 0
+    removeCardMethod: 0
+    transformCardCount: 0
+    transformCardMethod: 0
+    duplicateCardCount: 0
+    duplicateCardMethod: 0
     isGambleOption: 0
     gambleSuccessChance: 0.5
     penaltyType: 0

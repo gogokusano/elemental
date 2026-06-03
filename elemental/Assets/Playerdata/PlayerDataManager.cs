@@ -22,6 +22,9 @@ public class PlayerDataManager : MonoBehaviour
     public List<RelicData> allAvailableRelics = new List<RelicData>(); 
     private List<RelicData> unownedRelics = new List<RelicData>(); 
 
+    [Header("全カードのデータベース（すべてのカードを登録）")]
+    public List<CardData> allAvailableCards = new List<CardData>();
+
     private void Awake()
     {
         if (Instance == null)
@@ -124,4 +127,68 @@ public class PlayerDataManager : MonoBehaviour
             AddRelic(chosenRelic);
         }
     }
-} // PlayerDataManagerの終わり
+
+    public void LoseRandomRelics(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            if (ownedRelics.Count > 0)
+            {
+                int idx = Random.Range(0, ownedRelics.Count);
+                RelicData relic = ownedRelics[idx];
+                ownedRelics.RemoveAt(idx);
+                unownedRelics.Add(relic); // 未所持に戻す
+                Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
+            }
+        }
+    }
+
+    // フィルターに従ってランダムなカードを獲得する
+    public void AddRandomCardsFiltered(int count, bool useElement, ElementType element, bool useCost, int cost, bool useRarity, Rarity rarity)
+    {
+        List<CardData> pool = new List<CardData>(allAvailableCards);
+
+        if (useElement) pool = pool.FindAll(c => c.elementType == element);
+        if (useCost) pool = pool.FindAll(c => c.cost == cost);
+        if (useRarity) pool = pool.FindAll(c => c.rarity == rarity);
+
+        if (pool.Count == 0)
+        {
+            Debug.LogWarning("条件に合致するカードが存在しません！フィルターなしでランダム取得します。");
+            pool = new List<CardData>(allAvailableCards);
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            if (pool.Count > 0)
+            {
+                CardData chosen = pool[Random.Range(0, pool.Count)];
+                AddCard(chosen);
+            }
+        }
+    }
+    
+    // デッキからランダムにカードを削除する
+    public void RemoveRandomCards(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            if (deckCards.Count > 0)
+            {
+                int idx = Random.Range(0, deckCards.Count);
+                CardData card = deckCards[idx];
+                RemoveCard(card);
+            }
+        }
+    }
+
+    public void LoseRelic(RelicData relic)
+    {
+        if (ownedRelics.Contains(relic))
+        {
+            ownedRelics.Remove(relic);
+            unownedRelics.Add(relic); // 山札に戻す
+            Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
+        }
+    }
+}

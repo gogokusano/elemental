@@ -18,6 +18,10 @@ public class EventPoolManager : MonoBehaviour
     public List<EventData> allCampEvents;
     private List<EventData> remainingCampEvents = new List<EventData>();
 
+    [Header("異常イベントのリスト")]
+    public List<EventData> allAnomalyEvents;
+    private List<EventData> remainingAnomalyEvents = new List<EventData>();
+
     void Awake()
     {
         if (Instance == null)
@@ -28,7 +32,8 @@ public class EventPoolManager : MonoBehaviour
             // ★初期化時にすべての山札を作る
             ResetPool();
             ResetBonusPool(); 
-            ResetCampPool(); // ★追加
+            ResetCampPool();
+            ResetAnomalyPool();
         }
         else
         {
@@ -52,6 +57,11 @@ public class EventPoolManager : MonoBehaviour
     public void ResetCampPool()
     {
         remainingCampEvents = new List<EventData>(allCampEvents);
+    }
+
+    public void ResetAnomalyPool()
+    {
+        remainingAnomalyEvents = new List<EventData>(allAnomalyEvents);
     }
 
     // 通常イベントを引く
@@ -89,8 +99,7 @@ public class EventPoolManager : MonoBehaviour
 
         return selectedBonus;
     }
-
-    // ★追加：休息イベントを引く（CampManagerから呼ばれる関数）
+    
     public EventData GetRandomCamp()
     {
         if (allCampEvents == null || allCampEvents.Count == 0) return null;
@@ -106,5 +115,22 @@ public class EventPoolManager : MonoBehaviour
         remainingCampEvents.RemoveAt(randomIndex);
 
         return selectedCamp;
+    }
+
+    public EventData GetRandomAnomaly()
+    {
+        if (allAnomalyEvents == null || allAnomalyEvents.Count == 0) return null;
+
+        if (remainingAnomalyEvents.Count == 0)
+        {
+            Debug.Log("すべての異常イベントが出尽くしました。山札をリセットします。");
+            ResetAnomalyPool();
+        }
+
+        int randomIndex = Random.Range(0, remainingAnomalyEvents.Count);
+        EventData selectedAnomaly = remainingAnomalyEvents[randomIndex];
+        remainingAnomalyEvents.RemoveAt(randomIndex);
+
+        return selectedAnomaly;
     }
 }
