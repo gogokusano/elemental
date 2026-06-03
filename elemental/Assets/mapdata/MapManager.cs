@@ -42,7 +42,7 @@ public class MapManager : MonoBehaviour
         string currentChallenging = PlayerPrefs.GetString("CurrentChallengingNode", "");
         int savedSeed = PlayerPrefs.GetInt("MapSeed", 0);
 
-        // --- ★修正：マップシード（配置）の生成・ロード判定を最適化 ---
+        // --- マップシード（配置）の生成・ロード判定を最適化 ---
         if (savedSeed == 0)
         {
             // 完全な新規ゲーム開始時のみシード値を新しく作る
@@ -173,7 +173,11 @@ public class MapManager : MonoBehaviour
                 node.nodeIcon.color = finalColor;
             }
 
-            node.gameObject.name = $"{selectedEvent.eventName}_{node.transform.GetSiblingIndex()}_{randomIndex}";
+            // ========================================================
+            // ★重要修正：マスの所属する親（層）の名前を合体させて名前の重複を100%防ぐ！
+            // ========================================================
+            string layerName = node.transform.parent != null ? node.transform.parent.name : "Layer";
+            node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}_{randomIndex}";
         }
     }
 
