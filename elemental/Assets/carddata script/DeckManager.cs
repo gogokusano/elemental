@@ -20,6 +20,11 @@ public class DeckManager : MonoBehaviour
     public TextMeshProUGUI drawPileText;
     public TextMeshProUGUI discardPileText;
 
+    [Header("▼ カード一覧確認UI設定（★追加）")]
+    public GameObject cardListPanel;          // 確認用パネルの親オブジェクト (ScrollViewなど)
+    public Transform cardListContent;        // カードを並べるScrollRectのContent
+    public TMPro.TextMeshProUGUI cardListTitleText; // 「山札一覧」などのタイトルテキスト
+
     [Header("ゲームルール設定")]
     public int maxHandSize = 10;    
     public int drawAmount = 5;      
@@ -28,7 +33,7 @@ public class DeckManager : MonoBehaviour
     public bool isEnemyTurn = false; 
     private int nextTurnDrawBonus = 0;
 
-void Start() 
+    void Start() 
     { 
         if (PlayerDataManager.Instance != null)
         {
@@ -205,5 +210,74 @@ void Start()
     {
         if (drawPileText != null) drawPileText.text = drawPile.Count.ToString();
         if (discardPileText != null) discardPileText.text = discardPile.Count.ToString();
+    }
+
+    // ==========================================
+    // ★追加：山札確認ボタンから呼び出す関数
+    // ==========================================
+    public void ShowDrawPile()
+    {
+        OpenCardList("山札一覧", drawPile);
+    }
+
+    // ==========================================
+    // ★追加：捨て札確認ボタンから呼び出す関数
+    // ==========================================
+    public void ShowDiscardPile()
+    {
+        OpenCardList("捨て札一覧", discardPile);
+    }
+
+    // ==========================================
+    // ★追加：リストを表示する共通のメインロジック
+    // ==========================================
+    private void OpenCardList(string title, List<CardData> cards)
+    {
+        if (cardListPanel == null || cardListContent == null) return;
+
+        // 1. 前回の確認画面に残っている古いカードUIオブジェクトをすべて削除する
+        foreach (Transform child in cardListContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // 2. タイトルのテキストを書き換える
+        if (cardListTitleText != null) cardListTitleText.text = title;
+
+        // 3. 指定されたリスト内のカードをループで生成して綺麗に並べる
+        foreach (CardData data in cards)
+        {
+            // 手札用のプレハブ（cardPrefab）をそのまま使い回す
+            GameObject newCard = Instantiate(cardPrefab, cardListContent);
+
+            // カードの文字やイラストを反映
+            CardDisplay display = newCard.GetComponent<CardDisplay>();
+            if (display != null)
+            {
+                display.Setup(data);
+            }
+
+            // 💡重要：確認画面のカードが手札のように動いたり、ドラッグやクリックで誤作動しないように、
+            // 移動・ドラッグ用のスクリプト「CardMovement」をその場で取り除きます！
+            CardMovement movement = newCard.GetComponent<CardMovement>();
+            if (movement != null)
+            {
+                Destroy(movement);
+            }
+        }
+
+        // 4. 確認画面パネルをパッと表示する
+        cardListPanel.SetActive(true);
+    }
+
+    // ==========================================
+    // ★追加：確認画面の「閉じるボタン」から呼び出す関数
+    // ==========================================
+    public void CloseCardList()
+    {
+        if (cardListPanel != null)
+        {
+            cardListPanel.SetActive(false);
+        }
     }
 }
