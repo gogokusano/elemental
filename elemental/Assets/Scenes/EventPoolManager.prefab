@@ -60,7 +60,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 93f39f317dd5aa74791adf384253b945, type: 2}
   allCampEvents:
   - {fileID: 11400000, guid: cd79c1a89e4838941938bab356a1086d, type: 2}
-  allAnomalyEvents: []
+  allAnomalyEvents:
+  - {fileID: 11400000, guid: 40b0d22e00485cc4b880ef31c19ad596, type: 2}
   allShopEvents:
   - {fileID: 11400000, guid: ca1fbc1427aae1e4cb8d867b033f8865, type: 2}
 --- !u!114 &496167374814708121
