@@ -16,6 +16,7 @@ MonoBehaviour:
   description: "\u6226\u95D8\u6642\u624B\u672D\u306E\u679A\u6570\u304C+1\u679A\u5897\u3048\u308B\u3002"
   relicIcon: {fileID: -7078851214724172031, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 4
+  relicBackground: {fileID: -7297717459297875647, guid: 9426afe0015c1a9428c06c8eb7fedcd6, type: 3}
   relicType: 3
   maxHpBonus: 0
   initialGoldBonus: 0
