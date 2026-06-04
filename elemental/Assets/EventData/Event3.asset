@@ -17,6 +17,8 @@ MonoBehaviour:
   eventImage: {fileID: -680702051991692238, guid: fa3b6e4a8845c5b47a7a51c4f9715e0d, type: 3}
   options:
   - buttonText: "\u907A\u54C1\u3092\u63A2\u3059\uFF1A\u30E9\u30F3\u30C0\u30E0\u306A\u5947\u7269\u30921\u3064\u5F97\u308B\u304C\u3001\u7F60\u306B\u304B\u304B\u308AHP\u30926\u5931\u3046\u3002"
+    shopAction: 0
+    removeCardPrice: 75
     hpChange: -6
     maxHpChange: 0
     rewardRelic: {fileID: 0}
@@ -29,11 +31,29 @@ MonoBehaviour:
     canUpgradeRarity: 0
     upgradeChance: 0.5
     upgradedRarity: 0
+    loseRelicCount: 0
+    loseRelicMethod: 0
+    gainCardCount: 0
+    gainCardMethod: 0
+    filterCardByElement: 0
+    targetCardElement: 0
+    filterCardByCost: 0
+    targetCardCost: 0
+    filterCardByRarity: 0
+    targetCardRarity: 0
+    removeCardCount: 0
+    removeCardMethod: 0
+    transformCardCount: 0
+    transformCardMethod: 0
+    duplicateCardCount: 0
+    duplicateCardMethod: 0
     isGambleOption: 0
     gambleSuccessChance: 0.5
     penaltyType: 0
     penaltyValue: 0
   - buttonText: "\u5C11\u3057\u4F11\u3080\uFF1AHP\u30926\u56DE\u5FA9\u3059\u308B\u3002"
+    shopAction: 0
+    removeCardPrice: 75
     hpChange: 6
     maxHpChange: 0
     rewardRelic: {fileID: 0}
@@ -46,7 +66,30 @@ MonoBehaviour:
     canUpgradeRarity: 0
     upgradeChance: 0.5
     upgradedRarity: 0
+    loseRelicCount: 0
+    loseRelicMethod: 0
+    gainCardCount: 0
+    gainCardMethod: 0
+    filterCardByElement: 0
+    targetCardElement: 0
+    filterCardByCost: 0
+    targetCardCost: 0
+    filterCardByRarity: 0
+    targetCardRarity: 0
+    removeCardCount: 0
+    removeCardMethod: 0
+    transformCardCount: 0
+    transformCardMethod: 0
+    duplicateCardCount: 0
+    duplicateCardMethod: 0
     isGambleOption: 0
     gambleSuccessChance: 0.5
     penaltyType: 0
     penaltyValue: 0
+  shopConfig:
+    relicCount: 3
+    cardCount: 3
+    allowedRelicRarities: 000000000200000003000000
+    allowedCardRarities: 000000000200000003000000
+    relicPrices: []
+    cardPrices: []
