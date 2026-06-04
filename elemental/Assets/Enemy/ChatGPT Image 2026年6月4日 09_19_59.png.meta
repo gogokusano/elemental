@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e789902d48d520d4f8da195665f2d34e
+guid: 6d47ad0272b6d294caa1f071cfe7d6f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1101211347875007329
-    second: keikoku_0
+      213: 5654681832717305983
+    second: "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: keikoku_0
+      name: "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 52
         y: 0
-        width: 1367
-        height: 1151
+        width: 919
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16b08bce2e9484f00800000000000000
-      internalID: 1101211347875007329
+      spriteID: f7848f4ca27797e40800000000000000
+      internalID: 5654681832717305983
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      keikoku_0: 1101211347875007329
+      "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0": 5654681832717305983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 196dfba2c9a302849aa946f52e7d7d71
+guid: 0c8fa259c45ae3040ab5efa63ab3552c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8362141439872144987
-    second: Go-remu_0
-  - first:
-      213: 9082689345049398583
-    second: Go-remu_1
-  - first:
-      213: 9143980311141907639
-    second: Go-remu_2
+      213: 7105108982839960784
+    second: nezumi-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Go-remu_0
+      name: nezumi-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1343
-        height: 1171
+        x: 46
+        y: 31
+        width: 366
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b561725c55b4c0470800000000000000
-      internalID: 8362141439872144987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Go-remu_1
-      rect:
-        serializedVersion: 2
-        x: 1112
-        y: 558
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73d05e056d13c0e70800000000000000
-      internalID: 9082689345049398583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Go-remu_2
-      rect:
-        serializedVersion: 2
-        x: 1122
-        y: 503
-        width: 29
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bc77c665a1f5ee70800000000000000
-      internalID: 9143980311141907639
+      spriteID: 0d4ec94b9fa6a9260800000000000000
+      internalID: 7105108982839960784
       vertices: []
       indices: 
       edges: []
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Go-remu_0: 8362141439872144987
-      Go-remu_1: 9082689345049398583
-      Go-remu_2: 9143980311141907639
+      nezumi-removebg-preview_0: 7105108982839960784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

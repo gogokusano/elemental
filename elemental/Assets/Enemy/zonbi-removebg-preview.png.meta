@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 74270a6b0448be44b926d534a5d4d300
+guid: 565a0561227daa24da1e2297074dc05a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4215099794538360693
-    second: ei_0
+      213: 5332652109969372507
+    second: zonbi-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ei_0
+      name: zonbi-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1341
-        height: 1173
+        x: 45
+        y: 14
+        width: 391
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8018b5c115f085c0800000000000000
-      internalID: -4215099794538360693
+      spriteID: b55367527d2610a40800000000000000
+      internalID: 5332652109969372507
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ei_0: -4215099794538360693
+      zonbi-removebg-preview_0: 5332652109969372507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

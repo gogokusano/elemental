@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 661a0243bde019d49ac25a1a0cc696f6
+guid: 9c5dd23a52be8764dad19f8762556039
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4702335315215009228
-    second: Hebi_0
+      213: 4739703719804325569
+    second: crawler-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hebi_0
+      name: crawler-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1402
-        height: 1122
+        x: 75
+        y: 12
+        width: 395
+        height: 454
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc54a2e1e0d024140800000000000000
-      internalID: 4702335315215009228
+      spriteID: 1cec88fcb6fc6c140800000000000000
+      internalID: 4739703719804325569
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hebi_0: 4702335315215009228
+      crawler-removebg-preview_0: 4739703719804325569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

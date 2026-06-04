@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 86d2842d62be5044b9df5511987dd22b
+guid: 0202c7cc518759446b46d60387d628ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5031645754289232972
-    second: Zonbi1_0
-  - first:
-      213: -4280644673031253814
-    second: Zonbi1_1
-  - first:
-      213: 3388848734776932772
-    second: Zonbi1_2
-  - first:
-      213: -129800637837532569
-    second: Zonbi1_3
+      213: -8525879248927584636
+    second: dexyurahann-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zonbi1_0
+      name: dexyurahann-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1343
-        height: 1171
+        x: 11
+        y: 24
+        width: 483
+        height: 459
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b3ecf368d00c2ab0800000000000000
-      internalID: -5031645754289232972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zonbi1_1
-      rect:
-        serializedVersion: 2
-        x: 665
-        y: 1153
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac0dd4689581894c0800000000000000
-      internalID: -4280644673031253814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zonbi1_2
-      rect:
-        serializedVersion: 2
-        x: 593
-        y: 1115
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a939e928fb970f20800000000000000
-      internalID: 3388848734776932772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zonbi1_3
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 1072
-        width: 24
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7622312f10bd23ef0800000000000000
-      internalID: -129800637837532569
+      spriteID: 48e0cc1cefdfda980800000000000000
+      internalID: -8525879248927584636
       vertices: []
       indices: 
       edges: []
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Zonbi1_0: -5031645754289232972
-      Zonbi1_1: -4280644673031253814
-      Zonbi1_2: 3388848734776932772
-      Zonbi1_3: -129800637837532569
+      dexyurahann-removebg-preview_0: -8525879248927584636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

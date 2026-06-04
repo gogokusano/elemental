@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 2a86b54570e825f429470638dbb45e6f
+guid: ce0254e9c636d134a8c06e04d0d4fdb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5329161265166857734
-    second: Mimikku_0
-  - first:
-      213: 7413284549775081652
-    second: Mimikku_1
-  - first:
-      213: 8216180798465404766
-    second: Mimikku_2
+      213: -8858830965129182755
+    second: absurdism-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mimikku_0
+      name: absurdism-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 105
-        y: 109
-        width: 1431
-        height: 915
+        x: 41
+        y: 12
+        width: 471
+        height: 439
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af945fe70140b06b0800000000000000
-      internalID: -5329161265166857734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mimikku_1
-      rect:
-        serializedVersion: 2
-        x: 1383
-        y: 380
-        width: 61
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b04c30550741e660800000000000000
-      internalID: 7413284549775081652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mimikku_2
-      rect:
-        serializedVersion: 2
-        x: 1436
-        y: 368
-        width: 26
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e5f6aeea7ecb50270800000000000000
-      internalID: 8216180798465404766
+      spriteID: dd18e3e5c2c1f0580800000000000000
+      internalID: -8858830965129182755
       vertices: []
       indices: 
       edges: []
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mimikku_0: -5329161265166857734
-      Mimikku_1: 7413284549775081652
-      Mimikku_2: 8216180798465404766
+      absurdism-removebg-preview_0: -8858830965129182755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
