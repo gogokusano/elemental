@@ -4111,22 +4111,34 @@ MonoBehaviour:
   - {fileID: 1315195232}
   - {fileID: 323681892}
   availableEvents:
-  - eventName: 
+  - eventName: Battle
     iconSprite: {fileID: 21300000, guid: d31e0f15092fcfb47bd6e1a8defa5cbc, type: 3}
     sceneName: battlescene
     eventColor: {r: 1, g: 0, b: 0, a: 1}
-  - eventName: 
+    weight: 50
+    minCountPerLayer: 4
+  - eventName: Bouns
     iconSprite: {fileID: 21300000, guid: dfa7573a6acf9e143a09725f05116e1a, type: 3}
     sceneName: Bonus
     eventColor: {r: 0.9453459, g: 1, b: 0, a: 1}
-  - eventName: 
+    weight: 20
+    minCountPerLayer: 1
+  - eventName: Event
     iconSprite: {fileID: 21300000, guid: af265b2fbc97a2045ac7f630d1214705, type: 3}
     sceneName: Event
     eventColor: {r: 0.09492421, g: 1, b: 0, a: 1}
-  - eventName: 
+    weight: 30
+    minCountPerLayer: 4
+  - eventName: Shop
     iconSprite: {fileID: 21300000, guid: ad4f0495bda3d01418c589e71f5afba1, type: 3}
     sceneName: Shop
     eventColor: {r: 0.6135891, g: 0.2320754, b: 1, a: 1}
+    weight: 0
+    minCountPerLayer: 0
+  uniqueEventName: Shop
+  forbiddenEventNamesForStart:
+  - Shop
+  - Bouns
 --- !u!4 &669871690
 Transform:
   m_ObjectHideFlags: 0
