@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: slime
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: slime
-  maxHP: 60
-  enemyImage: {fileID: 5791124475601671289, guid: e6ba58a9549011343bbe8d37e0d32701, type: 3}
+  maxHP: 17
+  enemyImage: {fileID: 6087036220155657774, guid: b3fc01c64b45ee347b83cf5aaeabf99c, type: 3}
   actionList:
   - actionName: 
     actionType: 0
-    value: 50
+    value: 6
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
     statusCard: {fileID: 0}
     isPhase2Only: 1
     isOneTimeOnly: 0
+  spawnCount: 2

@@ -18,7 +18,9 @@ MonoBehaviour:
   damage: 8
   block: 0
   heal: 0
-  cardDraw: 0
+  immediateDraw: 0
+  nextTurnDraw: 0
+  isAoE: 1
   rarity: 0
   elementType: 2
   description: 

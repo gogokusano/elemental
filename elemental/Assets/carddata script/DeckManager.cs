@@ -21,9 +21,9 @@ public class DeckManager : MonoBehaviour
     public TextMeshProUGUI discardPileText;
 
     [Header("▼ カード一覧確認UI設定（★追加）")]
-    public GameObject cardListPanel;          // 確認用パネルの親オブジェクト (ScrollViewなど)
-    public Transform cardListContent;        // カードを並べるScrollRectのContent
-    public TMPro.TextMeshProUGUI cardListTitleText; // 「山札一覧」などのタイトルテキスト
+    public GameObject cardListPanel;          
+    public Transform cardListContent;        
+    public TMPro.TextMeshProUGUI cardListTitleText; 
 
     [Header("ゲームルール設定")]
     public int maxHandSize = 10;    
@@ -39,7 +39,6 @@ public class DeckManager : MonoBehaviour
         {
             drawPile = new List<CardData>(PlayerDataManager.Instance.deckCards);
             
-            // ★追記：10.知識の巻物などのドロー数ボーナスを適用
             foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
             {
                 if (relic is RelicCore core)
@@ -88,21 +87,34 @@ public class DeckManager : MonoBehaviour
         StartCoroutine(EnemyTurnRoutine());
     }
 
+    // ========================================================
+    // ★修正箇所：画面にいるすべての敵が順番に行動するように変更！
+    // ========================================================
     IEnumerator EnemyTurnRoutine()
     {
         isEnemyTurn = true;
         yield return new WaitForSeconds(0.5f);
 
-        EnemyManager enemy = Object.FindFirstObjectByType<EnemyManager>();
-        if (enemy != null && enemy.gameObject.activeSelf) {
-            enemy.ResetBlock(); 
-            enemy.ExecuteAction();
+        // 画面にいる全ての EnemyManager を取得
+        EnemyManager[] allEnemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
+        
+        foreach (EnemyManager enemy in allEnemies)
+        {
+            // 敵が生きていて表示されている場合のみ行動
+            if (enemy != null && enemy.gameObject.activeSelf) 
+            {
+                enemy.ResetBlock(); 
+                enemy.ExecuteAction();
+                
+                // 次の敵が動くまでに少し待つ（順番に攻撃してくるようにする）
+                yield return new WaitForSeconds(0.5f); 
+            }
         }
 
-        yield return new WaitForSeconds(1.0f);
-        
+        yield return new WaitForSeconds(0.5f);
         StartPlayerActionPhase();
     }
+    // ========================================================
 
     void StartPlayerActionPhase()
     {
@@ -178,14 +190,11 @@ public class DeckManager : MonoBehaviour
         UpdateDeckUI();
     }
 
-    // 敵からの状態異常カードなどを山札に混ぜる機能
     public void AddCardToDrawPile(CardData newCard)
     {
-        drawPile.Add(newCard); // 山札に追加
-        Shuffle(drawPile);     // 混ざるようにシャッフル
-        UpdateDeckUI();        // 山札の数字（UI）を更新
-        
-        Debug.Log("<color=red>敵の妨害！山札に " + newCard.cardName + " が混ざった！</color>");
+        drawPile.Add(newCard); 
+        Shuffle(drawPile);     
+        UpdateDeckUI();        
     }
 
     void Shuffle(List<CardData> list) { 
@@ -212,53 +221,37 @@ public class DeckManager : MonoBehaviour
         if (discardPileText != null) discardPileText.text = discardPile.Count.ToString();
     }
 
-    // ==========================================
-    // ★追加：山札確認ボタンから呼び出す関数
-    // ==========================================
     public void ShowDrawPile()
     {
         OpenCardList("山札一覧", drawPile);
     }
 
-    // ==========================================
-    // ★追加：捨て札確認ボタンから呼び出す関数
-    // ==========================================
     public void ShowDiscardPile()
     {
         OpenCardList("捨て札一覧", discardPile);
     }
 
-    // ==========================================
-    // ★追加：リストを表示する共通のメインロジック
-    // ==========================================
     private void OpenCardList(string title, List<CardData> cards)
     {
         if (cardListPanel == null || cardListContent == null) return;
 
-        // 1. 前回の確認画面に残っている古いカードUIオブジェクトをすべて削除する
         foreach (Transform child in cardListContent)
         {
             Destroy(child.gameObject);
         }
 
-        // 2. タイトルのテキストを書き換える
         if (cardListTitleText != null) cardListTitleText.text = title;
 
-        // 3. 指定されたリスト内のカードをループで生成して綺麗に並べる
         foreach (CardData data in cards)
         {
-            // 手札用のプレハブ（cardPrefab）をそのまま使い回す
             GameObject newCard = Instantiate(cardPrefab, cardListContent);
 
-            // カードの文字やイラストを反映
             CardDisplay display = newCard.GetComponent<CardDisplay>();
             if (display != null)
             {
                 display.Setup(data);
             }
 
-            // 💡重要：確認画面のカードが手札のように動いたり、ドラッグやクリックで誤作動しないように、
-            // 移動・ドラッグ用のスクリプト「CardMovement」をその場で取り除きます！
             CardMovement movement = newCard.GetComponent<CardMovement>();
             if (movement != null)
             {
@@ -266,13 +259,9 @@ public class DeckManager : MonoBehaviour
             }
         }
 
-        // 4. 確認画面パネルをパッと表示する
         cardListPanel.SetActive(true);
     }
 
-    // ==========================================
-    // ★追加：確認画面の「閉じるボタン」から呼び出す関数
-    // ==========================================
     public void CloseCardList()
     {
         if (cardListPanel != null)

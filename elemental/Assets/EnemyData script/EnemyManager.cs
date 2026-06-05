@@ -1,4 +1,4 @@
-using System.Collections.Generic; // Listを使うために必要
+using System.Collections.Generic; 
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -14,7 +14,7 @@ public class EnemyManager : MonoBehaviour
     public Image enemyImage;
     public TextMeshProUGUI blockText;
     public Slider hpSlider; 
-    public Slider blockSlider; // シールド（ブロック）用のスライダー
+    public Slider blockSlider; 
 
     [Header("属性・状態異常システム")]
     public Image elementIconDisplay; 
@@ -36,12 +36,11 @@ public class EnemyManager : MonoBehaviour
     public Sprite defendIntentIcon;     
     public Sprite statusIntentIcon;     
 
-    private EnemyAction nextAction;     // 次の行動
+    private EnemyAction nextAction;     
 
-    // AI履歴用の変数
-    private EnemyAction lastAction1; // 1ターン前の行動
-    private EnemyAction lastAction2; // 2ターン前の行動
-    private List<EnemyAction> usedOneTimeActions = new List<EnemyAction>(); // 使用済みの行動
+    private EnemyAction lastAction1; 
+    private EnemyAction lastAction2; 
+    private List<EnemyAction> usedOneTimeActions = new List<EnemyAction>(); 
 
     void Start() 
     { 
@@ -56,23 +55,19 @@ public class EnemyManager : MonoBehaviour
             currentBlock = 0;
             if (enemyImage != null) enemyImage.sprite = enemyData.enemyImage;
             
-            // 行動履歴の初期化
             lastAction1 = null;
             lastAction2 = null;
             usedOneTimeActions.Clear();
 
-            // HPバーとシールドバーの最大値を設定
             if (hpSlider != null) hpSlider.maxValue = enemyData.maxHP;
             if (blockSlider != null) blockSlider.maxValue = enemyData.maxHP; 
 
-            // ゲーム開始時に最初の行動を決定する
             DetermineNextAction();
             
             UpdateUI();
         }
     }
 
-    // 次のターンの行動を決定し、UIを更新するメソッド
     public void DetermineNextAction()
     {
         if (enemyData == null || enemyData.actionList.Count == 0) return;
@@ -124,23 +119,19 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    // 敵の行動を実行する
     public void ExecuteAction()
     {
         if (nextAction == null) DetermineNextAction();
 
-        // 凍結状態の判定
         if (isFrozen)
         {
             isFrozen = false; 
             if (Random.value <= 0.5f) {
-                Debug.Log("<color=cyan>敵は凍結していて動けない！</color>");
                 DetermineNextAction(); 
                 return; 
             }
         }
 
-        // 予告していた行動の実行
         switch (nextAction.actionType)
         {
             case EnemyActionType.Attack:
@@ -161,16 +152,13 @@ public class EnemyManager : MonoBehaviour
         
         UpdateUI();
 
-        // 行動履歴の更新
         if (nextAction.isOneTimeOnly) usedOneTimeActions.Add(nextAction);
         lastAction2 = lastAction1;
         lastAction1 = nextAction;
 
-        // 次のターンの行動を決定する
         DetermineNextAction();
     }
 
-    // プレイヤーからの攻撃（カード）を処理する
     public void ProcessAttack(CardData card)
     {
         PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
@@ -187,7 +175,6 @@ public class EnemyManager : MonoBehaviour
         {
             damageFloat *= 2.5f;
             isPhysicalWeak = false;
-            Debug.Log("<color=yellow>物理弱体が発動！Normalダメージが2.5倍！</color>");
         }
 
         bool comboTriggered = false;
@@ -200,25 +187,21 @@ public class EnemyManager : MonoBehaviour
             {
                 damageFloat *= 2.0f;
                 comboTriggered = true;
-                Debug.Log("<color=red>蒸発/溶解！ダメージ2.0倍！</color>");
             }
             else if (IsCombo(ElementType.Water, ElementType.Ice, currentElement, incomingElement))
             {
                 isFrozen = true;
                 comboTriggered = true;
-                Debug.Log("<color=cyan>凍結！敵が次に50%の確率で行動不能！</color>");
             }
             else if (IsCombo(ElementType.Ice, ElementType.Thunder, currentElement, incomingElement))
             {
                 isPhysicalWeak = true;
                 comboTriggered = true;
-                Debug.Log("<color=yellow>物理弱体付与！次のNormal攻撃が2.5倍！</color>");
             }
             else if (currentElement == ElementType.Rock && incomingElement == ElementType.Rock)
             {
                 if (player != null) player.hasCounter = true;
                 comboTriggered = true;
-                Debug.Log("<color=orange>カウンター準備完了！次の敵の攻撃を2.0倍で跳ね返す！</color>");
             }
             else if (IsCombo(ElementType.Fire, ElementType.Thunder, currentElement, incomingElement) ||
                      IsCombo(ElementType.Water, ElementType.Thunder, currentElement, incomingElement))
@@ -233,7 +216,6 @@ public class EnemyManager : MonoBehaviour
                     }
                 }
                 comboTriggered = true;
-                Debug.Log("<color=magenta>爆発/感電発生！周囲にもダメージ！</color>");
             }
         }
 
@@ -292,6 +274,9 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    // ========================================================
+    // ★修正箇所：敵が全滅した時だけリザルトを表示するように変更！
+    // ========================================================
     public void TakeDamage(int damage)
     {
         if (damage <= 0) return;
@@ -306,6 +291,9 @@ public class EnemyManager : MonoBehaviour
         if (currentHP <= 0) 
         { 
             currentHP = 0; 
+            
+            // ★1. 先にこの敵を非表示（死んだ扱い）にする
+            gameObject.SetActive(false); 
 
             if (PlayerDataManager.Instance != null)
             {
@@ -315,23 +303,34 @@ public class EnemyManager : MonoBehaviour
                 }
             }
 
-            GameManager gm = Object.FindFirstObjectByType<GameManager>();
-            if (gm != null) gm.WinGame();
-
-            // ==========================================
-            // ★追加：シーン内からRewardManagerを探して報酬画面を表示する
-            // ==========================================
-            RewardManager rm = Object.FindFirstObjectByType<RewardManager>();
-            if (rm != null) 
+            // ★2. 画面内にまだ生きている敵がいるか探す
+            EnemyManager[] remainingEnemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
+            bool isAnyEnemyAlive = false;
+            foreach (var e in remainingEnemies)
             {
-                rm.ShowReward();
+                if (e != null && e.gameObject.activeSelf)
+                {
+                    isAnyEnemyAlive = true;
+                    break; 
+                }
             }
-            // ==========================================
 
-            gameObject.SetActive(false); 
+            // ★3. もし生きている敵が1体もいなければ（全滅したら）勝利画面へ！
+            if (!isAnyEnemyAlive)
+            {
+                GameManager gm = Object.FindFirstObjectByType<GameManager>();
+                if (gm != null) gm.WinGame();
+
+                RewardManager rm = Object.FindFirstObjectByType<RewardManager>();
+                if (rm != null) rm.ShowReward();
+            }
         }
-        UpdateUI();
+        else
+        {
+            UpdateUI();
+        }
     }
+    // ========================================================
 
     public void ResetBlock() { currentBlock = 0; UpdateUI(); }
 

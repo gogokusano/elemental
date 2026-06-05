@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54db40a7330f0fe4bae16ddbeff0c794, type: 3}
-  m_Name: ei
+  m_Name: kou
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: 
-  maxHP: 44
-  enemyImage: {fileID: -8858830965129182755, guid: ce0254e9c636d134a8c06e04d0d4fdb7, type: 3}
+  maxHP: 21
+  enemyImage: {fileID: -9167925868417999818, guid: c544ad73808469f47b2fa152fe07ad64, type: 3}
   actionList:
   - actionName: 
     actionType: 0
-    value: 11
+    value: 8
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
   - actionName: 
-    actionType: 1
-    value: 7
+    actionType: 0
+    value: 12
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
-  spawnCount: 1
+  spawnCount: 2

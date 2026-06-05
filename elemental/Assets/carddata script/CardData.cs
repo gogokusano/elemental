@@ -28,6 +28,7 @@ public class CardData : ScriptableObject
     public int heal;
     public int immediateDraw;
     public int nextTurnDraw;
+    public bool isAoE; // 全体攻撃かどうか（AoE = Area of Effect）
 
     [Header("レアリティ・属性")]
     public Rarity rarity;

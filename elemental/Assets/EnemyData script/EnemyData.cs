@@ -30,4 +30,5 @@ public class EnemyData : ScriptableObject
 
     [Header("行動リスト")]
     public List<EnemyAction> actionList = new List<EnemyAction>();
+    public int spawnCount = 1;
 }

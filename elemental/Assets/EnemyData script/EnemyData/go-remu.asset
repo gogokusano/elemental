@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db40a7330f0fe4bae16ddbeff0c794, type: 3}
   m_Name: go-remu
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: 
-  maxHP: 0
-  enemyImage: {fileID: 8362141439872144987, guid: 196dfba2c9a302849aa946f52e7d7d71, type: 3}
+  enemyName: gore
+  maxHP: 80
+  enemyImage: {fileID: 5654681832717305983, guid: 6d47ad0272b6d294caa1f071cfe7d6f1, type: 3}
   actionList:
   - actionName: 
     actionType: 0
@@ -24,13 +24,14 @@ MonoBehaviour:
     isOneTimeOnly: 0
   - actionName: 
     actionType: 1
-    value: 25
+    value: 30
     statusCard: {fileID: 0}
     isPhase2Only: 1
     isOneTimeOnly: 0
   - actionName: 
     actionType: 0
-    value: 0
+    value: 15
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
+  spawnCount: 1
