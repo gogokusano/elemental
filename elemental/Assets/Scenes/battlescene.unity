@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8a597cd7038bc499cf03230ba20ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ManaManager
-  maxMana: 5
+  maxMana: 100
   currentMana: 0
   manaText: {fileID: 1333101012}
 --- !u!114 &359837572
@@ -1014,12 +1014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e089c1d00f319704888cc089eae14a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleSetup
-  easyEnemies:
-  - {fileID: 11400000, guid: 0a52307e1a3664f4c8dac9555d099f4b, type: 2}
-  - {fileID: 11400000, guid: bf420077ae0a4ee4b93c45865be892aa, type: 2}
-  - {fileID: 11400000, guid: 0df9bdbc8f9b41d4e9316133e97009d2, type: 2}
-  normalEnemies: []
-  hardEnemies: []
 --- !u!114 &359837576
 MonoBehaviour:
   m_ObjectHideFlags: 0

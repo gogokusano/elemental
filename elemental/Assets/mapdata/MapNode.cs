@@ -46,8 +46,15 @@ public class MapNode : MonoBehaviour
             MapSlideHandler.Instance.StartSlide();
         }
 
-        // ★判定：遷移先が「バトルシーン」の時だけ、途中で落としたらリセットにする
-        if (sceneName == "BattleScene")
+        // ========================================================
+        // ★修正：戦闘マスかどうかの安全な自動判定
+        // 中ボス・ボスフラグがあるか、シーン名に「scene」が入っていれば戦闘とみなす
+        // (インスペクターでシーン名が空っぽの中ボスでも正しく判定されます)
+        // ========================================================
+        string lowerScene = !string.IsNullOrEmpty(sceneName) ? sceneName.ToLower() : "";
+        bool isBattleNode = isMidBoss || isBoss || lowerScene.Contains("scene") || lowerScene.Contains("battle");
+
+        if (isBattleNode)
         {
             if (MapManager.Instance != null)
             {
@@ -56,8 +63,7 @@ public class MapNode : MonoBehaviour
         }
         else
         {
-            // ■ バトル以外のマス（宝箱、イベントなど）
-            // 遷移した時点で即座に「クリア扱い（次のマスを開放）」にしてセーブする
+            // ■ バトル以外のマス（宝箱、イベント、ショップなど）
             if (MapManager.Instance != null)
             {
                 MapManager.Instance.OpenNextNodesOnly(this);
@@ -68,6 +74,16 @@ public class MapNode : MonoBehaviour
         {
             Debug.Log($"{this.name} を開始: {sceneName} へ遷移します。");
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        }
+        else if (isBattleNode)
+        {
+            // 【デバッグ用】中ボスのシーン名が空の場合、即座にクリア扱いにしてマップをリフレッシュする
+            Debug.LogWarning($"{this.name} のシーン名が空です。デバッグ用即時クリアを処理します。");
+            if (MapManager.Instance != null)
+            {
+                MapManager.Instance.ClearCurrentNode();
+                MapManager.Instance.RefreshMap();
+            }
         }
     }
 }

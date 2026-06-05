@@ -11,12 +11,12 @@ public class EncounterManager : MonoBehaviour
     public Transform enemySpawnArea;
 
     [Header("▼ 敵の配置間隔（インスペクターから数字を変更できます）")]
-    public float horizontalSpacing = 180f; 
-    public float verticalSpacing = 100f;   
+    public float horizontalSpacing = 180f;
+    public float verticalSpacing = 100f;
 
     [Header("▼ 現在の進行度（自動取得）")]
-    public int currentMap = 1;   
-    public int currentFloor = 1; 
+    public int currentMap = 1;
+    public int currentFloor = 1;
 
     [Header("① 1階層目確定の敵データ（スライムなど）")]
     public EnemyData firstFloorEnemy;
@@ -32,21 +32,19 @@ public class EncounterManager : MonoBehaviour
     void Awake()
     {
         string nodeName = PlayerPrefs.GetString("CurrentChallengingNode", "");
-        
+
         if (!string.IsNullOrEmpty(nodeName))
         {
-            // ★修正：名前に埋め込まれた「Floor[数字]」をピンポイントで抽出する
             Match match = Regex.Match(nodeName, @"Floor([0-9]+)");
             if (match.Success)
             {
                 if (int.TryParse(match.Groups[1].Value, out int floorNumber))
                 {
-                    currentFloor = floorNumber; 
+                    currentFloor = floorNumber;
                 }
             }
         }
 
-        // ログでしっかりと階層が取れているか確認できます
         Debug.Log($"<color=green>【EncounterManager】現在の階層を自動取得しました: {currentFloor} 層目 (読み取ったノード名: {nodeName})</color>");
     }
 
@@ -73,14 +71,12 @@ public class EncounterManager : MonoBehaviour
     {
         if (currentMap == 1)
         {
-            // 1層目ならスライム確定
             if (currentFloor <= 1)
             {
                 chosenEnemy = firstFloorEnemy;
             }
             else
             {
-                // 2層目以降は通常プールからランダム
                 if (map1NormalPool != null && map1NormalPool.Count > 0)
                 {
                     int randomIndex = Random.Range(0, map1NormalPool.Count);
@@ -97,7 +93,6 @@ public class EncounterManager : MonoBehaviour
             }
         }
 
-        // 【安全装置】もしプールが空などで敵が選ばれなかった場合の保険
         if (chosenEnemy == null)
         {
             Debug.LogWarning("【安全装置】敵プールから取得できなかったため、1層目の敵を出現させます。");
@@ -109,8 +104,12 @@ public class EncounterManager : MonoBehaviour
     {
         if (chosenEnemy == null) return;
 
-        int count = chosenEnemy.spawnCount;
-        if (count <= 0) count = 1;
+        // ========================================================
+        // ★修正：敵の出現数を 1 ～ 3 体の間で毎回ランダムに決定する
+        // ========================================================
+        int count = Random.Range(1, 4);
+
+        Debug.Log($"【EncounterManager】{chosenEnemy.enemyName} が {count} 体抽選されました。");
 
         for (int i = 0; i < count; i++)
         {
@@ -123,6 +122,7 @@ public class EncounterManager : MonoBehaviour
                 manager.SetupEnemy();
             }
 
+            // 動的に決まった「count」に基づいて、綺麗に整列した座標を取得して適用
             newEnemy.transform.localPosition = GetPosition(count, i);
         }
     }
@@ -130,17 +130,18 @@ public class EncounterManager : MonoBehaviour
     private Vector3 GetPosition(int totalCount, int index)
     {
         if (totalCount == 1) return Vector3.zero;
-        
+
         if (totalCount == 2)
         {
-            if (index == 0) return new Vector3(-horizontalSpacing, 0, 0); 
-            if (index == 1) return new Vector3(horizontalSpacing, 0, 0);  
+            if (index == 0) return new Vector3(-horizontalSpacing, 0, 0);
+            if (index == 1) return new Vector3(horizontalSpacing, 0, 0);
         }
         else if (totalCount == 3)
         {
-            if (index == 0) return new Vector3(0, -verticalSpacing, 0);                 
-            if (index == 1) return new Vector3(-horizontalSpacing, verticalSpacing, 0); 
-            if (index == 2) return new Vector3(horizontalSpacing, verticalSpacing, 0);   
+            // 3体時のきれいなV字配置（あるいは逆V字）
+            if (index == 0) return new Vector3(0, -verticalSpacing, 0);
+            if (index == 1) return new Vector3(-horizontalSpacing, verticalSpacing, 0);
+            if (index == 2) return new Vector3(horizontalSpacing, verticalSpacing, 0);
         }
         return Vector3.zero;
     }
