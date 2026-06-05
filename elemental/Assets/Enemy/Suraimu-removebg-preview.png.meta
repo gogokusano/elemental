@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 86d2842d62be5044b9df5511987dd22b
+guid: b3fc01c64b45ee347b83cf5aaeabf99c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5031645754289232972
-    second: Zonbi1_0
+      213: 6087036220155657774
+    second: Suraimu-removebg-preview_0
   - first:
-      213: -4280644673031253814
-    second: Zonbi1_1
+      213: -6318630357428250131
+    second: Suraimu-removebg-preview_1
   - first:
-      213: 3388848734776932772
-    second: Zonbi1_2
-  - first:
-      213: -129800637837532569
-    second: Zonbi1_3
+      213: -481726136539682500
+    second: Suraimu-removebg-preview_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,17 +115,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zonbi1_0
+      name: Suraimu-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1343
-        height: 1171
+        x: 12
+        y: 66
+        width: 459
+        height: 389
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b3ecf368d00c2ab0800000000000000
-      internalID: -5031645754289232972
+      spriteID: e2e7055113f797450800000000000000
+      internalID: 6087036220155657774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zonbi1_1
+      name: Suraimu-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 665
-        y: 1153
-        width: 8
-        height: 8
+        x: 454
+        y: 120
+        width: 19
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac0dd4689581894c0800000000000000
-      internalID: -4280644673031253814
+      spriteID: de95d7eda27bf48a0800000000000000
+      internalID: -6318630357428250131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zonbi1_2
+      name: Suraimu-removebg-preview_2
       rect:
         serializedVersion: 2
-        x: 593
-        y: 1115
-        width: 26
-        height: 30
+        x: 350
+        y: 64
+        width: 21
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,30 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4a939e928fb970f20800000000000000
-      internalID: 3388848734776932772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zonbi1_3
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 1072
-        width: 24
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7622312f10bd23ef0800000000000000
-      internalID: -129800637837532569
+      spriteID: c39e78091a09059f0800000000000000
+      internalID: -481726136539682500
       vertices: []
       indices: 
       edges: []
@@ -223,10 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Zonbi1_0: -5031645754289232972
-      Zonbi1_1: -4280644673031253814
-      Zonbi1_2: 3388848734776932772
-      Zonbi1_3: -129800637837532569
+      Suraimu-removebg-preview_0: 6087036220155657774
+      Suraimu-removebg-preview_1: -6318630357428250131
+      Suraimu-removebg-preview_2: -481726136539682500
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

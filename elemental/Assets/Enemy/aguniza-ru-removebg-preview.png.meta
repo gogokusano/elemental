@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e6ba58a9549011343bbe8d37e0d32701
+guid: 58c4202f477b39f4a93146fa59e82721
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5791124475601671289
-    second: Suraimu_0
-  - first:
-      213: 2591755099940467650
-    second: Suraimu_1
+      213: -5705223673038883370
+    second: aguniza-ru-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Suraimu_0
+      name: aguniza-ru-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1353
-        height: 1162
+        x: 28
+        y: 17
+        width: 554
+        height: 373
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 974de4227053e5050800000000000000
-      internalID: 5791124475601671289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Suraimu_1
-      rect:
-        serializedVersion: 2
-        x: 501
-        y: 988
-        width: 34
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c332cc1883c7f320800000000000000
-      internalID: 2591755099940467650
+      spriteID: 6d53e540c49f2d0b0800000000000000
+      internalID: -5705223673038883370
       vertices: []
       indices: 
       edges: []
@@ -173,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Suraimu_0: 5791124475601671289
-      Suraimu_1: 2591755099940467650
+      aguniza-ru-removebg-preview_0: -5705223673038883370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

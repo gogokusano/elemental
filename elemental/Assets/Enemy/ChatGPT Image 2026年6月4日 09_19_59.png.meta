@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 61af1350cd8c945419437169d918ca1e
+guid: 6d47ad0272b6d294caa1f071cfe7d6f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2171377555203645968
-    second: Zonbi2_0
+      213: 5654681832717305983
+    second: "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zonbi2_0
+      name: "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 52
         y: 0
-        width: 1342
-        height: 1172
+        width: 919
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0126b2bc168422e10800000000000000
-      internalID: 2171377555203645968
+      spriteID: f7848f4ca27797e40800000000000000
+      internalID: 5654681832717305983
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Zonbi2_0: 2171377555203645968
+      "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0": 5654681832717305983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e789902d48d520d4f8da195665f2d34e
+guid: ce0254e9c636d134a8c06e04d0d4fdb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1101211347875007329
-    second: keikoku_0
+      213: -8858830965129182755
+    second: absurdism-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: keikoku_0
+      name: absurdism-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1367
-        height: 1151
+        x: 41
+        y: 12
+        width: 471
+        height: 439
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16b08bce2e9484f00800000000000000
-      internalID: 1101211347875007329
+      spriteID: dd18e3e5c2c1f0580800000000000000
+      internalID: -8858830965129182755
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      keikoku_0: 1101211347875007329
+      absurdism-removebg-preview_0: -8858830965129182755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
