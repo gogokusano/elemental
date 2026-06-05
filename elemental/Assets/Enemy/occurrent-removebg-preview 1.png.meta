@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 40f3503f457a55c49801b43baba37a29
+guid: f2d694ce719b8584a97916ad1feac28a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 407313587545403002
-    second: occurrent-removebg-preview_0
+      213: 8489709077484517309
+    second: occurrent-removebg-preview 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,33 +109,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> main
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
->>>>>>> battle
->>>>>>> main
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: occurrent-removebg-preview_0
+      name: occurrent-removebg-preview 1_0
       rect:
         serializedVersion: 2
         x: 10
@@ -150,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7e65d1cc8117a500800000000000000
-      internalID: 407313587545403002
+      spriteID: db7bfd1fc6181d570800000000000000
+      internalID: 8489709077484517309
       vertices: []
       indices: 
       edges: []
@@ -170,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      occurrent-removebg-preview_0: 407313587545403002
+      occurrent-removebg-preview 1_0: 8489709077484517309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
