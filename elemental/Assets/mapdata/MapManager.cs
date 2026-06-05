@@ -9,6 +9,7 @@ public struct MapEventData
     public string sceneName;
     public Color eventColor;
     public int weight;
+    // ★追加：このイベントを各層に「最低でも何マス出現させたいか」の設定
     public int minCountPerLayer;
 }
 
@@ -40,6 +41,7 @@ public class MapManager : MonoBehaviour
 
     public void RefreshMap()
     {
+        // 1. まず全てのマスを一旦非アクティブ（半透明化）にする
         foreach (var node in allNodes)
         {
             if (node != null) node.SetState(false);
@@ -49,6 +51,7 @@ public class MapManager : MonoBehaviour
         string currentChallenging = PlayerPrefs.GetString("CurrentChallengingNode", "");
         int savedSeed = PlayerPrefs.GetInt("MapSeed", 0);
 
+        // --- マップシード（配置）の生成・ロード判定を最適化 ---
         if (savedSeed == 0)
         {
             savedSeed = Random.Range(1, 999999);
@@ -56,8 +59,10 @@ public class MapManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
+        // 常に保存された同じシード値で生成
         RandomizeMapNodes(savedSeed);
 
+        // --- ★最重要：バトル中の不正な離脱（タスクキル）があった場合はデータを即リセット！ ---
         if (!string.IsNullOrEmpty(currentChallenging))
         {
             Debug.LogWarning($"バトル中の不正な離脱を検知しました（未クリアマス: {currentChallenging}）。データをリセットします。");
@@ -67,6 +72,7 @@ public class MapManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(lastCleared))
         {
+            // ■ 初期状態
             foreach (var st in startNodes)
             {
                 if (st != null) st.SetState(true);
@@ -79,6 +85,7 @@ public class MapManager : MonoBehaviour
         }
         else
         {
+            // ■ シーン遷移から正常に戻ってきた時
             MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
             if (lastNode != null)
             {
@@ -116,6 +123,7 @@ public class MapManager : MonoBehaviour
             PlayerPrefs.SetString("LastClearedNode", challengingNodeName);
             PlayerPrefs.DeleteKey("CurrentChallengingNode");
             PlayerPrefs.Save();
+            Debug.Log($"バトルクリア確定: {challengingNodeName}");
         }
     }
 
@@ -129,6 +137,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
+    // 引数に「seed」を受け取り、それに基づいてランダムを固定化する
     private void RandomizeMapNodes(int seed)
     {
         if (allNodes == null || allNodes.Count == 0) return;
@@ -136,50 +145,7 @@ public class MapManager : MonoBehaviour
 
         Random.InitState(seed);
 
-        // ==========================================================
-        // ★最強版：マスの「繋がり（nextNodes）」をたどって階層を計算する！
-        // 座標やヒエラルキー構造に一切依存しない、絶対確実な方法です。
-        // ==========================================================
-        Dictionary<MapNode, int> nodeFloors = new Dictionary<MapNode, int>();
-        foreach (var node in allNodes)
-        {
-            if (node != null) nodeFloors[node] = 1; // 初期値は1
-        }
-
-        Queue<MapNode> queue = new Queue<MapNode>();
-        foreach (var st in startNodes)
-        {
-            if (st != null)
-            {
-                nodeFloors[st] = 1; // スタート地点は1層目
-                queue.Enqueue(st);
-            }
-        }
-
-        // 繋がりを辿って、深い階層の数字を更新していく
-        while (queue.Count > 0)
-        {
-            MapNode current = queue.Dequeue();
-            int currentFloorNum = nodeFloors[current];
-
-            if (current.nextNodes != null)
-            {
-                foreach (var nextNode in current.nextNodes)
-                {
-                    if (nextNode != null)
-                    {
-                        // 次のマスには +1 した階層をセットする
-                        if (nodeFloors[nextNode] < currentFloorNum + 1)
-                        {
-                            nodeFloors[nextNode] = currentFloorNum + 1;
-                            queue.Enqueue(nextNode);
-                        }
-                    }
-                }
-            }
-        }
-        // ==========================================================
-
+        // --- ① ショップ（限定イベント）を通常プールから分別 ---
         List<MapEventData> normalEvents = new List<MapEventData>();
         MapEventData uniqueEvent = default;
         bool hasUniqueEvent = false;
@@ -199,6 +165,7 @@ public class MapManager : MonoBehaviour
 
         if (normalEvents.Count == 0) normalEvents = availableEvents;
 
+        // --- 最初の3マス専用のプールを作る ---
         List<MapEventData> startNodeAvailableEvents = new List<MapEventData>();
         int totalWeightForStart = 0;
 
@@ -218,28 +185,32 @@ public class MapManager : MonoBehaviour
             foreach (var ev in normalEvents) totalWeightForStart += Mathf.Max(1, ev.weight);
         }
 
+        // --- 通常マス用の合計Weight（重み）を計算しておく ---
         int totalWeight = 0;
         foreach (var ev in normalEvents)
         {
             totalWeight += Mathf.Max(1, ev.weight);
         }
 
-        // 階層（Floor）ごとにグループ分けする
-        Dictionary<int, List<MapNode>> layerGroups = new Dictionary<int, List<MapNode>>();
-        foreach (var pair in nodeFloors)
+        // --- ② マスを「親オブジェクト（層）」ごとにグループ分けする ---
+        Dictionary<Transform, List<MapNode>> layerGroups = new Dictionary<Transform, List<MapNode>>();
+
+        foreach (var node in allNodes)
         {
-            MapNode node = pair.Key;
-            int floorNum = pair.Value;
+            if (node == null || node.isMidBoss || node.isBoss || node.isFixedNode) continue;
 
-            if (node.isMidBoss || node.isBoss || node.isFixedNode) continue;
+            Transform parent = node.transform.parent;
+            if (parent == null) continue;
 
-            if (!layerGroups.ContainsKey(floorNum))
+            if (!layerGroups.ContainsKey(parent))
             {
-                layerGroups[floorNum] = new List<MapNode>();
+                layerGroups[parent] = new List<MapNode>();
             }
-            layerGroups[floorNum].Add(node);
+            layerGroups[parent].Add(node);
         }
 
+        // --- ③ 各マスの役割を確定させる事前抽選フェーズ ---
+        // 各マスをキーとして、どのイベントを割り当てるかを記録する辞書
         Dictionary<MapNode, MapEventData> forcedNodeEvents = new Dictionary<MapNode, MapEventData>();
 
         foreach (var pair in layerGroups)
@@ -247,6 +218,7 @@ public class MapManager : MonoBehaviour
             List<MapNode> availableNodesInLayer = new List<MapNode>(pair.Value);
             if (availableNodesInLayer.Count == 0) continue;
 
+            // A. 各層に1マスのショップ（UniqueEvent）を最優先で割り当て
             if (hasUniqueEvent)
             {
                 List<MapNode> shopCandidates = availableNodesInLayer.FindAll(n => !startNodes.Contains(n));
@@ -265,14 +237,17 @@ public class MapManager : MonoBehaviour
                 availableNodesInLayer.Remove(shopNode);
             }
 
+            // B. ★修正：インスペクターで指定された「最低保証数（minCountPerLayer）」を満たすように割り当て
             foreach (var ev in availableEvents)
             {
+                // ショップ（Unique）は上で処理済みなのと、最低保証数が0以下のものはスルー
                 if (ev.eventName == uniqueEventName || ev.minCountPerLayer <= 0) continue;
 
                 for (int i = 0; i < ev.minCountPerLayer; i++)
                 {
-                    if (availableNodesInLayer.Count == 0) break;
+                    if (availableNodesInLayer.Count == 0) break; // 空きマスがなくなったら終了
 
+                    // 最初の3マスの制限リストに入っているイベントの場合、startNodesを避けて選ぶ
                     MapNode targetNode = null;
                     if (forbiddenEventNamesForStart.Contains(ev.eventName))
                     {
@@ -283,13 +258,14 @@ public class MapManager : MonoBehaviour
                         }
                     }
 
+                    // 適切な退避先がない、または制限のないイベントなら残りからランダム選出
                     if (targetNode == null)
                     {
                         targetNode = availableNodesInLayer[Random.Range(0, availableNodesInLayer.Count)];
                     }
 
                     forcedNodeEvents[targetNode] = ev;
-                    availableNodesInLayer.Remove(targetNode);
+                    availableNodesInLayer.Remove(targetNode); // 確定したので候補から消す
                 }
             }
         }
@@ -299,23 +275,23 @@ public class MapManager : MonoBehaviour
         {
             if (node == null) continue;
 
-            // ★マスの繋がりから計算した「絶対に正しい階層」を取得
-            int actualFloor = nodeFloors.ContainsKey(node) ? nodeFloors[node] : 1;
-
+            // 中ボス、ボス、または「固定マス」にチェックがある場合はランダム化をスキップ
             if (node.isMidBoss || node.isBoss || node.isFixedNode)
             {
-                node.gameObject.name = $"Fixed_Floor{actualFloor}_{node.transform.GetSiblingIndex()}";
+                node.gameObject.name = $"Fixed_{node.transform.parent.name}_{node.transform.GetSiblingIndex()}";
                 continue;
             }
 
             MapEventData selectedEvent = default;
 
+            // 事前抽選（ショップや最低保証枠）で確定しているマスか判定
             if (forcedNodeEvents.ContainsKey(node))
             {
                 selectedEvent = forcedNodeEvents[node];
             }
             else if (startNodes.Contains(node))
             {
+                // 最初の3マスのうち、最低保証で埋まらなかった残りの通常マスを抽選
                 int rolledValue = Random.Range(0, totalWeightForStart);
                 int currentWeightSum = 0;
 
@@ -331,6 +307,7 @@ public class MapManager : MonoBehaviour
             }
             else
             {
+                // 最低保証枠から外れた、残りの完全フリーな通常マスをWeight確率で抽選
                 int rolledValue = Random.Range(0, totalWeight);
                 int currentWeightSum = 0;
 
@@ -362,8 +339,8 @@ public class MapManager : MonoBehaviour
                 node.nodeIcon.color = finalColor;
             }
 
-            // ★絶対に正しい階層の数字を名前に刻み込む！
-            node.gameObject.name = $"{selectedEvent.eventName}_Floor{actualFloor}_{node.transform.GetSiblingIndex()}";
+            string layerName = node.transform.parent != null ? node.transform.parent.name : "Layer";
+            node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}";
         }
     }
 

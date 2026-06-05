@@ -14,7 +14,6 @@ public class MapNode : MonoBehaviour
     public bool isMidBoss;
     public bool isBoss;
 
-    // ★追加：このマスをランダム化せず、インスペクターの設定で固定にするか
     [Header("特定のイベントに固定する")]
     public bool isFixedNode;
 
@@ -47,21 +46,18 @@ public class MapNode : MonoBehaviour
             MapSlideHandler.Instance.StartSlide();
         }
 
-        // ========================================================
-        // ★修正：実際のシーン名「battlescene」に完全一致させました
-        // ========================================================
-        if (sceneName == "battlescene")
+        // ★判定：遷移先が「バトルシーン」の時だけ、途中で落としたらリセットにする
+        if (sceneName == "BattleScene")
         {
             if (MapManager.Instance != null)
             {
-                // バトルシーンの場合は、途中で落としたらリセットするロックをかける
                 MapManager.Instance.SaveChallengingNode(this);
             }
         }
         else
         {
             // ■ バトル以外のマス（宝箱、イベントなど）
-            // 遷移した時点で即座に「次のマスを開放」してセーブする
+            // 遷移した時点で即座に「クリア扱い（次のマスを開放）」にしてセーブする
             if (MapManager.Instance != null)
             {
                 MapManager.Instance.OpenNextNodesOnly(this);
