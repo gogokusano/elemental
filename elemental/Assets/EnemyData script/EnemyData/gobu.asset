@@ -10,22 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54db40a7330f0fe4bae16ddbeff0c794, type: 3}
-  m_Name: ei
+  m_Name: gobu
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: 
-  maxHP: 44
-  enemyImage: {fileID: -8858830965129182755, guid: ce0254e9c636d134a8c06e04d0d4fdb7, type: 3}
+  enemyName: gobu
+  maxHP: 32
+  enemyImage: {fileID: 5332652109969372507, guid: 565a0561227daa24da1e2297074dc05a, type: 3}
   actionList:
   - actionName: 
     actionType: 0
-    value: 11
+    value: 12
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
   - actionName: 
+    actionType: 0
+    value: 30
+    statusCard: {fileID: 0}
+    isPhase2Only: 1
+    isOneTimeOnly: 0
+  - actionName: 
     actionType: 1
-    value: 7
+    value: 6
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
-  spawnCount: 1
+  spawnCount: 2

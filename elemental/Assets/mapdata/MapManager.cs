@@ -9,7 +9,6 @@ public struct MapEventData
     public string sceneName;
     public Color eventColor;
     public int weight;
-    // š’Ç‰ÁF‚±‚ÌƒCƒxƒ“ƒg‚ğŠe‘w‚ÉuÅ’á‚Å‚à‰½ƒ}ƒXoŒ»‚³‚¹‚½‚¢‚©v‚Ìİ’è
     public int minCountPerLayer;
 }
 
@@ -17,20 +16,20 @@ public class MapManager : MonoBehaviour
 {
     public static MapManager Instance;
 
-    [Header("‘S‚Ä‚Ìƒ}ƒXiƒqƒGƒ‰ƒ‹ƒL[‚©‚ç‘S‚Ä“ü‚ê‚éj")]
+    [Header("å…¨ã¦ã®ãƒã‚¹ï¼ˆãƒ’ã‚¨ãƒ©ãƒ«ã‚­ãƒ¼ã‹ã‚‰å…¨ã¦å…¥ã‚Œã‚‹ï¼‰")]
     public List<MapNode> allNodes;
 
-    [Header("Å‰‚Ì3ƒ}ƒX")]
+    [Header("æœ€åˆã®3ãƒã‚¹")]
     public List<MapNode> startNodes;
 
-    [Header("ƒ‰ƒ“ƒ_ƒ€—pƒCƒxƒ“ƒg‚Ìí—Ş")]
+    [Header("ãƒ©ãƒ³ãƒ€ãƒ ç”¨ã‚¤ãƒ™ãƒ³ãƒˆã®ç¨®é¡")]
     public List<MapEventData> availableEvents;
 
-    [Header("Še‘w‚É1ƒ}ƒXŒÀ’è‚É‚·‚éƒCƒxƒ“ƒg‚Ìİ’è")]
-    public string uniqueEventName = "ƒVƒ‡ƒbƒv";
+    [Header("å„å±¤ã«1ãƒã‚¹é™å®šã«ã™ã‚‹ã‚¤ãƒ™ãƒ³ãƒˆã®è¨­å®š")]
+    public string uniqueEventName = "ã‚·ãƒ§ãƒƒãƒ—";
 
-    [Header("Å‰‚Ì3ƒ}ƒX‚ÅoŒ»‚ğ‹Ö~‚·‚éƒCƒxƒ“ƒgi•¡”w’è‰Â”\j")]
-    public List<string> forbiddenEventNamesForStart = new List<string> { "ƒVƒ‡ƒbƒv", "Bonus" };
+    [Header("æœ€åˆã®3ãƒã‚¹ã§å‡ºç¾ã‚’ç¦æ­¢ã™ã‚‹ã‚¤ãƒ™ãƒ³ãƒˆï¼ˆè¤‡æ•°æŒ‡å®šå¯èƒ½ï¼‰")]
+    public List<string> forbiddenEventNamesForStart = new List<string> { "ã‚·ãƒ§ãƒƒãƒ—", "Bonus" };
 
     void Awake() => Instance = this;
 
@@ -41,7 +40,6 @@ public class MapManager : MonoBehaviour
 
     public void RefreshMap()
     {
-        // 1. ‚Ü‚¸‘S‚Ä‚Ìƒ}ƒX‚ğˆê’U”ñƒAƒNƒeƒBƒui”¼“§–¾‰»j‚É‚·‚é
         foreach (var node in allNodes)
         {
             if (node != null) node.SetState(false);
@@ -51,7 +49,6 @@ public class MapManager : MonoBehaviour
         string currentChallenging = PlayerPrefs.GetString("CurrentChallengingNode", "");
         int savedSeed = PlayerPrefs.GetInt("MapSeed", 0);
 
-        // --- ƒ}ƒbƒvƒV[ƒhi”z’uj‚Ì¶¬Eƒ[ƒh”»’è‚ğÅ“K‰» ---
         if (savedSeed == 0)
         {
             savedSeed = Random.Range(1, 999999);
@@ -59,20 +56,17 @@ public class MapManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        // í‚É•Û‘¶‚³‚ê‚½“¯‚¶ƒV[ƒh’l‚Å¶¬
         RandomizeMapNodes(savedSeed);
 
-        // --- šÅd—vFƒoƒgƒ‹’†‚Ì•s³‚È—£’Eiƒ^ƒXƒNƒLƒ‹j‚ª‚ ‚Á‚½ê‡‚Íƒf[ƒ^‚ğ‘¦ƒŠƒZƒbƒgI ---
         if (!string.IsNullOrEmpty(currentChallenging))
         {
-            Debug.LogWarning($"ƒoƒgƒ‹’†‚Ì•s³‚È—£’E‚ğŒŸ’m‚µ‚Ü‚µ‚½i–¢ƒNƒŠƒAƒ}ƒX: {currentChallenging}jBƒf[ƒ^‚ğƒŠƒZƒbƒg‚µ‚Ü‚·B");
+            Debug.LogWarning($"ãƒãƒˆãƒ«ä¸­ã®ä¸æ­£ãªé›¢è„±ã‚’æ¤œçŸ¥ã—ã¾ã—ãŸï¼ˆæœªã‚¯ãƒªã‚¢ãƒã‚¹: {currentChallenging}ï¼‰ã€‚ãƒ‡ãƒ¼ã‚¿ã‚’ãƒªã‚»ãƒƒãƒˆã—ã¾ã™ã€‚");
             ResetProgress();
             return;
         }
 
         if (string.IsNullOrEmpty(lastCleared))
         {
-            // ¡ ‰Šúó‘Ô
             foreach (var st in startNodes)
             {
                 if (st != null) st.SetState(true);
@@ -85,7 +79,6 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            // ¡ ƒV[ƒ“‘JˆÚ‚©‚ç³í‚É–ß‚Á‚Ä‚«‚½
             MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
             if (lastNode != null)
             {
@@ -123,7 +116,6 @@ public class MapManager : MonoBehaviour
             PlayerPrefs.SetString("LastClearedNode", challengingNodeName);
             PlayerPrefs.DeleteKey("CurrentChallengingNode");
             PlayerPrefs.Save();
-            Debug.Log($"ƒoƒgƒ‹ƒNƒŠƒAŠm’è: {challengingNodeName}");
         }
     }
 
@@ -137,7 +129,6 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    // ˆø”‚Éuseedv‚ğó‚¯æ‚èA‚»‚ê‚ÉŠî‚Ã‚¢‚Äƒ‰ƒ“ƒ_ƒ€‚ğŒÅ’è‰»‚·‚é
     private void RandomizeMapNodes(int seed)
     {
         if (allNodes == null || allNodes.Count == 0) return;
@@ -145,7 +136,50 @@ public class MapManager : MonoBehaviour
 
         Random.InitState(seed);
 
-        // --- ‡@ ƒVƒ‡ƒbƒviŒÀ’èƒCƒxƒ“ƒgj‚ğ’Êíƒv[ƒ‹‚©‚ç•ª•Ê ---
+        // ==========================================================
+        // â˜…æœ€å¼·ç‰ˆï¼šãƒã‚¹ã®ã€Œç¹‹ãŒã‚Šï¼ˆnextNodesï¼‰ã€ã‚’ãŸã©ã£ã¦éšå±¤ã‚’è¨ˆç®—ã™ã‚‹ï¼
+        // åº§æ¨™ã‚„ãƒ’ã‚¨ãƒ©ãƒ«ã‚­ãƒ¼æ§‹é€ ã«ä¸€åˆ‡ä¾å­˜ã—ãªã„ã€çµ¶å¯¾ç¢ºå®Ÿãªæ–¹æ³•ã§ã™ã€‚
+        // ==========================================================
+        Dictionary<MapNode, int> nodeFloors = new Dictionary<MapNode, int>();
+        foreach (var node in allNodes)
+        {
+            if (node != null) nodeFloors[node] = 1; // åˆæœŸå€¤ã¯1
+        }
+
+        Queue<MapNode> queue = new Queue<MapNode>();
+        foreach (var st in startNodes)
+        {
+            if (st != null)
+            {
+                nodeFloors[st] = 1; // ã‚¹ã‚¿ãƒ¼ãƒˆåœ°ç‚¹ã¯1å±¤ç›®
+                queue.Enqueue(st);
+            }
+        }
+
+        // ç¹‹ãŒã‚Šã‚’è¾¿ã£ã¦ã€æ·±ã„éšå±¤ã®æ•°å­—ã‚’æ›´æ–°ã—ã¦ã„ã
+        while (queue.Count > 0)
+        {
+            MapNode current = queue.Dequeue();
+            int currentFloorNum = nodeFloors[current];
+
+            if (current.nextNodes != null)
+            {
+                foreach (var nextNode in current.nextNodes)
+                {
+                    if (nextNode != null)
+                    {
+                        // æ¬¡ã®ãƒã‚¹ã«ã¯ +1 ã—ãŸéšå±¤ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+                        if (nodeFloors[nextNode] < currentFloorNum + 1)
+                        {
+                            nodeFloors[nextNode] = currentFloorNum + 1;
+                            queue.Enqueue(nextNode);
+                        }
+                    }
+                }
+            }
+        }
+        // ==========================================================
+
         List<MapEventData> normalEvents = new List<MapEventData>();
         MapEventData uniqueEvent = default;
         bool hasUniqueEvent = false;
@@ -165,7 +199,6 @@ public class MapManager : MonoBehaviour
 
         if (normalEvents.Count == 0) normalEvents = availableEvents;
 
-        // --- Å‰‚Ì3ƒ}ƒXê—p‚Ìƒv[ƒ‹‚ğì‚é ---
         List<MapEventData> startNodeAvailableEvents = new List<MapEventData>();
         int totalWeightForStart = 0;
 
@@ -185,32 +218,28 @@ public class MapManager : MonoBehaviour
             foreach (var ev in normalEvents) totalWeightForStart += Mathf.Max(1, ev.weight);
         }
 
-        // --- ’Êíƒ}ƒX—p‚Ì‡ŒvWeightid‚İj‚ğŒvZ‚µ‚Ä‚¨‚­ ---
         int totalWeight = 0;
         foreach (var ev in normalEvents)
         {
             totalWeight += Mathf.Max(1, ev.weight);
         }
 
-        // --- ‡A ƒ}ƒX‚ğueƒIƒuƒWƒFƒNƒgi‘wjv‚²‚Æ‚ÉƒOƒ‹[ƒv•ª‚¯‚·‚é ---
-        Dictionary<Transform, List<MapNode>> layerGroups = new Dictionary<Transform, List<MapNode>>();
-
-        foreach (var node in allNodes)
+        // éšå±¤ï¼ˆFloorï¼‰ã”ã¨ã«ã‚°ãƒ«ãƒ¼ãƒ—åˆ†ã‘ã™ã‚‹
+        Dictionary<int, List<MapNode>> layerGroups = new Dictionary<int, List<MapNode>>();
+        foreach (var pair in nodeFloors)
         {
-            if (node == null || node.isMidBoss || node.isBoss || node.isFixedNode) continue;
+            MapNode node = pair.Key;
+            int floorNum = pair.Value;
 
-            Transform parent = node.transform.parent;
-            if (parent == null) continue;
+            if (node.isMidBoss || node.isBoss || node.isFixedNode) continue;
 
-            if (!layerGroups.ContainsKey(parent))
+            if (!layerGroups.ContainsKey(floorNum))
             {
-                layerGroups[parent] = new List<MapNode>();
+                layerGroups[floorNum] = new List<MapNode>();
             }
-            layerGroups[parent].Add(node);
+            layerGroups[floorNum].Add(node);
         }
 
-        // --- ‡B Šeƒ}ƒX‚Ì–ğŠ„‚ğŠm’è‚³‚¹‚é–‘O’Š‘IƒtƒF[ƒY ---
-        // Šeƒ}ƒX‚ğƒL[‚Æ‚µ‚ÄA‚Ç‚ÌƒCƒxƒ“ƒg‚ğŠ„‚è“–‚Ä‚é‚©‚ğ‹L˜^‚·‚é«‘
         Dictionary<MapNode, MapEventData> forcedNodeEvents = new Dictionary<MapNode, MapEventData>();
 
         foreach (var pair in layerGroups)
@@ -218,7 +247,6 @@ public class MapManager : MonoBehaviour
             List<MapNode> availableNodesInLayer = new List<MapNode>(pair.Value);
             if (availableNodesInLayer.Count == 0) continue;
 
-            // A. Še‘w‚É1ƒ}ƒX‚ÌƒVƒ‡ƒbƒviUniqueEventj‚ğÅ—Dæ‚ÅŠ„‚è“–‚Ä
             if (hasUniqueEvent)
             {
                 List<MapNode> shopCandidates = availableNodesInLayer.FindAll(n => !startNodes.Contains(n));
@@ -237,17 +265,14 @@ public class MapManager : MonoBehaviour
                 availableNodesInLayer.Remove(shopNode);
             }
 
-            // B. šC³FƒCƒ“ƒXƒyƒNƒ^[‚Åw’è‚³‚ê‚½uÅ’á•ÛØ”iminCountPerLayerjv‚ğ–‚½‚·‚æ‚¤‚ÉŠ„‚è“–‚Ä
             foreach (var ev in availableEvents)
             {
-                // ƒVƒ‡ƒbƒviUniquej‚Íã‚Åˆ—Ï‚İ‚È‚Ì‚ÆAÅ’á•ÛØ”‚ª0ˆÈ‰º‚Ì‚à‚Ì‚ÍƒXƒ‹[
                 if (ev.eventName == uniqueEventName || ev.minCountPerLayer <= 0) continue;
 
                 for (int i = 0; i < ev.minCountPerLayer; i++)
                 {
-                    if (availableNodesInLayer.Count == 0) break; // ‹ó‚«ƒ}ƒX‚ª‚È‚­‚È‚Á‚½‚çI—¹
+                    if (availableNodesInLayer.Count == 0) break;
 
-                    // Å‰‚Ì3ƒ}ƒX‚Ì§ŒÀƒŠƒXƒg‚É“ü‚Á‚Ä‚¢‚éƒCƒxƒ“ƒg‚Ìê‡AstartNodes‚ğ”ğ‚¯‚Ä‘I‚Ô
                     MapNode targetNode = null;
                     if (forbiddenEventNamesForStart.Contains(ev.eventName))
                     {
@@ -258,40 +283,39 @@ public class MapManager : MonoBehaviour
                         }
                     }
 
-                    // “KØ‚È‘Ş”ğæ‚ª‚È‚¢A‚Ü‚½‚Í§ŒÀ‚Ì‚È‚¢ƒCƒxƒ“ƒg‚È‚çc‚è‚©‚çƒ‰ƒ“ƒ_ƒ€‘Io
                     if (targetNode == null)
                     {
                         targetNode = availableNodesInLayer[Random.Range(0, availableNodesInLayer.Count)];
                     }
 
                     forcedNodeEvents[targetNode] = ev;
-                    availableNodesInLayer.Remove(targetNode); // Šm’è‚µ‚½‚Ì‚ÅŒó•â‚©‚çÁ‚·
+                    availableNodesInLayer.Remove(targetNode);
                 }
             }
         }
 
-        // --- ‡C ÀÛ‚Ì”z’u‚Æ–½–¼ˆ— ---
+        // --- â‘£ å®Ÿéš›ã®é…ç½®ã¨å‘½åå‡¦ç† ---
         foreach (var node in allNodes)
         {
             if (node == null) continue;
 
-            // ’†ƒ{ƒXAƒ{ƒXA‚Ü‚½‚ÍuŒÅ’èƒ}ƒXv‚Éƒ`ƒFƒbƒN‚ª‚ ‚éê‡‚Íƒ‰ƒ“ƒ_ƒ€‰»‚ğƒXƒLƒbƒv
+            // â˜…ãƒã‚¹ã®ç¹‹ãŒã‚Šã‹ã‚‰è¨ˆç®—ã—ãŸã€Œçµ¶å¯¾ã«æ­£ã—ã„éšå±¤ã€ã‚’å–å¾—
+            int actualFloor = nodeFloors.ContainsKey(node) ? nodeFloors[node] : 1;
+
             if (node.isMidBoss || node.isBoss || node.isFixedNode)
             {
-                node.gameObject.name = $"Fixed_{node.transform.parent.name}_{node.transform.GetSiblingIndex()}";
+                node.gameObject.name = $"Fixed_Floor{actualFloor}_{node.transform.GetSiblingIndex()}";
                 continue;
             }
 
             MapEventData selectedEvent = default;
 
-            // –‘O’Š‘IiƒVƒ‡ƒbƒv‚âÅ’á•ÛØ˜gj‚ÅŠm’è‚µ‚Ä‚¢‚éƒ}ƒX‚©”»’è
             if (forcedNodeEvents.ContainsKey(node))
             {
                 selectedEvent = forcedNodeEvents[node];
             }
             else if (startNodes.Contains(node))
             {
-                // Å‰‚Ì3ƒ}ƒX‚Ì‚¤‚¿AÅ’á•ÛØ‚Å–„‚Ü‚ç‚È‚©‚Á‚½c‚è‚Ì’Êíƒ}ƒX‚ğ’Š‘I
                 int rolledValue = Random.Range(0, totalWeightForStart);
                 int currentWeightSum = 0;
 
@@ -307,7 +331,6 @@ public class MapManager : MonoBehaviour
             }
             else
             {
-                // Å’á•ÛØ˜g‚©‚çŠO‚ê‚½Ac‚è‚ÌŠ®‘SƒtƒŠ[‚È’Êíƒ}ƒX‚ğWeightŠm—¦‚Å’Š‘I
                 int rolledValue = Random.Range(0, totalWeight);
                 int currentWeightSum = 0;
 
@@ -339,8 +362,8 @@ public class MapManager : MonoBehaviour
                 node.nodeIcon.color = finalColor;
             }
 
-            string layerName = node.transform.parent != null ? node.transform.parent.name : "Layer";
-            node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}";
+            // â˜…çµ¶å¯¾ã«æ­£ã—ã„éšå±¤ã®æ•°å­—ã‚’åå‰ã«åˆ»ã¿è¾¼ã‚€ï¼
+            node.gameObject.name = $"{selectedEvent.eventName}_Floor{actualFloor}_{node.transform.GetSiblingIndex()}";
         }
     }
 
