@@ -865,6 +865,7 @@ GameObject:
   - component: {fileID: 359837572}
   - component: {fileID: 359837573}
   - component: {fileID: 359837574}
+  - component: {fileID: 359837575}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1000,6 +1001,24 @@ MonoBehaviour:
   - {fileID: 1235811979}
   - {fileID: 1636984167}
   skipSelectionButton: {fileID: 1727246536}
+--- !u!114 &359837575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359837568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e089c1d00f319704888cc089eae14a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleSetup
+  easyEnemies:
+  - {fileID: 11400000, guid: 0a52307e1a3664f4c8dac9555d099f4b, type: 2}
+  - {fileID: 11400000, guid: bf420077ae0a4ee4b93c45865be892aa, type: 2}
+  - {fileID: 0}
+  normalEnemies: []
+  hardEnemies: []
 --- !u!1 &360555439
 GameObject:
   m_ObjectHideFlags: 0
