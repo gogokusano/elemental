@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 9c5dd23a52be8764dad19f8762556039
+guid: f3f4fe4b97be5874795d34bdc2f4cb75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4739703719804325569
-    second: crawler-removebg-preview_0
+      213: -305054077423200894
+    second: RelicStar_0
+  - first:
+      213: 7750797307378477792
+    second: RelicStar_1
+  - first:
+      213: -5013459067541836087
+    second: RelicStar_2
+  - first:
+      213: -5415460020015239479
+    second: RelicStar_3
+  - first:
+      213: 7480068730678432826
+    second: RelicStar_4
+  - first:
+      213: -3435839711465970897
+    second: RelicStar_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,49 +124,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> main
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
->>>>>>> battle
->>>>>>> main
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crawler-removebg-preview_0
+      name: RelicStar_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 12
-        width: 395
-        height: 454
+        x: 60
+        y: 30
+        width: 100
+        height: 105
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1cec88fcb6fc6c140800000000000000
-      internalID: 4739703719804325569
+      spriteID: 285d7edceea34cbf0800000000000000
+      internalID: -305054077423200894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RelicStar_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 30
+        width: 220
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce253f5a8d9c6ab0800000000000000
+      internalID: -5013459067541836087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RelicStar_4
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 30
+        width: 340
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34589321ea8ec760800000000000000
+      internalID: 7480068730678432826
       vertices: []
       indices: 
       edges: []
@@ -160,7 +197,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4686e84dc67f55348ba3823d39431486
     internalID: 0
     vertices: []
     indices: 
@@ -170,7 +207,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      crawler-removebg-preview_0: 4739703719804325569
+      RelicStar_0: -305054077423200894
+      RelicStar_1: 7750797307378477792
+      RelicStar_2: -5013459067541836087
+      RelicStar_3: -5415460020015239479
+      RelicStar_4: 7480068730678432826
+      RelicStar_5: -3435839711465970897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

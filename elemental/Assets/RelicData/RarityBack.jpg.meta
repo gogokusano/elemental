@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9c5dd23a52be8764dad19f8762556039
+guid: 9426afe0015c1a9428c06c8eb7fedcd6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4739703719804325569
-    second: crawler-removebg-preview_0
+      213: -7297717459297875647
+    second: RarityBack_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,49 +109,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> main
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
->>>>>>> battle
->>>>>>> main
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crawler-removebg-preview_0
+      name: RarityBack_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 12
-        width: 395
-        height: 454
+        x: 687
+        y: 0
+        width: 297
+        height: 546
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1cec88fcb6fc6c140800000000000000
-      internalID: 4739703719804325569
+      spriteID: 149426fb2ac49ba90800000000000000
+      internalID: -7297717459297875647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RarityBack_1
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 0
+        width: 297
+        height: 546
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65687505c6674b84c93212f5aa91b2a0
+      internalID: 1211683508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RarityBack_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 297
+        height: 546
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffad22a6bf4268f4f962deebb1b6ebd0
+      internalID: -864616816
       vertices: []
       indices: 
       edges: []
@@ -160,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 92b39d3f055c3c54aaaaca5fd53df6d1
     internalID: 0
     vertices: []
     indices: 
@@ -170,7 +192,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      crawler-removebg-preview_0: 4739703719804325569
+      RarityBack_0: -7297717459297875647
+      RarityBack_1: 1211683508
+      RarityBack_2: -864616816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -44,6 +44,7 @@ public class EventManager : MonoBehaviour
     public TextMeshProUGUI relicDetailText;     // 奇物の効果テキスト
     public Button relicConfirmButton;           // 奇物用の「OK」ボタン
     public Button relicCancelButton;            // ★キャンセルボタン
+    public Image relicDetailBackgroundImage;
 
     // 内部管理用変数
     private bool isSelectionWaiting = false;
@@ -556,6 +557,14 @@ public class EventManager : MonoBehaviour
             if (relicDetailImage != null) relicDetailImage.sprite = relic.relicIcon;
             if (relicDetailName != null) relicDetailName.text = relic.relicName;
             
+            if (relicDetailBackgroundImage != null)
+            {
+                if (StatusPanelManager.Instance != null)
+                {
+                    relicDetailBackgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic.rarity);
+                }
+            }
+
             string priceText = "";
             if (currentShopAction == ShopActionType.BuyRelic && shopRelics.Contains(relic))
                 priceText = $"\n\n<color=yellow>価格: {GetRelicPrice(relic.rarity)} Gold</color>";

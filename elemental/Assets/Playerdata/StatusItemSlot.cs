@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class StatusItemSlot : MonoBehaviour
 {
     [Header("UI要素の割り当て")]
+    public Image backgroundImage;
     public Image iconImage;
     public Button slotButton;
 
@@ -32,9 +33,19 @@ public class StatusItemSlot : MonoBehaviour
     {
         targetRelic = relic;
         targetCard = null;
-        if (iconImage != null && relic != null)
+        if (relic != null)
         {
-            iconImage.sprite = relic.relicIcon;
+            if (iconImage != null) iconImage.sprite = relic.relicIcon;
+            
+            // ★修正：StatusPanelManagerから背景をもらってくる
+            if (backgroundImage != null)
+            {
+                if (StatusPanelManager.Instance != null)
+                {
+                    backgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic.rarity);
+                    backgroundImage.gameObject.SetActive(true);
+                }
+            }
         }
     }
 

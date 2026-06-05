@@ -6,6 +6,7 @@ public class EventSelectItem : MonoBehaviour
 {
     [Header("UI設定")]
     public Image iconImage;
+    public Image backgroundImage;
 
     private CardData targetCard;
     private RelicData targetRelic;
@@ -28,8 +29,20 @@ public class EventSelectItem : MonoBehaviour
         targetCard = null;
         manager = mgr;
         
-        if (iconImage != null && relic.relicIcon != null) iconImage.sprite = relic.relicIcon;
-        
+        if (relic != null)
+        {
+            if (iconImage != null && relic.relicIcon != null) iconImage.sprite = relic.relicIcon;
+            
+            // ★修正：StatusPanelManagerから背景をもらってくる
+            if (backgroundImage != null)
+            {
+                if (StatusPanelManager.Instance != null)
+                {
+                    backgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic.rarity);
+                    backgroundImage.gameObject.SetActive(true);
+                }
+            }
+        }
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
 

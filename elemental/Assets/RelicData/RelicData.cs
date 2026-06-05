@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public enum RelicType { None, Attack, Defense, Special }
+public enum RelicCategory { Normal, Subtle, Negative }
 // [CreateAssetMenu] を追加してエディタ上から作成できるようにしています
 [CreateAssetMenu(fileName = "NewRelic", menuName = "CardGame/RelicData")]
 public class RelicData : ScriptableObject
@@ -10,9 +11,10 @@ public class RelicData : ScriptableObject
     [TextArea]
     public string description;    // 効果の説明文
     public Sprite relicIcon;      // 画面に表示するアイコン
-    public Rarity rarity;         // レアリティ（微妙な奇物Common、不利奇物Uncommon、★Rare、★★Epic、★★★legendaryとする）
+    public Rarity rarity;         // レアリティ（★Rare、★★Epic、★★★legendaryとする）
+    [Header("ゲーム上の設定")]
     public RelicType relicType;
-
+    public RelicCategory relicCategory; // ★追加：有利・微妙・不利の区別用
     // ==========================================
     // 効果を発動するタイミング（フック）
     // 派生先で上書き（override）して使います。

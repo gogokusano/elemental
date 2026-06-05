@@ -22,10 +22,19 @@ public class StatusPanelManager : MonoBehaviour
     public GameObject cardSlotPrefab;     // 長方形のカード用プレハブ
     public GameObject relicSlotPrefab;    // 正方形の奇物用プレハブ
 
+    [Header("レアリティ別 背景画像設定")]
+    public Sprite bgCommon;
+    public Sprite bgUncommon;
+    public Sprite bgRare;
+    public Sprite bgEpic;
+    public Sprite bgLegendary;
+    public Sprite bgSpecial;
+
     [Header("詳細ポップアップ用UI")]
     public TextMeshProUGUI detailNameText;
     public TextMeshProUGUI detailDescriptionText;
     public Image detailImageView;
+    public Image detailBackgroundImage;
 
     void Awake()
     {
@@ -40,6 +49,20 @@ public class StatusPanelManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public Sprite GetRelicBackground(Rarity rarity)
+    {
+        switch (rarity)
+        {
+            case Rarity.Common:    return bgCommon;
+            case Rarity.Uncommon:  return bgUncommon;
+            case Rarity.Rare:      return bgRare;
+            case Rarity.Epic:      return bgEpic;
+            case Rarity.Legendary: return bgLegendary;
+            case Rarity.Special:   return bgSpecial;
+            default:               return bgCommon; // 設定漏れ用のデフォルト
         }
     }
 
@@ -115,6 +138,12 @@ public class StatusPanelManager : MonoBehaviour
         detailDescriptionText.text = string.IsNullOrEmpty(card.cardTextS) ? card.description : card.cardTextS;
         detailImageView.sprite = card.cardImage;
         
+        // ★修正：カードを開いたときは奇物のレアリティ背景を非表示にする
+        if (detailBackgroundImage != null)
+        {
+            detailBackgroundImage.gameObject.SetActive(false);
+        }
+        
         // ★必要に応じて、詳細画面での画像アスペクト比も調整する（ImageのPreserve AspectをONにしておくと便利です）
 
         detailPopupPanel.SetActive(true);
@@ -127,6 +156,20 @@ public class StatusPanelManager : MonoBehaviour
         detailNameText.text = relic.relicName;
         detailDescriptionText.text = relic.description;
         detailImageView.sprite = relic.relicIcon;
+
+        if (detailBackgroundImage != null)
+        {
+            Sprite bgSprite = GetRelicBackground(relic.rarity);
+            if (bgSprite != null)
+            {
+                detailBackgroundImage.gameObject.SetActive(true);
+                detailBackgroundImage.sprite = bgSprite;
+            }
+            else
+            {
+                detailBackgroundImage.gameObject.SetActive(false);
+            }
+        }
 
         detailPopupPanel.SetActive(true);
     }

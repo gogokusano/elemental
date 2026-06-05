@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b1345f9589a2394eb28952923445a78, type: 3}
-  m_Name: Event3
+  m_Name: Anomaly2
   m_EditorClassIdentifier: Assembly-CSharp::EventData
-  eventName: "\u673D\u3061\u305F\u91CE\u55B6\u5730"
-  eventText: "\u706B\u306F\u3068\u3046\u306B\u6D88\u3048\u3001\u98A8\u5316\u3057\u305F\u30C6\u30F3\u30C8\u306E\u305D\u3070\u306B\u306F\u8AB0\u304B\u306E\u8377\u7269\u304C\u6563\u4E71\u3057\u3066\u3044\u308B\u3002\u3053\u3053\u3067\u306A\u3089\u5C11\u3057\u4F11\u3081\u305D\u3046\u3060\u304C\u3001\u7269\u8CC7\u3092\u6F01\u308B\u3053\u3068\u3082\u3067\u304D\u305D\u3046\u3060\u3002"
-  eventImage: {fileID: -680702051991692238, guid: fa3b6e4a8845c5b47a7a51c4f9715e0d, type: 3}
+  eventName: "\u30AC\u30FC\u30B4\u30A4\u30EB\u306E\u5F6B\u523B"
+  eventText: "\u5927\u304D\u306A\u53E3\u3092\u958B\u3051\u305F\u798D\u3005\u3057\u3044\u30AC\u30FC\u30B4\u30A4\u30EB\u306E\u77F3\u50CF\u304C\u93AE\u5EA7\u3057\u3066\u3044\u308B\u3002\u305D\u306E\u53E3\u306E\u5965\u306F\u6697\u9ED2\u306B\u7E4B\u304C\u3063\u3066\u304A\u308A\u3001\u4F55\u304B\u3092\u653E\u308A\u8FBC\u3081\u3068\u8A00\u308F\u3093\u3070\u304B\u308A\u306B\u5F85\u3061\u69CB\u3048\u3066\u3044\u308B\u3002"
+  eventImage: {fileID: 2772836264892695146, guid: b8e7ed9e2a349e94baa3586530426744, type: 3}
   options:
-  - buttonText: "\u907A\u54C1\u3092\u63A2\u3059\uFF1A\u30E9\u30F3\u30C0\u30E0\u306A\u5947\u7269\u30921\u3064\u5F97\u308B\u304C\u3001\u7F60\u306B\u304B\u304B\u308AHP\u30926\u5931\u3046\u3002"
+  - buttonText: "\u53E3\u306B\u653E\u308A\u8FBC\u3080\uFF1A\u9078\u3093\u3060\u30AB\u30FC\u30C9\u30921\u679A\u30C7\u30C3\u30AD\u304B\u3089\u524A\u9664\u3057\u3001\u5F15\u304D\u63DB\u3048\u306B\u300C\u5371\u7269\u300D\u30921\u3064\u7372\u5F97\u3059\u308B\u3002"
     shopAction: 0
-    removeCardPrice: 75
-    hpChange: -6
+    removeCardPrice: 0
+    hpChange: 0
     maxHpChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 1
-    minRelicCount: 1
-    maxRelicCount: 1
-    allowedRarities: 020000000300000004000000
+    minRelicCount: 0
+    maxRelicCount: 0
+    allowedRarities: 01000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
-    upgradeChance: 0.5
+    upgradeChance: 0
     upgradedRarity: 0
     loseRelicCount: 0
     loseRelicMethod: 0
@@ -41,35 +41,35 @@ MonoBehaviour:
     targetCardCost: 0
     filterCardByRarity: 0
     targetCardRarity: 0
-    removeCardCount: 0
-    removeCardMethod: 0
+    removeCardCount: 1
+    removeCardMethod: 2
     transformCardCount: 0
     transformCardMethod: 0
     duplicateCardCount: 0
     duplicateCardMethod: 0
     isGambleOption: 0
-    gambleSuccessChance: 0.5
+    gambleSuccessChance: 0
     penaltyType: 0
     penaltyValue: 0
-  - buttonText: "\u5C11\u3057\u4F11\u3080\uFF1AHP\u30926\u56DE\u5FA9\u3059\u308B\u3002"
+  - buttonText: "\u751F\u547D\u529B\u3092\u6CE8\u304E\u8FBC\u3080\uFF1AHP\u30927\u5931\u3046\u3002\u4EE3\u308F\u308A\u306B\u3001\u30E9\u30F3\u30C0\u30E0\u306A\u300C\u5947\u7269\u300D\u30921\u3064\u7372\u5F97\u3059\u308B\u3002"
     shopAction: 0
-    removeCardPrice: 75
-    hpChange: 6
+    removeCardPrice: 0
+    hpChange: -7
     maxHpChange: 0
     rewardRelic: {fileID: 0}
-    giveRandomRelic: 0
-    minRelicCount: 2
-    maxRelicCount: 3
-    allowedRarities: 
+    giveRandomRelic: 1
+    minRelicCount: 0
+    maxRelicCount: 0
+    allowedRarities: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
-    upgradeChance: 0.5
+    upgradeChance: 0
     upgradedRarity: 0
     loseRelicCount: 0
     loseRelicMethod: 0
-    gainCardCount: 0
-    gainCardMethod: 0
+    gainCardCount: 1
+    gainCardMethod: 1
     filterCardByElement: 0
     targetCardElement: 0
     filterCardByCost: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
     duplicateCardCount: 0
     duplicateCardMethod: 0
     isGambleOption: 0
-    gambleSuccessChance: 0.5
+    gambleSuccessChance: 0
     penaltyType: 0
     penaltyValue: 0
   shopConfig:
