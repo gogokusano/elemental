@@ -62,6 +62,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd79c1a89e4838941938bab356a1086d, type: 2}
   allAnomalyEvents:
   - {fileID: 11400000, guid: 40b0d22e00485cc4b880ef31c19ad596, type: 2}
+  - {fileID: 11400000, guid: 1659a3b9ac6f78249a13356168a41d61, type: 2}
+  - {fileID: 11400000, guid: b3a6f78cf69fbd64f8ff963ff8315378, type: 2}
   allShopEvents:
   - {fileID: 11400000, guid: ca1fbc1427aae1e4cb8d867b033f8865, type: 2}
 --- !u!114 &496167374814708121
@@ -128,6 +130,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2bb3cf82aa15402489fc96fe4a554b10, type: 2}
   - {fileID: 11400000, guid: 26ee860e28753ab41981052ac4b65f95, type: 2}
   - {fileID: 11400000, guid: 2b386b4bc586f4946bf2ffae109eb393, type: 2}
+  - {fileID: 11400000, guid: 7c9e4d1c10864ce4cbc380b8801b026b, type: 2}
   allAvailableCards:
   - {fileID: 11400000, guid: 7be1658040b9b174d9b65c369745b796, type: 2}
   - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}

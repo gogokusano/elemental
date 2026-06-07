@@ -29,6 +29,15 @@ public class StatusPanelManager : MonoBehaviour
     public Sprite bgEpic;
     public Sprite bgLegendary;
     public Sprite bgSpecial;
+    public Sprite bgNegative;
+    
+    [Header("★レアリティ星画像設定")]
+    public Sprite starRare;       // ★ (1つ星)
+    public Sprite starEpic;       // ★★ (2つ星)
+    public Sprite starLegendary;  // ★★★ (3つ星)
+    public Sprite starNegative;   // ★不利奇物専用のアイコン（ドクロやヒビ割れた星など）
+    [Header("詳細パネル内のUI (追加)")]
+    public Image detailStarImage;
 
     [Header("詳細ポップアップ用UI")]
     public TextMeshProUGUI detailNameText;
@@ -52,9 +61,18 @@ public class StatusPanelManager : MonoBehaviour
         }
     }
 
-    public Sprite GetRelicBackground(Rarity rarity)
+    public Sprite GetRelicBackground(RelicData relic)
     {
-        switch (rarity)
+        if (relic == null) return null;
+
+        // ★カテゴリがNegative(不利奇物)なら、レアリティ設定を無視して専用背景を返す
+        if (relic.relicCategory == RelicCategory.Negative)
+        {
+            return bgNegative;
+        }
+
+        // それ以外はレアリティに応じて返す
+        switch (relic.rarity)
         {
             case Rarity.Common:    return bgCommon;
             case Rarity.Uncommon:  return bgUncommon;
@@ -62,7 +80,27 @@ public class StatusPanelManager : MonoBehaviour
             case Rarity.Epic:      return bgEpic;
             case Rarity.Legendary: return bgLegendary;
             case Rarity.Special:   return bgSpecial;
-            default:               return bgCommon; // 設定漏れ用のデフォルト
+            default:               return bgCommon;
+        }
+    }
+
+    public Sprite GetRelicStarSprite(RelicData relic)
+    {
+        if (relic == null) return null;
+
+        // ★不利奇物の場合は、レアリティ設定を無視して専用アイコンを返す
+        if (relic.relicCategory == RelicCategory.Negative)
+        {
+            return starNegative;
+        }
+
+        // それ以外はレアリティに応じて星画像を返す
+        switch (relic.rarity)
+        {
+            case Rarity.Rare:      return starRare;
+            case Rarity.Epic:      return starEpic;
+            case Rarity.Legendary: return starLegendary;
+            default:               return null;
         }
     }
 
@@ -159,7 +197,7 @@ public class StatusPanelManager : MonoBehaviour
 
         if (detailBackgroundImage != null)
         {
-            Sprite bgSprite = GetRelicBackground(relic.rarity);
+            Sprite bgSprite = GetRelicBackground(relic);
             if (bgSprite != null)
             {
                 detailBackgroundImage.gameObject.SetActive(true);
@@ -168,6 +206,21 @@ public class StatusPanelManager : MonoBehaviour
             else
             {
                 detailBackgroundImage.gameObject.SetActive(false);
+            }
+        }
+
+        if (detailStarImage != null)
+        {
+            Sprite starSprite = GetRelicStarSprite(relic);
+            if (starSprite != null)
+            {
+                detailStarImage.sprite = starSprite;
+                detailStarImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                // 星画像が設定されていない（Commonなど）場合は非表示にする
+                detailStarImage.gameObject.SetActive(false);
             }
         }
 
