@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: gore
   maxHP: 80
-  enemyImage: {fileID: 5654681832717305983, guid: 6d47ad0272b6d294caa1f071cfe7d6f1, type: 3}
+  enemyImage: {fileID: -211942268205873957, guid: 178e0aa6fd8d86d4eb41a6a8060d44da, type: 3}
   actionList:
   - actionName: 
     actionType: 0
