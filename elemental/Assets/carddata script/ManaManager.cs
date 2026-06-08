@@ -15,21 +15,25 @@ public class ManaManager : MonoBehaviour
         ResetMana();
     }
 
-    // コストを全回復させる
+    // コストを回復させる
     public void ResetMana()
     {
         currentMana = maxMana;
 
         // ==========================================
-        // ★デバフ処理：金縛りにかかっていたら回復マナを減らす
+        // ★正しい復旧：金縛り（Paralysis）のデバフ処理
         // ==========================================
         if (PlayerDebuffManager.Instance != null)
         {
-            // 金縛りのペナルティ（例：-2）を取得して加算する
+            // PlayerDebuffManagerから金縛りのマイナス値を取得する（例：1設定なら -1 が返ってくる）
             int penalty = PlayerDebuffManager.Instance.GetParalysisManaPenalty();
-            currentMana += penalty;
-
-            if (currentMana < 0) currentMana = 0; // マナがマイナスにならないよう防御
+            
+            if (penalty < 0) // ペナルティが発生している場合
+            {
+                currentMana += penalty;
+                if (currentMana < 0) currentMana = 0; // マナがマイナスにならないよう防御
+                Debug.Log($"<color=purple>金縛りにより、マナが最大まで回復しなかった！</color>");
+            }
         }
 
         UpdateManaUI();
