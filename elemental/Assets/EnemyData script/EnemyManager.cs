@@ -36,8 +36,21 @@ public class EnemyManager : MonoBehaviour
     public Sprite defendIntentIcon;     
     public Sprite statusIntentIcon;     
 
-    private EnemyAction nextAction;     
+    // ========================================================
+    // ★追加：必殺技(Ultimate)ギミックの一括インスペクター設定
+    // ========================================================
+    [Header("必殺技(Ultimate)ギミック設定")]
+    public bool hasUltimate = false;            // この敵が必殺技を使うかどうか
+    public int ultimateTriggerTurn = 5;        // 何ターン目に「力をためる」を行うか
+    public int ultimateDamage = 999;           // その次のターンに与える開放ダメージ
+    public Sprite chargeIntentIcon;            // 「力をためる」時の専用予告アイコン（未設定ならstatusを使い回し）
 
+    private int turnCount = 1;                 // 敵の経過ターン数カウンター
+    private bool isCharging = false;           // 現在力をためている最中か
+    private bool isReleasing = false;          // 現在力を開放するターンか
+    // ========================================================
+
+    private EnemyAction nextAction;     
     private EnemyAction lastAction1; 
     private EnemyAction lastAction2; 
     private List<EnemyAction> usedOneTimeActions = new List<EnemyAction>(); 
@@ -59,6 +72,11 @@ public class EnemyManager : MonoBehaviour
             lastAction2 = null;
             usedOneTimeActions.Clear();
 
+            // 必殺技用カウンターを初期化
+            turnCount = 1;
+            isCharging = false;
+            isReleasing = false;
+
             if (hpSlider != null) hpSlider.maxValue = enemyData.maxHP;
             if (blockSlider != null) blockSlider.maxValue = enemyData.maxHP; 
 
@@ -70,6 +88,36 @@ public class EnemyManager : MonoBehaviour
 
     public void DetermineNextAction()
     {
+        // ========================================================
+        // ★追加：必殺技ギミックの強制割り込み判定
+        // ========================================================
+        if (hasUltimate)
+        {
+            // 指定されたターンになったら、通常の行動を無視して「力をためる」を予告
+            if (turnCount == ultimateTriggerTurn)
+            {
+                isCharging = true;
+                isReleasing = false;
+                nextAction = null; // 通常アクションは不使用
+                UpdateUltimateIntentUI(true);
+                return;
+            }
+            // 前のターンにためていたなら、今回は通常の行動を無視して「力の開放」を予告
+            else if (isCharging)
+            {
+                isCharging = false;
+                isReleasing = true;
+                nextAction = null; // 通常アクションは不使用
+                UpdateUltimateIntentUI(false);
+                return;
+            }
+        }
+
+        // 通常時は必殺技フラグをオフにする
+        isCharging = false;
+        isReleasing = false;
+        // ========================================================
+
         if (enemyData == null || enemyData.actionList.Count == 0) return;
 
         List<EnemyAction> availableActions = new List<EnemyAction>();
@@ -79,7 +127,8 @@ public class EnemyManager : MonoBehaviour
         {
             if (action.isPhase2Only && hpPercentage > 0.5f) continue;
             if (action.isOneTimeOnly && usedOneTimeActions.Contains(action)) continue;
-            if (lastAction1 == action && lastAction2 == action) continue;
+            
+            if (lastAction1 == action) continue;
 
             availableActions.Add(action);
         }
@@ -90,6 +139,30 @@ public class EnemyManager : MonoBehaviour
         nextAction = availableActions[randomIndex];
 
         UpdateIntentUI();
+    }
+
+    // ★追加：必殺技専用の予告UI表示ルーチン
+    private void UpdateUltimateIntentUI(bool charging)
+    {
+        if (intentIconDisplay == null || intentText == null) return;
+
+        intentIconDisplay.gameObject.SetActive(true);
+        intentText.gameObject.SetActive(true);
+
+        if (charging)
+        {
+            // 【力をためる予告】
+            intentIconDisplay.sprite = chargeIntentIcon != null ? chargeIntentIcon : statusIntentIcon;
+            intentIconDisplay.color = new Color(1.0f, 0.5f, 0.0f); // チャージを表すオレンジ色
+            intentText.text = ""; // 猶予ターンなのでダメージ数値は非表示
+        }
+        else
+        {
+            // 【力の開放予告】
+            intentIconDisplay.sprite = attackIntentIcon;
+            intentIconDisplay.color = Color.red; // 攻撃の赤色
+            intentText.text = ultimateDamage.ToString(); // 設定した即死級ダメージを表示！
+        }
     }
 
     private void UpdateIntentUI()
@@ -106,27 +179,83 @@ public class EnemyManager : MonoBehaviour
                 intentIconDisplay.color = Color.red; 
                 intentText.text = nextAction.value.ToString(); 
                 break;
+
             case EnemyActionType.Defend:
                 intentIconDisplay.sprite = defendIntentIcon;
                 intentIconDisplay.color = Color.blue; 
                 intentText.text = nextAction.value.ToString(); 
                 break;
+
             case EnemyActionType.AddStatusCard:
                 intentIconDisplay.sprite = statusIntentIcon;
                 intentIconDisplay.color = Color.green; 
                 intentText.text = ""; 
+                break;
+
+            case EnemyActionType.ApplyDebuff:
+                intentIconDisplay.sprite = statusIntentIcon; 
+                intentText.text = ""; 
+
+                switch (nextAction.debuffType)
+                {
+                    case DebuffType.Poison:
+                        intentIconDisplay.color = new Color(0.2f, 0.8f, 0.2f); 
+                        break;
+                    case DebuffType.Weaken:
+                        intentIconDisplay.color = new Color(0.4f, 0.4f, 0.4f); 
+                        break;
+                    case DebuffType.Bleed:
+                        intentIconDisplay.color = new Color(1.0f, 0.27f, 0.0f); 
+                        break;
+                    case DebuffType.Paralysis:
+                        intentIconDisplay.color = new Color(0.58f, 0.0f, 0.82f); 
+                        break;
+                    case DebuffType.Confusion:
+                        intentIconDisplay.color = new Color(1.0f, 0.0f, 1.0f); 
+                        break;
+                    default:
+                        intentIconDisplay.color = new Color(0.6f, 0.0f, 0.8f); 
+                        break;
+                }
                 break;
         }
     }
 
     public void ExecuteAction()
     {
+        // ========================================================
+        // ★追加：必殺技の実行ルーチン
+        // ========================================================
+        if (hasUltimate && (isCharging || isReleasing))
+        {
+            if (isCharging)
+            {
+                // 【力をためるターン】プレイヤーへのダメージは無し（猶予）
+                Debug.Log($"<color=orange>{gameObject.name}は激しく力をためている…！次のターンの「力の開放」に備えよ！</color>");
+            }
+            else if (isReleasing)
+            {
+                // 【力の開放ターン】設定した即死級ダメージをプレイヤーに叩き込む！
+                Debug.Log($"<color=red>{gameObject.name}の力の開放！プレイヤーに {ultimateDamage} の即死級ダメージ！</color>");
+                PlayerManager player = Object.FindFirstObjectByType<PlayerManager>();
+                if (player != null) player.TakeDamage(ultimateDamage);
+            }
+
+            UpdateUI();
+
+            turnCount++; // ターンを進める
+            DetermineNextAction(); // 次のターンの予測を決定して終了
+            return;
+        }
+        // ========================================================
+
         if (nextAction == null) DetermineNextAction();
 
         if (isFrozen)
         {
             isFrozen = false; 
             if (Random.value <= 0.5f) {
+                turnCount++; // スキップされてもターン自体は進める
                 DetermineNextAction(); 
                 return; 
             }
@@ -148,14 +277,22 @@ public class EnemyManager : MonoBehaviour
                     dm.AddCardToDrawPile(nextAction.statusCard); 
                 }
                 break;
+            case EnemyActionType.ApplyDebuff:
+                if (PlayerDebuffManager.Instance != null)
+                {
+                    PlayerDebuffManager.Instance.ApplyDebuff(nextAction.debuffType, nextAction.debuffDuration, nextAction.debuffValue);
+                }
+                break;
         }
         
         UpdateUI();
 
         if (nextAction.isOneTimeOnly) usedOneTimeActions.Add(nextAction);
+        
         lastAction2 = lastAction1;
         lastAction1 = nextAction;
 
+        turnCount++; // 通常行動終了時にターンを進める
         DetermineNextAction();
     }
 
@@ -170,6 +307,12 @@ public class EnemyManager : MonoBehaviour
         }
         
         ElementType incomingElement = card.elementType; 
+
+        if (PlayerDebuffManager.Instance != null && PlayerDebuffManager.Instance.HasConfusion())
+        {
+            incomingElement = ElementType.Normal;
+            Debug.Log("<color=magenta>混乱により、属性の付与が無効化された！</color>");
+        }
 
         if (isPhysicalWeak && incomingElement == ElementType.Normal)
         {
@@ -274,9 +417,6 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    // ========================================================
-    // ★修正箇所：敵が全滅した時だけリザルトを表示するように変更！
-    // ========================================================
     public void TakeDamage(int damage)
     {
         if (damage <= 0) return;
@@ -292,7 +432,6 @@ public class EnemyManager : MonoBehaviour
         { 
             currentHP = 0; 
             
-            // ★1. 先にこの敵を非表示（死んだ扱い）にする
             gameObject.SetActive(false); 
 
             if (PlayerDataManager.Instance != null)
@@ -303,7 +442,6 @@ public class EnemyManager : MonoBehaviour
                 }
             }
 
-            // ★2. 画面内にまだ生きている敵がいるか探す
             EnemyManager[] remainingEnemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
             bool isAnyEnemyAlive = false;
             foreach (var e in remainingEnemies)
@@ -315,7 +453,6 @@ public class EnemyManager : MonoBehaviour
                 }
             }
 
-            // ★3. もし生きている敵が1体もいなければ（全滅したら）勝利画面へ！
             if (!isAnyEnemyAlive)
             {
                 GameManager gm = Object.FindFirstObjectByType<GameManager>();
@@ -330,7 +467,6 @@ public class EnemyManager : MonoBehaviour
             UpdateUI();
         }
     }
-    // ========================================================
 
     public void ResetBlock() { currentBlock = 0; UpdateUI(); }
 

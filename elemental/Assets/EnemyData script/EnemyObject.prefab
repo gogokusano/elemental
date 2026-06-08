@@ -663,6 +663,10 @@ MonoBehaviour:
   attackIntentIcon: {fileID: 21300000, guid: 6fa365c0ceed64a49836c8da6dc0fcf8, type: 3}
   defendIntentIcon: {fileID: 21300000, guid: c6e7c202f05ab5540b77239101217338, type: 3}
   statusIntentIcon: {fileID: 21300000, guid: 0444d31f14457f346b517cd60ffbe6e7, type: 3}
+  hasUltimate: 1
+  ultimateTriggerTurn: 15
+  ultimateDamage: 999
+  chargeIntentIcon: {fileID: 21300000, guid: 9042a9bcf075f3a428ee3f5bd986e375, type: 3}
 --- !u!1 &5411234069105771817
 GameObject:
   m_ObjectHideFlags: 0

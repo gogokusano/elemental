@@ -6,6 +6,8 @@ using TMPro;
 
 public class DeckManager : MonoBehaviour
 {
+    public static DeckManager Instance; // ★追加：他のスクリプトから呼び出しやすくする
+
     [Header("カードデータ")]
     public List<CardData> drawPile = new List<CardData>();
     public List<CardData> discardPile = new List<CardData>();
@@ -32,6 +34,11 @@ public class DeckManager : MonoBehaviour
     [Header("状態管理")]
     public bool isEnemyTurn = false; 
     private int nextTurnDrawBonus = 0;
+
+    void Awake()
+    {
+        Instance = this; // ★追加
+    }
 
     void Start() 
     { 
@@ -62,6 +69,14 @@ public class DeckManager : MonoBehaviour
     {
         if (isEnemyTurn) return; 
 
+        // ==========================================
+        // ★デバフ処理：ターン終了時に毒のダメージや出血、ターンの減少を行う！
+        // ==========================================
+        if (PlayerDebuffManager.Instance != null)
+        {
+            PlayerDebuffManager.Instance.OnPlayerTurnEnd();
+        }
+
         GameManager gm = Object.FindFirstObjectByType<GameManager>();
         if (gm != null) gm.PlayerTurnEnd();
 
@@ -87,26 +102,20 @@ public class DeckManager : MonoBehaviour
         StartCoroutine(EnemyTurnRoutine());
     }
 
-    // ========================================================
-    // ★修正箇所：画面にいるすべての敵が順番に行動するように変更！
-    // ========================================================
     IEnumerator EnemyTurnRoutine()
     {
         isEnemyTurn = true;
         yield return new WaitForSeconds(0.5f);
 
-        // 画面にいる全ての EnemyManager を取得
         EnemyManager[] allEnemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
         
         foreach (EnemyManager enemy in allEnemies)
         {
-            // 敵が生きていて表示されている場合のみ行動
             if (enemy != null && enemy.gameObject.activeSelf) 
             {
                 enemy.ResetBlock(); 
                 enemy.ExecuteAction();
                 
-                // 次の敵が動くまでに少し待つ（順番に攻撃してくるようにする）
                 yield return new WaitForSeconds(0.5f); 
             }
         }
@@ -114,7 +123,6 @@ public class DeckManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         StartPlayerActionPhase();
     }
-    // ========================================================
 
     void StartPlayerActionPhase()
     {
