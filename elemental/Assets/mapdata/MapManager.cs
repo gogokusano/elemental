@@ -399,4 +399,18 @@ public class MapManager : MonoBehaviour
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
+
+    public void GiveUpAndBackToTitle()
+    {
+        Debug.Log("ゲームを途中離脱します。タイトルへ戻ります。");
+
+        // データを完全にリセット
+        if (PlayerDataManager.Instance != null)
+        {
+            PlayerDataManager.Instance.ResetAllData();
+        }
+
+        // タイトルシーンへ遷移
+        UnityEngine.SceneManagement.SceneManager.LoadScene("title");
+    }
 }

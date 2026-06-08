@@ -71,6 +71,11 @@ public class GameManager : MonoBehaviour
 
         // ★追加：敗北画面が表示された瞬間にリボン画像を進行度に合わせて切り替える
         SetupGameOverRibbon();
+        
+        if (PlayerDataManager.Instance != null)
+        {
+            PlayerDataManager.Instance.ResetAllData();
+        }
 
         // 完全に敗北が確定したため、データをリセット（最初からやり直し）にする
         PlayerPrefs.DeleteKey("LastClearedNode");

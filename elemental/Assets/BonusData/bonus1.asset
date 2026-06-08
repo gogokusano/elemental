@@ -23,9 +23,9 @@ MonoBehaviour:
     hpPercentChange: 0
     maxHpChange: 0
     maxHpPercentChange: 0
-    goldChange: 0
+    goldChange: 60
     rewardRelic: {fileID: 0}
-    giveRandomRelic: 1
+    giveRandomRelic: 0
     minRelicCount: 2
     maxRelicCount: 2
     allowedRarities: 0300000004000000
