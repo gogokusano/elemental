@@ -3955,7 +3955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f18d892567b741b61fe447d15d038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  sceneName: 
+  sceneName: mid boss
   nodeButton: {fileID: 662667709}
   nodeIcon: {fileID: 0}
   nextNodes:
