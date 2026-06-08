@@ -49,6 +49,22 @@ public class EventManager : MonoBehaviour
     public Image relicDetailStarImage;
     public TextMeshProUGUI relicDetailPriceText;
 
+    [Header("★イベント結果ポップアップUI")]
+    public GameObject eventResultPanel;          // ポップアップ画面全体の親
+    public Transform eventResultContentArea;     // 結果を並べるエリア
+    
+    // ★変更箇所：プレハブを種類別に3つ用意する
+    public GameObject eventResultRelicPrefab;    // 奇物用プレハブ
+    public GameObject eventResultCardPrefab;     // カード用プレハブ
+    public GameObject eventResultGoldPrefab;     // ゴールド用プレハブ
+    public Sprite goldIconSprite;
+    public Sprite goldBgSprite;
+
+    public Button eventResultConfirmButton;      // 「マップへ戻る」ボタン
+
+
+
+
     // 内部管理用変数
     private bool isSelectionWaiting = false;
     private bool isCanceled = false;
@@ -68,6 +84,7 @@ public class EventManager : MonoBehaviour
         if (relicSelectionPanel != null) relicSelectionPanel.SetActive(false);
         if (cardDetailPanel != null) cardDetailPanel.SetActive(false);
         if (relicDetailPanel != null) relicDetailPanel.SetActive(false);
+        if (eventResultPanel != null) eventResultPanel.SetActive(false);
 
         // OKボタンのイベントリスナー登録と初期無効化
         if (cardConfirmButton != null)
@@ -342,6 +359,10 @@ public class EventManager : MonoBehaviour
     {
         if (PlayerDataManager.Instance == null) yield break;
 
+        int oldGold = PlayerDataManager.Instance.gold;
+        List<RelicData> oldRelics = new List<RelicData>(PlayerDataManager.Instance.ownedRelics);
+        List<CardData> oldCards = new List<CardData>(PlayerDataManager.Instance.deckCards);
+
         bool isSuccess = true;
 
         if (option.isGambleOption)
@@ -469,6 +490,81 @@ public class EventManager : MonoBehaviour
             }
         }
 
+        yield return StartCoroutine(ShowEventResultCoroutine(oldGold, oldRelics, oldCards));
+    }
+
+    IEnumerator ShowEventResultCoroutine(int oldGold, List<RelicData> oldRelics, List<CardData> oldCards)
+    {
+        bool hasChanges = false;
+        foreach (Transform child in eventResultContentArea) Destroy(child.gameObject);
+
+        // 1. 奇物の獲得
+        var addedRelics = GetDifferences(oldRelics, PlayerDataManager.Instance.ownedRelics);
+        foreach (var kvp in addedRelics)
+        {
+            GameObject obj = Instantiate(eventResultRelicPrefab, eventResultContentArea); // ★RelicPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupRelic(kvp.Key, kvp.Value, false);
+            hasChanges = true;
+        }
+
+        // 2. 奇物の喪失
+        var lostRelics = GetDifferences(PlayerDataManager.Instance.ownedRelics, oldRelics);
+        foreach (var kvp in lostRelics)
+        {
+            GameObject obj = Instantiate(eventResultRelicPrefab, eventResultContentArea); // ★RelicPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupRelic(kvp.Key, kvp.Value, true);
+            hasChanges = true;
+        }
+
+        // 3. カードの獲得
+        var addedCards = GetDifferences(oldCards, PlayerDataManager.Instance.deckCards);
+        foreach (var kvp in addedCards)
+        {
+            GameObject obj = Instantiate(eventResultCardPrefab, eventResultContentArea); // ★CardPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupCard(kvp.Key, kvp.Value, false);
+            hasChanges = true;
+        }
+
+        // 4. カードの喪失(削除など)
+        var lostCards = GetDifferences(PlayerDataManager.Instance.deckCards, oldCards);
+        foreach (var kvp in lostCards)
+        {
+            GameObject obj = Instantiate(eventResultCardPrefab, eventResultContentArea); // ★CardPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupCard(kvp.Key, kvp.Value, true);
+            hasChanges = true;
+        }
+
+        // 5 & 6. ゴールドの獲得と減少
+        int goldDiff = PlayerDataManager.Instance.gold - oldGold;
+        if (goldDiff > 0) // 獲得
+        {
+            GameObject obj = Instantiate(eventResultGoldPrefab, eventResultContentArea); // ★GoldPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupGold(goldDiff, goldIconSprite, goldBgSprite, false);
+            hasChanges = true;
+        }
+        else if (goldDiff < 0) // 減少
+        {
+            GameObject obj = Instantiate(eventResultGoldPrefab, eventResultContentArea); // ★GoldPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupGold(Mathf.Abs(goldDiff), goldIconSprite, goldBgSprite, true);
+            hasChanges = true;
+        }
+
+        if (!hasChanges)
+        {
+            ReturnToMap();
+            yield break;
+        }
+
+        eventResultPanel.SetActive(true);
+        eventResultConfirmButton.interactable = true;
+
+        bool resultConfirmed = false;
+        eventResultConfirmButton.onClick.RemoveAllListeners();
+        eventResultConfirmButton.onClick.AddListener(() => { resultConfirmed = true; });
+
+        yield return new WaitUntil(() => resultConfirmed);
+
+        eventResultPanel.SetActive(false);
         ReturnToMap();
     }
 
@@ -683,6 +779,25 @@ public class EventManager : MonoBehaviour
             }
         }
         return result;
+    }
+
+    Dictionary<T, int> GetDifferences<T>(List<T> oldList, List<T> newList) where T : ScriptableObject
+    {
+        Dictionary<T, int> counts = new Dictionary<T, int>();
+        List<T> tempOld = new List<T>(oldList);
+        foreach (var item in newList)
+        {
+            if (tempOld.Contains(item))
+            {
+                tempOld.Remove(item); // 以前から持っていた分は相殺
+            }
+            else
+            {
+                if (counts.ContainsKey(item)) counts[item]++;
+                else counts[item] = 1; // 新しく増えた分
+            }
+        }
+        return counts;
     }
 
     void ReturnToMap()
