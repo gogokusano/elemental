@@ -40,33 +40,56 @@ public class MapManager : MonoBehaviour
 
     public void RefreshMap()
     {
+        // 1. まず全てのマスを一旦非アクティブ（半透明化）にする
         foreach (var node in allNodes)
         {
             if (node != null) node.SetState(false);
         }
 
-        string lastCleared = PlayerPrefs.GetString("LastClearedNode", "");
-        string currentChallenging = PlayerPrefs.GetString("CurrentChallengingNode", "");
+        // --- マップを全く同じルールで完全再現（名前を確定）させる ---
         int savedSeed = PlayerPrefs.GetInt("MapSeed", 0);
-
         if (savedSeed == 0)
         {
             savedSeed = Random.Range(1, 999999);
             PlayerPrefs.SetInt("MapSeed", savedSeed);
             PlayerPrefs.Save();
         }
-
         RandomizeMapNodes(savedSeed);
 
+        // --- 名前の確定後にセーブデータを読み込む ---
+        string lastCleared = PlayerPrefs.GetString("LastClearedNode", "");
+        string currentChallenging = PlayerPrefs.GetString("CurrentChallengingNode", "");
+
+        bool isBossClearedBack = false; // ボス撃破から戻ってきたフラグ
+
+        // --- ★最重要：中ボス・ボス戦から「正常に」戻ってきたかどうかの判定 ---
         if (!string.IsNullOrEmpty(currentChallenging))
         {
-            Debug.LogWarning($"バトル中の不正な離脱を検知しました（未クリアマス: {currentChallenging}）。データをリセットします。");
-            ResetProgress();
-            return;
+            MapNode challengingNode = allNodes.Find(x => x.name == currentChallenging);
+            if (challengingNode != null && (challengingNode.isMidBoss || challengingNode.isBoss))
+            {
+                // 中ボス・ボスは、シーン移動（またはシーン空スキップ）から戻った時点で自動でクリア扱いにする
+                PlayerPrefs.SetString("LastClearedNode", currentChallenging);
+                PlayerPrefs.DeleteKey("CurrentChallengingNode");
+                lastCleared = currentChallenging; // 下の開放処理に流す
+                currentChallenging = "";
+                PlayerPrefs.Save();
+
+                isBossClearedBack = true; // 演出の分岐用フラグを立てる
+                Debug.Log($"<color=cyan>【MapManager】中ボス・ボスの撃破戻りを検知しました。次を開放します: {lastCleared}</color>");
+            }
+            else
+            {
+                // 通常戦闘でのタスクキルはペナルティ
+                Debug.LogWarning($"バトル中の不正な離脱を検知しました（未クリアマス: {currentChallenging}）。データをリセットします。");
+                ResetProgress();
+                return;
+            }
         }
 
         if (string.IsNullOrEmpty(lastCleared))
         {
+            // ■ 初期状態
             foreach (var st in startNodes)
             {
                 if (st != null) st.SetState(true);
@@ -79,6 +102,7 @@ public class MapManager : MonoBehaviour
         }
         else
         {
+            // ■ シーン遷移から正常に戻ってきた時
             MapNode lastNode = allNodes.Find(x => x.name == lastCleared);
             if (lastNode != null)
             {
@@ -89,14 +113,31 @@ public class MapManager : MonoBehaviour
             }
             else
             {
+                Debug.LogWarning($"前回クリアしたノードが見つかりません: {lastCleared}。進行状況をリセットします。");
                 ResetProgress();
                 return;
             }
 
+            // ========================================================
+            // ★修正：カメラ位置復元とスライド演出のバッティングを解消
+            // ========================================================
             if (MapSlideHandler.Instance != null)
             {
-                float savedX = PlayerPrefs.GetFloat("MapSavedX", 0f);
-                MapSlideHandler.Instance.RestorePosition(savedX);
+                if (isBossClearedBack || lastNode.isMidBoss || lastNode.isBoss)
+                {
+                    // 【中ボスを倒して帰ってきた時】
+                    // 1. 最初は前のカメラ位置（0f）にピタッと初期化する
+                    MapSlideHandler.Instance.RestorePosition(0f);
+                    // 2. 画面が開いた直後から、なめらかなスライド演出をスタートさせる！
+                    MapSlideHandler.Instance.StartSlide();
+                }
+                else
+                {
+                    // 【通常マスから帰ってきた時】
+                    // 保存されているスクロール位置を一瞬で復元する
+                    float savedX = PlayerPrefs.GetFloat("MapSavedX", 0f);
+                    MapSlideHandler.Instance.RestorePosition(savedX);
+                }
             }
         }
     }
@@ -116,6 +157,7 @@ public class MapManager : MonoBehaviour
             PlayerPrefs.SetString("LastClearedNode", challengingNodeName);
             PlayerPrefs.DeleteKey("CurrentChallengingNode");
             PlayerPrefs.Save();
+            Debug.Log($"バトルクリア確定: {challengingNodeName}");
         }
     }
 
@@ -135,50 +177,6 @@ public class MapManager : MonoBehaviour
         if (availableEvents == null || availableEvents.Count == 0) return;
 
         Random.InitState(seed);
-
-        // ==========================================================
-        // ★最強版：マスの「繋がり（nextNodes）」をたどって階層を計算する！
-        // 座標やヒエラルキー構造に一切依存しない、絶対確実な方法です。
-        // ==========================================================
-        Dictionary<MapNode, int> nodeFloors = new Dictionary<MapNode, int>();
-        foreach (var node in allNodes)
-        {
-            if (node != null) nodeFloors[node] = 1; // 初期値は1
-        }
-
-        Queue<MapNode> queue = new Queue<MapNode>();
-        foreach (var st in startNodes)
-        {
-            if (st != null)
-            {
-                nodeFloors[st] = 1; // スタート地点は1層目
-                queue.Enqueue(st);
-            }
-        }
-
-        // 繋がりを辿って、深い階層の数字を更新していく
-        while (queue.Count > 0)
-        {
-            MapNode current = queue.Dequeue();
-            int currentFloorNum = nodeFloors[current];
-
-            if (current.nextNodes != null)
-            {
-                foreach (var nextNode in current.nextNodes)
-                {
-                    if (nextNode != null)
-                    {
-                        // 次のマスには +1 した階層をセットする
-                        if (nodeFloors[nextNode] < currentFloorNum + 1)
-                        {
-                            nodeFloors[nextNode] = currentFloorNum + 1;
-                            queue.Enqueue(nextNode);
-                        }
-                    }
-                }
-            }
-        }
-        // ==========================================================
 
         List<MapEventData> normalEvents = new List<MapEventData>();
         MapEventData uniqueEvent = default;
@@ -224,20 +222,20 @@ public class MapManager : MonoBehaviour
             totalWeight += Mathf.Max(1, ev.weight);
         }
 
-        // 階層（Floor）ごとにグループ分けする
-        Dictionary<int, List<MapNode>> layerGroups = new Dictionary<int, List<MapNode>>();
-        foreach (var pair in nodeFloors)
+        Dictionary<Transform, List<MapNode>> layerGroups = new Dictionary<Transform, List<MapNode>>();
+
+        foreach (var node in allNodes)
         {
-            MapNode node = pair.Key;
-            int floorNum = pair.Value;
+            if (node == null || node.isMidBoss || node.isBoss || node.isFixedNode) continue;
 
-            if (node.isMidBoss || node.isBoss || node.isFixedNode) continue;
+            Transform parent = node.transform.parent;
+            if (parent == null) continue;
 
-            if (!layerGroups.ContainsKey(floorNum))
+            if (!layerGroups.ContainsKey(parent))
             {
-                layerGroups[floorNum] = new List<MapNode>();
+                layerGroups[parent] = new List<MapNode>();
             }
-            layerGroups[floorNum].Add(node);
+            layerGroups[parent].Add(node);
         }
 
         Dictionary<MapNode, MapEventData> forcedNodeEvents = new Dictionary<MapNode, MapEventData>();
@@ -294,17 +292,13 @@ public class MapManager : MonoBehaviour
             }
         }
 
-        // --- ④ 実際の配置と命名処理 ---
         foreach (var node in allNodes)
         {
             if (node == null) continue;
 
-            // ★マスの繋がりから計算した「絶対に正しい階層」を取得
-            int actualFloor = nodeFloors.ContainsKey(node) ? nodeFloors[node] : 1;
-
             if (node.isMidBoss || node.isBoss || node.isFixedNode)
             {
-                node.gameObject.name = $"Fixed_Floor{actualFloor}_{node.transform.GetSiblingIndex()}";
+                node.gameObject.name = $"Fixed_{node.transform.parent.name}_{node.transform.GetSiblingIndex()}";
                 continue;
             }
 
@@ -362,8 +356,8 @@ public class MapManager : MonoBehaviour
                 node.nodeIcon.color = finalColor;
             }
 
-            // ★絶対に正しい階層の数字を名前に刻み込む！
-            node.gameObject.name = $"{selectedEvent.eventName}_Floor{actualFloor}_{node.transform.GetSiblingIndex()}";
+            string layerName = node.transform.parent != null ? node.transform.parent.name : "Layer";
+            node.gameObject.name = $"{selectedEvent.eventName}_{layerName}_{node.transform.GetSiblingIndex()}";
         }
     }
 
