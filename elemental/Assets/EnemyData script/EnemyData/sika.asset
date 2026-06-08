@@ -31,7 +31,7 @@ MonoBehaviour:
     statusCard: {fileID: 0}
     debuffType: 4
     debuffDuration: 1
-    debuffValue: 0
+    debuffValue: 1
     isPhase2Only: 0
     isOneTimeOnly: 0
   - actionName: 
@@ -50,6 +50,6 @@ MonoBehaviour:
     debuffType: 5
     debuffDuration: 3
     debuffValue: 0
-    isPhase2Only: 1
-    isOneTimeOnly: 1
+    isPhase2Only: 0
+    isOneTimeOnly: 0
   spawnCount: 1

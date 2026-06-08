@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager Instance; // ★追加：他のスクリプトから呼び出しやすくするためのInstance
+    public static PlayerManager Instance; 
 
     [Header("プレイヤーステータス (※HPはPlayerDataManagerで管理)")]
     public int currentBlock;
@@ -20,16 +20,19 @@ public class PlayerManager : MonoBehaviour
     public Slider hpSlider; 
     public Slider blockSlider; // シールド（ブロック）用のスライダー
 
+    [Header("エフェクト設定")]
+    public DamageText damageTextPrefab; // プレイヤー用のダメージテキストプレハブ
+    public Transform damageTextParent;    // ★追加：テキストを表示させたいUIオブジェクト（HPバーなど）
+
     void Awake()
     {
-        Instance = this; // ★追加
+        Instance = this; 
     }
 
     void Start()
     {
         currentBlock = 0;
 
-        // ★追加：戦闘開始時に、スライダーの「最大値」をプレイヤーの最大HPに設定する
         if (PlayerDataManager.Instance != null)
         {
             if (hpSlider != null) hpSlider.maxValue = PlayerDataManager.Instance.maxHp;
@@ -41,23 +44,17 @@ public class PlayerManager : MonoBehaviour
 
     public void AddBlock(int amount)
     {
-        // ==========================================
-        // ★デバフ処理：弱体化がかかっていたらブロック獲得量を減らす
-        // ==========================================
         if (PlayerDebuffManager.Instance != null)
         {
-            int penalty = PlayerDebuffManager.Instance.GetWeakenModifier(); // 弱体化の数値を引っ張ってくる
+            int penalty = PlayerDebuffManager.Instance.GetWeakenModifier(); 
             amount -= penalty;
-            if (amount < 0) amount = 0; // マイナスにはならないようにする
+            if (amount < 0) amount = 0; 
         }
 
         currentBlock += amount;
         UpdateUI();
     }
 
-    // ==========================================
-    // ★敵にダメージを与える時、奇物の効果（筋力など）を乗せるための関数
-    // ==========================================
     public int CalculateFinalDamage(int baseDamage, CardData card)
     {
         float finalDamage = baseDamage;
@@ -70,14 +67,11 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        // ==========================================
-        // ★デバフ処理：弱体化がかかっていたら与えるダメージを減らす
-        // ==========================================
         if (PlayerDebuffManager.Instance != null)
         {
             int penalty = PlayerDebuffManager.Instance.GetWeakenModifier();
             finalDamage -= penalty;
-            if (finalDamage < 0) finalDamage = 0; // マイナスにはならないようにする
+            if (finalDamage < 0) finalDamage = 0; 
         }
         
         return Mathf.RoundToInt(finalDamage); 
@@ -85,9 +79,6 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // ==========================================
-        // ★1. 一番最初に、持っている奇物の効果で受けるダメージを軽減する
-        // ==========================================
         if (PlayerDataManager.Instance != null)
         {
             foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
@@ -108,6 +99,26 @@ public class PlayerManager : MonoBehaviour
                 enemy.TakeDamage(damage * 2); 
             }
             return; 
+        }
+
+        // ★修正：指定された親UIの子供として生成し、さらに最前面に持ってくる
+        if (damage > 0 && damageTextPrefab != null)
+        {
+            // damageTextParentが指定されていればそこ、無ければ自分自身を親にする
+            Transform parentTransform = damageTextParent != null ? damageTextParent : transform;
+            DamageText textObj = Instantiate(damageTextPrefab, parentTransform);
+            
+            // 他のUI（背景など）の後ろに隠れないように、強制的に最前面に並び替える処理
+            textObj.transform.SetAsLastSibling();
+            
+            RectTransform textRect = textObj.GetComponent<RectTransform>();
+            if (textRect != null)
+            {
+                // 親UIの中心から、少し上（Y座標を100ピクセル上）に表示
+                textRect.anchoredPosition = new Vector2(0, 100f); 
+            }
+            
+            textObj.Setup(damage);
         }
 
         // カメラシェイク演出
@@ -141,13 +152,26 @@ public class PlayerManager : MonoBehaviour
         UpdateUI();
     }
 
-    // ==========================================
-    // ★追加：毒や一部イベント用！ブロックを無視して直接HPを削る関数
-    // ==========================================
     public void TakeDirectDamage(int damage)
     {
         if (PlayerDataManager.Instance != null && damage > 0)
         {
+            // ★修正：毒などの直接ダメージ時にも、指定された親で最前面に表示
+            if (damageTextPrefab != null)
+            {
+                Transform parentTransform = damageTextParent != null ? damageTextParent : transform;
+                DamageText textObj = Instantiate(damageTextPrefab, parentTransform);
+                
+                textObj.transform.SetAsLastSibling();
+
+                RectTransform textRect = textObj.GetComponent<RectTransform>();
+                if (textRect != null)
+                {
+                    textRect.anchoredPosition = new Vector2(0, 100f);
+                }
+                textObj.Setup(damage);
+            }
+
             int newHp = PlayerDataManager.Instance.currentHp - damage;
             PlayerDataManager.Instance.SaveHp(newHp); 
             
@@ -176,26 +200,22 @@ public class PlayerManager : MonoBehaviour
 
     void UpdateUI()
     {
-        // 1. テキストの更新
         if (hpText != null && PlayerDataManager.Instance != null) 
         {
             hpText.text = PlayerDataManager.Instance.currentHp + " / " + PlayerDataManager.Instance.maxHp;
         }
 
-        // 2. HPスライダーの値を更新
         if (hpSlider != null && PlayerDataManager.Instance != null)
         {
             hpSlider.value = PlayerDataManager.Instance.currentHp;
         }
         
-        // 3. ブロックスライダーの値を更新（敵と同じで HP + ブロック の長さにする）
         if (blockSlider != null && PlayerDataManager.Instance != null)
         {
             blockSlider.value = PlayerDataManager.Instance.currentHp + currentBlock; 
             blockSlider.gameObject.SetActive(currentBlock > 0);
         }
 
-        // 4. ブロックテキストの更新
         if (blockText != null)
         {
             blockText.text = "Block: " + currentBlock;

@@ -24,7 +24,7 @@ MonoBehaviour:
   rarity: 0
   elementType: 0
   description: 
-  cardImage: {fileID: 0}
+  cardImage: {fileID: -7716940765424196088, guid: ee43a99d5dab6124b8de9123cbfa0668, type: 3}
   cardNameS: 
   cardTextS: 
-  isUnusable: 0
+  isUnusable: 1

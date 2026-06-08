@@ -36,9 +36,6 @@ public class EnemyManager : MonoBehaviour
     public Sprite defendIntentIcon;     
     public Sprite statusIntentIcon;     
 
-    // ========================================================
-    // ★復旧：必殺技(Ultimate)ギミック設定
-    // ========================================================
     [Header("必殺技(Ultimate)ギミック設定")]
     public bool hasUltimate = false;            
     public int ultimateTriggerTurn = 5;        
@@ -48,7 +45,9 @@ public class EnemyManager : MonoBehaviour
     private int turnCount = 1;                 
     private bool isCharging = false;           
     private bool isReleasing = false;          
-    // ========================================================
+
+    [Header("エフェクト設定")]
+    public DamageText damageTextPrefab; // ダメージテキストのプレハブ
 
     private EnemyAction nextAction;     
     private EnemyAction lastAction1; 
@@ -65,6 +64,7 @@ public class EnemyManager : MonoBehaviour
         if (enemyData != null)
         {
             currentHP = enemyData.maxHP;
+            isPhysicalWeak = false;
             currentBlock = 0;
             if (enemyImage != null) enemyImage.sprite = enemyData.enemyImage;
             
@@ -280,9 +280,6 @@ public class EnemyManager : MonoBehaviour
         
         ElementType incomingElement = card.elementType; 
 
-        // ==========================================
-        // ★復旧：混乱（Confusion）のデバフ処理
-        // ==========================================
         if (PlayerDebuffManager.Instance != null && PlayerDebuffManager.Instance.HasConfusion())
         {
             incomingElement = ElementType.Normal;
@@ -401,6 +398,23 @@ public class EnemyManager : MonoBehaviour
             if (currentBlock >= damage) { currentBlock -= damage; damage = 0; }
             else { damage -= currentBlock; currentBlock = 0; }
         }
+
+        // ★修正：UI（Canvas）の階層構造に対応した生成処理
+        if (damage > 0 && damageTextPrefab != null)
+        {
+            // 敵のUI（this.transform）の「子供」として生成する
+            DamageText textObj = Instantiate(damageTextPrefab, transform);
+            
+            // 敵UIの中心から、少し上（Y座標を100ピクセル上）に初期位置をずらす
+            RectTransform textRect = textObj.GetComponent<RectTransform>();
+            if (textRect != null)
+            {
+                textRect.anchoredPosition = new Vector2(0, 100f);
+            }
+            
+            textObj.Setup(damage); // ダメージ数値を渡す
+        }
+
         currentHP -= damage;
         
         if (currentHP <= 0) 

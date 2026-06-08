@@ -867,6 +867,7 @@ GameObject:
   - component: {fileID: 359837574}
   - component: {fileID: 359837575}
   - component: {fileID: 359837576}
+  - component: {fileID: 359837577}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -959,6 +960,8 @@ MonoBehaviour:
   blockText: {fileID: 1746271343}
   hpSlider: {fileID: 424537242}
   blockSlider: {fileID: 311852509}
+  damageTextPrefab: {fileID: 1592011057032789196, guid: bfb4a772fbdb40443ba8e17f33246e9f, type: 3}
+  damageTextParent: {fileID: 424537241}
 --- !u!114 &359837573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,6 +1035,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e9b73630f777ad46b3de587bae10f29, type: 2}
   - {fileID: 11400000, guid: ba486f442a81d154c94d61a11309f5e1, type: 2}
   - {fileID: 11400000, guid: 0df9bdbc8f9b41d4e9316133e97009d2, type: 2}
+--- !u!114 &359837577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359837568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2deb127bbb1a9654cbca1ecd3d829ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDebuffManager
+  activeDebuffs:
+  - type: 0
+    value: 0
+    duration: 0
+  - type: 0
+    value: 0
+    duration: 0
+  woundCardData: {fileID: 11400000, guid: 969423bab77b9f341a3543433d09c188, type: 2}
 --- !u!1 &365459295
 GameObject:
   m_ObjectHideFlags: 0
