@@ -16,13 +16,13 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI hpText;
     public TextMeshProUGUI blockText;
     
-    // ★追加：プレイヤー用のHPバーとブロックバー
+    // プレイヤー用のHPバーとブロックバー
     public Slider hpSlider; 
     public Slider blockSlider; // シールド（ブロック）用のスライダー
 
     [Header("エフェクト設定")]
     public DamageText damageTextPrefab; // プレイヤー用のダメージテキストプレハブ
-    public Transform damageTextParent;    // ★追加：テキストを表示させたいUIオブジェクト（HPバーなど）
+    public Transform damageTextParent;    // テキストを表示させたいUIオブジェクト（HPバーなど）
 
     void Awake()
     {
@@ -101,24 +101,21 @@ public class PlayerManager : MonoBehaviour
             return; 
         }
 
-        // ★修正：指定された親UIの子供として生成し、さらに最前面に持ってくる
+        // プレイヤーの通常被ダメージ：目立つ「オレンジ〜明るい赤」にする
         if (damage > 0 && damageTextPrefab != null)
         {
-            // damageTextParentが指定されていればそこ、無ければ自分自身を親にする
             Transform parentTransform = damageTextParent != null ? damageTextParent : transform;
             DamageText textObj = Instantiate(damageTextPrefab, parentTransform);
-            
-            // 他のUI（背景など）の後ろに隠れないように、強制的に最前面に並び替える処理
             textObj.transform.SetAsLastSibling();
             
             RectTransform textRect = textObj.GetComponent<RectTransform>();
             if (textRect != null)
             {
-                // 親UIの中心から、少し上（Y座標を100ピクセル上）に表示
                 textRect.anchoredPosition = new Vector2(0, 100f); 
             }
             
-            textObj.Setup(damage);
+            // ★プレイヤー通常被ダメージの色（オレンジがかった赤）
+            textObj.Setup(damage, new Color(1f, 0.4f, 0.2f));
         }
 
         // カメラシェイク演出
@@ -156,12 +153,11 @@ public class PlayerManager : MonoBehaviour
     {
         if (PlayerDataManager.Instance != null && damage > 0)
         {
-            // ★修正：毒などの直接ダメージ時にも、指定された親で最前面に表示
+            // ★修正：毒などの直接ダメージ時は「鮮やかな黄緑色」でテキストを表示
             if (damageTextPrefab != null)
             {
                 Transform parentTransform = damageTextParent != null ? damageTextParent : transform;
                 DamageText textObj = Instantiate(damageTextPrefab, parentTransform);
-                
                 textObj.transform.SetAsLastSibling();
 
                 RectTransform textRect = textObj.GetComponent<RectTransform>();
@@ -169,7 +165,9 @@ public class PlayerManager : MonoBehaviour
                 {
                     textRect.anchoredPosition = new Vector2(0, 100f);
                 }
-                textObj.Setup(damage);
+
+                // ★毒ダメージの色：ライムグリーン（黄緑）
+                textObj.Setup(damage, new Color(0.35f, 0.95f, 0.15f));
             }
 
             int newHp = PlayerDataManager.Instance.currentHp - damage;

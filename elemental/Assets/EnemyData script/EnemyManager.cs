@@ -64,7 +64,6 @@ public class EnemyManager : MonoBehaviour
         if (enemyData != null)
         {
             currentHP = enemyData.maxHP;
-            isPhysicalWeak = false;
             currentBlock = 0;
             if (enemyImage != null) enemyImage.sprite = enemyData.enemyImage;
             
@@ -294,29 +293,43 @@ public class EnemyManager : MonoBehaviour
 
         bool comboTriggered = false;
 
+        // --- 属性ごとのテキストカラー設定用 ---
+        Color textCustomColor = Color.white; // デフォルトは白
+
+        if (incomingElement == ElementType.Fire) textCustomColor = new Color(1f, 0.25f, 0.25f); // 赤
+        else if (incomingElement == ElementType.Water) textCustomColor = new Color(0.25f, 0.6f, 1f); // 青
+        else if (incomingElement == ElementType.Ice) textCustomColor = new Color(0.4f, 0.9f, 1f); // 水色
+        else if (incomingElement == ElementType.Thunder) textCustomColor = new Color(1f, 0.9f, 0.2f); // 黄色
+        else if (incomingElement == ElementType.Rock) textCustomColor = new Color(0.65f, 0.45f, 0.3f); // 茶色・岩色
+
         if (currentElement != ElementType.None && currentElement != ElementType.Normal &&
             incomingElement != ElementType.None && incomingElement != ElementType.Normal)
         {
+            // コンボ（元素反応）が起きたら、より派手な色（オレンジや紫など）にする
             if (IsCombo(ElementType.Fire, ElementType.Water, currentElement, incomingElement) ||
                 IsCombo(ElementType.Fire, ElementType.Ice, currentElement, incomingElement))
             {
                 damageFloat *= 2.0f;
                 comboTriggered = true;
+                textCustomColor = new Color(1f, 0.5f, 0f); // 元素反応大ダメージ：オレンジ
             }
             else if (IsCombo(ElementType.Water, ElementType.Ice, currentElement, incomingElement))
             {
                 isFrozen = true;
                 comboTriggered = true;
+                textCustomColor = new Color(0.5f, 0.8f, 1f); // 凍結コンボ
             }
             else if (IsCombo(ElementType.Ice, ElementType.Thunder, currentElement, incomingElement))
             {
                 isPhysicalWeak = true;
                 comboTriggered = true;
+                textCustomColor = new Color(0.7f, 0.4f, 1f); // 物理脆弱コンボ：紫
             }
             else if (currentElement == ElementType.Rock && incomingElement == ElementType.Rock)
             {
                 if (player != null) player.hasCounter = true;
                 comboTriggered = true;
+                textCustomColor = new Color(0.8f, 0.6f, 0.4f);
             }
             else if (IsCombo(ElementType.Fire, ElementType.Thunder, currentElement, incomingElement) ||
                      IsCombo(ElementType.Water, ElementType.Thunder, currentElement, incomingElement))
@@ -327,10 +340,12 @@ public class EnemyManager : MonoBehaviour
                 EnemyManager[] allEnemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
                 foreach(var e in allEnemies) {
                     if (e != this && e.gameObject.activeSelf) {
-                        e.TakeDamage(Mathf.RoundToInt(bonus * 0.5f));
+                        // 他の敵への連鎖ダメージは雷の色(黄)で出す
+                        e.TakeDamageWithColor(Mathf.RoundToInt(bonus * 0.5f), new Color(1f, 0.9f, 0.2f));
                     }
                 }
                 comboTriggered = true;
+                textCustomColor = new Color(1f, 0.8f, 0f); // 感電コンボ：輝く黄色
             }
         }
 
@@ -348,7 +363,8 @@ public class EnemyManager : MonoBehaviour
             SetElement(incomingElement);
         }
 
-        TakeDamage(Mathf.RoundToInt(damageFloat));
+        // 割り出したカスタム色を渡してダメージを与える
+        TakeDamageWithColor(Mathf.RoundToInt(damageFloat), textCustomColor);
     }
 
     private bool IsCombo(ElementType a, ElementType b, ElementType current, ElementType incoming) {
@@ -389,7 +405,14 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    // 通常の外部からの呼び出し用（デフォルトは赤系の色で出す）
     public void TakeDamage(int damage)
+    {
+        TakeDamageWithColor(damage, new Color(1f, 0.3f, 0.3f));
+    }
+
+    // ★修正：色を指定してダメージを与える内部メイン関数
+    public void TakeDamageWithColor(int damage, Color textColor)
     {
         if (damage <= 0) return;
 
@@ -399,20 +422,19 @@ public class EnemyManager : MonoBehaviour
             else { damage -= currentBlock; currentBlock = 0; }
         }
 
-        // ★修正：UI（Canvas）の階層構造に対応した生成処理
         if (damage > 0 && damageTextPrefab != null)
         {
-            // 敵のUI（this.transform）の「子供」として生成する
             DamageText textObj = Instantiate(damageTextPrefab, transform);
+            textObj.transform.SetAsLastSibling();
             
-            // 敵UIの中心から、少し上（Y座標を100ピクセル上）に初期位置をずらす
             RectTransform textRect = textObj.GetComponent<RectTransform>();
             if (textRect != null)
             {
                 textRect.anchoredPosition = new Vector2(0, 100f);
             }
             
-            textObj.Setup(damage); // ダメージ数値を渡す
+            // ★決定した色をセットして生成！
+            textObj.Setup(damage, textColor); 
         }
 
         currentHP -= damage;

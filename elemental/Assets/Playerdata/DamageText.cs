@@ -7,21 +7,25 @@ public class DamageText : MonoBehaviour
     private RectTransform rectTransform;
     
     [Header("アニメーション設定")]
-    public float floatSpeed = 120f; // UIのサイズに合わせてスピードを調整（ピクセル単位）
+    public float floatSpeed = 120f; // UIのサイズに合わせてスピードを調整
     public float fadeSpeed = 2f;    // 消えるスピード
     public float destroyTime = 1f;  // 何秒後に消滅するか
 
     private Color textColor;
 
-    public void Setup(int damageAmount)
+    // ★修正：引数に customColor を追加して外から色を指定できるようにする
+    public void Setup(int damageAmount, Color customColor)
     {
         textMesh = GetComponent<TextMeshProUGUI>();
         rectTransform = GetComponent<RectTransform>();
         
         textMesh.text = damageAmount.ToString();
-        textColor = textMesh.color;
+        
+        // ★もらった色をテキストに適用する
+        textMesh.color = customColor;
+        textColor = customColor;
 
-        // UIのピクセル単位に合わせて、出現位置を左右に少しだけランダムにズラす
+        // 出現位置を左右に少しだけランダムにズラす
         rectTransform.anchoredPosition += new Vector2(Random.Range(-40f, 40f), Random.Range(-10f, 10f));
         
         // 指定した秒数後に消滅
@@ -30,7 +34,7 @@ public class DamageText : MonoBehaviour
 
     void Update()
     {
-        // UIの座標（anchoredPosition）を毎フレーム上に移動させる
+        // 座標（anchoredPosition）を毎フレーム上に移動させる
         rectTransform.anchoredPosition += Vector2.up * floatSpeed * Time.deltaTime;
 
         // 毎フレーム少しずつ透明にする
