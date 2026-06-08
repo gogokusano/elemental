@@ -59,6 +59,8 @@ public class EventManager : MonoBehaviour
     public GameObject eventResultGoldPrefab;     // ゴールド用プレハブ
     public Sprite goldIconSprite;
     public Sprite goldBgSprite;
+    public TextMeshProUGUI resultTitleText;      // 例：「獲得した奇物」
+    public TextMeshProUGUI resultCountText;      // 例：「獲得した奇物数 2」
 
     public Button eventResultConfirmButton;      // 「マップへ戻る」ボタン
 
@@ -274,6 +276,12 @@ public class EventManager : MonoBehaviour
             yield break;
         }
 
+        // ★追加：イベント開始前の状態を保存 (スナップショット)
+        int oldGold = PlayerDataManager.Instance.gold;
+        List<RelicData> oldRelics = new List<RelicData>(PlayerDataManager.Instance.ownedRelics);
+        List<CardData> oldCards = new List<CardData>(PlayerDataManager.Instance.deckCards);
+
+
         if (option.shopAction == ShopActionType.BuyRelic)
         {
             if (shopRelics.Count == 0) Debug.Log("奇物は売り切れです！");
@@ -281,7 +289,6 @@ public class EventManager : MonoBehaviour
             {
                 yield return StartCoroutine(OpenRelicSelectionWindow("購入する奇物を選んでください", shopRelics));
                 
-                // ★修正：キャンセルされず、かつアイテムが正しく選ばれている場合のみ購入
                 if (!isCanceled && lastSelectedRelic != null)
                 {
                     int price = GetRelicPrice(lastSelectedRelic.rarity);
@@ -290,13 +297,7 @@ public class EventManager : MonoBehaviour
                         PlayerDataManager.Instance.gold -= price;
                         PlayerDataManager.Instance.AddRelic(lastSelectedRelic);
                         shopRelics.Remove(lastSelectedRelic); 
-                        Debug.Log($"<color=yellow>{lastSelectedRelic.relicName} を購入しました！ 残りGold: {PlayerDataManager.Instance.gold}</color>");
                     }
-                    else Debug.Log("Goldが足りません！");
-                }
-                else if (isCanceled)
-                {
-                    Debug.Log("奇物の購入をキャンセルしました。");
                 }
             }
         }
@@ -307,7 +308,6 @@ public class EventManager : MonoBehaviour
             {
                 yield return StartCoroutine(OpenCardSelectionWindow("購入するカードを選んでください", shopCards));
                 
-                // ★修正：キャンセルされず、かつアイテムが正しく選ばれている場合のみ購入
                 if (!isCanceled && lastSelectedCard != null)
                 {
                     int price = GetCardPrice(lastSelectedCard.rarity);
@@ -316,13 +316,7 @@ public class EventManager : MonoBehaviour
                         PlayerDataManager.Instance.gold -= price;
                         PlayerDataManager.Instance.AddCard(lastSelectedCard);
                         shopCards.Remove(lastSelectedCard); 
-                        Debug.Log($"<color=yellow>{lastSelectedCard.cardName} を購入しました！ 残りGold: {PlayerDataManager.Instance.gold}</color>");
                     }
-                    else Debug.Log("Goldが足りません！");
-                }
-                else if (isCanceled)
-                {
-                    Debug.Log("カードの購入をキャンセルしました。");
                 }
             }
         }
@@ -333,23 +327,19 @@ public class EventManager : MonoBehaviour
             {
                 yield return StartCoroutine(OpenCardSelectionWindow($"削除するカードを選んでください (費用: {option.removeCardPrice}G)", PlayerDataManager.Instance.deckCards));
                 
-                // ★修正：キャンセルされず、かつアイテムが正しく選ばれている場合のみ削除
                 if (!isCanceled && lastSelectedCard != null)
                 {
                     if (PlayerDataManager.Instance.gold >= option.removeCardPrice)
                     {
                         PlayerDataManager.Instance.gold -= option.removeCardPrice;
                         PlayerDataManager.Instance.RemoveCard(lastSelectedCard);
-                        Debug.Log($"<color=yellow>{lastSelectedCard.cardName} を削除しました！ 残りGold: {PlayerDataManager.Instance.gold}</color>");
                     }
-                    else Debug.Log("Goldが足りません！");
-                }
-                else if (isCanceled)
-                {
-                    Debug.Log("カードの削除をキャンセルしました。");
                 }
             }
         }
+
+        // ★追加：結果画面の呼び出し (hideGoldLoss = true にすることでゴールド減少を表示しない)
+        yield return StartCoroutine(ShowEventResultCoroutine(oldGold, oldRelics, oldCards, true));
 
         // 買い物が終わった、あるいは「すぐキャンセルした」場合もここへ来てボタンを再表示
         SetupEventUI(currentEventData);
@@ -375,14 +365,37 @@ public class EventManager : MonoBehaviour
         {
             if (!option.isGambleOption)
             {
-                if (option.maxHpChange != 0)
+                // 割合計算の基準となる元の最大HPを記憶
+                int baseMaxHp = PlayerDataManager.Instance.maxHp;
+
+                // ★最大HPの変動（固定値 ＋ 割合）
+                int totalMaxHpChange = option.maxHpChange + Mathf.RoundToInt(baseMaxHp * option.maxHpPercentChange);
+                if (totalMaxHpChange != 0)
                 {
-                    PlayerDataManager.Instance.maxHp = Mathf.Max(1, PlayerDataManager.Instance.maxHp + option.maxHpChange);
-                    if (option.maxHpChange > 0) PlayerDataManager.Instance.currentHp += option.maxHpChange;
+                    PlayerDataManager.Instance.maxHp = Mathf.Max(1, PlayerDataManager.Instance.maxHp + totalMaxHpChange);
+                    
+                    // 最大HPが増えた場合は現在HPも同量回復させる
+                    if (totalMaxHpChange > 0) 
+                    {
+                        PlayerDataManager.Instance.currentHp += totalMaxHpChange;
+                    }
                 }
-                if (option.hpChange != 0)
+
+                // ★HPの変動（固定値 ＋ 割合）
+                int totalHpChange = option.hpChange + Mathf.RoundToInt(baseMaxHp * option.hpPercentChange);
+                if (totalHpChange != 0)
                 {
-                    PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp + option.hpChange);
+                    PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp + totalHpChange);
+                }
+
+                if (PlayerDataManager.Instance.currentHp > PlayerDataManager.Instance.maxHp)
+                {
+                    PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.maxHp);
+                }
+
+                if (option.goldChange != 0)
+                {
+                    PlayerDataManager.Instance.gold = Mathf.Max(0, PlayerDataManager.Instance.gold + option.goldChange);
                 }
             }
 
@@ -490,81 +503,7 @@ public class EventManager : MonoBehaviour
             }
         }
 
-        yield return StartCoroutine(ShowEventResultCoroutine(oldGold, oldRelics, oldCards));
-    }
-
-    IEnumerator ShowEventResultCoroutine(int oldGold, List<RelicData> oldRelics, List<CardData> oldCards)
-    {
-        bool hasChanges = false;
-        foreach (Transform child in eventResultContentArea) Destroy(child.gameObject);
-
-        // 1. 奇物の獲得
-        var addedRelics = GetDifferences(oldRelics, PlayerDataManager.Instance.ownedRelics);
-        foreach (var kvp in addedRelics)
-        {
-            GameObject obj = Instantiate(eventResultRelicPrefab, eventResultContentArea); // ★RelicPrefabに変更
-            obj.GetComponent<EventResultItemUI>().SetupRelic(kvp.Key, kvp.Value, false);
-            hasChanges = true;
-        }
-
-        // 2. 奇物の喪失
-        var lostRelics = GetDifferences(PlayerDataManager.Instance.ownedRelics, oldRelics);
-        foreach (var kvp in lostRelics)
-        {
-            GameObject obj = Instantiate(eventResultRelicPrefab, eventResultContentArea); // ★RelicPrefabに変更
-            obj.GetComponent<EventResultItemUI>().SetupRelic(kvp.Key, kvp.Value, true);
-            hasChanges = true;
-        }
-
-        // 3. カードの獲得
-        var addedCards = GetDifferences(oldCards, PlayerDataManager.Instance.deckCards);
-        foreach (var kvp in addedCards)
-        {
-            GameObject obj = Instantiate(eventResultCardPrefab, eventResultContentArea); // ★CardPrefabに変更
-            obj.GetComponent<EventResultItemUI>().SetupCard(kvp.Key, kvp.Value, false);
-            hasChanges = true;
-        }
-
-        // 4. カードの喪失(削除など)
-        var lostCards = GetDifferences(PlayerDataManager.Instance.deckCards, oldCards);
-        foreach (var kvp in lostCards)
-        {
-            GameObject obj = Instantiate(eventResultCardPrefab, eventResultContentArea); // ★CardPrefabに変更
-            obj.GetComponent<EventResultItemUI>().SetupCard(kvp.Key, kvp.Value, true);
-            hasChanges = true;
-        }
-
-        // 5 & 6. ゴールドの獲得と減少
-        int goldDiff = PlayerDataManager.Instance.gold - oldGold;
-        if (goldDiff > 0) // 獲得
-        {
-            GameObject obj = Instantiate(eventResultGoldPrefab, eventResultContentArea); // ★GoldPrefabに変更
-            obj.GetComponent<EventResultItemUI>().SetupGold(goldDiff, goldIconSprite, goldBgSprite, false);
-            hasChanges = true;
-        }
-        else if (goldDiff < 0) // 減少
-        {
-            GameObject obj = Instantiate(eventResultGoldPrefab, eventResultContentArea); // ★GoldPrefabに変更
-            obj.GetComponent<EventResultItemUI>().SetupGold(Mathf.Abs(goldDiff), goldIconSprite, goldBgSprite, true);
-            hasChanges = true;
-        }
-
-        if (!hasChanges)
-        {
-            ReturnToMap();
-            yield break;
-        }
-
-        eventResultPanel.SetActive(true);
-        eventResultConfirmButton.interactable = true;
-
-        bool resultConfirmed = false;
-        eventResultConfirmButton.onClick.RemoveAllListeners();
-        eventResultConfirmButton.onClick.AddListener(() => { resultConfirmed = true; });
-
-        yield return new WaitUntil(() => resultConfirmed);
-
-        eventResultPanel.SetActive(false);
+        yield return StartCoroutine(ShowEventResultCoroutine(oldGold, oldRelics, oldCards, false));
         ReturnToMap();
     }
 
@@ -781,23 +720,120 @@ public class EventManager : MonoBehaviour
         return result;
     }
 
-    Dictionary<T, int> GetDifferences<T>(List<T> oldList, List<T> newList) where T : ScriptableObject
+    IEnumerator ShowEventResultCoroutine(int oldGold, List<RelicData> oldRelics, List<CardData> oldCards, bool hideGoldLoss = false)
     {
-        Dictionary<T, int> counts = new Dictionary<T, int>();
-        List<T> tempOld = new List<T>(oldList);
-        foreach (var item in newList)
+        // 差分を計算
+        var addedRelics = GetDifferences(oldRelics, PlayerDataManager.Instance.ownedRelics);
+        var lostRelics = GetDifferences(PlayerDataManager.Instance.ownedRelics, oldRelics);
+        var addedCards = GetDifferences(oldCards, PlayerDataManager.Instance.deckCards);
+        var lostCards = GetDifferences(PlayerDataManager.Instance.deckCards, oldCards);
+        int goldDiff = PlayerDataManager.Instance.gold - oldGold;
+
+        // 変化があったカテゴリごとに、順番にポップアップを表示して待機する
+        if (addedRelics.Count > 0) yield return StartCoroutine(ShowResultPage("獲得した奇物", "獲得した奇物数", addedRelics, false, eventResultRelicPrefab));
+        if (lostRelics.Count > 0) yield return StartCoroutine(ShowResultPage("放棄した奇物", "放棄した奇物数", lostRelics, true, eventResultRelicPrefab));
+        
+        if (addedCards.Count > 0) yield return StartCoroutine(ShowResultPage("獲得したカード", "獲得したカード数", addedCards, false, eventResultCardPrefab));
+        if (lostCards.Count > 0) yield return StartCoroutine(ShowResultPage("削除したカード", "削除したカード数", lostCards, true, eventResultCardPrefab));
+
+        if (goldDiff > 0)
         {
-            if (tempOld.Contains(item))
+            yield return StartCoroutine(ShowGoldResultPage("アイテム獲得", goldDiff, false));
+        }
+        else if (goldDiff < 0 && !hideGoldLoss) // ショップ(hideGoldLoss=true)の時は減少を表示しない
+        {
+            yield return StartCoroutine(ShowGoldResultPage("アイテム喪失", goldDiff, true));
+        }
+    }
+
+    // 奇物・カード用の汎用ページ表示コルーチン
+    IEnumerator ShowResultPage<T>(string title, string countPrefix, Dictionary<T, int> items, bool isLost, GameObject prefab) where T : ScriptableObject
+    {
+        // タイトルと合計個数のテキスト設定
+        if (resultTitleText != null) resultTitleText.text = title;
+        
+        int totalCount = 0;
+        foreach (var kvp in items) totalCount += kvp.Value;
+        if (resultCountText != null) resultCountText.text = $"{countPrefix} {totalCount}";
+
+        // リストをクリアして生成
+        foreach (Transform child in eventResultContentArea) Destroy(child.gameObject);
+
+        foreach (var kvp in items)
+        {
+            GameObject obj = Instantiate(prefab, eventResultContentArea);
+            EventResultItemUI ui = obj.GetComponent<EventResultItemUI>();
+            if (typeof(T) == typeof(RelicData)) ui.SetupRelic(kvp.Key as RelicData, kvp.Value, isLost);
+            else if (typeof(T) == typeof(CardData)) ui.SetupCard(kvp.Key as CardData, kvp.Value, isLost);
+        }
+
+        // 表示してボタン入力を待機
+        eventResultPanel.SetActive(true);
+        eventResultConfirmButton.interactable = true;
+
+        bool resultConfirmed = false;
+        eventResultConfirmButton.onClick.RemoveAllListeners();
+        eventResultConfirmButton.onClick.AddListener(() => { resultConfirmed = true; });
+
+        yield return new WaitUntil(() => resultConfirmed);
+
+        eventResultPanel.SetActive(false);
+    }
+
+    private Dictionary<T, int> GetDifferences<T>(List<T> before, List<T> after) where T : ScriptableObject
+    {
+        Dictionary<T, int> beforeCounts = new Dictionary<T, int>();
+        foreach (var item in before)
+        {
+            if (item == null) continue;
+            if (beforeCounts.ContainsKey(item)) beforeCounts[item]++;
+            else beforeCounts[item] = 1;
+        }
+
+        Dictionary<T, int> afterCounts = new Dictionary<T, int>();
+        foreach (var item in after)
+        {
+            if (item == null) continue;
+            if (afterCounts.ContainsKey(item)) afterCounts[item]++;
+            else afterCounts[item] = 1;
+        }
+
+        Dictionary<T, int> diff = new Dictionary<T, int>();
+        foreach (var kvp in afterCounts)
+        {
+            int beforeCount = beforeCounts.ContainsKey(kvp.Key) ? beforeCounts[kvp.Key] : 0;
+            int diffCount = kvp.Value - beforeCount;
+            if (diffCount > 0)
             {
-                tempOld.Remove(item); // 以前から持っていた分は相殺
-            }
-            else
-            {
-                if (counts.ContainsKey(item)) counts[item]++;
-                else counts[item] = 1; // 新しく増えた分
+                diff[kvp.Key] = diffCount;
             }
         }
-        return counts;
+
+        return diff;
+    }
+
+    // ゴールド専用のページ表示コルーチン
+    IEnumerator ShowGoldResultPage(string title, int amount, bool isLost)
+    {
+        if (resultTitleText != null) resultTitleText.text = title;
+        if (resultCountText != null) resultCountText.gameObject.SetActive(false); // ゴールドは個数テキストを非表示にする
+
+        foreach (Transform child in eventResultContentArea) Destroy(child.gameObject);
+
+        GameObject obj = Instantiate(eventResultGoldPrefab, eventResultContentArea);
+        obj.GetComponent<EventResultItemUI>().SetupGold(amount, goldIconSprite, goldBgSprite, isLost);
+
+        eventResultPanel.SetActive(true);
+        eventResultConfirmButton.interactable = true;
+
+        bool resultConfirmed = false;
+        eventResultConfirmButton.onClick.RemoveAllListeners();
+        eventResultConfirmButton.onClick.AddListener(() => { resultConfirmed = true; });
+
+        yield return new WaitUntil(() => resultConfirmed);
+
+        if (resultCountText != null) resultCountText.gameObject.SetActive(true); // 元に戻す
+        eventResultPanel.SetActive(false);
     }
 
     void ReturnToMap()

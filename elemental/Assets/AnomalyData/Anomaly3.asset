@@ -16,21 +16,30 @@ MonoBehaviour:
   eventText: "\u90E8\u5C4B\u306E\u56DB\u65B9\u306E\u58C1\u304C\u3001\u3059\u3079\u3066\u602A\u3057\u304F\u767A\u5149\u3059\u308B\u9B54\u5C0E\u66F8\u3067\u57CB\u3081\u5C3D\u304F\u3055\u308C\u3066\u3044\u308B\u3002\u3044\u304F\u3064\u304B\u306E\u66F8\u7269\u306F\u3072\u3068\u308A\u3067\u306B\u30DA\u30FC\u30B8\u304C\u3081\u304F\u308C\u3001\u5F37\u529B\u306A\u546A\u6587\u306E\u6587\u5B57\u304C\u6D6E\u304B\u3073\u4E0A\u304C\u3063\u3066\u306F\u6D88\u3048\u3066\u3044\u304F\u3002"
   eventImage: {fileID: -813387740449554958, guid: 0348b195915f2124ba240e0eb041bbc2, type: 3}
   options:
-  - buttonText: "\u7981\u5FCC\u306E\u30DA\u30FC\u30B8\u3092\u7834\u308A\u53D6\u308B\uFF1A\u30E9\u30F3\u30C0\u30E0\u306A\u300C\u30AB\u30FC\u30C9\u300D\u30922\u679A\u7372\u5F97\u3059\u308B\u3002\u305F\u3060\u3057\u3001\u6700\u5927HP\u304C4\u6E1B\u5C11\u3059\u308B\u3002"
+  - buttonText: "\u7981\u5FCC\u306E\u30DA\u30FC\u30B8\u3092\u7834\u308A\u53D6\u308B\uFF1A\u30E9\u30F3\u30C0\u30E0\u306A\u300C\u30AB\u30FC\u30C9\u300D\u30922\u679A\u7372\u5F97\u3059\u308B\u304C\u3001\u30B4\u30FC\u30EB\u30C9\u3092\xD715\u5931\u3046\u3002"
     shopAction: 0
     removeCardPrice: 0
     hpChange: -4
+    hpPercentChange: 0
     maxHpChange: -4
+    maxHpPercentChange: 0
+    goldChange: -15
     rewardRelic: {fileID: 0}
     giveRandomRelic: 1
     minRelicCount: 0
     maxRelicCount: 0
     allowedRarities: 00000000
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 2
@@ -55,17 +64,26 @@ MonoBehaviour:
     shopAction: 0
     removeCardPrice: 0
     hpChange: -8
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 0
     maxRelicCount: 0
     allowedRarities: 
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 1
@@ -90,17 +108,26 @@ MonoBehaviour:
     shopAction: 0
     removeCardPrice: 0
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 0
     maxRelicCount: 0
     allowedRarities: 
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0
@@ -126,5 +153,6 @@ MonoBehaviour:
     cardCount: 3
     allowedRelicRarities: 000000000200000003000000
     allowedCardRarities: 000000000200000003000000
+    allowedRelicCategories: 0000000001000000
     relicPrices: []
     cardPrices: []

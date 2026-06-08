@@ -2481,6 +2481,8 @@ MonoBehaviour:
   eventResultGoldPrefab: {fileID: 8417990003877203048, guid: 50f5e3d6d83b7ee459fe67a9455a1446, type: 3}
   goldIconSprite: {fileID: 3689406259031229628, guid: 2a947852d2d9ac84b915d7bd0fb1e06e, type: 3}
   goldBgSprite: {fileID: 1624632511, guid: e3f94d809e32b864c90ff8228a4a1288, type: 3}
+  resultTitleText: {fileID: 1874289005}
+  resultCountText: {fileID: 1816847149}
   eventResultConfirmButton: {fileID: 1914440031}
 --- !u!1 &1151700218
 GameObject:
@@ -4122,7 +4124,7 @@ GameObject:
   - component: {fileID: 1816847150}
   - component: {fileID: 1816847149}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: ResultText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4394,7 +4396,7 @@ GameObject:
   - component: {fileID: 1874289006}
   - component: {fileID: 1874289005}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ResultTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
