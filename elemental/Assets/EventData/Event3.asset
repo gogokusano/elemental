@@ -26,11 +26,17 @@ MonoBehaviour:
     minRelicCount: 1
     maxRelicCount: 1
     allowedRarities: 020000000300000004000000
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0.5
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0
@@ -61,11 +67,17 @@ MonoBehaviour:
     minRelicCount: 2
     maxRelicCount: 3
     allowedRarities: 
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0.5
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0

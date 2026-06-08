@@ -26,11 +26,17 @@ MonoBehaviour:
     minRelicCount: 0
     maxRelicCount: 0
     allowedRarities: 
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0
@@ -61,11 +67,17 @@ MonoBehaviour:
     minRelicCount: 0
     maxRelicCount: 0
     allowedRarities: 
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0
@@ -96,11 +108,17 @@ MonoBehaviour:
     minRelicCount: 0
     maxRelicCount: 0
     allowedRarities: 
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0
@@ -131,11 +149,17 @@ MonoBehaviour:
     minRelicCount: 0
     maxRelicCount: 0
     allowedRarities: 
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0
@@ -161,6 +185,7 @@ MonoBehaviour:
     cardCount: 10
     allowedRelicRarities: 0200000003000000
     allowedCardRarities: 00000000
+    allowedRelicCategories: 00000000
     relicPrices:
     - rarity: 2
       price: 25

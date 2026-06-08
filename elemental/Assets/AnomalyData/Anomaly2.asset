@@ -23,14 +23,20 @@ MonoBehaviour:
     maxHpChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 1
-    minRelicCount: 0
-    maxRelicCount: 0
-    allowedRarities: 01000000
+    minRelicCount: 1
+    maxRelicCount: 1
+    allowedRarities: 
+    allowedCategories: 02000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 0
@@ -58,14 +64,20 @@ MonoBehaviour:
     maxHpChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 1
-    minRelicCount: 0
-    maxRelicCount: 0
-    allowedRarities: 00000000
+    minRelicCount: 1
+    maxRelicCount: 1
+    allowedRarities: 0200000003000000
+    allowedCategories: 00000000
     filterByType: 0
     targetRelicType: 0
     canUpgradeRarity: 0
     upgradeChance: 0
     upgradedRarity: 0
+    giveSecondaryRandomRelic: 0
+    minSecondaryRelicCount: 1
+    maxSecondaryRelicCount: 1
+    secondaryAllowedRarities: 
+    secondaryAllowedCategories: 02000000
     loseRelicCount: 0
     loseRelicMethod: 0
     gainCardCount: 1

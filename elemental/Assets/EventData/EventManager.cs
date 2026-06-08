@@ -30,6 +30,7 @@ public class EventManager : MonoBehaviour
     public TextMeshProUGUI cardDetailText;      // 詳細用の効果テキスト（cardTextSを表示）
     public Button cardConfirmButton;            // カード用の「OK」ボタン
     public Button cardCancelButton;             // ★キャンセルボタン
+    public TextMeshProUGUI cardDetailPriceText;
 
     [Header("★奇物選択用UI")]
     public GameObject relicSelectionPanel;      // 奇物選択画面全体の親
@@ -45,6 +46,24 @@ public class EventManager : MonoBehaviour
     public Button relicConfirmButton;           // 奇物用の「OK」ボタン
     public Button relicCancelButton;            // ★キャンセルボタン
     public Image relicDetailBackgroundImage;
+    public Image relicDetailStarImage;
+    public TextMeshProUGUI relicDetailPriceText;
+
+    [Header("★イベント結果ポップアップUI")]
+    public GameObject eventResultPanel;          // ポップアップ画面全体の親
+    public Transform eventResultContentArea;     // 結果を並べるエリア
+    
+    // ★変更箇所：プレハブを種類別に3つ用意する
+    public GameObject eventResultRelicPrefab;    // 奇物用プレハブ
+    public GameObject eventResultCardPrefab;     // カード用プレハブ
+    public GameObject eventResultGoldPrefab;     // ゴールド用プレハブ
+    public Sprite goldIconSprite;
+    public Sprite goldBgSprite;
+
+    public Button eventResultConfirmButton;      // 「マップへ戻る」ボタン
+
+
+
 
     // 内部管理用変数
     private bool isSelectionWaiting = false;
@@ -65,6 +84,7 @@ public class EventManager : MonoBehaviour
         if (relicSelectionPanel != null) relicSelectionPanel.SetActive(false);
         if (cardDetailPanel != null) cardDetailPanel.SetActive(false);
         if (relicDetailPanel != null) relicDetailPanel.SetActive(false);
+        if (eventResultPanel != null) eventResultPanel.SetActive(false);
 
         // OKボタンのイベントリスナー登録と初期無効化
         if (cardConfirmButton != null)
@@ -133,9 +153,18 @@ public class EventManager : MonoBehaviour
         List<RelicData> poolR = new List<RelicData>(PlayerDataManager.Instance.allAvailableRelics);
         poolR.RemoveAll(r => PlayerDataManager.Instance.ownedRelics.Contains(r)); 
         
+        // レアリティによる除外
         if (config.allowedRelicRarities != null && config.allowedRelicRarities.Count > 0)
         {
             poolR.RemoveAll(r => !config.allowedRelicRarities.Contains(r.rarity));
+        }
+
+        // ==========================================
+        // ★新規追加：カテゴリーによる除外
+        // ==========================================
+        if (config.allowedRelicCategories != null && config.allowedRelicCategories.Count > 0)
+        {
+            poolR.RemoveAll(r => !config.allowedRelicCategories.Contains(r.relicCategory));
         }
         
         for (int i = 0; i < config.relicCount; i++)
@@ -151,6 +180,7 @@ public class EventManager : MonoBehaviour
         // 【カード】
         List<CardData> poolC = new List<CardData>(PlayerDataManager.Instance.allAvailableCards);
         
+        // レアリティによる除外
         if (config.allowedCardRarities != null && config.allowedCardRarities.Count > 0)
         {
             poolC.RemoveAll(c => !config.allowedCardRarities.Contains(c.rarity));
@@ -329,6 +359,10 @@ public class EventManager : MonoBehaviour
     {
         if (PlayerDataManager.Instance == null) yield break;
 
+        int oldGold = PlayerDataManager.Instance.gold;
+        List<RelicData> oldRelics = new List<RelicData>(PlayerDataManager.Instance.ownedRelics);
+        List<CardData> oldCards = new List<CardData>(PlayerDataManager.Instance.deckCards);
+
         bool isSuccess = true;
 
         if (option.isGambleOption)
@@ -361,7 +395,16 @@ public class EventManager : MonoBehaviour
                 {
                     currentRarities.Clear(); currentRarities.Add(option.upgradedRarity);
                 }
-                PlayerDataManager.Instance.AddRandomRelicsAdvanced(count, currentRarities, option.filterByType, option.targetRelicType, false, 0, Rarity.Common);
+                // ★修正：option.allowedCategories を引数に渡す
+                PlayerDataManager.Instance.AddRandomRelicsAdvanced(count, currentRarities, option.allowedCategories, option.filterByType, option.targetRelicType, false, 0, Rarity.Common);
+            }
+
+            // 【枠2】追加のランダム奇物獲得（例：EpicのNegative奇物を1個など）
+            if (option.giveSecondaryRandomRelic)
+            {
+                int count2 = Random.Range(option.minSecondaryRelicCount, option.maxSecondaryRelicCount + 1);
+                // 追加枠用にはアップグレードやタイプフィルターは使わずシンプルに抽選
+                PlayerDataManager.Instance.AddRandomRelicsAdvanced(count2, option.secondaryAllowedRarities, option.secondaryAllowedCategories, false, RelicType.None, false, 0, Rarity.Common);
             }
 
             // 通常イベントでの選択系処理（今回は仕様上キャンセルは想定しない、またはスキップ処理）
@@ -447,6 +490,81 @@ public class EventManager : MonoBehaviour
             }
         }
 
+        yield return StartCoroutine(ShowEventResultCoroutine(oldGold, oldRelics, oldCards));
+    }
+
+    IEnumerator ShowEventResultCoroutine(int oldGold, List<RelicData> oldRelics, List<CardData> oldCards)
+    {
+        bool hasChanges = false;
+        foreach (Transform child in eventResultContentArea) Destroy(child.gameObject);
+
+        // 1. 奇物の獲得
+        var addedRelics = GetDifferences(oldRelics, PlayerDataManager.Instance.ownedRelics);
+        foreach (var kvp in addedRelics)
+        {
+            GameObject obj = Instantiate(eventResultRelicPrefab, eventResultContentArea); // ★RelicPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupRelic(kvp.Key, kvp.Value, false);
+            hasChanges = true;
+        }
+
+        // 2. 奇物の喪失
+        var lostRelics = GetDifferences(PlayerDataManager.Instance.ownedRelics, oldRelics);
+        foreach (var kvp in lostRelics)
+        {
+            GameObject obj = Instantiate(eventResultRelicPrefab, eventResultContentArea); // ★RelicPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupRelic(kvp.Key, kvp.Value, true);
+            hasChanges = true;
+        }
+
+        // 3. カードの獲得
+        var addedCards = GetDifferences(oldCards, PlayerDataManager.Instance.deckCards);
+        foreach (var kvp in addedCards)
+        {
+            GameObject obj = Instantiate(eventResultCardPrefab, eventResultContentArea); // ★CardPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupCard(kvp.Key, kvp.Value, false);
+            hasChanges = true;
+        }
+
+        // 4. カードの喪失(削除など)
+        var lostCards = GetDifferences(PlayerDataManager.Instance.deckCards, oldCards);
+        foreach (var kvp in lostCards)
+        {
+            GameObject obj = Instantiate(eventResultCardPrefab, eventResultContentArea); // ★CardPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupCard(kvp.Key, kvp.Value, true);
+            hasChanges = true;
+        }
+
+        // 5 & 6. ゴールドの獲得と減少
+        int goldDiff = PlayerDataManager.Instance.gold - oldGold;
+        if (goldDiff > 0) // 獲得
+        {
+            GameObject obj = Instantiate(eventResultGoldPrefab, eventResultContentArea); // ★GoldPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupGold(goldDiff, goldIconSprite, goldBgSprite, false);
+            hasChanges = true;
+        }
+        else if (goldDiff < 0) // 減少
+        {
+            GameObject obj = Instantiate(eventResultGoldPrefab, eventResultContentArea); // ★GoldPrefabに変更
+            obj.GetComponent<EventResultItemUI>().SetupGold(Mathf.Abs(goldDiff), goldIconSprite, goldBgSprite, true);
+            hasChanges = true;
+        }
+
+        if (!hasChanges)
+        {
+            ReturnToMap();
+            yield break;
+        }
+
+        eventResultPanel.SetActive(true);
+        eventResultConfirmButton.interactable = true;
+
+        bool resultConfirmed = false;
+        eventResultConfirmButton.onClick.RemoveAllListeners();
+        eventResultConfirmButton.onClick.AddListener(() => { resultConfirmed = true; });
+
+        yield return new WaitUntil(() => resultConfirmed);
+
+        eventResultPanel.SetActive(false);
         ReturnToMap();
     }
 
@@ -454,11 +572,29 @@ public class EventManager : MonoBehaviour
     {
         foreach (Transform child in cardContentArea) Destroy(child.gameObject);
 
+        // 削除費用の取得（一回だけ計算する）
+        int removePrice = 75;
+        if (currentShopAction == ShopActionType.RemoveCard && currentEventData != null)
+        {
+            foreach (var opt in currentEventData.options)
+            {
+                if (opt.shopAction == ShopActionType.RemoveCard) { removePrice = opt.removeCardPrice; break; }
+            }
+        }
+
         foreach (CardData card in cards)
         {
             if (card == null) continue;
             GameObject obj = Instantiate(selectableCardPrefab, cardContentArea);
-            obj.GetComponent<EventSelectItem>().SetupCard(card, this); 
+            
+            // ★追加：ショップなら価格を渡す
+            int price = -1;
+            if (currentShopAction == ShopActionType.BuyCard && shopCards.Contains(card))
+                price = GetCardPrice(card.rarity);
+            else if (currentShopAction == ShopActionType.RemoveCard)
+                price = removePrice;
+
+            obj.GetComponent<EventSelectItem>().SetupCard(card, this, price); 
         }
 
         if (cardSelectionTitle != null) cardSelectionTitle.text = title;
@@ -466,14 +602,11 @@ public class EventManager : MonoBehaviour
         cardSelectionPanel.SetActive(true);
         if (cardDetailPanel != null) cardDetailPanel.SetActive(false);
         if (cardConfirmButton != null) cardConfirmButton.interactable = false;
-        
-        // ★追加：キャンセルボタンは開いた瞬間から絶対に押せるようにする
         if (cardCancelButton != null) cardCancelButton.interactable = true;
 
         isSelectionWaiting = true;
         lastSelectedCard = null;
 
-        // OKまたはキャンセルボタンが押されるまで待機
         yield return new WaitUntil(() => !isSelectionWaiting);
         
         cardSelectionPanel.SetActive(false);
@@ -487,7 +620,13 @@ public class EventManager : MonoBehaviour
         {
             if (relic == null) continue;
             GameObject obj = Instantiate(selectableRelicPrefab, relicContentArea);
-            obj.GetComponent<EventSelectItem>().SetupRelic(relic, this);
+            
+            // ★追加：ショップなら価格を渡す
+            int price = -1;
+            if (currentShopAction == ShopActionType.BuyRelic && shopRelics.Contains(relic))
+                price = GetRelicPrice(relic.rarity);
+
+            obj.GetComponent<EventSelectItem>().SetupRelic(relic, this, price);
         }
 
         if (relicSelectionTitle != null) relicSelectionTitle.text = title;
@@ -495,14 +634,11 @@ public class EventManager : MonoBehaviour
         relicSelectionPanel.SetActive(true);
         if (relicDetailPanel != null) relicDetailPanel.SetActive(false);
         if (relicConfirmButton != null) relicConfirmButton.interactable = false;
-        
-        // ★追加：キャンセルボタンは開いた瞬間から絶対に押せるようにする
         if (relicCancelButton != null) relicCancelButton.interactable = true;
 
         isSelectionWaiting = true;
         lastSelectedRelic = null;
 
-        // OKまたはキャンセルボタンが押されるまで待機
         yield return new WaitUntil(() => !isSelectionWaiting);
         
         relicSelectionPanel.SetActive(false);
@@ -518,29 +654,35 @@ public class EventManager : MonoBehaviour
             cardDetailPanel.SetActive(true);
             if (cardDetailImage != null) cardDetailImage.sprite = card.cardImage;
             
-            string priceText = "";
-            if (currentShopAction == ShopActionType.BuyCard && shopCards.Contains(card))
+            // ★修正：説明文には価格を混ぜない
+            if (cardDetailText != null) cardDetailText.text = string.IsNullOrEmpty(card.cardTextS) ? card.description : card.cardTextS;
+
+            // ★新規追加：価格テキストを分離して表示
+            if (cardDetailPriceText != null)
             {
-                priceText = $"\n\n<color=yellow>価格: {GetCardPrice(card.rarity)} Gold</color>";
-            }
-            else if (currentShopAction == ShopActionType.RemoveCard)
-            {
-                int removePrice = 75; 
-                if (currentEventData != null)
+                if (currentShopAction == ShopActionType.BuyCard && shopCards.Contains(card))
                 {
-                    foreach (var opt in currentEventData.options)
+                    cardDetailPriceText.text = $"<color=yellow>{GetCardPrice(card.rarity)} G</color>";
+                    cardDetailPriceText.gameObject.SetActive(true);
+                }
+                else if (currentShopAction == ShopActionType.RemoveCard)
+                {
+                    int removePrice = 75; 
+                    if (currentEventData != null)
                     {
-                        if (opt.shopAction == ShopActionType.RemoveCard)
+                        foreach (var opt in currentEventData.options)
                         {
-                            removePrice = opt.removeCardPrice;
-                            break;
+                            if (opt.shopAction == ShopActionType.RemoveCard) { removePrice = opt.removeCardPrice; break; }
                         }
                     }
+                    cardDetailPriceText.text = $"<color=yellow>{removePrice} G</color>";
+                    cardDetailPriceText.gameObject.SetActive(true);
                 }
-                priceText = $"\n\n<color=yellow>削除費用: {removePrice} Gold</color>";
+                else
+                {
+                    cardDetailPriceText.gameObject.SetActive(false); // ショップ以外は隠す
+                }
             }
-
-            if (cardDetailText != null) cardDetailText.text = (string.IsNullOrEmpty(card.cardTextS) ? card.description : card.cardTextS) + priceText;
         }
 
         if (cardConfirmButton != null) cardConfirmButton.interactable = true;
@@ -557,19 +699,36 @@ public class EventManager : MonoBehaviour
             if (relicDetailImage != null) relicDetailImage.sprite = relic.relicIcon;
             if (relicDetailName != null) relicDetailName.text = relic.relicName;
             
-            if (relicDetailBackgroundImage != null)
+            if (relicDetailBackgroundImage != null && StatusPanelManager.Instance != null)
+                relicDetailBackgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic);
+
+            if (relicDetailStarImage != null && StatusPanelManager.Instance != null)
             {
-                if (StatusPanelManager.Instance != null)
+                Sprite starSprite = StatusPanelManager.Instance.GetRelicStarSprite(relic);
+                if (starSprite != null)
                 {
-                    relicDetailBackgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic.rarity);
+                    relicDetailStarImage.sprite = starSprite;
+                    relicDetailStarImage.gameObject.SetActive(true);
                 }
+                else relicDetailStarImage.gameObject.SetActive(false);
             }
 
-            string priceText = "";
-            if (currentShopAction == ShopActionType.BuyRelic && shopRelics.Contains(relic))
-                priceText = $"\n\n<color=yellow>価格: {GetRelicPrice(relic.rarity)} Gold</color>";
+            // ★修正：説明文には価格を混ぜない
+            if (relicDetailText != null) relicDetailText.text = relic.description;
 
-            if (relicDetailText != null) relicDetailText.text = relic.description + priceText;
+            // ★新規追加：価格テキストを分離して表示
+            if (relicDetailPriceText != null)
+            {
+                if (currentShopAction == ShopActionType.BuyRelic && shopRelics.Contains(relic))
+                {
+                    relicDetailPriceText.text = $"<color=yellow>{GetRelicPrice(relic.rarity)} G</color>";
+                    relicDetailPriceText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    relicDetailPriceText.gameObject.SetActive(false); // ショップ以外は隠す
+                }
+            }
         }
 
         if (relicConfirmButton != null) relicConfirmButton.interactable = true;
@@ -620,6 +779,25 @@ public class EventManager : MonoBehaviour
             }
         }
         return result;
+    }
+
+    Dictionary<T, int> GetDifferences<T>(List<T> oldList, List<T> newList) where T : ScriptableObject
+    {
+        Dictionary<T, int> counts = new Dictionary<T, int>();
+        List<T> tempOld = new List<T>(oldList);
+        foreach (var item in newList)
+        {
+            if (tempOld.Contains(item))
+            {
+                tempOld.Remove(item); // 以前から持っていた分は相殺
+            }
+            else
+            {
+                if (counts.ContainsKey(item)) counts[item]++;
+                else counts[item] = 1; // 新しく増えた分
+            }
+        }
+        return counts;
     }
 
     void ReturnToMap()
