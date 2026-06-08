@@ -2811,7 +2811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440349585}
   m_Layer: 5
-  m_Name: MapContainer
+  m_Name: Floor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4128,8 +4128,8 @@ MonoBehaviour:
     iconSprite: {fileID: 21300000, guid: d31e0f15092fcfb47bd6e1a8defa5cbc, type: 3}
     sceneName: battlescene
     eventColor: {r: 1, g: 0, b: 0, a: 1}
-    weight: 0
-    minCountPerLayer: 0
+    weight: 5
+    minCountPerLayer: 4
   - eventName: Bonus
     iconSprite: {fileID: 21300000, guid: dfa7573a6acf9e143a09725f05116e1a, type: 3}
     sceneName: Bonus
@@ -4140,8 +4140,13 @@ MonoBehaviour:
     iconSprite: {fileID: 21300000, guid: af265b2fbc97a2045ac7f630d1214705, type: 3}
     sceneName: Event
     eventColor: {r: 0.09492421, g: 1, b: 0, a: 1}
+<<<<<<< HEAD
     weight: 0
     minCountPerLayer: 0
+=======
+    weight: 5
+    minCountPerLayer: 4
+>>>>>>> map2
   - eventName: Shop
     iconSprite: {fileID: 21300000, guid: ad4f0495bda3d01418c589e71f5afba1, type: 3}
     sceneName: Shop
@@ -4153,11 +4158,12 @@ MonoBehaviour:
     sceneName: Anomaly
     eventColor: {r: 0.6135891, g: 0.07058824, b: 0.6313726, a: 1}
     weight: 0
-    minCountPerLayer: 0
+    minCountPerLayer: 1
   uniqueEventName: Shop
   forbiddenEventNamesForStart:
   - Shop
   - Bonus
+  - Anomaly
 --- !u!4 &669871690
 Transform:
   m_ObjectHideFlags: 0
@@ -4183,7 +4189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670422871}
   m_Layer: 5
-  m_Name: MapContainer (1)
+  m_Name: Floor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
