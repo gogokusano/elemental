@@ -2,9 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 public enum EventPenaltyType { HpLoss, MaxHpLoss, GoldLoss }
-
 public enum TargetSelectionMethod { None, Random, Select }
-
 public enum ShopActionType { None, BuyRelic, BuyCard, RemoveCard, Leave }
 
 [System.Serializable]
@@ -21,9 +19,13 @@ public class ShopConfig
     public int relicCount = 3;
     public int cardCount = 3;
 
-    [Header("ショップに並ぶレアリティ (チェックしたものだけ出現)")]
+    [Header("ショップに並ぶレアリティ (空ならすべて出現)")]
     public List<Rarity> allowedRelicRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };
     public List<Rarity> allowedCardRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };
+
+    [Header("ショップに並ぶ奇物のカテゴリー (空ならすべて出現)")]
+    [Tooltip("Normal, Subtle などを指定。Negativeを外せば不利奇物は並ばない")]
+    public List<RelicCategory> allowedRelicCategories = new List<RelicCategory>() { RelicCategory.Normal, RelicCategory.Subtle };
 
     [Header("奇物のレアリティ別価格")]
     public List<RarityPrice> relicPrices = new List<RarityPrice>();
@@ -50,15 +52,18 @@ public class EventOption
     public RelicData rewardRelic; 
 
     // ==========================================
-    // ★統合：ランダム奇物獲得の万能設定
+    // ★追加・修正：ランダム奇物獲得（枠1）
     // ==========================================
-    [Header("ランダム奇物獲得")]
+    [Header("ランダム奇物獲得 (枠1)")]
     public bool giveRandomRelic = false;
-    public int minRelicCount = 1; // ★最低獲得数
-    public int maxRelicCount = 1; // ★最大獲得数
+    public int minRelicCount = 1; 
+    public int maxRelicCount = 1; 
     
-    [Tooltip("許可するレアリティ（不利奇物を弾く場合は Common, Rare 等を指定）")]
+    [Tooltip("許可するレアリティ（空ならすべて許可）")]
     public List<Rarity> allowedRarities = new List<Rarity>();
+
+    [Tooltip("★許可するカテゴリー（Normal, Subtle, Negative）")]
+    public List<RelicCategory> allowedCategories = new List<RelicCategory>() { RelicCategory.Normal };
 
     [Header("絞り込み：タイプ")]
     public bool filterByType = false;
@@ -69,6 +74,21 @@ public class EventOption
     [Range(0f, 1f)]
     public float upgradeChance = 0.5f; 
     public Rarity upgradedRarity; 
+
+    // ==========================================
+    // ★新規追加：ランダム奇物獲得（枠2・デメリット用など）
+    // ==========================================
+    [Header("追加のランダム奇物獲得 (枠2)")]
+    public bool giveSecondaryRandomRelic = false;
+    public int minSecondaryRelicCount = 1;
+    public int maxSecondaryRelicCount = 1;
+    
+    [Tooltip("許可するレアリティ（空ならすべて許可）")]
+    public List<Rarity> secondaryAllowedRarities = new List<Rarity>();
+
+    [Tooltip("★許可するカテゴリー（Negativeなどを指定）")]
+    public List<RelicCategory> secondaryAllowedCategories = new List<RelicCategory>() { RelicCategory.Negative };
+
 
     [Header("奇物の喪失")]
     public int loseRelicCount = 0;

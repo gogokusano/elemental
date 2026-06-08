@@ -10,6 +10,7 @@ public class StatusItemSlot : MonoBehaviour
 
     private CardData targetCard;
     private RelicData targetRelic;
+    public Image rarityStarImage;
 
     void Awake()
     {
@@ -42,9 +43,23 @@ public class StatusItemSlot : MonoBehaviour
             {
                 if (StatusPanelManager.Instance != null)
                 {
-                    backgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic.rarity);
+                    backgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic);
                     backgroundImage.gameObject.SetActive(true);
                 }
+            }
+        }
+
+        if (rarityStarImage != null && StatusPanelManager.Instance != null)
+        {
+            Sprite starSprite = StatusPanelManager.Instance.GetRelicStarSprite(relic);
+            if (starSprite != null)
+            {
+                rarityStarImage.sprite = starSprite;
+                rarityStarImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                rarityStarImage.gameObject.SetActive(false);
             }
         }
     }

@@ -7,12 +7,15 @@ public class EventSelectItem : MonoBehaviour
     [Header("UI設定")]
     public Image iconImage;
     public Image backgroundImage;
+    public Image rarityStarImage;
+    public TextMeshProUGUI priceText;
 
     private CardData targetCard;
     private RelicData targetRelic;
     private EventManager manager;
 
-    public void SetupCard(CardData card, EventManager mgr)
+    // ★引数に int price = -1 を追加
+    public void SetupCard(CardData card, EventManager mgr, int price = -1) 
     {
         targetCard = card;
         targetRelic = null;
@@ -20,10 +23,29 @@ public class EventSelectItem : MonoBehaviour
         
         if (iconImage != null && card.cardImage != null) iconImage.sprite = card.cardImage;
         
+        // カードの場合は背景や星を消す
+        if (backgroundImage != null) backgroundImage.gameObject.SetActive(false);
+        if (rarityStarImage != null) rarityStarImage.gameObject.SetActive(false);
+
+        // ★価格の表示設定
+        if (priceText != null)
+        {
+            if (price >= 0)
+            {
+                priceText.text = price.ToString() + " G";
+                priceText.gameObject.SetActive(true);
+            }
+            else
+            {
+                priceText.gameObject.SetActive(false); // ショップ以外では隠す
+            }
+        }
+        
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
 
-    public void SetupRelic(RelicData relic, EventManager mgr)
+    // ★引数に int price = -1 を追加
+    public void SetupRelic(RelicData relic, EventManager mgr, int price = -1) 
     {
         targetRelic = relic;
         targetCard = null;
@@ -33,16 +55,41 @@ public class EventSelectItem : MonoBehaviour
         {
             if (iconImage != null && relic.relicIcon != null) iconImage.sprite = relic.relicIcon;
             
-            // ★修正：StatusPanelManagerから背景をもらってくる
-            if (backgroundImage != null)
+            if (backgroundImage != null && StatusPanelManager.Instance != null)
             {
-                if (StatusPanelManager.Instance != null)
+                backgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic);
+                backgroundImage.gameObject.SetActive(true);
+            }
+
+            if (rarityStarImage != null && StatusPanelManager.Instance != null)
+            {
+                Sprite starSprite = StatusPanelManager.Instance.GetRelicStarSprite(relic);
+                if (starSprite != null)
                 {
-                    backgroundImage.sprite = StatusPanelManager.Instance.GetRelicBackground(relic.rarity);
-                    backgroundImage.gameObject.SetActive(true);
+                    rarityStarImage.sprite = starSprite;
+                    rarityStarImage.gameObject.SetActive(true);
+                }
+                else
+                {
+                    rarityStarImage.gameObject.SetActive(false);
                 }
             }
         }
+
+        // ★価格の表示設定
+        if (priceText != null)
+        {
+            if (price >= 0)
+            {
+                priceText.text = price.ToString() + " G";
+                priceText.gameObject.SetActive(true);
+            }
+            else
+            {
+                priceText.gameObject.SetActive(false);
+            }
+        }
+
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
 

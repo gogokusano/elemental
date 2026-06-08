@@ -1,0 +1,1430 @@
+fileFormatVersion: 2
+guid: 977b411315082404b9c015e904348afa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8938804529179142473
+    second: Hurikibutu_0
+  - first:
+      213: 9161428442863588404
+    second: Hurikibutu_1
+  - first:
+      213: -2933240304247893110
+    second: Hurikibutu_2
+  - first:
+      213: -4252688856540153132
+    second: Hurikibutu_3
+  - first:
+      213: 4567988615191962108
+    second: Hurikibutu_4
+  - first:
+      213: -2190071809090574166
+    second: Hurikibutu_5
+  - first:
+      213: 2347646603380600854
+    second: Hurikibutu_6
+  - first:
+      213: 2979615863099025965
+    second: Hurikibutu_7
+  - first:
+      213: 2639005071221263764
+    second: Hurikibutu_8
+  - first:
+      213: -1190428417330374890
+    second: Hurikibutu_9
+  - first:
+      213: 7738584551461393455
+    second: Hurikibutu_10
+  - first:
+      213: -3780068148943066540
+    second: Hurikibutu_11
+  - first:
+      213: 3572330454407702592
+    second: Hurikibutu_12
+  - first:
+      213: 1833627617288411290
+    second: Hurikibutu_13
+  - first:
+      213: -1352008035420064894
+    second: Hurikibutu_14
+  - first:
+      213: -7076023648155180131
+    second: Hurikibutu_15
+  - first:
+      213: -6967021392764603949
+    second: Hurikibutu_16
+  - first:
+      213: -958096657376310402
+    second: Hurikibutu_17
+  - first:
+      213: -5102463627754085371
+    second: Hurikibutu_18
+  - first:
+      213: 6042041595717726500
+    second: Hurikibutu_19
+  - first:
+      213: 164057944987910925
+    second: Hurikibutu_20
+  - first:
+      213: -8388297737109473611
+    second: Hurikibutu_21
+  - first:
+      213: 7407731084983755958
+    second: Hurikibutu_22
+  - first:
+      213: -8576338464964123661
+    second: Hurikibutu_23
+  - first:
+      213: 1984943982816901858
+    second: Hurikibutu_24
+  - first:
+      213: 6262234614387387771
+    second: Hurikibutu_25
+  - first:
+      213: -4869175904267369824
+    second: Hurikibutu_26
+  - first:
+      213: 8023791159793956539
+    second: Hurikibutu_27
+  - first:
+      213: -8600462618248124151
+    second: Hurikibutu_28
+  - first:
+      213: -6314720250793834445
+    second: Hurikibutu_29
+  - first:
+      213: -6323758919645780888
+    second: Hurikibutu_30
+  - first:
+      213: -538779996140073271
+    second: Hurikibutu_31
+  - first:
+      213: 9204701353507779032
+    second: Hurikibutu_32
+  - first:
+      213: -2988064203238690004
+    second: Hurikibutu_33
+  - first:
+      213: 2815673632967793392
+    second: Hurikibutu_34
+  - first:
+      213: -2749270249478211399
+    second: Hurikibutu_35
+  - first:
+      213: 3895234205113169739
+    second: Hurikibutu_36
+  - first:
+      213: -9108898342273998551
+    second: Hurikibutu_37
+  - first:
+      213: 2454257704836158885
+    second: Hurikibutu_38
+  - first:
+      213: -6528360109164880081
+    second: Hurikibutu_39
+  - first:
+      213: -3234490307995040989
+    second: Hurikibutu_40
+  - first:
+      213: -1567388017738938931
+    second: Hurikibutu_41
+  - first:
+      213: -7962929993597253110
+    second: Hurikibutu_42
+  - first:
+      213: 8512559583429838301
+    second: Hurikibutu_43
+  - first:
+      213: 3131598901649758430
+    second: Hurikibutu_44
+  - first:
+      213: 3901820703823715150
+    second: Hurikibutu_45
+  - first:
+      213: 5591425440748998713
+    second: Hurikibutu_46
+  - first:
+      213: -6528623075916349884
+    second: Hurikibutu_47
+  - first:
+      213: -2409289353911078108
+    second: Hurikibutu_48
+  - first:
+      213: 7621887186032604109
+    second: Hurikibutu_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hurikibutu_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 881
+        width: 119
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94920660c530d0c70800000000000000
+      internalID: 8938804529179142473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 888
+        width: 110
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4345b0421aee32f70800000000000000
+      internalID: 9161428442863588404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_2
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 890
+        width: 112
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a831278fb790b47d0800000000000000
+      internalID: -2933240304247893110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_3
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 888
+        width: 105
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da79a5440a6bf4c0800000000000000
+      internalID: -4252688856540153132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_4
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 869
+        width: 119
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1ab8a7171c46f30800000000000000
+      internalID: 4567988615191962108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_5
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 889
+        width: 103
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa82f8a0b4d4b91e0800000000000000
+      internalID: -2190071809090574166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_6
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 882
+        width: 115
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61037acb524849020800000000000000
+      internalID: 2347646603380600854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_7
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 881
+        width: 112
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ae22f37d8b95920800000000000000
+      internalID: 2979615863099025965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 730
+        width: 105
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d09965121af9420800000000000000
+      internalID: 2639005071221263764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_9
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 742
+        width: 120
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6171e7e59afba7fe0800000000000000
+      internalID: -1190428417330374890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_10
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 741
+        width: 117
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f249e2616a9f46b60800000000000000
+      internalID: 7738584551461393455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_11
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 744
+        width: 103
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45aea73db008a8bc0800000000000000
+      internalID: -3780068148943066540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_12
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 735
+        width: 121
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048e74b0f97739130800000000000000
+      internalID: 3572330454407702592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_13
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 723
+        width: 112
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9852da5a9a527910800000000000000
+      internalID: 1833627617288411290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_14
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 731
+        width: 112
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2833053ead3bc3de0800000000000000
+      internalID: -1352008035420064894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_15
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 734
+        width: 124
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d93627d7bf9eccd90800000000000000
+      internalID: -7076023648155180131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_16
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 558
+        width: 111
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1f7b5c4fa205f90800000000000000
+      internalID: -6967021392764603949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_17
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 578
+        width: 123
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b88949a2824b2f0800000000000000
+      internalID: -958096657376310402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_18
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 565
+        width: 127
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504ed545d586039b0800000000000000
+      internalID: -5102463627754085371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_19
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 572
+        width: 74
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 421b3e6b1d4a9d350800000000000000
+      internalID: 6042041595717726500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_20
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 567
+        width: 124
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03c59de4d9d64200800000000000000
+      internalID: 164057944987910925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_21
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 565
+        width: 116
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b67065b6a7c69b80800000000000000
+      internalID: -8388297737109473611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_22
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 593
+        width: 120
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b463188c2c8dc660800000000000000
+      internalID: 7407731084983755958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_23
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 567
+        width: 105
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f36b420b99baf880800000000000000
+      internalID: -8576338464964123661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_24
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 385
+        width: 111
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eab9d22900fb8b10800000000000000
+      internalID: 1984943982816901858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_25
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 379
+        width: 98
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d27baf33de7e650800000000000000
+      internalID: 6262234614387387771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_26
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 371
+        width: 110
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2804520563d6cb0800000000000000
+      internalID: -4869175904267369824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_27
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 366
+        width: 82
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb630774c8b3a5f60800000000000000
+      internalID: 8023791159793956539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_28
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 371
+        width: 117
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9096b4fd0d405a880800000000000000
+      internalID: -8600462618248124151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_29
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 340
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338c773836b9d58a0800000000000000
+      internalID: -6314720250793834445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_30
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 360
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8642e4d64ce7d38a0800000000000000
+      internalID: -6323758919645780888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_31
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 384
+        width: 119
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce0cf5b27ed588f0800000000000000
+      internalID: -538779996140073271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_32
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 202
+        width: 118
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d17367cc1badbf70800000000000000
+      internalID: 9204701353507779032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_33
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 208
+        width: 112
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23b5e740734886d0800000000000000
+      internalID: -2988064203238690004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_34
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 206
+        width: 122
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa9a784048431720800000000000000
+      internalID: 2815673632967793392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_35
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 210
+        width: 108
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b83d4c3641a8d9d0800000000000000
+      internalID: -2749270249478211399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_36
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 210
+        width: 119
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47b8b82fd6ae0630800000000000000
+      internalID: 3895234205113169739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_37
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 174
+        width: 119
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9212d9df731b69180800000000000000
+      internalID: -9108898342273998551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_38
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 196
+        width: 123
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a5560c11664f0220800000000000000
+      internalID: 2454257704836158885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_39
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 210
+        width: 102
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f9567c11b9665a0800000000000000
+      internalID: -6528360109164880081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_40
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 218
+        width: 98
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3230382b338cc13d0800000000000000
+      internalID: -3234490307995040989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_41
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 46
+        width: 113
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc58779f6e48f3ae0800000000000000
+      internalID: -1567388017738938931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_42
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 43
+        width: 110
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a05583c5dfd7190800000000000000
+      internalID: -7962929993597253110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_43
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 44
+        width: 113
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5cea3f6dfa22670800000000000000
+      internalID: 8512559583429838301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_44
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 42
+        width: 111
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed856dfeb9ca57b20800000000000000
+      internalID: 3131598901649758430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_45
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 36
+        width: 112
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4b5da4e14d062630800000000000000
+      internalID: 3901820703823715150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_46
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 38
+        width: 102
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9301def40dbb89d40800000000000000
+      internalID: 5591425440748998713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_47
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 26
+        width: 117
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e769f07eba565a0800000000000000
+      internalID: -6528623075916349884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_48
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 34
+        width: 119
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423fffaf81c709ed0800000000000000
+      internalID: -2409289353911078108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurikibutu_49
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 55
+        width: 122
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc33391630266c960800000000000000
+      internalID: 7621887186032604109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hurikibutu_0: 8938804529179142473
+      Hurikibutu_1: 9161428442863588404
+      Hurikibutu_10: 7738584551461393455
+      Hurikibutu_11: -3780068148943066540
+      Hurikibutu_12: 3572330454407702592
+      Hurikibutu_13: 1833627617288411290
+      Hurikibutu_14: -1352008035420064894
+      Hurikibutu_15: -7076023648155180131
+      Hurikibutu_16: -6967021392764603949
+      Hurikibutu_17: -958096657376310402
+      Hurikibutu_18: -5102463627754085371
+      Hurikibutu_19: 6042041595717726500
+      Hurikibutu_2: -2933240304247893110
+      Hurikibutu_20: 164057944987910925
+      Hurikibutu_21: -8388297737109473611
+      Hurikibutu_22: 7407731084983755958
+      Hurikibutu_23: -8576338464964123661
+      Hurikibutu_24: 1984943982816901858
+      Hurikibutu_25: 6262234614387387771
+      Hurikibutu_26: -4869175904267369824
+      Hurikibutu_27: 8023791159793956539
+      Hurikibutu_28: -8600462618248124151
+      Hurikibutu_29: -6314720250793834445
+      Hurikibutu_3: -4252688856540153132
+      Hurikibutu_30: -6323758919645780888
+      Hurikibutu_31: -538779996140073271
+      Hurikibutu_32: 9204701353507779032
+      Hurikibutu_33: -2988064203238690004
+      Hurikibutu_34: 2815673632967793392
+      Hurikibutu_35: -2749270249478211399
+      Hurikibutu_36: 3895234205113169739
+      Hurikibutu_37: -9108898342273998551
+      Hurikibutu_38: 2454257704836158885
+      Hurikibutu_39: -6528360109164880081
+      Hurikibutu_4: 4567988615191962108
+      Hurikibutu_40: -3234490307995040989
+      Hurikibutu_41: -1567388017738938931
+      Hurikibutu_42: -7962929993597253110
+      Hurikibutu_43: 8512559583429838301
+      Hurikibutu_44: 3131598901649758430
+      Hurikibutu_45: 3901820703823715150
+      Hurikibutu_46: 5591425440748998713
+      Hurikibutu_47: -6528623075916349884
+      Hurikibutu_48: -2409289353911078108
+      Hurikibutu_49: 7621887186032604109
+      Hurikibutu_5: -2190071809090574166
+      Hurikibutu_6: 2347646603380600854
+      Hurikibutu_7: 2979615863099025965
+      Hurikibutu_8: 2639005071221263764
+      Hurikibutu_9: -1190428417330374890
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
