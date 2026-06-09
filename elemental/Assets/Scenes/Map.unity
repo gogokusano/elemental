@@ -6783,7 +6783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6951dd8adb66a004fb7296cd08177f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectHideByScene
-  targetSceneName: title
 --- !u!1 &1265928694
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,6 +6866,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: allAvailableRelics.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'allAvailableRelics.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e095cc349cf34940b1e51314c47096e, type: 2}
+    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
+      propertyPath: 'allAvailableRelics.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e386cab26fe35954ba257d10c7313bba, type: 2}
     - target: {fileID: 3257981656874785856, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.76212
@@ -7455,7 +7466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6951dd8adb66a004fb7296cd08177f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectHideByScene
-  targetSceneName: title
 --- !u!1 &1413753753
 GameObject:
   m_ObjectHideFlags: 0
