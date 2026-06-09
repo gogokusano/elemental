@@ -16,13 +16,16 @@ MonoBehaviour:
   eventText: "\u304B\u3064\u3066\u306E\u652F\u914D\u8005\u304C\u96A0\u3057\u305F\u3001\u546A\u3044\u306E\u306A\u3044\u7D14\u7C8B\u306A\u8CA1\u5B9D\u304C\u7720\u308B\u5834\u6240\u3002\n\u8DB3\u306E\u8E0F\u307F\u5834\u3082\u306A\u3044\u307B\u3069\u306E\u91D1\u8CA8\u3068\u3001\u898B\u305F\u3053\u3068\u3082\u306A\u3044\u307B\u3069\u8C6A\u83EF\u306A\u5947\u7269\u304C\u4E26\u3093\u3067\u3044\u308B\u3002"
   eventImage: {fileID: -3513679087232322709, guid: f83c52f4082a0c344af5c592fcff3853, type: 3}
   options:
-  - buttonText: "\u738B\u306E\u907A\u7523\uFF1A\u26052~3\u306E\u5947\u7269\u30922\u3064\u7372\u5F97\u3059\u308B\u3002"
+  - buttonText: "\u738B\u306E\u907A\u7523\uFF1A\u30B4\u30FC\u30EB\u30C9\u3092\xD760\u7372\u5F97\u3059\u308B\u3002"
     shopAction: 0
     removeCardPrice: 75
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 60
     rewardRelic: {fileID: 0}
-    giveRandomRelic: 1
+    giveRandomRelic: 0
     minRelicCount: 2
     maxRelicCount: 2
     allowedRarities: 0300000004000000
@@ -61,7 +64,10 @@ MonoBehaviour:
     shopAction: 0
     removeCardPrice: 75
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 2
@@ -98,11 +104,14 @@ MonoBehaviour:
     gambleSuccessChance: 0.5
     penaltyType: 0
     penaltyValue: 0
-  - buttonText: "\u6B32\u5F35\u308A\u306A\u53CE\u96C6\uFF1A\u30E9\u30F3\u30C0\u30E0\u306A\u5947\u7269\u30922~3\u500B\u7372\u5F97\u3059\u308B\u3002"
+  - buttonText: "\u6B32\u5F35\u308A\u306A\u53CE\u96C6\uFF1A\u26051~3\u5947\u7269\u30922~3\u500B\u7372\u5F97\u3059\u308B\u3002"
     shopAction: 0
     removeCardPrice: 75
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 1
     minRelicCount: 2

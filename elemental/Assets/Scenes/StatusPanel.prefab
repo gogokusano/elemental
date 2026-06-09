@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3690797050057774229
 RectTransform:
   m_ObjectHideFlags: 0
@@ -623,9 +623,22 @@ MonoBehaviour:
   relicContentArea: {fileID: 7311693099311699297}
   cardSlotPrefab: {fileID: 7315777553480449573, guid: ef6a9a29d81761b4ab264664295d07b1, type: 3}
   relicSlotPrefab: {fileID: 8417990003877203048, guid: 632fa9b4e6efe2a4680b11b14d007b90, type: 3}
+  bgCommon: {fileID: 0}
+  bgUncommon: {fileID: 0}
+  bgRare: {fileID: 0}
+  bgEpic: {fileID: 0}
+  bgLegendary: {fileID: 0}
+  bgSpecial: {fileID: 0}
+  bgNegative: {fileID: 0}
+  starRare: {fileID: 0}
+  starEpic: {fileID: 0}
+  starLegendary: {fileID: 0}
+  starNegative: {fileID: 0}
+  detailStarImage: {fileID: 0}
   detailNameText: {fileID: 1804358416293235617}
   detailDescriptionText: {fileID: 2352290249844033875}
   detailImageView: {fileID: 1120466493498578622}
+  detailBackgroundImage: {fileID: 0}
 --- !u!1 &1714961254759132911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,8 +1688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcc297f624f4134dbc9ce644f8035e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatusItemSlot
+  backgroundImage: {fileID: 0}
   iconImage: {fileID: 6058212231678663445}
   slotButton: {fileID: 8712607849530757339}
+  rarityStarImage: {fileID: 0}
 --- !u!1 &4543207459189384852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,8 +2717,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcc297f624f4134dbc9ce644f8035e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatusItemSlot
+  backgroundImage: {fileID: 0}
   iconImage: {fileID: 3500602819687481240}
   slotButton: {fileID: 8452343145518531901}
+  rarityStarImage: {fileID: 0}
 --- !u!1 &6630931477463864460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,8 +3278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcc297f624f4134dbc9ce644f8035e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatusItemSlot
+  backgroundImage: {fileID: 0}
   iconImage: {fileID: 1120466493498578622}
   slotButton: {fileID: 7728725017070747980}
+  rarityStarImage: {fileID: 0}
 --- !u!1 &8116029654310288620
 GameObject:
   m_ObjectHideFlags: 0
