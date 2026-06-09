@@ -644,6 +644,12 @@ MonoBehaviour:
   enemyData: {fileID: 0}
   currentHP: 0
   currentBlock: 0
+  isMidBoss: 0
+  isBoss: 1
+  barrierCount: 0
+  barrierText: {fileID: 0}
+  bossDamageMultiplier: 1
+  bossWoundCard: {fileID: 11400000, guid: 969423bab77b9f341a3543433d09c188, type: 2}
   hpText: {fileID: 4494951212275301438}
   enemyImage: {fileID: 8033847231871954861}
   blockText: {fileID: 9121847590215061240}
@@ -663,10 +669,12 @@ MonoBehaviour:
   attackIntentIcon: {fileID: 21300000, guid: 6fa365c0ceed64a49836c8da6dc0fcf8, type: 3}
   defendIntentIcon: {fileID: 21300000, guid: c6e7c202f05ab5540b77239101217338, type: 3}
   statusIntentIcon: {fileID: 21300000, guid: 0444d31f14457f346b517cd60ffbe6e7, type: 3}
+  buffIntentIcon: {fileID: 0}
   hasUltimate: 1
   ultimateTriggerTurn: 15
   ultimateDamage: 999
   chargeIntentIcon: {fileID: 21300000, guid: 9042a9bcf075f3a428ee3f5bd986e375, type: 3}
+  damageTextPrefab: {fileID: 1592011057032789196, guid: bfb4a772fbdb40443ba8e17f33246e9f, type: 3}
 --- !u!1 &5411234069105771817
 GameObject:
   m_ObjectHideFlags: 0

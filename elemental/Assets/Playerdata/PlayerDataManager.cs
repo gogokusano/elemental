@@ -22,12 +22,13 @@ public class PlayerDataManager : MonoBehaviour
     public List<RelicData> allAvailableRelics = new List<RelicData>(); 
     private List<RelicData> unownedRelics = new List<RelicData>(); 
 
-
-
     // ★追加：全カードのデータベース（GetRewardCardsでカードを抽出するために必要です）
 
     [Header("全カードのデータベース（すべてのカードを登録）")]
     public List<CardData> allAvailableCards = new List<CardData>();
+
+    private int defaultMaxHp;
+    private int defaultGold;
 
     private void Awake()
     {
@@ -35,6 +36,11 @@ public class PlayerDataManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); 
+            
+            // ★起動時の初期ステータスを記憶しておく
+            defaultMaxHp = maxHp;
+            defaultGold = gold;
+
             InitializeData();
         }
         else
@@ -103,23 +109,9 @@ public class PlayerDataManager : MonoBehaviour
 
             List<RelicData> pool = new List<RelicData>(unownedRelics);
 
-            // レアリティでの絞り込み
-            if (currentTargetRarities.Count > 0)
-            {
-                pool = pool.FindAll(r => currentTargetRarities.Contains(r.rarity));
-            }
-
-            // ★追加：カテゴリー（有利・不利など）での絞り込み
-            if (allowedCategories != null && allowedCategories.Count > 0)
-            {
-                pool = pool.FindAll(r => allowedCategories.Contains(r.relicCategory));
-            }
-
-            // タイプでの絞り込み
-            if (useType)
-            {
-                pool = pool.FindAll(r => r.relicType == type);
-            }
+            if (currentTargetRarities.Count > 0) pool = pool.FindAll(r => currentTargetRarities.Contains(r.rarity));
+            if (allowedCategories != null && allowedCategories.Count > 0) pool = pool.FindAll(r => allowedCategories.Contains(r.relicCategory));
+            if (useType) pool = pool.FindAll(r => r.relicType == type);
 
             if (pool.Count == 0)
             {
@@ -132,7 +124,6 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
 
-
     public void LoseRandomRelics(int count)
     {
         for (int i = 0; i < count; i++)
@@ -142,13 +133,12 @@ public class PlayerDataManager : MonoBehaviour
                 int idx = Random.Range(0, ownedRelics.Count);
                 RelicData relic = ownedRelics[idx];
                 ownedRelics.RemoveAt(idx);
-                unownedRelics.Add(relic); // 未所持に戻す
+                unownedRelics.Add(relic); 
                 Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
             }
         }
     }
 
-    // フィルターに従ってランダムなカードを獲得する
     public void AddRandomCardsFiltered(int count, bool useElement, ElementType element, bool useCost, int cost, bool useRarity, Rarity rarity)
     {
         List<CardData> pool = new List<CardData>(allAvailableCards);
@@ -173,7 +163,6 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
     
-    // デッキからランダムにカードを削除する
     public void RemoveRandomCards(int count)
     {
         for (int i = 0; i < count; i++)
@@ -192,36 +181,44 @@ public class PlayerDataManager : MonoBehaviour
         if (ownedRelics.Contains(relic))
         {
             ownedRelics.Remove(relic);
-            unownedRelics.Add(relic); // 山札に戻す
+            unownedRelics.Add(relic); 
             Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
         }
-        }
+    }
     
-
     // ==========================================
-    // ▼ ここから今回追加した報酬用のメソッド ▼
+    // ▼ ここから報酬用のメソッド ▼
     // ==========================================
 
-    // ゴールドを加算するメソッド
     public void AddGold(int amount)
     {
+        // ★変更：ゴールドを獲得（プラス）する時のみ、奇物の倍率効果を適用する
+        if (amount > 0)
+        {
+            foreach (var relic in ownedRelics)
+            {
+                amount = relic.OnModifyGainGold(amount);
+            }
+        }
+
         gold += amount;
-        Debug.Log($"ゴールド獲得: {amount} / 現在のゴールド: {gold}");
+
+        // ★追加：ゴールドが0未満にならないようにする
+        if (gold < 0) gold = 0;
+
+        Debug.Log($"ゴールド変動: {amount} / 現在のゴールド: {gold}");
     }
 
-    // 報酬画面用に、重複しないN枚のカードをランダムに取得するメソッド
     public List<CardData> GetRewardCards(int count = 3)
     {
         List<CardData> rewardCards = new List<CardData>();
         
-        // エラー回避：もしインスペクターでallAvailableCardsに何も登録されていなかった場合
         if (allAvailableCards == null || allAvailableCards.Count == 0)
         {
-            Debug.LogError("全カードリスト(allAvailableCards)が設定されていないか、空です！インスペクターからカードを登録してください。");
+            Debug.LogError("全カードリスト(allAvailableCards)が設定されていないか、空です！");
             return rewardCards;
         }
 
-        // 全カードリストのコピーを作成（本体を破壊しないため）
         List<CardData> pool = new List<CardData>(allAvailableCards); 
 
         for (int i = 0; i < count; i++)
@@ -230,12 +227,47 @@ public class PlayerDataManager : MonoBehaviour
 
             int randomIndex = Random.Range(0, pool.Count);
             rewardCards.Add(pool[randomIndex]);
-            
-            // 選ばれたカードをプールから削除し、重複提示を防ぐ
             pool.RemoveAt(randomIndex); 
         }
 
         return rewardCards;
+    }
 
+    // ★追加：報酬画面用に未所持の奇物をランダムに1つ取得するメソッド
+    public RelicData GetRandomRewardRelic()
+    {
+        // まだ持っていない奇物(unownedRelics)の中からランダムに選ぶ
+        if (unownedRelics == null || unownedRelics.Count == 0)
+        {
+            return null; // 全て持っている場合はnullを返す
+        }
+
+        int randomIndex = Random.Range(0, unownedRelics.Count);
+        return unownedRelics[randomIndex];
+    }
+
+    public void ResetAllData()
+    {
+        Debug.Log("<color=red>すべてのプレイヤーデータとマップ進捗を初期化します。</color>");
+
+        // 1. ステータスとゴールドの初期化
+        maxHp = defaultMaxHp;
+        gold = defaultGold;
+        currentHp = maxHp;
+        hasCounter = false;
+
+        // 2. デッキを初期デッキの内容で再読み込み
+        deckCards = new List<CardData>(startingDeck);
+
+        // 3. 所持奇物のクリアと山札の再構築
+        ownedRelics.Clear();
+        unownedRelics = new List<RelicData>(allAvailableRelics);
+
+        // 4. マップ進行度（PlayerPrefs）の完全削除
+        PlayerPrefs.DeleteKey("LastClearedNode");
+        PlayerPrefs.DeleteKey("CurrentChallengingNode");
+        PlayerPrefs.DeleteKey("MapSavedX");
+        PlayerPrefs.DeleteKey("MapSeed");
+        PlayerPrefs.Save();
     }
 }

@@ -64,4 +64,9 @@ public class RelicData : ScriptableObject
     /// ★新規追加：ターンのドロー枚数を書き換えるフック
     /// </summary>
     public virtual int OnModifyDrawAmount(int baseAmount) { return baseAmount; }
+
+    /// <summary>
+    /// ★新規追加：ゴールドを獲得する時に獲得量を書き換えるフック（増加・減少）
+    /// </summary>
+    public virtual int OnModifyGainGold(int amount) { return amount; }
 }

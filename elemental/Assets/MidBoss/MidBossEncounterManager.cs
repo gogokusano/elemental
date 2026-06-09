@@ -58,6 +58,7 @@ public class MidBossEncounterManager : MonoBehaviour
         {
             // ボスのデータを渡してセットアップ
             manager.enemyData = chosenBoss;
+            manager.isMidBoss = true; // ★追加：生成された敵に「中ボス」フラグを付与！
             manager.SetupEnemy();
         }
 

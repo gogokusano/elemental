@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a3053483bfdd4a874cd06dd9467b0, type: 3}
   m_Name: kibutu10
   m_EditorClassIdentifier: Assembly-CSharp::RelicCore
-  relicName: "\u8150\u6557\u3057\u305F\u8D64\u30EA\u30F3\u30B4"
-  description: "\u81EA\u8EAB\u306E\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u3001\u4F53\u529B\u304C2\u6E1B\u5C11\u3059\u308B\u3002"
-  relicIcon: {fileID: 8938804529179142473, guid: 977b411315082404b9c015e904348afa, type: 3}
-  rarity: 0
+  relicName: "\u9811\u4E08\u306A\u30ED\u30FC\u30D7"
+  description: "\u6575\u304B\u3089\u53D7\u3051\u308B\u30C7\u30D0\u30D5\u3092\u4E00\u5EA6\u3060\u3051\u9632\u3050\u3002"
+  relicIcon: {fileID: -5273810571259814418, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
+  rarity: 2
   relicType: 2
   relicCategory: 2
   maxHpBonus: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   turnStartHeal: 0
   turnStartBlock: 0
   turnEndBlock: 0
-  turnEndHeal: -2
+  turnEndHeal: 0
   flatDamageBonus: 0
   damageMultiplier: 0
   damageReduction: 0

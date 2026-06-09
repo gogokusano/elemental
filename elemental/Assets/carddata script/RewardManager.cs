@@ -6,50 +6,97 @@ using TMPro;
 public class RewardManager : MonoBehaviour
 {
     [Header("パネルの参照")]
-    public GameObject rewardListPanel;    // 戦利品パネル（画像2枚目）
-    public GameObject cardSelectionPanel; // カード選択パネル（画像1枚目）
+    public GameObject rewardListPanel;    
+    public GameObject cardSelectionPanel; 
 
     [Header("戦利品パネルのボタン")]
     public Button goldButton;
-    public TextMeshProUGUI goldText; // 「○ゴールド」と表示するテキスト
+    public TextMeshProUGUI goldText; 
     public Button addCardButton;
-    public Button skipListButton; // 右下のスキップボタン
+    public Button skipListButton; 
+
+    // ★追加：レリック報酬用のUI要素
+    [Header("戦利品パネル（奇物追加分）")]
+    public Button relicButton;       // レリック獲得用のボタン
+    public TextMeshProUGUI relicText;// 「奇物名」を表示するテキスト
 
     [Header("カード選択パネルの要素")]
-    public CardUI[] cardUIs; // 3つの白いカードオブジェクト
-    public Button skipSelectionButton; // 下のスキップボタン
+    public CardUI[] cardUIs; 
+    public Button skipSelectionButton; 
 
     private int generatedGoldAmount;
+    private RelicData generatedRelicData; // 今回ランダム選出された奇物
 
     private void Start()
     {
-        // 初期状態は両方非表示
         rewardListPanel.SetActive(false);
         cardSelectionPanel.SetActive(false);
 
-        // ボタンに処理を登録
         goldButton.onClick.AddListener(OnGoldClicked);
         addCardButton.onClick.AddListener(OnAddCardClicked);
         skipListButton.onClick.AddListener(EndReward);
         skipSelectionButton.onClick.AddListener(EndReward);
+
+        // ★追加：レリックボタンのイベント登録
+        if (relicButton != null)
+        {
+            relicButton.onClick.AddListener(OnRelicClicked);
+        }
     }
 
-    // 戦闘終了時に他のスクリプトから呼ばれるメソッド
-    public void ShowReward()
+    // ★修正：中ボス戦だったかどうか（isMidBoss）を受け取る
+    public void ShowReward(bool isMidBoss = false)
     {
         rewardListPanel.SetActive(true);
         
-        // ゴールドのランダム生成
         generatedGoldAmount = Random.Range(10, 20);
         if (goldText != null) goldText.text = $"{generatedGoldAmount}ゴールド";
         goldButton.interactable = true;
+
+        // ★追加：中ボス戦の時だけ奇物を報酬に出す！
+        if (isMidBoss && PlayerDataManager.Instance != null && relicButton != null && relicText != null)
+        {
+            relicButton.gameObject.SetActive(true);
+
+            // 未所持の奇物をランダムに1つ抽選する
+            generatedRelicData = PlayerDataManager.Instance.GetRandomRewardRelic();
+
+            if (generatedRelicData != null)
+            {
+                relicText.text = $"奇物: {generatedRelicData.relicName}"; 
+                relicButton.interactable = true;
+            }
+            else
+            {
+                relicText.text = "獲得可能な奇物がありません";
+                relicButton.interactable = false; // 全ての奇物を取り尽くした場合
+            }
+        }
+        else if (relicButton != null)
+        {
+            // 中ボス戦以外（通常戦闘）なら奇物ボタンを非表示にする
+            relicButton.gameObject.SetActive(false);
+        }
     }
 
     private void OnGoldClicked()
     {
         PlayerDataManager.Instance.AddGold(generatedGoldAmount);
-        goldButton.interactable = false; // 連続で押せないようにする
+        goldButton.interactable = false; 
         if (goldText != null) goldText.text = "獲得済み";
+    }
+
+    // ★追加：奇物ボタンがクリックされた時の処理
+    private void OnRelicClicked()
+    {
+        if (PlayerDataManager.Instance != null && generatedRelicData != null)
+        {
+            // PlayerDataManagerの既存の関数を使って奇物を追加！
+            PlayerDataManager.Instance.AddRelic(generatedRelicData);
+            
+            relicButton.interactable = false; 
+            if (relicText != null) relicText.text = "獲得済み";
+        }
     }
 
     private void OnAddCardClicked()
@@ -57,7 +104,6 @@ public class RewardManager : MonoBehaviour
         rewardListPanel.SetActive(false);
         cardSelectionPanel.SetActive(true);
 
-        // 3枚のカードデータを取得してUIにセット
         List<CardData> rewards = PlayerDataManager.Instance.GetRewardCards(3);
         
         for (int i = 0; i < cardUIs.Length; i++)
@@ -67,8 +113,7 @@ public class RewardManager : MonoBehaviour
                 cardUIs[i].gameObject.SetActive(true);
                 cardUIs[i].SetupCard(rewards[i]);
 
-                // ボタンのクリックイベントを登録
-                int index = i; // クロージャ対策
+                int index = i; 
                 cardUIs[index].selectButton.onClick.RemoveAllListeners();
                 cardUIs[index].selectButton.onClick.AddListener(() => OnCardSelected(rewards[index]));
             }
@@ -90,6 +135,5 @@ public class RewardManager : MonoBehaviour
         rewardListPanel.SetActive(false);
         cardSelectionPanel.SetActive(false);
         Debug.Log("報酬画面終了。次のシーンへ遷移します。");
-        // TODO: ここにマップへ戻る処理などを記述
     }
 }
