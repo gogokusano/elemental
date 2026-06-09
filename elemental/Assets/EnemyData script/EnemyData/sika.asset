@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54db40a7330f0fe4bae16ddbeff0c794, type: 3}
-  m_Name: go-remu
+  m_Name: sika
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: gore
-  maxHP: 80
-  enemyImage: {fileID: -211942268205873957, guid: 178e0aa6fd8d86d4eb41a6a8060d44da, type: 3}
+  enemyName: sika
+  maxHP: 300
+  enemyImage: {fileID: 4994779720096134330, guid: 4e869ead5eb2f944eac3dcf921438886, type: 3}
   actionList:
   - actionName: 
     actionType: 0
-    value: 10
+    value: 12
+    statusCard: {fileID: 0}
+    isPhase2Only: 0
+    isOneTimeOnly: 0
+  - actionName: 
+    actionType: 0
+    value: 30
     statusCard: {fileID: 0}
     isPhase2Only: 0
     isOneTimeOnly: 0
   - actionName: 
     actionType: 1
-    value: 30
+    value: 40
     statusCard: {fileID: 0}
     isPhase2Only: 1
-    isOneTimeOnly: 0
-  - actionName: 
-    actionType: 0
-    value: 15
-    statusCard: {fileID: 0}
-    isPhase2Only: 0
-    isOneTimeOnly: 0
+    isOneTimeOnly: 1
   spawnCount: 1

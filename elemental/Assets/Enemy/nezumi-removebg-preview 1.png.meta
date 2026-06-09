@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c544ad73808469f47b2fa152fe07ad64
+guid: 055ec586aa071544a963ce52c3709578
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9167925868417999818
-    second: nightcrawler-removebg-preview_0
+      213: 2466209960358011863
+    second: nezumi-removebg-preview 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,33 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> battle
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nightcrawler-removebg-preview_0
+      name: nezumi-removebg-preview 1_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 119
-        width: 478
-        height: 273
+        x: 46
+        y: 31
+        width: 366
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63c94d51ffbf4c080800000000000000
-      internalID: -9167925868417999818
+      spriteID: 7d36ba474ecb93220800000000000000
+      internalID: 2466209960358011863
       vertices: []
       indices: 
       edges: []
@@ -164,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      nightcrawler-removebg-preview_0: -9167925868417999818
+      nezumi-removebg-preview 1_0: 2466209960358011863
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

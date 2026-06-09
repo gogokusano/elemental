@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:elemental/Assets/Enemy/nezumi-removebg-preview.png.meta
+guid: 29425ae4a43ebf74bbaa703e1bb17ab1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7105108982839960784
+    second: nezumi-removebg-preview_0
+========
 guid: 4f05d065d74f9ca41857f8d7f300409d
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7189530345730726354
     second: saidan_0
+>>>>>>>> main:elemental/Assets/image/saidan.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,10 +105,48 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<<< HEAD:elemental/Assets/Enemy/nezumi-removebg-preview.png.meta
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+========
+>>>>>>>> main:elemental/Assets/image/saidan.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:elemental/Assets/Enemy/nezumi-removebg-preview.png.meta
+      name: nezumi-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 31
+        width: 366
+        height: 467
+========
       name: saidan_0
       rect:
         serializedVersion: 2
@@ -107,6 +154,7 @@ TextureImporter:
         y: 0
         width: 1693
         height: 929
+>>>>>>>> main:elemental/Assets/image/saidan.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:elemental/Assets/Enemy/nezumi-removebg-preview.png.meta
+      spriteID: 0d4ec94b9fa6a9260800000000000000
+      internalID: 7105108982839960784
+========
       spriteID: 2d9db27f1c756c360800000000000000
       internalID: 7189530345730726354
+>>>>>>>> main:elemental/Assets/image/saidan.png.meta
       vertices: []
       indices: 
       edges: []
@@ -135,7 +188,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:elemental/Assets/Enemy/nezumi-removebg-preview.png.meta
+      nezumi-removebg-preview_0: 7105108982839960784
+========
       saidan_0: 7189530345730726354
+>>>>>>>> main:elemental/Assets/image/saidan.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,9 +1,11 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; // ★追加：Slider（UI）を動かすために必要です
+using UnityEngine.UI; 
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance; // ★追加：他のスクリプトから呼び出しやすくするためのInstance
+
     [Header("プレイヤーステータス (※HPはPlayerDataManagerで管理)")]
     public int currentBlock;
 
@@ -17,6 +19,11 @@ public class PlayerManager : MonoBehaviour
     // ★追加：プレイヤー用のHPバーとブロックバー
     public Slider hpSlider; 
     public Slider blockSlider; // シールド（ブロック）用のスライダー
+
+    void Awake()
+    {
+        Instance = this; // ★追加
+    }
 
     void Start()
     {
@@ -34,6 +41,16 @@ public class PlayerManager : MonoBehaviour
 
     public void AddBlock(int amount)
     {
+        // ==========================================
+        // ★デバフ処理：弱体化がかかっていたらブロック獲得量を減らす
+        // ==========================================
+        if (PlayerDebuffManager.Instance != null)
+        {
+            int penalty = PlayerDebuffManager.Instance.GetWeakenModifier(); // 弱体化の数値を引っ張ってくる
+            amount -= penalty;
+            if (amount < 0) amount = 0; // マイナスにはならないようにする
+        }
+
         currentBlock += amount;
         UpdateUI();
     }
@@ -51,6 +68,16 @@ public class PlayerManager : MonoBehaviour
             {
                 finalDamage = relic.OnModifyModifyDamage(finalDamage, card);
             }
+        }
+
+        // ==========================================
+        // ★デバフ処理：弱体化がかかっていたら与えるダメージを減らす
+        // ==========================================
+        if (PlayerDebuffManager.Instance != null)
+        {
+            int penalty = PlayerDebuffManager.Instance.GetWeakenModifier();
+            finalDamage -= penalty;
+            if (finalDamage < 0) finalDamage = 0; // マイナスにはならないようにする
         }
         
         return Mathf.RoundToInt(finalDamage); 
@@ -109,6 +136,29 @@ public class PlayerManager : MonoBehaviour
         }
         
         // 5. 死亡判定
+        CheckDeath();
+
+        UpdateUI();
+    }
+
+    // ==========================================
+    // ★追加：毒や一部イベント用！ブロックを無視して直接HPを削る関数
+    // ==========================================
+    public void TakeDirectDamage(int damage)
+    {
+        if (PlayerDataManager.Instance != null && damage > 0)
+        {
+            int newHp = PlayerDataManager.Instance.currentHp - damage;
+            PlayerDataManager.Instance.SaveHp(newHp); 
+            
+            Debug.Log($"<color=purple>直接ダメージ（毒など）を {damage} 受けた！</color>");
+            CheckDeath();
+            UpdateUI();
+        }
+    }
+
+    private void CheckDeath()
+    {
         if (PlayerDataManager.Instance != null && PlayerDataManager.Instance.currentHp <= 0) 
         {
             GameManager gm = Object.FindFirstObjectByType<GameManager>();
@@ -116,8 +166,6 @@ public class PlayerManager : MonoBehaviour
             
             gameObject.SetActive(false);
         }
-
-        UpdateUI();
     }
 
     public void ResetBlock()
@@ -134,13 +182,13 @@ public class PlayerManager : MonoBehaviour
             hpText.text = PlayerDataManager.Instance.currentHp + " / " + PlayerDataManager.Instance.maxHp;
         }
 
-        // ★追加：2. HPスライダーの値を更新
+        // 2. HPスライダーの値を更新
         if (hpSlider != null && PlayerDataManager.Instance != null)
         {
             hpSlider.value = PlayerDataManager.Instance.currentHp;
         }
         
-        // ★追加：3. ブロックスライダーの値を更新（敵と同じで HP + ブロック の長さにする）
+        // 3. ブロックスライダーの値を更新（敵と同じで HP + ブロック の長さにする）
         if (blockSlider != null && PlayerDataManager.Instance != null)
         {
             blockSlider.value = PlayerDataManager.Instance.currentHp + currentBlock; 

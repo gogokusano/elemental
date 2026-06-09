@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// 敵の行動の種類
-public enum EnemyActionType { Attack, Defend, AddStatusCard }
+// 敵の行動の種類に「ApplyDebuff（デバフ付与）」を追加！
+public enum EnemyActionType { Attack, Defend, AddStatusCard, ApplyDebuff }
+
+// デバフの種類のリストを追加！
+public enum DebuffType { None, Poison, Weaken, Bleed, Paralysis, Confusion }
 
 [System.Serializable]
 public class EnemyAction
@@ -11,6 +14,11 @@ public class EnemyAction
     public EnemyActionType actionType;
     public int value; // ダメージやブロックの数値
     public CardData statusCard; // AddStatusCardの時に付与するカード
+
+    [Header("デバフ設定 (ApplyDebuffの時のみ使用)")]
+    public DebuffType debuffType;      // デバフの種類
+    public int debuffDuration;         // 持続ターン数
+    public int debuffValue;            // デバフの威力（毒のダメージ量や、弱体化の減少値など）
 
     [Header("AI条件設定")]
     [Tooltip("チェックを入れると、敵のHPが50%以下の時しか使ってこない大技になります")]
