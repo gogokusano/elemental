@@ -210,8 +210,21 @@ public class PlayerDataManager : MonoBehaviour
     // ゴールドを加算するメソッド
     public void AddGold(int amount)
     {
+        // ★変更：ゴールドを獲得（プラス）する時のみ、奇物の倍率効果を適用する
+        if (amount > 0)
+        {
+            foreach (var relic in ownedRelics)
+            {
+                amount = relic.OnModifyGainGold(amount);
+            }
+        }
+
         gold += amount;
-        Debug.Log($"ゴールド獲得: {amount} / 現在のゴールド: {gold}");
+
+        // ★追加：ゴールドが0未満にならないようにする
+        if (gold < 0) gold = 0;
+
+        Debug.Log($"ゴールド変動: {amount} / 現在のゴールド: {gold}");
     }
 
     // 報酬画面用に、重複しないN枚のカードをランダムに取得するメソッド
