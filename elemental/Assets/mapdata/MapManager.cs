@@ -410,6 +410,11 @@ public class MapManager : MonoBehaviour
             PlayerDataManager.Instance.ResetAllData();
         }
 
+        if (StatusPanelManager.Instance != null)
+        {
+            Destroy(StatusPanelManager.Instance.gameObject);
+        }
+        
         // タイトルシーンへ遷移
         UnityEngine.SceneManagement.SceneManager.LoadScene("title");
     }
