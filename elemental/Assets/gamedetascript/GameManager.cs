@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine.UI; // ★追加：Imageコンポーネントを扱うために必要です
-using System.Collections.Generic; // ★追加：List（画像リスト）を扱うために必要です
+using UnityEngine.UI; 
+using System.Collections.Generic; 
 
 public class GameManager : MonoBehaviour
 {
@@ -19,9 +19,15 @@ public class GameManager : MonoBehaviour
     [Header("道中で死んだ時のリボン画像（3種類登録してください）")]
     public List<Sprite> normalGameOverSprites = new List<Sprite>();
 
+    // ==========================================
+    // ★ターン切り替えのテキスト演出設定
+    // ==========================================
+    [Header("ターン開始エフェクト設定")]
+    public DamageText damageTextPrefab; // 画面に流したいDamageTextのプレハブ
+    public Transform effectSpawnTarget; // テキストを出したい親Canvas、またはバトル画面の中心オブジェクト
+
     void Start()
     {
-        // 最初はパネルを隠しておく
         if (victoryPanel != null) victoryPanel.SetActive(false);
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
 
@@ -36,6 +42,9 @@ public class GameManager : MonoBehaviour
 
     public void PlayerTurnStart()
     {
+        // ★修正：プレイヤーのターン開始演出は「黄色（Color.yellow）」で出現
+        SpawnTurnNotification("プレイヤーのターン", Color.yellow);
+
         if (PlayerDataManager.Instance != null)
         {
             foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics)
@@ -56,20 +65,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // 勝利した時に呼ばれる
+    // 敵のターンが始まる時に呼び出す関数
+    public void EnemyTurnStart()
+    {
+        // ★修正：敵のターン開始演出は「赤色（Color.red）」で出現
+        SpawnTurnNotification("敵のターン", Color.red);
+    }
+
+    /// <summary>
+    /// 画面中央に文字アニメーションテキストを生成する共通関数
+    /// </summary>
+    private void SpawnTurnNotification(string msg, Color textColor)
+    {
+        if (damageTextPrefab != null && effectSpawnTarget != null)
+        {
+            DamageText textObj = Instantiate(damageTextPrefab, effectSpawnTarget);
+            textObj.transform.SetAsLastSibling(); // UIの最前面に表示する
+            
+            RectTransform textRect = textObj.GetComponent<RectTransform>();
+            if (textRect != null) 
+            {
+                // 画面の中央（0, 0）に配置
+                textRect.anchoredPosition = Vector2.zero; 
+            }
+            
+            // 文字列モードのSetupを呼び出す
+            textObj.SetupText(msg, textColor);
+        }
+    }
+
     public void WinGame()
     {
         Debug.Log("勝利！");
         if (victoryPanel != null) victoryPanel.SetActive(true);
     }
 
-    // 敗北した時に呼ばれる
     public void LoseGame()
     {
         Debug.Log("敗北...");
         if (gameOverPanel != null) gameOverPanel.SetActive(true);
 
-        // ★追加：敗北画面が表示された瞬間にリボン画像を進行度に合わせて切り替える
         SetupGameOverRibbon();
         
         if (PlayerDataManager.Instance != null)
@@ -77,7 +112,6 @@ public class GameManager : MonoBehaviour
             PlayerDataManager.Instance.ResetAllData();
         }
 
-        // 完全に敗北が確定したため、データをリセット（最初からやり直し）にする
         PlayerPrefs.DeleteKey("LastClearedNode");
         PlayerPrefs.DeleteKey("CurrentChallengingNode");
         PlayerPrefs.DeleteKey("MapSavedX");
@@ -85,19 +119,14 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    /// <summary>
-    /// ★追加：進行度に応じてゲームオーバーのリボン画像をセットする
-    /// </summary>
     private void SetupGameOverRibbon()
     {
         if (ribbonImage == null) return;
 
-        // ボス直前かどうかのチェック（下の窓を呼び出す）
         bool isBossApproach = CheckIfBossApproach();
 
         if (isBossApproach)
         {
-            // ボス直前なら、固定の悔しいリボンにする
             if (bossApproachSprite != null)
             {
                 ribbonImage.sprite = bossApproachSprite;
@@ -105,7 +134,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // 道中なら、登録された3種類の中からランダムに選ぶ
             if (normalGameOverSprites != null && normalGameOverSprites.Count > 0)
             {
                 int randomIndex = Random.Range(0, normalGameOverSprites.Count);
@@ -114,31 +142,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// ★ここが将来用の「窓」です！
-    /// 将来ボスが実装されたら、ここの条件を書き換えます。
-    /// </summary>
     private bool CheckIfBossApproach()
     {
-        // 【現状】ボスが未実装なので、ひとまず常に「false（道中）」にしておきます。
-        // 💡テストしたい時は、ここを「return true;」に書き換えると、ボス直前のリボンに固定してテストできます！
         return false;
-
-        // 【将来、マップやステージ進行が完成した時の合流イメージ】
-        // if (StageManager.Instance.currentFloor == 10) // 例えば10階がボス部屋なら
-        // {
-        //     return true;
-        // }
-        // return false;
     }
 
-    // ボタンから呼ぶ用：タイトル画面に戻る
     public void BackToTitle()
     {
         SceneManager.LoadScene("title");
     }
 
-    // クリア後のポップアップボタンから呼ばれる関数
     public void ResultOnMap()
     {
         string challenging = PlayerPrefs.GetString("CurrentChallengingNode", "");

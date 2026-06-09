@@ -982,6 +982,8 @@ MonoBehaviour:
   - {fileID: 6682361600144599653, guid: cd184f7df7aa1714aacc9e2b599f956b, type: 3}
   - {fileID: 4979402062244733315, guid: b8d19998616536e4e8016eafd7a0ba1b, type: 3}
   - {fileID: 4888855821675836953, guid: 5249fb9075358b342ae86f76791b7550, type: 3}
+  damageTextPrefab: {fileID: 1592011057032789196, guid: bfb4a772fbdb40443ba8e17f33246e9f, type: 3}
+  effectSpawnTarget: {fileID: 495547773}
 --- !u!114 &359837574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6426,7 +6428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2004398909
 RectTransform:
   m_ObjectHideFlags: 0

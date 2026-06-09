@@ -105,6 +105,8 @@ public class DeckManager : MonoBehaviour
     IEnumerator EnemyTurnRoutine()
     {
         isEnemyTurn = true;
+        GameManager gm = Object.FindFirstObjectByType<GameManager>();
+        if (gm != null) gm.EnemyTurnStart();
         yield return new WaitForSeconds(0.5f);
 
         EnemyManager[] allEnemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);

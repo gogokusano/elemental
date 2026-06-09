@@ -18,6 +18,7 @@ public class EnemyManager : MonoBehaviour
     [Header("ボス設定")]
     public bool isBoss = false; 
     public int barrierCount = 0; // 9層のバリア
+    public GameObject barrierUIGroup; // ★追加：アイコンとテキストをまとめた親オブジェクト
     public TextMeshProUGUI barrierText; // バリア数を表示するテキスト
     public float bossDamageMultiplier = 1.0f; // 与ダメージ倍率（初期1.0倍）
     public CardData bossWoundCard; // 捨て札に混ぜる「負傷」カードのデータ
@@ -270,7 +271,6 @@ public class EnemyManager : MonoBehaviour
         {
             int currentStep = bossActionStep % 4;
 
-            // ★2連続攻撃(行動2)のときだけ、時間差コルーチンに処理を逃がして終了する
             if (currentStep == 1)
             {
                 StartCoroutine(BossMultiAttackCoroutine(p));
@@ -282,13 +282,11 @@ public class EnemyManager : MonoBehaviour
                 case 0:
                     if (p != null) p.TakeDamage(Mathf.RoundToInt(8 * bossDamageMultiplier));
                     break;
-                // case 1 (連続攻撃) は下にコルーチンとして分離しました
                 case 2:
                     if (p != null) p.TakeDamage(Mathf.RoundToInt(25 * bossDamageMultiplier));
                     DeckManager dm = Object.FindFirstObjectByType<DeckManager>();
                     if (dm != null && bossWoundCard != null)
                     {
-                        // 山札に3枚追加
                         for (int i=0; i<3; i++) dm.AddCardToDrawPile(bossWoundCard);
                         Debug.Log("<color=red>ボスが山札に負傷カードを3枚追加した！</color>");
                     }
@@ -334,24 +332,16 @@ public class EnemyManager : MonoBehaviour
         DetermineNextAction();
     }
 
-    // ★新設：ボスの時間差2連続攻撃用コルーチン
     private System.Collections.IEnumerator BossMultiAttackCoroutine(PlayerManager player)
     {
         if (player != null)
         {
             int multiDmg = Mathf.RoundToInt(7 * bossDamageMultiplier);
-
-            // 1回目の攻撃
             player.TakeDamage(multiDmg);
-
-            // 0.25秒待つ（トントンッの絶妙な間隔。お好みで数値を調整してください）
             yield return new WaitForSeconds(0.25f);
-
-            // 2回目の攻撃
             player.TakeDamage(multiDmg);
         }
 
-        // ダメージを与え終わったら、本来行うはずだったターン終了処理を実行する
         bossActionStep++;
         turnCount++;
         UpdateUI();
@@ -447,7 +437,6 @@ public class EnemyManager : MonoBehaviour
     {
         if (damage <= 0) return;
 
-        // ★ボスのバリア処理！ダメージを受ける直前に判定
         if (isBoss && barrierCount > 0)
         {
             barrierCount--; 
@@ -483,9 +472,6 @@ public class EnemyManager : MonoBehaviour
                 foreach (RelicData relic in PlayerDataManager.Instance.ownedRelics) { relic.OnEnemyKilled(); }
             }
 
-            // ==========================================
-            // ★ボス・中ボス・通常敵で死んだ時の処理を完全に分ける
-            // ==========================================
             EnemyManager[] allEnemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
             bool isAnyEnemyAlive = false;
             bool wasMidBossBattle = this.isMidBoss;
@@ -506,6 +492,11 @@ public class EnemyManager : MonoBehaviour
                 if (wasBossBattle)
                 {
                     Debug.Log("<color=yellow>ボス撃破！！ 後でここにゲーム全体のリザルト画面を繋げます！</color>");
+                    BattleResultManager resultManager = Object.FindFirstObjectByType<BattleResultManager>();
+                    if (resultManager != null)
+                    {
+                        resultManager.PlayBossClearResult();
+                    }
                 }
                 else
                 {
@@ -526,11 +517,11 @@ public class EnemyManager : MonoBehaviour
         if (blockSlider != null) { blockSlider.value = currentHP + currentBlock; blockSlider.gameObject.SetActive(currentBlock > 0); }
         if (blockText != null) { blockText.text = "Block: " + currentBlock; blockText.gameObject.SetActive(currentBlock > 0); }
 
-        // ★ボスのバリアUIの更新
-        if (isBoss && barrierText != null)
+        // ★ボスのバリアUIの自動制御
+        if (isBoss)
         {
-            barrierText.gameObject.SetActive(barrierCount > 0);
-            barrierText.text = $"バリア: {barrierCount}";
+            if (barrierUIGroup != null) barrierUIGroup.SetActive(barrierCount > 0);
+            if (barrierText != null) barrierText.text = barrierCount.ToString(); // シンプルに残り回数のみ表示（例：9）
         }
     }
 }
