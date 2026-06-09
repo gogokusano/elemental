@@ -19,6 +19,9 @@ public class ShopConfig
     public int relicCount = 3;
     public int cardCount = 3;
 
+    [Header("カードの削除上限回数")]
+    public int maxCardRemoveCount = 1;
+
     [Header("ショップに並ぶレアリティ (空ならすべて出現)")]
     public List<Rarity> allowedRelicRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };
     public List<Rarity> allowedCardRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };

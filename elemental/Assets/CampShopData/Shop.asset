@@ -20,7 +20,10 @@ MonoBehaviour:
     shopAction: 1
     removeCardPrice: 75
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 0
@@ -61,7 +64,10 @@ MonoBehaviour:
     shopAction: 2
     removeCardPrice: 75
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 0
@@ -102,7 +108,10 @@ MonoBehaviour:
     shopAction: 3
     removeCardPrice: 10
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 0
@@ -143,7 +152,10 @@ MonoBehaviour:
     shopAction: 4
     removeCardPrice: 75
     hpChange: 0
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 0
@@ -183,6 +195,7 @@ MonoBehaviour:
   shopConfig:
     relicCount: 8
     cardCount: 10
+    maxCardRemoveCount: 3
     allowedRelicRarities: 0200000003000000
     allowedCardRarities: 00000000
     allowedRelicCategories: 00000000

@@ -30,7 +30,8 @@ public class EventManager : MonoBehaviour
     public TextMeshProUGUI cardDetailText;      // 詳細用の効果テキスト（cardTextSを表示）
     public Button cardConfirmButton;            // カード用の「OK」ボタン
     public Button cardCancelButton;             // ★キャンセルボタン
-    public TextMeshProUGUI cardDetailPriceText;
+    public TextMeshProUGUI cardDetailPriceText; //カード購入売却価格
+    public TextMeshProUGUI cardDetailRemoveCountText; //削除回数テキスト
 
     [Header("★奇物選択用UI")]
     public GameObject relicSelectionPanel;      // 奇物選択画面全体の親
@@ -63,15 +64,13 @@ public class EventManager : MonoBehaviour
     public TextMeshProUGUI resultCountText;      // 例：「獲得した奇物数 2」
 
     public Button eventResultConfirmButton;      // 「マップへ戻る」ボタン
-
-
-
-
     // 内部管理用変数
     private bool isSelectionWaiting = false;
     private bool isCanceled = false;
     private CardData lastSelectedCard = null;
     private RelicData lastSelectedRelic = null;
+
+    private int removedCardCount = 0;
 
     // ショップの商品リストと現在のアクション
     private List<RelicData> shopRelics = new List<RelicData>();
@@ -81,6 +80,7 @@ public class EventManager : MonoBehaviour
 
     void Start()
     {
+        removedCardCount = 0;
         // 最初はすべての選択パネル・詳細パネルを非表示にする
         if (cardSelectionPanel != null) cardSelectionPanel.SetActive(false);
         if (relicSelectionPanel != null) relicSelectionPanel.SetActive(false);
@@ -235,7 +235,7 @@ public class EventManager : MonoBehaviour
             btn.onClick.RemoveAllListeners();
         }
 
-        for (int i = 0; i < ev.options.Length; i++)
+for (int i = 0; i < ev.options.Length; i++)
         {
             if (i >= optionButtons.Length) break; 
 
@@ -244,6 +244,26 @@ public class EventManager : MonoBehaviour
             
             TextMeshProUGUI btnText = btn.GetComponentInChildren<TextMeshProUGUI>();
             if (btnText != null) btnText.text = option.buttonText;
+
+            // ==================================================
+            // ★追加：カード削除の上限チェック
+            // ==================================================
+            if (option.shopAction == ShopActionType.RemoveCard && ev.shopConfig != null)
+            {
+                if (removedCardCount >= ev.shopConfig.maxCardRemoveCount)
+                {
+                    btn.interactable = false;
+                    if (btnText != null) btnText.text = "削除不可（上限到達）";
+                }
+                else
+                {
+                    btn.interactable = true;
+                }
+            }
+            else
+            {
+                btn.interactable = true;
+            }
 
             btn.onClick.AddListener(() => OnOptionSelected(option));
             btn.gameObject.SetActive(true); 
@@ -333,6 +353,7 @@ public class EventManager : MonoBehaviour
                     {
                         PlayerDataManager.Instance.gold -= option.removeCardPrice;
                         PlayerDataManager.Instance.RemoveCard(lastSelectedCard);
+                        removedCardCount++;
                     }
                 }
             }
@@ -620,6 +641,23 @@ public class EventManager : MonoBehaviour
                 else
                 {
                     cardDetailPriceText.gameObject.SetActive(false); // ショップ以外は隠す
+                }
+
+                if (cardDetailRemoveCountText != null)
+                {
+                    // 現在のアクションがカード削除であり、イベントデータとショップ設定が存在するか確認
+                    if (currentShopAction == ShopActionType.RemoveCard && currentEventData != null && currentEventData.shopConfig != null)
+                    {
+                        // 残り回数を計算 (最大回数 - 既に削除した回数)
+                        int remainCount = currentEventData.shopConfig.maxCardRemoveCount - removedCardCount;
+                        cardDetailRemoveCountText.text = $"残り削除回数: {remainCount} 回";
+                        cardDetailRemoveCountText.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        // 削除画面以外（購入など）の時は非表示にする
+                        cardDetailRemoveCountText.gameObject.SetActive(false);
+                    }
                 }
             }
         }
