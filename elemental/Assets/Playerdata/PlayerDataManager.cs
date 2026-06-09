@@ -23,6 +23,7 @@ public class PlayerDataManager : MonoBehaviour
     private List<RelicData> unownedRelics = new List<RelicData>(); 
 
     // ★追加：全カードのデータベース（GetRewardCardsでカードを抽出するために必要です）
+
     [Header("全カードのデータベース（すべてのカードを登録）")]
     public List<CardData> allAvailableCards = new List<CardData>();
 
@@ -108,23 +109,9 @@ public class PlayerDataManager : MonoBehaviour
 
             List<RelicData> pool = new List<RelicData>(unownedRelics);
 
-            // レアリティでの絞り込み
-            if (currentTargetRarities.Count > 0)
-            {
-                pool = pool.FindAll(r => currentTargetRarities.Contains(r.rarity));
-            }
-
-            // ★追加：カテゴリー（有利・不利など）での絞り込み
-            if (allowedCategories != null && allowedCategories.Count > 0)
-            {
-                pool = pool.FindAll(r => allowedCategories.Contains(r.relicCategory));
-            }
-
-            // タイプでの絞り込み
-            if (useType)
-            {
-                pool = pool.FindAll(r => r.relicType == type);
-            }
+            if (currentTargetRarities.Count > 0) pool = pool.FindAll(r => currentTargetRarities.Contains(r.rarity));
+            if (allowedCategories != null && allowedCategories.Count > 0) pool = pool.FindAll(r => allowedCategories.Contains(r.relicCategory));
+            if (useType) pool = pool.FindAll(r => r.relicType == type);
 
             if (pool.Count == 0)
             {
@@ -137,7 +124,6 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
 
-
     public void LoseRandomRelics(int count)
     {
         for (int i = 0; i < count; i++)
@@ -147,13 +133,12 @@ public class PlayerDataManager : MonoBehaviour
                 int idx = Random.Range(0, ownedRelics.Count);
                 RelicData relic = ownedRelics[idx];
                 ownedRelics.RemoveAt(idx);
-                unownedRelics.Add(relic); // 未所持に戻す
+                unownedRelics.Add(relic); 
                 Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
             }
         }
     }
 
-    // フィルターに従ってランダムなカードを獲得する
     public void AddRandomCardsFiltered(int count, bool useElement, ElementType element, bool useCost, int cost, bool useRarity, Rarity rarity)
     {
         List<CardData> pool = new List<CardData>(allAvailableCards);
@@ -178,7 +163,6 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
     
-    // デッキからランダムにカードを削除する
     public void RemoveRandomCards(int count)
     {
         for (int i = 0; i < count; i++)
@@ -197,17 +181,15 @@ public class PlayerDataManager : MonoBehaviour
         if (ownedRelics.Contains(relic))
         {
             ownedRelics.Remove(relic);
-            unownedRelics.Add(relic); // 山札に戻す
+            unownedRelics.Add(relic); 
             Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
         }
-        }
+    }
     
-
     // ==========================================
-    // ▼ ここから今回追加した報酬用のメソッド ▼
+    // ▼ ここから報酬用のメソッド ▼
     // ==========================================
 
-    // ゴールドを加算するメソッド
     public void AddGold(int amount)
     {
         // ★変更：ゴールドを獲得（プラス）する時のみ、奇物の倍率効果を適用する
@@ -227,19 +209,16 @@ public class PlayerDataManager : MonoBehaviour
         Debug.Log($"ゴールド変動: {amount} / 現在のゴールド: {gold}");
     }
 
-    // 報酬画面用に、重複しないN枚のカードをランダムに取得するメソッド
     public List<CardData> GetRewardCards(int count = 3)
     {
         List<CardData> rewardCards = new List<CardData>();
         
-        // エラー回避：もしインスペクターでallAvailableCardsに何も登録されていなかった場合
         if (allAvailableCards == null || allAvailableCards.Count == 0)
         {
-            Debug.LogError("全カードリスト(allAvailableCards)が設定されていないか、空です！インスペクターからカードを登録してください。");
+            Debug.LogError("全カードリスト(allAvailableCards)が設定されていないか、空です！");
             return rewardCards;
         }
 
-        // 全カードリストのコピーを作成（本体を破壊しないため）
         List<CardData> pool = new List<CardData>(allAvailableCards); 
 
         for (int i = 0; i < count; i++)
@@ -248,13 +227,23 @@ public class PlayerDataManager : MonoBehaviour
 
             int randomIndex = Random.Range(0, pool.Count);
             rewardCards.Add(pool[randomIndex]);
-            
-            // 選ばれたカードをプールから削除し、重複提示を防ぐ
             pool.RemoveAt(randomIndex); 
         }
 
         return rewardCards;
+    }
 
+    // ★追加：報酬画面用に未所持の奇物をランダムに1つ取得するメソッド
+    public RelicData GetRandomRewardRelic()
+    {
+        // まだ持っていない奇物(unownedRelics)の中からランダムに選ぶ
+        if (unownedRelics == null || unownedRelics.Count == 0)
+        {
+            return null; // 全て持っている場合はnullを返す
+        }
+
+        int randomIndex = Random.Range(0, unownedRelics.Count);
+        return unownedRelics[randomIndex];
     }
 
     public void ResetAllData()
