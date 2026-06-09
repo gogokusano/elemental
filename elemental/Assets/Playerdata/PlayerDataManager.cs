@@ -22,12 +22,12 @@ public class PlayerDataManager : MonoBehaviour
     public List<RelicData> allAvailableRelics = new List<RelicData>(); 
     private List<RelicData> unownedRelics = new List<RelicData>(); 
 
-
-
     // ★追加：全カードのデータベース（GetRewardCardsでカードを抽出するために必要です）
-
     [Header("全カードのデータベース（すべてのカードを登録）")]
     public List<CardData> allAvailableCards = new List<CardData>();
+
+    private int defaultMaxHp;
+    private int defaultGold;
 
     private void Awake()
     {
@@ -35,6 +35,11 @@ public class PlayerDataManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); 
+            
+            // ★起動時の初期ステータスを記憶しておく
+            defaultMaxHp = maxHp;
+            defaultGold = gold;
+
             InitializeData();
         }
         else
@@ -205,8 +210,21 @@ public class PlayerDataManager : MonoBehaviour
     // ゴールドを加算するメソッド
     public void AddGold(int amount)
     {
+        // ★変更：ゴールドを獲得（プラス）する時のみ、奇物の倍率効果を適用する
+        if (amount > 0)
+        {
+            foreach (var relic in ownedRelics)
+            {
+                amount = relic.OnModifyGainGold(amount);
+            }
+        }
+
         gold += amount;
-        Debug.Log($"ゴールド獲得: {amount} / 現在のゴールド: {gold}");
+
+        // ★追加：ゴールドが0未満にならないようにする
+        if (gold < 0) gold = 0;
+
+        Debug.Log($"ゴールド変動: {amount} / 現在のゴールド: {gold}");
     }
 
     // 報酬画面用に、重複しないN枚のカードをランダムに取得するメソッド
@@ -237,5 +255,30 @@ public class PlayerDataManager : MonoBehaviour
 
         return rewardCards;
 
+    }
+
+    public void ResetAllData()
+    {
+        Debug.Log("<color=red>すべてのプレイヤーデータとマップ進捗を初期化します。</color>");
+
+        // 1. ステータスとゴールドの初期化
+        maxHp = defaultMaxHp;
+        gold = defaultGold;
+        currentHp = maxHp;
+        hasCounter = false;
+
+        // 2. デッキを初期デッキの内容で再読み込み
+        deckCards = new List<CardData>(startingDeck);
+
+        // 3. 所持奇物のクリアと山札の再構築
+        ownedRelics.Clear();
+        unownedRelics = new List<RelicData>(allAvailableRelics);
+
+        // 4. マップ進行度（PlayerPrefs）の完全削除
+        PlayerPrefs.DeleteKey("LastClearedNode");
+        PlayerPrefs.DeleteKey("CurrentChallengingNode");
+        PlayerPrefs.DeleteKey("MapSavedX");
+        PlayerPrefs.DeleteKey("MapSeed");
+        PlayerPrefs.Save();
     }
 }

@@ -19,6 +19,9 @@ public class ShopConfig
     public int relicCount = 3;
     public int cardCount = 3;
 
+    [Header("カードの削除上限回数")]
+    public int maxCardRemoveCount = 1;
+
     [Header("ショップに並ぶレアリティ (空ならすべて出現)")]
     public List<Rarity> allowedRelicRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };
     public List<Rarity> allowedCardRarities = new List<Rarity>() { Rarity.Common, Rarity.Rare, Rarity.Epic };
@@ -46,7 +49,14 @@ public class EventOption
 
     [Header("ステータス変動 (通常時)")]
     public int hpChange;
+    [Tooltip("HP割合変動 (最大HPを基準。例: 0.3で+30%, -0.2で-20%)")]
+    public float hpPercentChange;
     public int maxHpChange;
+    [Tooltip("最大HP割合変動 (例: 0.1で+10%, -0.1で-10%)")]
+    public float maxHpPercentChange;
+    [Header("ゴールド変動 (通常時)")]
+    [Tooltip("正の値で獲得、負の値で減少")]
+    public int goldChange;
 
     [Header("奇物獲得 (固定指定)")]
     public RelicData rewardRelic; 

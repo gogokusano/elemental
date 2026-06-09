@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c92a3053483bfdd4a874cd06dd9467b0, type: 3}
-  m_Name: kibutu9
+  m_Name: kibutu12
   m_EditorClassIdentifier: Assembly-CSharp::RelicCore
-  relicName: "\u77E5\u8B58\u306E\u5DFB\u7269"
-  description: "\u6226\u95D8\u6642\u624B\u672D\u306E\u679A\u6570\u304C+1\u679A\u5897\u3048\u308B\u3002"
-  relicIcon: {fileID: -7078851214724172031, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
+  relicName: "\u4E0D\u6EC5\u306E\u30CF\u30FC\u30C8"
+  description: "\u7372\u5F97\u3057\u305F\u77AC\u9593\u3001\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u6700\u5927HP\u304C+10\u3055\u308C\u308B\u3002"
+  relicIcon: {fileID: 777898925178264342, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 3
-  relicType: 3
-  relicCategory: 0
-  maxHpBonus: 0
-  initialGoldBonus: 0
+  relicType: 2
+  relicCategory: 2
+  maxHpBonus: 10
+  initialGoldBonus: 10
   startBlock: 0
   applyRandomElementOnStart: 0
   turnStartHeal: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
   flatDamageTakenIncrease: 0
   firstTurnDamageBonus: 0
   cost3DamageBonus: 0
-  drawAmountBonus: 1
+  drawAmountBonus: 0
   elementReactionBlock: 0
   killEnemyManaRecover: 0
   doubleDiscard: 0

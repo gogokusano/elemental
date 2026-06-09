@@ -30,6 +30,16 @@ public class RelicCore : RelicData
     public int elementReactionBlock = 0;    // ★8.魔術師の古帽子用
     public bool killEnemyManaRecover = false; // ★9.完熟の青リンゴ用
     public bool doubleDiscard = false;      // ★6.幸運の古銭用（処理の予約用フラグ）
+    
+    [Header("【ゴールド関連パッシブ】")]
+    [Tooltip("ゴールド獲得量の倍率 (1.0でそのまま、1.2で+20%、0.8で-20%)")]
+    public float goldGainMultiplier = 1.0f;
+    
+    [Tooltip("所持ゴールド n個 につきダメージ増加（0にすると無効）")]
+    public int goldThresholdForDamage = 0;
+    
+    [Tooltip("n個満たす毎のダメージ増減率 (0.1で+10%、-0.1で-10%)")]
+    public float damageBonusPerGoldRatio = 0f;
 
     // 戦闘中の個別状態管理用（ScriptableObjectの一時変数）
     [System.NonSerialized] private bool isFirstTurn = true;
@@ -117,6 +127,20 @@ public class RelicCore : RelicData
         // 全カード共通の固定値と倍率
         finalDamage = (finalDamage + flatDamageBonus) * damageMultiplier;
 
+        // ★追加：所持ゴールドn個につき、与えるダメージz％増加
+        if (goldThresholdForDamage > 0 && damageBonusPerGoldRatio != 0f && PlayerDataManager.Instance != null)
+        {
+            // (現在のゴールド / n個) で条件を何回満たしているか計算（切り捨て）
+            int goldCount = PlayerDataManager.Instance.gold / goldThresholdForDamage;
+            if (goldCount > 0)
+            {
+                // 倍率を計算（例：2回満たしていて割合が0.1なら、1.0 + 0.2 = 1.2倍）
+                float bonusMultiplier = 1f + (goldCount * damageBonusPerGoldRatio);
+                finalDamage *= bonusMultiplier;
+                Debug.Log($"{relicName}の効果: 所持ゴールドによりダメージが {bonusMultiplier} 倍に！");
+            }
+        }
+
         // ★2.豪傑の麦酒効果 (最初のターンかつ攻撃カードのみ)
         if (isFirstTurn && card != null && card.cardType == CardType.Attack)
         {
@@ -186,5 +210,16 @@ public class RelicCore : RelicData
     public override int OnModifyDrawAmount(int baseAmount)
     {
         return baseAmount + drawAmountBonus;
+    }
+
+    public override int OnModifyGainGold(int amount)
+    {
+        if (goldGainMultiplier != 1.0f)
+        {
+            // 倍率をかけて四捨五入（例：100G * 1.2 = 120G）
+            amount = Mathf.RoundToInt(amount * goldGainMultiplier);
+            Debug.Log($"{relicName}の効果: ゴールド獲得量が {amount}G に変化！");
+        }
+        return amount;
     }
 }
