@@ -125,12 +125,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a9e430ce74453d4da52551bd1312a77, type: 2}
   - {fileID: 11400000, guid: 6cb09a8014502cf4eab825566c6db489, type: 2}
   - {fileID: 11400000, guid: ebd0abe0b068c1b4580253d93bea4af9, type: 2}
-  - {fileID: 11400000, guid: 1193a7e0098101e459de9128df5af501, type: 2}
+  - {fileID: 11400000, guid: 4e095cc349cf34940b1e51314c47096e, type: 2}
   - {fileID: 11400000, guid: 2dd6798a8514e724299722b93d8031df, type: 2}
   - {fileID: 11400000, guid: 2bb3cf82aa15402489fc96fe4a554b10, type: 2}
   - {fileID: 11400000, guid: 26ee860e28753ab41981052ac4b65f95, type: 2}
   - {fileID: 11400000, guid: 2b386b4bc586f4946bf2ffae109eb393, type: 2}
   - {fileID: 11400000, guid: 7c9e4d1c10864ce4cbc380b8801b026b, type: 2}
+  - {fileID: 11400000, guid: e386cab26fe35954ba257d10c7313bba, type: 2}
   allAvailableCards:
   - {fileID: 11400000, guid: 7be1658040b9b174d9b65c369745b796, type: 2}
   - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
