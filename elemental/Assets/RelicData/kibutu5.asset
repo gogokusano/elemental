@@ -19,7 +19,7 @@ MonoBehaviour:
   relicType: 1
   relicCategory: 0
   maxHpBonus: 0
-  initialGoldBonus: 0
+  initialGoldBonus: 150
   startBlock: 0
   applyRandomElementOnStart: 0
   turnStartHeal: 0
@@ -36,6 +36,6 @@ MonoBehaviour:
   elementReactionBlock: 0
   killEnemyManaRecover: 0
   doubleDiscard: 0
-  goldGainMultiplier: 0
+  goldGainMultiplier: 1
   goldThresholdForDamage: 0
   damageBonusPerGoldRatio: 0
