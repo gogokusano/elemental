@@ -16,8 +16,8 @@ MonoBehaviour:
   description: "\u5C5E\u6027\u53CD\u5FDC\u304C\u767A\u751F\u3057\u305F\u6642\u3001\u30D7\u30EC\u30A4\u30E4\u30FC\u306B\u30B7\u30FC\u30EB\u30C9\u30923\u4ED8\u4E0E\u3059\u308B\u3002"
   relicIcon: {fileID: 6787071901202935155, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 3
-  relicBackground: {fileID: 1211683508, guid: 9426afe0015c1a9428c06c8eb7fedcd6, type: 3}
   relicType: 2
+  relicCategory: 0
   maxHpBonus: 0
   initialGoldBonus: 0
   startBlock: 0
@@ -36,3 +36,6 @@ MonoBehaviour:
   elementReactionBlock: 3
   killEnemyManaRecover: 0
   doubleDiscard: 0
+  goldGainMultiplier: 1
+  goldThresholdForDamage: 0
+  damageBonusPerGoldRatio: 0

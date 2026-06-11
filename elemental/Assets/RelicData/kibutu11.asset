@@ -27,7 +27,7 @@ MonoBehaviour:
   turnEndBlock: 0
   turnEndHeal: 0
   flatDamageBonus: 0
-  damageMultiplier: 0
+  damageMultiplier: 1
   damageReduction: 0
   flatDamageTakenIncrease: 0
   firstTurnDamageBonus: 0
@@ -36,3 +36,6 @@ MonoBehaviour:
   elementReactionBlock: 0
   killEnemyManaRecover: 0
   doubleDiscard: 0
+  goldGainMultiplier: 1
+  goldThresholdForDamage: 0
+  damageBonusPerGoldRatio: 0
