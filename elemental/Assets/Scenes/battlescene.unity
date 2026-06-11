@@ -1036,32 +1036,18 @@ MonoBehaviour:
   enemySpawnArea: {fileID: 2018162486}
   horizontalSpacing: 150
   verticalSpacing: 120
-  weightFor1Enemy: 1
-  weightFor2Enemies: 4
-  weightFor3Enemies: 5
   currentMap: 1
   currentFloor: 1
   firstFloorEnemy: {fileID: 11400000, guid: bf420077ae0a4ee4b93c45865be892aa, type: 2}
   map1NormalPool:
-  - enemyData: {fileID: 11400000, guid: e92c3afeceb6e1548a318f9d52466adb, type: 2}
-    weight: 0
-  - enemyData: {fileID: 11400000, guid: 0df9bdbc8f9b41d4e9316133e97009d2, type: 2}
-    weight: 0
-  - enemyData: {fileID: 11400000, guid: 0a52307e1a3664f4c8dac9555d099f4b, type: 2}
-    weight: 0
-  - enemyData: {fileID: 11400000, guid: b04abf7e1fb00584c8b8e93718b60a56, type: 2}
-    weight: 0
-  - enemyData: {fileID: 11400000, guid: b4e48940a6b78d14ba68d5929e16fa43, type: 2}
-    weight: 0
-  - enemyData: {fileID: 11400000, guid: 37572edb322d1184b97d753d80230e91, type: 2}
-    weight: 0
-  - enemyData: {fileID: 11400000, guid: d106f7ac5184fe147bb644dd88bef840, type: 2}
-    weight: 0
-  - enemyData: {fileID: 11400000, guid: bf420077ae0a4ee4b93c45865be892aa, type: 2}
-    weight: 0
-  map1SingleOnlyPool: []
+  - {fileID: 11400000, guid: 0df9bdbc8f9b41d4e9316133e97009d2, type: 2}
+  - {fileID: 11400000, guid: 0a52307e1a3664f4c8dac9555d099f4b, type: 2}
+  - {fileID: 11400000, guid: e92c3afeceb6e1548a318f9d52466adb, type: 2}
+  - {fileID: 11400000, guid: b04abf7e1fb00584c8b8e93718b60a56, type: 2}
+  - {fileID: 11400000, guid: b4e48940a6b78d14ba68d5929e16fa43, type: 2}
+  - {fileID: 11400000, guid: 37572edb322d1184b97d753d80230e91, type: 2}
+  - {fileID: 11400000, guid: d106f7ac5184fe147bb644dd88bef840, type: 2}
   map2NormalPool: []
-  map2SingleOnlyPool: []
 --- !u!1 &365459295
 GameObject:
   m_ObjectHideFlags: 0

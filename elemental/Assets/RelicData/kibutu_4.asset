@@ -36,6 +36,3 @@ MonoBehaviour:
   elementReactionBlock: 0
   killEnemyManaRecover: 0
   doubleDiscard: 0
-  goldGainMultiplier: 1
-  goldThresholdForDamage: 0
-  damageBonusPerGoldRatio: 0
