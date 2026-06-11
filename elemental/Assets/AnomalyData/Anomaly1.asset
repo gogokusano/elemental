@@ -14,13 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EventData
   eventName: "\u8840\u8108\u306E\u796D\u58C7"
   eventText: "\u8584\u6697\u3044\u5C0F\u90E8\u5C4B\u306E\u4E2D\u592E\u306B\u3001\u8D64\u304F\u8108\u6253\u3064\u7D50\u6676\u304C\u57CB\u3081\u8FBC\u307E\u308C\u305F\u796D\u58C7\u304C\u3042\u308B\u3002\u89E6\u308C\u308B\u8005\u306E\u751F\u547D\u529B\u3092\u5438\u3044\u4E0A\u3052\u308B\u4EE3\u308F\u308A\u306B\u3001\u5854\u306E\u79D8\u5B9D\u3092\u5177\u73FE\u5316\u3055\u305B\u308B\u529B\u3092\u6301\u3063\u3066\u3044\u308B\u3088\u3046\u3060\u3002"
-  eventImage: {fileID: 7189530345730726354, guid: 4f05d065d74f9ca41857f8d7f300409d, type: 3}
+  eventImage: {fileID: 7189530345730726354, guid: 29425ae4a43ebf74bbaa703e1bb17ab1, type: 3}
   options:
   - buttonText: "\u81EA\u3089\u306E\u8840\u3092\u6367\u3052\u308B\uFF1AHP\u309210\u5931\u3046\u3002\u4EE3\u308F\u308A\u306B\u3001\u30E9\u30F3\u30C0\u30E0\u306A\u300C\u5947\u7269\u300D\u30921\u3064\u7372\u5F97\u3059\u308B"
     shopAction: 0
     removeCardPrice: 0
     hpChange: -10
+    hpPercentChange: 0
     maxHpChange: 0
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 1
     minRelicCount: 1
@@ -61,7 +64,10 @@ MonoBehaviour:
     shopAction: 0
     removeCardPrice: 0
     hpChange: -3
+    hpPercentChange: 0
     maxHpChange: -3
+    maxHpPercentChange: 0
+    goldChange: 0
     rewardRelic: {fileID: 0}
     giveRandomRelic: 0
     minRelicCount: 0
@@ -101,7 +107,9 @@ MonoBehaviour:
   shopConfig:
     relicCount: 3
     cardCount: 3
+    maxCardRemoveCount: 1
     allowedRelicRarities: 000000000200000003000000
     allowedCardRarities: 000000000200000003000000
+    allowedRelicCategories: 0000000001000000
     relicPrices: []
     cardPrices: []

@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:elemental/Assets/Enemy/ChatGPT Image 2026年6月4日 09_19_59.png.meta
 guid: 388bbb753eab78e44ac980903bea0922
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 5654681832717305983
-    second: "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0"
-========
-guid: 0348b195915f2124ba240e0eb041bbc2
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -813387740449554958
     second: madousyo_0
->>>>>>>> main:elemental/Assets/image/madousyo.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,55 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<<< HEAD:elemental/Assets/Enemy/ChatGPT Image 2026年6月4日 09_19_59.png.meta
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-========
->>>>>>>> main:elemental/Assets/image/madousyo.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:elemental/Assets/Enemy/ChatGPT Image 2026年6月4日 09_19_59.png.meta
-      name: "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0"
-========
       name: madousyo_0
->>>>>>>> main:elemental/Assets/image/madousyo.png.meta
       rect:
         serializedVersion: 2
-        x: 52
+        x: 0
         y: 0
-<<<<<<<< HEAD:elemental/Assets/Enemy/ChatGPT Image 2026年6月4日 09_19_59.png.meta
-        width: 919
-        height: 1024
-========
         width: 1693
         height: 929
->>>>>>>> main:elemental/Assets/image/madousyo.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,13 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:elemental/Assets/Enemy/ChatGPT Image 2026年6月4日 09_19_59.png.meta
-      spriteID: f7848f4ca27797e40800000000000000
-      internalID: 5654681832717305983
-========
       spriteID: 2fdb8d9d82446b4f0800000000000000
       internalID: -813387740449554958
->>>>>>>> main:elemental/Assets/image/madousyo.png.meta
       vertices: []
       indices: 
       edges: []
@@ -187,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:elemental/Assets/Enemy/ChatGPT Image 2026年6月4日 09_19_59.png.meta
-      "ChatGPT Image 2026\u5E746\u67084\u65E5 09_19_59_0": 5654681832717305983
-========
       madousyo_0: -813387740449554958
->>>>>>>> main:elemental/Assets/image/madousyo.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
