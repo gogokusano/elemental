@@ -179,7 +179,6 @@ public class EnemyManager : MonoBehaviour
             case 3: // 行動4: 与ダメージ1.5倍バフ
                 intentIconDisplay.sprite = buffIntentIcon != null ? buffIntentIcon : statusIntentIcon;
                 intentIconDisplay.color = Color.yellow;
-                intentText.text = "強化";
                 break;
         }
     }
