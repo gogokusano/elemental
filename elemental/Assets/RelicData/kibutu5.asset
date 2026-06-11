@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a3053483bfdd4a874cd06dd9467b0, type: 3}
   m_Name: kibutu5
   m_EditorClassIdentifier: Assembly-CSharp::RelicCore
-  relicName: "\u5E78\u904B\u306E\u5C0F\u92AD"
+  relicName: "\u5E78\u904B\u306E\u53E4\u92AD"
   description: "\u7372\u5F97\u6642\u306B\u5373\u5EA7\u306B150\u30B4\u30FC\u30EB\u30C9\u3092\u5F97\u308B\u3002"
   relicIcon: {fileID: 1880115036164830049, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 3
@@ -36,3 +36,6 @@ MonoBehaviour:
   elementReactionBlock: 0
   killEnemyManaRecover: 0
   doubleDiscard: 0
+  goldGainMultiplier: 1
+  goldThresholdForDamage: 0
+  damageBonusPerGoldRatio: 0
