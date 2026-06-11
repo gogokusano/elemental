@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: 968359b546664b14083e802840443fda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8502632902251068094
+    second: Nezumi_0
+  - first:
+      213: -6840441786223571876
+    second: Nezumi_1
+  - first:
+      213: 6223568320943599703
+    second: Nezumi_2
+  - first:
+      213: 546276751250015078
+    second: Nezumi_3
+  - first:
+      213: -1861967689619665620
+    second: Nezumi_4
+  - first:
+      213: 7248999424065968290
+    second: Nezumi_5
+  - first:
+      213: -7631253564320370505
+    second: Nezumi_6
+  - first:
+      213: 6183966980179411124
+    second: Nezumi_7
+  - first:
+      213: 3115222260315195206
+    second: Nezumi_8
+  - first:
+      213: -2947203551870390247
+    second: Nezumi_9
+  - first:
+      213: -9104526371198396117
+    second: Nezumi_10
+  - first:
+      213: 533342902668026938
+    second: Nezumi_11
+  - first:
+      213: -1378536298608479651
+    second: Nezumi_12
+  - first:
+      213: 6884633021370974542
+    second: Nezumi_13
+  - first:
+      213: -3672556407959620611
+    second: Nezumi_14
+  - first:
+      213: -8711126954692100557
+    second: Nezumi_15
+  - first:
+      213: -379495283545182287
+    second: Nezumi_16
+  - first:
+      213: 8657394073880594162
+    second: Nezumi_17
+  - first:
+      213: 3543251537758519469
+    second: Nezumi_18
+  - first:
+      213: -1251926270017173474
+    second: Nezumi_19
+  - first:
+      213: -4262502331556537786
+    second: Nezumi_20
+  - first:
+      213: 3446933022696736799
+    second: Nezumi_21
+  - first:
+      213: -4630686792984292627
+    second: Nezumi_22
+  - first:
+      213: -2704935407740862841
+    second: Nezumi_23
+  - first:
+      213: -4924541008794830164
+    second: Nezumi_24
+  - first:
+      213: 3064459047465171515
+    second: Nezumi_25
+  - first:
+      213: 6041488317449609316
+    second: Nezumi_26
+  - first:
+      213: 7745994646201151075
+    second: Nezumi_27
+  - first:
+      213: 4680066561898330145
+    second: Nezumi_28
+  - first:
+      213: 2285629122340271862
+    second: Nezumi_29
+  - first:
+      213: 6164811190652961156
+    second: Nezumi_30
+  - first:
+      213: -3144554503298008451
+    second: Nezumi_31
+  - first:
+      213: 3325183175928739468
+    second: Nezumi_32
+  - first:
+      213: -6164438988479695777
+    second: Nezumi_33
+  - first:
+      213: -8851007951059232205
+    second: Nezumi_34
+  - first:
+      213: 8047166206989185592
+    second: Nezumi_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nezumi_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 3064
+        width: 432
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 245c6cd9c64900a80800000000000000
+      internalID: -8502632902251068094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_1
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 3064
+        width: 429
+        height: 596
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5cc769007ed111a0800000000000000
+      internalID: -6840441786223571876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_2
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 3064
+        width: 428
+        height: 595
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750b73df96e8e5650800000000000000
+      internalID: 6223568320943599703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_3
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 3064
+        width: 432
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663cf4b9fc3c49700800000000000000
+      internalID: 546276751250015078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_4
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 3064
+        width: 440
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d07fc5046f826e0800000000000000
+      internalID: -1861967689619665620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_5
+      rect:
+        serializedVersion: 2
+        x: 2754
+        y: 3064
+        width: 446
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a89670c19e999460800000000000000
+      internalID: 7248999424065968290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_6
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 2454
+        width: 454
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b030cbb057581690800000000000000
+      internalID: -7631253564320370505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_7
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 2454
+        width: 457
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0c654543dd1d550800000000000000
+      internalID: 6183966980179411124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_8
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 2454
+        width: 457
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6470a7ef32e7b3b20800000000000000
+      internalID: 3115222260315195206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_9
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 2454
+        width: 465
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910fef90cfd6917d0800000000000000
+      internalID: -2947203551870390247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_10
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 2454
+        width: 501
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b291b84d08936a180800000000000000
+      internalID: -9104526371198396117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_11
+      rect:
+        serializedVersion: 2
+        x: 2741
+        y: 2454
+        width: 509
+        height: 577
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34e0015b80d66700800000000000000
+      internalID: 533342902668026938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1844
+        width: 511
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52b57b4a847edce0800000000000000
+      internalID: -1378536298608479651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_13
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1844
+        width: 508
+        height: 572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e41cdbfa1412b8f50800000000000000
+      internalID: 6884633021370974542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_14
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 1844
+        width: 490
+        height: 573
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df37bfda765780dc0800000000000000
+      internalID: -3672556407959620611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_15
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 1844
+        width: 482
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e3f30303cdb1780800000000000000
+      internalID: -8711126954692100557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_16
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 1844
+        width: 450
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf6a5edc03cbbaf0800000000000000
+      internalID: -379495283545182287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_17
+      rect:
+        serializedVersion: 2
+        x: 2752
+        y: 1844
+        width: 427
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f689369a0e352870800000000000000
+      internalID: 8657394073880594162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_18
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1234
+        width: 416
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da004f920882c2130800000000000000
+      internalID: 3543251537758519469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_19
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1234
+        width: 432
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1885aeb0b340aee0800000000000000
+      internalID: -1251926270017173474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_20
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 1234
+        width: 436
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a5c4196bc88d4c0800000000000000
+      internalID: -4262502331556537786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_21
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1234
+        width: 438
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18076e4257f5df20800000000000000
+      internalID: 3446933022696736799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_22
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 1234
+        width: 441
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2141e65ee7cbfb0800000000000000
+      internalID: -4630686792984292627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_23
+      rect:
+        serializedVersion: 2
+        x: 2754
+        y: 1234
+        width: 446
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78eba39f393267ad0800000000000000
+      internalID: -2704935407740862841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_24
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 624
+        width: 449
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caab0f83b0488abb0800000000000000
+      internalID: -4924541008794830164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_25
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 624
+        width: 451
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3ab4e87445278a20800000000000000
+      internalID: 3064459047465171515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_26
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 624
+        width: 458
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460a1449d9da7d350800000000000000
+      internalID: 6041488317449609316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_27
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 624
+        width: 465
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ea5e6371d4f7b60800000000000000
+      internalID: 7745994646201151075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_28
+      rect:
+        serializedVersion: 2
+        x: 2201
+        y: 624
+        width: 473
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1283223fdbfe2f040800000000000000
+      internalID: 4680066561898330145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_29
+      rect:
+        serializedVersion: 2
+        x: 2741
+        y: 624
+        width: 493
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f63165b39f28bf10800000000000000
+      internalID: 2285629122340271862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_30
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 14
+        width: 498
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48109368d1fcd8550800000000000000
+      internalID: 6164811190652961156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_31
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 14
+        width: 454
+        height: 573
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a311ef65c4c54d0800000000000000
+      internalID: -3144554503298008451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_32
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 14
+        width: 428
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86765e1b7c652e20800000000000000
+      internalID: 3325183175928739468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_33
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 14
+        width: 414
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f54791c8663837aa0800000000000000
+      internalID: -6164438988479695777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_34
+      rect:
+        serializedVersion: 2
+        x: 2213
+        y: 14
+        width: 400
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ad4f4c927ea2580800000000000000
+      internalID: -8851007951059232205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nezumi_35
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 14
+        width: 404
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8323e1097074daf60800000000000000
+      internalID: 8047166206989185592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nezumi_0: -8502632902251068094
+      Nezumi_1: -6840441786223571876
+      Nezumi_10: -9104526371198396117
+      Nezumi_11: 533342902668026938
+      Nezumi_12: -1378536298608479651
+      Nezumi_13: 6884633021370974542
+      Nezumi_14: -3672556407959620611
+      Nezumi_15: -8711126954692100557
+      Nezumi_16: -379495283545182287
+      Nezumi_17: 8657394073880594162
+      Nezumi_18: 3543251537758519469
+      Nezumi_19: -1251926270017173474
+      Nezumi_2: 6223568320943599703
+      Nezumi_20: -4262502331556537786
+      Nezumi_21: 3446933022696736799
+      Nezumi_22: -4630686792984292627
+      Nezumi_23: -2704935407740862841
+      Nezumi_24: -4924541008794830164
+      Nezumi_25: 3064459047465171515
+      Nezumi_26: 6041488317449609316
+      Nezumi_27: 7745994646201151075
+      Nezumi_28: 4680066561898330145
+      Nezumi_29: 2285629122340271862
+      Nezumi_3: 546276751250015078
+      Nezumi_30: 6164811190652961156
+      Nezumi_31: -3144554503298008451
+      Nezumi_32: 3325183175928739468
+      Nezumi_33: -6164438988479695777
+      Nezumi_34: -8851007951059232205
+      Nezumi_35: 8047166206989185592
+      Nezumi_4: -1861967689619665620
+      Nezumi_5: 7248999424065968290
+      Nezumi_6: -7631253564320370505
+      Nezumi_7: 6183966980179411124
+      Nezumi_8: 3115222260315195206
+      Nezumi_9: -2947203551870390247
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

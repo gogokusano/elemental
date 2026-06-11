@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: 4d33e9515af2f8f428ee02229638d9d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2260261321014276889
+    second: goburin_0
+  - first:
+      213: -5800572306043209338
+    second: goburin_1
+  - first:
+      213: -3937358430838762760
+    second: goburin_2
+  - first:
+      213: 8671435771467778708
+    second: goburin_3
+  - first:
+      213: 1466158013262717145
+    second: goburin_4
+  - first:
+      213: -2513855976130272946
+    second: goburin_5
+  - first:
+      213: 3128015610150806185
+    second: goburin_6
+  - first:
+      213: -2269432912720060007
+    second: goburin_7
+  - first:
+      213: 6980873866978454117
+    second: goburin_8
+  - first:
+      213: 6047403279428979264
+    second: goburin_9
+  - first:
+      213: -3328417057394568271
+    second: goburin_10
+  - first:
+      213: -4523159928222201178
+    second: goburin_11
+  - first:
+      213: -7090032110369766630
+    second: goburin_12
+  - first:
+      213: 8224958602078494207
+    second: goburin_13
+  - first:
+      213: 7912308811866202717
+    second: goburin_14
+  - first:
+      213: 5638570617616968692
+    second: goburin_15
+  - first:
+      213: -1368951962729694062
+    second: goburin_16
+  - first:
+      213: 2654860947874070662
+    second: goburin_17
+  - first:
+      213: -1791995257677596593
+    second: goburin_18
+  - first:
+      213: -126946616418110718
+    second: goburin_19
+  - first:
+      213: 4738274639482551203
+    second: goburin_20
+  - first:
+      213: 218532818374901742
+    second: goburin_21
+  - first:
+      213: -3102292966850590172
+    second: goburin_22
+  - first:
+      213: -3092419808463752333
+    second: goburin_23
+  - first:
+      213: -723087262706637777
+    second: goburin_24
+  - first:
+      213: -2195498910422998168
+    second: goburin_25
+  - first:
+      213: -7552591024714732592
+    second: goburin_26
+  - first:
+      213: -5892629932035372003
+    second: goburin_27
+  - first:
+      213: -8586801651953713586
+    second: goburin_28
+  - first:
+      213: 5996039554911415094
+    second: goburin_29
+  - first:
+      213: -8514745211724045020
+    second: goburin_30
+  - first:
+      213: -4677465025376950767
+    second: goburin_31
+  - first:
+      213: 2108425139270284253
+    second: goburin_32
+  - first:
+      213: 6986282119207619268
+    second: goburin_33
+  - first:
+      213: 1653369142543365758
+    second: goburin_34
+  - first:
+      213: -5451461753349889318
+    second: goburin_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: goburin_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2497
+        width: 564
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9137c9232bf0e5f10800000000000000
+      internalID: 2260261321014276889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_1
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 2497
+        width: 564
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689735c683a308fa0800000000000000
+      internalID: -5800572306043209338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_2
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 2497
+        width: 564
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f257704e51bb59c0800000000000000
+      internalID: -3937358430838762760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_3
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 2497
+        width: 564
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ac3f214e0275870800000000000000
+      internalID: 8671435771467778708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_4
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 2497
+        width: 564
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0ed1de1f6d85410800000000000000
+      internalID: 1466158013262717145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_5
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 2497
+        width: 564
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4123460f4dfc1dd0800000000000000
+      internalID: -2513855976130272946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1999
+        width: 564
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a26aeedf91f86b20800000000000000
+      internalID: 3128015610150806185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_7
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1999
+        width: 563
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 991adb33aca5180e0800000000000000
+      internalID: -2269432912720060007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_8
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1999
+        width: 562
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56aee07bbcb01e060800000000000000
+      internalID: 6980873866978454117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_9
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1999
+        width: 562
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a85ebfd31bce350800000000000000
+      internalID: 6047403279428979264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_10
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 1999
+        width: 562
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b355ad22561fc1d0800000000000000
+      internalID: -3328417057394568271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_11
+      rect:
+        serializedVersion: 2
+        x: 2844
+        y: 1999
+        width: 562
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aac80092028a31c0800000000000000
+      internalID: -4523159928222201178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1501
+        width: 561
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a130c473c552b9d90800000000000000
+      internalID: -7090032110369766630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_13
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1501
+        width: 561
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd9e29554ce42270800000000000000
+      internalID: 8224958602078494207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_14
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1501
+        width: 561
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d526a7471fa2ecd60800000000000000
+      internalID: 7912308811866202717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_15
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1501
+        width: 560
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fba3003a1a304e40800000000000000
+      internalID: 5638570617616968692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_16
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 1501
+        width: 560
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c3ce26171800de0800000000000000
+      internalID: -1368951962729694062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_17
+      rect:
+        serializedVersion: 2
+        x: 2844
+        y: 1501
+        width: 559
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680471e47f5f7d420800000000000000
+      internalID: 2654860947874070662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1003
+        width: 560
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4831fabecd8127e0800000000000000
+      internalID: -1791995257677596593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_19
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1003
+        width: 559
+        height: 486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 203f5f699befc3ef0800000000000000
+      internalID: -126946616418110718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_20
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 1003
+        width: 558
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab799e1eabb1c140800000000000000
+      internalID: 4738274639482551203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_21
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 1003
+        width: 559
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef3003c072680300800000000000000
+      internalID: 218532818374901742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_22
+      rect:
+        serializedVersion: 2
+        x: 2274
+        y: 1003
+        width: 559
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a8da9bbf072f4d0800000000000000
+      internalID: -3102292966850590172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_23
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 1003
+        width: 560
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 373f22c81948515d0800000000000000
+      internalID: -3092419808463752333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 505
+        width: 560
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24e2c437f317f5f0800000000000000
+      internalID: -723087262706637777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_25
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 505
+        width: 560
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863ea7b8f550881e0800000000000000
+      internalID: -2195498910422998168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_26
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 505
+        width: 562
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db23167a7ecf2790800000000000000
+      internalID: -7552591024714732592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_27
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 505
+        width: 562
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c823c1c4c293ea0800000000000000
+      internalID: -5892629932035372003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_28
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 505
+        width: 562
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ebf82746d85d880800000000000000
+      internalID: -8586801651953713586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_29
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 505
+        width: 563
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63bafa1f436363350800000000000000
+      internalID: 5996039554911415094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 564
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425ea3ec75c85d980800000000000000
+      internalID: -8514745211724045020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_31
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 7
+        width: 564
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116e719775e461fb0800000000000000
+      internalID: -4677465025376950767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_32
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 7
+        width: 565
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd375b54e71a24d10800000000000000
+      internalID: 2108425139270284253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_33
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 7
+        width: 565
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca8800929244f060800000000000000
+      internalID: 6986282119207619268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_34
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 7
+        width: 566
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e76b3e7a972f1f610800000000000000
+      internalID: 1653369142543365758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goburin_35
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 7
+        width: 566
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2a3fc1b648854b0800000000000000
+      internalID: -5451461753349889318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      goburin_0: 2260261321014276889
+      goburin_1: -5800572306043209338
+      goburin_10: -3328417057394568271
+      goburin_11: -4523159928222201178
+      goburin_12: -7090032110369766630
+      goburin_13: 8224958602078494207
+      goburin_14: 7912308811866202717
+      goburin_15: 5638570617616968692
+      goburin_16: -1368951962729694062
+      goburin_17: 2654860947874070662
+      goburin_18: -1791995257677596593
+      goburin_19: -126946616418110718
+      goburin_2: -3937358430838762760
+      goburin_20: 4738274639482551203
+      goburin_21: 218532818374901742
+      goburin_22: -3102292966850590172
+      goburin_23: -3092419808463752333
+      goburin_24: -723087262706637777
+      goburin_25: -2195498910422998168
+      goburin_26: -7552591024714732592
+      goburin_27: -5892629932035372003
+      goburin_28: -8586801651953713586
+      goburin_29: 5996039554911415094
+      goburin_3: 8671435771467778708
+      goburin_30: -8514745211724045020
+      goburin_31: -4677465025376950767
+      goburin_32: 2108425139270284253
+      goburin_33: 6986282119207619268
+      goburin_34: 1653369142543365758
+      goburin_35: -5451461753349889318
+      goburin_4: 1466158013262717145
+      goburin_5: -2513855976130272946
+      goburin_6: 3128015610150806185
+      goburin_7: -2269432912720060007
+      goburin_8: 6980873866978454117
+      goburin_9: 6047403279428979264
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

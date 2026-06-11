@@ -1,0 +1,1300 @@
+fileFormatVersion: 2
+guid: ec71fd51a700c944580c8917369dbf1f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7186229144680214958
+    second: zako kori_0
+  - first:
+      213: 8187716480517994065
+    second: zako kori_1
+  - first:
+      213: -7792594704846277624
+    second: zako kori_2
+  - first:
+      213: 2325276479898808472
+    second: zako kori_3
+  - first:
+      213: 323734951657339111
+    second: zako kori_4
+  - first:
+      213: 1187836786766556670
+    second: zako kori_5
+  - first:
+      213: 7326127734637155644
+    second: zako kori_6
+  - first:
+      213: 8829208901289779665
+    second: zako kori_7
+  - first:
+      213: -8257441081425356956
+    second: zako kori_8
+  - first:
+      213: 4282742168058754546
+    second: zako kori_9
+  - first:
+      213: 2565144260117469539
+    second: zako kori_10
+  - first:
+      213: -5337060453575332426
+    second: zako kori_11
+  - first:
+      213: 1882963163847830306
+    second: zako kori_12
+  - first:
+      213: -4637089622276704312
+    second: zako kori_13
+  - first:
+      213: 5569822110957609
+    second: zako kori_14
+  - first:
+      213: -9028170763187778165
+    second: zako kori_15
+  - first:
+      213: -2294655893998415998
+    second: zako kori_16
+  - first:
+      213: -8888069665423099816
+    second: zako kori_17
+  - first:
+      213: 1340441542278403363
+    second: zako kori_18
+  - first:
+      213: 1189326899354891346
+    second: zako kori_19
+  - first:
+      213: -8416812170382126637
+    second: zako kori_20
+  - first:
+      213: -637490366266919355
+    second: zako kori_21
+  - first:
+      213: -8668905743643508798
+    second: zako kori_22
+  - first:
+      213: 6489330187634424237
+    second: zako kori_23
+  - first:
+      213: 2118504101855733606
+    second: zako kori_24
+  - first:
+      213: 6790134657882278046
+    second: zako kori_25
+  - first:
+      213: 2009888096043230478
+    second: zako kori_26
+  - first:
+      213: 3463415404733102872
+    second: zako kori_27
+  - first:
+      213: 7596810399142913872
+    second: zako kori_28
+  - first:
+      213: -5096338011802220006
+    second: zako kori_29
+  - first:
+      213: 8532986553722935932
+    second: zako kori_30
+  - first:
+      213: -4838977263397527497
+    second: zako kori_31
+  - first:
+      213: 6087096475069646737
+    second: zako kori_32
+  - first:
+      213: -6014974871362000578
+    second: zako kori_33
+  - first:
+      213: 5389820337311647186
+    second: zako kori_34
+  - first:
+      213: -6594687611631153424
+    second: zako kori_35
+  - first:
+      213: -6290996525108894331
+    second: zako kori_36
+  - first:
+      213: 1101366246384429042
+    second: zako kori_37
+  - first:
+      213: 3882046294890649113
+    second: zako kori_38
+  - first:
+      213: 583637867978346026
+    second: zako kori_39
+  - first:
+      213: -4354573862947064288
+    second: zako kori_40
+  - first:
+      213: 3946532606538775302
+    second: zako kori_41
+  - first:
+      213: -1053855668255892566
+    second: zako kori_42
+  - first:
+      213: -8475807894573152598
+    second: zako kori_43
+  - first:
+      213: 2451118975080403877
+    second: zako kori_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zako kori_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3006
+        width: 405
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ec6cccaa2654c90800000000000000
+      internalID: -7186229144680214958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_1
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 3006
+        width: 405
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156f2e632cc90a170800000000000000
+      internalID: 8187716480517994065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_2
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 3006
+        width: 404
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8043c0327642bd390800000000000000
+      internalID: -7792594704846277624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_3
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 3006
+        width: 403
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89070fc73aa054020800000000000000
+      internalID: 2325276479898808472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_4
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 3006
+        width: 400
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e8f9ea29332e7400800000000000000
+      internalID: 323734951657339111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_5
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 3006
+        width: 399
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdac5e934b0c7010800000000000000
+      internalID: 1187836786766556670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 2406
+        width: 397
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c355f22fb52aba560800000000000000
+      internalID: 7326127734637155644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_7
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 2406
+        width: 395
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d1281177b6a78a70800000000000000
+      internalID: 8829208901289779665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_8
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 2406
+        width: 393
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4679ce3161da76d80800000000000000
+      internalID: -8257441081425356956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_9
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 2406
+        width: 393
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f57ab79f4b5f6b30800000000000000
+      internalID: 4282742168058754546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_10
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 2406
+        width: 390
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3691fe52d19399320800000000000000
+      internalID: 2565144260117469539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_11
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 2773
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd6bdf5bc3fee5b0800000000000000
+      internalID: -5337060453575332426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_12
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 2406
+        width: 389
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bab4a6501a12a10800000000000000
+      internalID: 1882963163847830306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_13
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 2773
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7fb809e8fb5afb0800000000000000
+      internalID: -4637089622276704312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_14
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1806
+        width: 387
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920c26449b9c31000800000000000000
+      internalID: 5569822110957609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_15
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 2174
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d00a0368e75b280800000000000000
+      internalID: -9028170763187778165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_16
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1806
+        width: 385
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28fc77c3f9eb720e0800000000000000
+      internalID: -2294655893998415998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_17
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 2175
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858f785fabb37a480800000000000000
+      internalID: -8888069665423099816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_18
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1806
+        width: 384
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3255ea11b743a9210800000000000000
+      internalID: 1340441542278403363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_19
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 2176
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2547ddd7386518010800000000000000
+      internalID: 1189326899354891346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_20
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1806
+        width: 384
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1503bdce9713b80800000000000000
+      internalID: -8416812170382126637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_21
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 2177
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5463de2b3ed2727f0800000000000000
+      internalID: -637490366266919355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_22
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1806
+        width: 385
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cff8cee72cd1b780800000000000000
+      internalID: -8668905743643508798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_23
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 2178
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da93b287c6bbe0a50800000000000000
+      internalID: 6489330187634424237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_24
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 1806
+        width: 386
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667a15e9140766d10800000000000000
+      internalID: 2118504101855733606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_25
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 2180
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e984424ee776b3e50800000000000000
+      internalID: 6790134657882278046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_26
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1206
+        width: 386
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0561f2139e84eb10800000000000000
+      internalID: 2009888096043230478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_27
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1581
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b7bbce5f5801030800000000000000
+      internalID: 3463415404733102872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_28
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1206
+        width: 388
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05728e2feca4d6960800000000000000
+      internalID: 7596810399142913872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_29
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 1206
+        width: 390
+        height: 593
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a453f649b2649b0800000000000000
+      internalID: -5096338011802220006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_30
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1206
+        width: 391
+        height: 593
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a17d79f024b6670800000000000000
+      internalID: 8532986553722935932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_31
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1206
+        width: 392
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730aff221df78dcb0800000000000000
+      internalID: -4838977263397527497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_32
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 1206
+        width: 394
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1970f064ef5b97450800000000000000
+      internalID: 6087096475069646737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_33
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 606
+        width: 396
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3921932934868ca0800000000000000
+      internalID: -6014974871362000578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_34
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 607
+        width: 399
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d503a05a0d7cca40800000000000000
+      internalID: 5389820337311647186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_35
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 607
+        width: 400
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe4e00be86fa74a0800000000000000
+      internalID: -6594687611631153424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_36
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 607
+        width: 403
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 585eaa5ddf3e1b8a0800000000000000
+      internalID: -6290996525108894331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_37
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 607
+        width: 404
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7695b04c6d84f00800000000000000
+      internalID: 1101366246384429042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_38
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 607
+        width: 405
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9161498898ccfd530800000000000000
+      internalID: 3882046294890649113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_39
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 405
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ec0567c8f791800800000000000000
+      internalID: 583637867978346026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_40
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 6
+        width: 406
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026f6d6a4227193c0800000000000000
+      internalID: -4354573862947064288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_41
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 6
+        width: 407
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b7d3bfe76e4c630800000000000000
+      internalID: 3946532606538775302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_42
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 6
+        width: 408
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab53117ad3ff51f0800000000000000
+      internalID: -1053855668255892566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_43
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 6
+        width: 408
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6048b60a1ef5a80800000000000000
+      internalID: -8475807894573152598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zako kori_44
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 6
+        width: 408
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a313e3a8bf140220800000000000000
+      internalID: 2451118975080403877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zako kori_0: -7186229144680214958
+      zako kori_1: 8187716480517994065
+      zako kori_10: 2565144260117469539
+      zako kori_11: -5337060453575332426
+      zako kori_12: 1882963163847830306
+      zako kori_13: -4637089622276704312
+      zako kori_14: 5569822110957609
+      zako kori_15: -9028170763187778165
+      zako kori_16: -2294655893998415998
+      zako kori_17: -8888069665423099816
+      zako kori_18: 1340441542278403363
+      zako kori_19: 1189326899354891346
+      zako kori_2: -7792594704846277624
+      zako kori_20: -8416812170382126637
+      zako kori_21: -637490366266919355
+      zako kori_22: -8668905743643508798
+      zako kori_23: 6489330187634424237
+      zako kori_24: 2118504101855733606
+      zako kori_25: 6790134657882278046
+      zako kori_26: 2009888096043230478
+      zako kori_27: 3463415404733102872
+      zako kori_28: 7596810399142913872
+      zako kori_29: -5096338011802220006
+      zako kori_3: 2325276479898808472
+      zako kori_30: 8532986553722935932
+      zako kori_31: -4838977263397527497
+      zako kori_32: 6087096475069646737
+      zako kori_33: -6014974871362000578
+      zako kori_34: 5389820337311647186
+      zako kori_35: -6594687611631153424
+      zako kori_36: -6290996525108894331
+      zako kori_37: 1101366246384429042
+      zako kori_38: 3882046294890649113
+      zako kori_39: 583637867978346026
+      zako kori_4: 323734951657339111
+      zako kori_40: -4354573862947064288
+      zako kori_41: 3946532606538775302
+      zako kori_42: -1053855668255892566
+      zako kori_43: -8475807894573152598
+      zako kori_44: 2451118975080403877
+      zako kori_5: 1187836786766556670
+      zako kori_6: 7326127734637155644
+      zako kori_7: 8829208901289779665
+      zako kori_8: -8257441081425356956
+      zako kori_9: 4282742168058754546
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

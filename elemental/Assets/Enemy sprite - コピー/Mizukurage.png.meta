@@ -1,0 +1,2340 @@
+fileFormatVersion: 2
+guid: 0126979c62ae2bc4096f842c3152f6aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2019510596451883550
+    second: Mizukurage_0
+  - first:
+      213: 3246113628727548769
+    second: Mizukurage_1
+  - first:
+      213: -702953758962121057
+    second: Mizukurage_2
+  - first:
+      213: 6427386563114626367
+    second: Mizukurage_3
+  - first:
+      213: 2782009034174815589
+    second: Mizukurage_4
+  - first:
+      213: -1227742604705616419
+    second: Mizukurage_5
+  - first:
+      213: 2059861896503845073
+    second: Mizukurage_6
+  - first:
+      213: 6537601226957085225
+    second: Mizukurage_7
+  - first:
+      213: 6996358361288947066
+    second: Mizukurage_8
+  - first:
+      213: -6683931852705692415
+    second: Mizukurage_9
+  - first:
+      213: 8936213414179653445
+    second: Mizukurage_10
+  - first:
+      213: 7113875661220518971
+    second: Mizukurage_11
+  - first:
+      213: -609476643991064457
+    second: Mizukurage_12
+  - first:
+      213: -7950404983538686310
+    second: Mizukurage_13
+  - first:
+      213: 8101681054809719968
+    second: Mizukurage_14
+  - first:
+      213: -1432289076387322145
+    second: Mizukurage_15
+  - first:
+      213: 2230364295241792484
+    second: Mizukurage_16
+  - first:
+      213: -2461660221505425487
+    second: Mizukurage_17
+  - first:
+      213: 8608854129234322886
+    second: Mizukurage_18
+  - first:
+      213: -2327397174416544361
+    second: Mizukurage_19
+  - first:
+      213: -5293704819612038369
+    second: Mizukurage_20
+  - first:
+      213: -434440600860298589
+    second: Mizukurage_21
+  - first:
+      213: 50452490410011972
+    second: Mizukurage_22
+  - first:
+      213: 4673652239278041578
+    second: Mizukurage_23
+  - first:
+      213: -5046378340042901991
+    second: Mizukurage_24
+  - first:
+      213: 3408573287135424246
+    second: Mizukurage_25
+  - first:
+      213: 2396013551649826745
+    second: Mizukurage_26
+  - first:
+      213: -1285482325694995707
+    second: Mizukurage_27
+  - first:
+      213: -2764615495137348331
+    second: Mizukurage_28
+  - first:
+      213: -405579917469122666
+    second: Mizukurage_29
+  - first:
+      213: -6305376563951428411
+    second: Mizukurage_30
+  - first:
+      213: -430046964188062670
+    second: Mizukurage_31
+  - first:
+      213: -696319039546702620
+    second: Mizukurage_32
+  - first:
+      213: -1455043251034413247
+    second: Mizukurage_33
+  - first:
+      213: -217563521873274540
+    second: Mizukurage_34
+  - first:
+      213: 595063740224717985
+    second: Mizukurage_35
+  - first:
+      213: -4586164537979789028
+    second: Mizukurage_36
+  - first:
+      213: 1030330478577481682
+    second: Mizukurage_37
+  - first:
+      213: 7075118141467465198
+    second: Mizukurage_38
+  - first:
+      213: 1292058712718731550
+    second: Mizukurage_39
+  - first:
+      213: 5181334875319314680
+    second: Mizukurage_40
+  - first:
+      213: 4020992521157862885
+    second: Mizukurage_41
+  - first:
+      213: -5425480414082458030
+    second: Mizukurage_42
+  - first:
+      213: 5322770927091447794
+    second: Mizukurage_43
+  - first:
+      213: -5303176771998118764
+    second: Mizukurage_44
+  - first:
+      213: -7125296808104367810
+    second: Mizukurage_45
+  - first:
+      213: -8194799399454114188
+    second: Mizukurage_46
+  - first:
+      213: -4059669746710815732
+    second: Mizukurage_47
+  - first:
+      213: -4095857842818174572
+    second: Mizukurage_48
+  - first:
+      213: -1234908930825206392
+    second: Mizukurage_49
+  - first:
+      213: -7761590853096967201
+    second: Mizukurage_50
+  - first:
+      213: 2737633257636325776
+    second: Mizukurage_51
+  - first:
+      213: 3291432654659542455
+    second: Mizukurage_52
+  - first:
+      213: -1059200048710595228
+    second: Mizukurage_53
+  - first:
+      213: 5904853778288530717
+    second: Mizukurage_54
+  - first:
+      213: 8978903795734712249
+    second: Mizukurage_55
+  - first:
+      213: -2280611952783755706
+    second: Mizukurage_56
+  - first:
+      213: -4750121278514319551
+    second: Mizukurage_57
+  - first:
+      213: 4628035139510935835
+    second: Mizukurage_58
+  - first:
+      213: 9062183875024792446
+    second: Mizukurage_59
+  - first:
+      213: -4740807939042959015
+    second: Mizukurage_60
+  - first:
+      213: 8241141134114378341
+    second: Mizukurage_61
+  - first:
+      213: 7398902245089860032
+    second: Mizukurage_62
+  - first:
+      213: -8827777350080440896
+    second: Mizukurage_63
+  - first:
+      213: -758408424896302149
+    second: Mizukurage_64
+  - first:
+      213: 3063775305310299710
+    second: Mizukurage_65
+  - first:
+      213: -6206532517181290470
+    second: Mizukurage_66
+  - first:
+      213: 8273070386359915677
+    second: Mizukurage_67
+  - first:
+      213: 5611271936265383530
+    second: Mizukurage_68
+  - first:
+      213: 6899096402112637906
+    second: Mizukurage_69
+  - first:
+      213: -829182406164474424
+    second: Mizukurage_70
+  - first:
+      213: -8913225685613560001
+    second: Mizukurage_71
+  - first:
+      213: -9108722860799240227
+    second: Mizukurage_72
+  - first:
+      213: 1760989911308403790
+    second: Mizukurage_73
+  - first:
+      213: -1745010961250643709
+    second: Mizukurage_74
+  - first:
+      213: 4219659641277573905
+    second: Mizukurage_75
+  - first:
+      213: -8908806166505767097
+    second: Mizukurage_76
+  - first:
+      213: -8158231368174320809
+    second: Mizukurage_77
+  - first:
+      213: -1226217853480276883
+    second: Mizukurage_78
+  - first:
+      213: -5186112211353225368
+    second: Mizukurage_79
+  - first:
+      213: -2036288020105679971
+    second: Mizukurage_80
+  - first:
+      213: 5721661704929749120
+    second: Mizukurage_81
+  - first:
+      213: 5263828204507547146
+    second: Mizukurage_82
+  - first:
+      213: -1061095828009212631
+    second: Mizukurage_83
+  - first:
+      213: 2517760944501843467
+    second: Mizukurage_84
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mizukurage_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 2747
+        width: 411
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ad6a9003eb60c10800000000000000
+      internalID: 2019510596451883550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_1
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 2746
+        width: 411
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b1cdc85238c0d20800000000000000
+      internalID: 3246113628727548769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_2
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 2747
+        width: 411
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f968987d74b9e36f0800000000000000
+      internalID: -702953758962121057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_3
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 2748
+        width: 411
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3de090860aa23950800000000000000
+      internalID: 6427386563114626367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_4
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 2748
+        width: 410
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ddae31a7eab9620800000000000000
+      internalID: 2782009034174815589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_5
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 2748
+        width: 410
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddda8ea1b9e26fee0800000000000000
+      internalID: -1227742604705616419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 2204
+        width: 409
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d069733b79169c10800000000000000
+      internalID: 2059861896503845073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_7
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 2204
+        width: 407
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a5fef9da93aba50800000000000000
+      internalID: 6537601226957085225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_8
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 2205
+        width: 406
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7536fd7cde081160800000000000000
+      internalID: 6996358361288947066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_9
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 2204
+        width: 405
+        height: 510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1050f889467ed33a0800000000000000
+      internalID: -6683931852705692415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_10
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 2204
+        width: 403
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547424d01cec30c70800000000000000
+      internalID: 8936213414179653445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_11
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 2204
+        width: 402
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c9853193099b260800000000000000
+      internalID: 7113875661220518971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1659
+        width: 399
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770f300b834ba87f0800000000000000
+      internalID: -609476643991064457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_13
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 1658
+        width: 392
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a966eaf5acc7aa190800000000000000
+      internalID: -7950404983538686310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_14
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1658
+        width: 391
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4027baef3fe6070800000000000000
+      internalID: 8101681054809719968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_15
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 1658
+        width: 388
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6e2427cac7f1ce0800000000000000
+      internalID: -1432289076387322145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_16
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1657
+        width: 382
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebf9917288d3fe10800000000000000
+      internalID: 2230364295241792484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_17
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2023
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bfa57b221d66ddd0800000000000000
+      internalID: -2461660221505425487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_18
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 1657
+        width: 375
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5aa28083bc87770800000000000000
+      internalID: 8608854129234322886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_19
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1965
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d67a7d99c63bfd0800000000000000
+      internalID: -2327397174416544361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_20
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 1967
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b4049838bf886b0800000000000000
+      internalID: -5293704819612038369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_21
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1967
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a2f6b5439e88f9f0800000000000000
+      internalID: -434440600860298589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_22
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 1968
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d2ce0d54e33b000800000000000000
+      internalID: 50452490410011972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_23
+      rect:
+        serializedVersion: 2
+        x: 2569
+        y: 1970
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae960e513f52cd040800000000000000
+      internalID: 4673652239278041578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_24
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1483
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9167487f2a9a7f9b0800000000000000
+      internalID: -5046378340042901991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_25
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1113
+        width: 366
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fea792685fad4f20800000000000000
+      internalID: 3408573287135424246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_26
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 1486
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b72c1f61a9504120800000000000000
+      internalID: 2396013551649826745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_27
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1113
+        width: 363
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50328e3b2ac092ee0800000000000000
+      internalID: -1285482325694995707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_28
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1492
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5153ccfcadc12a9d0800000000000000
+      internalID: -2764615495137348331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_29
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 1112
+        width: 355
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f7833c6371f5af0800000000000000
+      internalID: -405579917469122666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_30
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1493
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc1a922c6dce78a0800000000000000
+      internalID: -6305376563951428411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_31
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1112
+        width: 350
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23cd5d6809a280af0800000000000000
+      internalID: -430046964188062670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_32
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 1113
+        width: 338
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e44a75d58d2656f0800000000000000
+      internalID: -696319039546702620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_33
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 1114
+        width: 327
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147a3415fd5aecbe0800000000000000
+      internalID: -1455043251034413247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_34
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1428
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45919aa212f0bfcf0800000000000000
+      internalID: -217563521873274540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_35
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 1428
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a44fc6a157124800800000000000000
+      internalID: 595063740224717985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_36
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1412
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c11a838b6abaa50c0800000000000000
+      internalID: -4586164537979789028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_37
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1429
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d77ed08c187c4e00800000000000000
+      internalID: 1030330478577481682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_38
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 1413
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5171ec67edf2260800000000000000
+      internalID: 7075118141467465198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_39
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1430
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e196c88bd805ee110800000000000000
+      internalID: 1292058712718731550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_40
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 1414
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f820c10e9cc7e740800000000000000
+      internalID: 5181334875319314680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_41
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 1431
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5ed14d46f6dc730800000000000000
+      internalID: 4020992521157862885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_42
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 1415
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e96ce0f42d4b4b0800000000000000
+      internalID: -5425480414082458030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_43
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 1431
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7ff0af4f74ed940800000000000000
+      internalID: 5322770927091447794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_44
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 571
+        width: 328
+        height: 497
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c03f3c2d45766b0800000000000000
+      internalID: -5303176771998118764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_45
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 572
+        width: 331
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e39e6b1fd4cdd1d90800000000000000
+      internalID: -7125296808104367810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_46
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 573
+        width: 337
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ef3f53d59364e80800000000000000
+      internalID: -8194799399454114188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_47
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 574
+        width: 341
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0cd6e9dfd729a7c0800000000000000
+      internalID: -4059669746710815732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_48
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 979
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49133542ef69827c0800000000000000
+      internalID: -4095857842818174572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_49
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 575
+        width: 345
+        height: 486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885c438ced8bcdee0800000000000000
+      internalID: -1234908930825206392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_50
+      rect:
+        serializedVersion: 2
+        x: 2197
+        y: 577
+        width: 353
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3fb35ed3a494490800000000000000
+      internalID: -7761590853096967201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_51
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 966
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09965b671f60ef520800000000000000
+      internalID: 2737633257636325776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_52
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 873
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd5a178f848dad20800000000000000
+      internalID: 3291432654659542455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_53
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 889
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d4786ea27fc41f0800000000000000
+      internalID: -1059200048710595228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_54
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 874
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15d281e93142f150800000000000000
+      internalID: 5904853778288530717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_55
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 890
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf8c211e697b9c70800000000000000
+      internalID: 8978903795734712249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_56
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 877
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64670db1383a950e0800000000000000
+      internalID: -2280611952783755706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_57
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 892
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f212a4ddd241eb0800000000000000
+      internalID: -4750121278514319551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_58
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 877
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b11239260751a3040800000000000000
+      internalID: 4628035139510935835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_59
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 891
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b2028883853cd70800000000000000
+      internalID: 9062183875024792446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_60
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 878
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9512efc1c44453eb0800000000000000
+      internalID: -4740807939042959015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_61
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 893
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5625fb2b23a6e5270800000000000000
+      internalID: 8241141134114378341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_62
+      rect:
+        serializedVersion: 2
+        x: 2540
+        y: 881
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9db6e046e2ea660800000000000000
+      internalID: 7398902245089860032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_63
+      rect:
+        serializedVersion: 2
+        x: 2578
+        y: 893
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5573c854f6d7580800000000000000
+      internalID: -8827777350080440896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_64
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 32
+        width: 356
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb374674e879975f0800000000000000
+      internalID: -758408424896302149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_65
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 30
+        width: 362
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3662a85867b48a20800000000000000
+      internalID: 3063775305310299710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_66
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 29
+        width: 367
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a188f7a2f87fdd9a0800000000000000
+      internalID: -6206532517181290470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_67
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 25
+        width: 376
+        height: 486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9459cc0fa9dfc270800000000000000
+      internalID: 8273070386359915677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_68
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 474
+        width: 14
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e6733a81e3fdd40800000000000000
+      internalID: 5611271936265383530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_69
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 24
+        width: 382
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db691fef938ebf50800000000000000
+      internalID: 6899096402112637906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_70
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 477
+        width: 17
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5109aaef62e74f0800000000000000
+      internalID: -829182406164474424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_71
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 24
+        width: 386
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fbd16967cdd4480800000000000000
+      internalID: -8913225685613560001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_72
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 478
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7d49471d0579180800000000000000
+      internalID: -9108722860799240227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_73
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 338
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4485948efa407810800000000000000
+      internalID: 1760989911308403790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_74
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 350
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3011e75b6c978c7e0800000000000000
+      internalID: -1745010961250643709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_75
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 340
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11be667461e3f8a30800000000000000
+      internalID: 4219659641277573905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_76
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 351
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74f3d901eff8d5480800000000000000
+      internalID: -8908806166505767097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_77
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 341
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75345887bc328ce80800000000000000
+      internalID: -8158231368174320809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_78
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 352
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ce01aeb599bfee0800000000000000
+      internalID: -1226217853480276883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_79
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 344
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867b9f4cb6a3708b0800000000000000
+      internalID: -5186112211353225368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_80
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 353
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9ba73d95d6adb3e0800000000000000
+      internalID: -2036288020105679971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_81
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 346
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0882b47810d676f40800000000000000
+      internalID: 5721661704929749120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_82
+      rect:
+        serializedVersion: 2
+        x: 2149
+        y: 354
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06ca50fcdfdc0940800000000000000
+      internalID: 5263828204507547146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_83
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 348
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925acd267fa3641f0800000000000000
+      internalID: -1061095828009212631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mizukurage_84
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 356
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0662664d32e0f220800000000000000
+      internalID: 2517760944501843467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mizukurage_0: 2019510596451883550
+      Mizukurage_1: 3246113628727548769
+      Mizukurage_10: 8936213414179653445
+      Mizukurage_11: 7113875661220518971
+      Mizukurage_12: -609476643991064457
+      Mizukurage_13: -7950404983538686310
+      Mizukurage_14: 8101681054809719968
+      Mizukurage_15: -1432289076387322145
+      Mizukurage_16: 2230364295241792484
+      Mizukurage_17: -2461660221505425487
+      Mizukurage_18: 8608854129234322886
+      Mizukurage_19: -2327397174416544361
+      Mizukurage_2: -702953758962121057
+      Mizukurage_20: -5293704819612038369
+      Mizukurage_21: -434440600860298589
+      Mizukurage_22: 50452490410011972
+      Mizukurage_23: 4673652239278041578
+      Mizukurage_24: -5046378340042901991
+      Mizukurage_25: 3408573287135424246
+      Mizukurage_26: 2396013551649826745
+      Mizukurage_27: -1285482325694995707
+      Mizukurage_28: -2764615495137348331
+      Mizukurage_29: -405579917469122666
+      Mizukurage_3: 6427386563114626367
+      Mizukurage_30: -6305376563951428411
+      Mizukurage_31: -430046964188062670
+      Mizukurage_32: -696319039546702620
+      Mizukurage_33: -1455043251034413247
+      Mizukurage_34: -217563521873274540
+      Mizukurage_35: 595063740224717985
+      Mizukurage_36: -4586164537979789028
+      Mizukurage_37: 1030330478577481682
+      Mizukurage_38: 7075118141467465198
+      Mizukurage_39: 1292058712718731550
+      Mizukurage_4: 2782009034174815589
+      Mizukurage_40: 5181334875319314680
+      Mizukurage_41: 4020992521157862885
+      Mizukurage_42: -5425480414082458030
+      Mizukurage_43: 5322770927091447794
+      Mizukurage_44: -5303176771998118764
+      Mizukurage_45: -7125296808104367810
+      Mizukurage_46: -8194799399454114188
+      Mizukurage_47: -4059669746710815732
+      Mizukurage_48: -4095857842818174572
+      Mizukurage_49: -1234908930825206392
+      Mizukurage_5: -1227742604705616419
+      Mizukurage_50: -7761590853096967201
+      Mizukurage_51: 2737633257636325776
+      Mizukurage_52: 3291432654659542455
+      Mizukurage_53: -1059200048710595228
+      Mizukurage_54: 5904853778288530717
+      Mizukurage_55: 8978903795734712249
+      Mizukurage_56: -2280611952783755706
+      Mizukurage_57: -4750121278514319551
+      Mizukurage_58: 4628035139510935835
+      Mizukurage_59: 9062183875024792446
+      Mizukurage_6: 2059861896503845073
+      Mizukurage_60: -4740807939042959015
+      Mizukurage_61: 8241141134114378341
+      Mizukurage_62: 7398902245089860032
+      Mizukurage_63: -8827777350080440896
+      Mizukurage_64: -758408424896302149
+      Mizukurage_65: 3063775305310299710
+      Mizukurage_66: -6206532517181290470
+      Mizukurage_67: 8273070386359915677
+      Mizukurage_68: 5611271936265383530
+      Mizukurage_69: 6899096402112637906
+      Mizukurage_7: 6537601226957085225
+      Mizukurage_70: -829182406164474424
+      Mizukurage_71: -8913225685613560001
+      Mizukurage_72: -9108722860799240227
+      Mizukurage_73: 1760989911308403790
+      Mizukurage_74: -1745010961250643709
+      Mizukurage_75: 4219659641277573905
+      Mizukurage_76: -8908806166505767097
+      Mizukurage_77: -8158231368174320809
+      Mizukurage_78: -1226217853480276883
+      Mizukurage_79: -5186112211353225368
+      Mizukurage_8: 6996358361288947066
+      Mizukurage_80: -2036288020105679971
+      Mizukurage_81: 5721661704929749120
+      Mizukurage_82: 5263828204507547146
+      Mizukurage_83: -1061095828009212631
+      Mizukurage_84: 2517760944501843467
+      Mizukurage_9: -6683931852705692415
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

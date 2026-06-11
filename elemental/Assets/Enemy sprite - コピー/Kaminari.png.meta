@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: dc27fad01e248d64c92e13820545bd2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4594440418360270736
+    second: Kaminari_0
+  - first:
+      213: 4553932780912057671
+    second: Kaminari_1
+  - first:
+      213: -412861652778419424
+    second: Kaminari_2
+  - first:
+      213: 4743021942870010099
+    second: Kaminari_3
+  - first:
+      213: 4432611303807584424
+    second: Kaminari_4
+  - first:
+      213: -8655054389177169910
+    second: Kaminari_5
+  - first:
+      213: -4839068052468173250
+    second: Kaminari_6
+  - first:
+      213: -5032269221878360513
+    second: Kaminari_7
+  - first:
+      213: 4527914173818277002
+    second: Kaminari_8
+  - first:
+      213: -5173619157044021835
+    second: Kaminari_9
+  - first:
+      213: 311953032861423601
+    second: Kaminari_10
+  - first:
+      213: 1651421156737308342
+    second: Kaminari_11
+  - first:
+      213: -8809449871346527026
+    second: Kaminari_12
+  - first:
+      213: 843270500353929243
+    second: Kaminari_13
+  - first:
+      213: -6651122726982555013
+    second: Kaminari_14
+  - first:
+      213: -147966920705243502
+    second: Kaminari_15
+  - first:
+      213: 9033068670866968160
+    second: Kaminari_16
+  - first:
+      213: 484286971428397999
+    second: Kaminari_17
+  - first:
+      213: -7961342200518929346
+    second: Kaminari_18
+  - first:
+      213: -6581969199745657651
+    second: Kaminari_19
+  - first:
+      213: 204924429048930673
+    second: Kaminari_20
+  - first:
+      213: -7899456026828923716
+    second: Kaminari_21
+  - first:
+      213: -3669637554220187862
+    second: Kaminari_22
+  - first:
+      213: -3281046337153216245
+    second: Kaminari_23
+  - first:
+      213: -4944981566852642456
+    second: Kaminari_24
+  - first:
+      213: -1032580270638272300
+    second: Kaminari_25
+  - first:
+      213: 2765365342066923583
+    second: Kaminari_26
+  - first:
+      213: 3728801875826729130
+    second: Kaminari_27
+  - first:
+      213: -8276720447614826202
+    second: Kaminari_28
+  - first:
+      213: 7510082178972221235
+    second: Kaminari_29
+  - first:
+      213: 1422878512424230966
+    second: Kaminari_30
+  - first:
+      213: 106763431468979022
+    second: Kaminari_31
+  - first:
+      213: 8466165535704714295
+    second: Kaminari_32
+  - first:
+      213: -7161219822568455241
+    second: Kaminari_33
+  - first:
+      213: 8866781719314373941
+    second: Kaminari_34
+  - first:
+      213: -3211761932262626547
+    second: Kaminari_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Kaminari_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 2261
+        width: 621
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f9f06d73bb2cf30800000000000000
+      internalID: 4594440418360270736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_1
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 2261
+        width: 630
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74d15498cb1d23f30800000000000000
+      internalID: 4553932780912057671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_2
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2261
+        width: 637
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bf2c4a388354af0800000000000000
+      internalID: -412861652778419424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_3
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 2261
+        width: 640
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f866a2d35992d140800000000000000
+      internalID: 4743021942870010099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_4
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 2261
+        width: 640
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a805deee7cc38d30800000000000000
+      internalID: 4432611303807584424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_5
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 2261
+        width: 640
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08c865b3e113e780800000000000000
+      internalID: -8655054389177169910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1809
+        width: 637
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3671b8ae3d28dcb0800000000000000
+      internalID: -4839068052468173250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_7
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1809
+        width: 625
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f361fc70ec9c92ab0800000000000000
+      internalID: -5032269221878360513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1809
+        width: 612
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c05ef73f166de30800000000000000
+      internalID: 4527914173818277002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_9
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 1809
+        width: 606
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b53c35a9cc9338b0800000000000000
+      internalID: -5173619157044021835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_10
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 1809
+        width: 598
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f79f4e61a7445400800000000000000
+      internalID: 311953032861423601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_11
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 1809
+        width: 593
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b654eddac60be610800000000000000
+      internalID: 1651421156737308342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1357
+        width: 588
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec497c7340c8eb580800000000000000
+      internalID: -8809449871346527026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_13
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1357
+        width: 589
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b10792f5d06e3bb00800000000000000
+      internalID: 843270500353929243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1357
+        width: 592
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a6da47e1772b3a0800000000000000
+      internalID: -6651122726982555013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_15
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 1357
+        width: 597
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2960bdc9ed052fdf0800000000000000
+      internalID: -147966920705243502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_16
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 1357
+        width: 599
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e4cbec818eb5d70800000000000000
+      internalID: 9033068670866968160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_17
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 1357
+        width: 596
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa3e6554f6888b600800000000000000
+      internalID: 484286971428397999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 905
+        width: 590
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e341eba1371a38190800000000000000
+      internalID: -7961342200518929346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_19
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 905
+        width: 581
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc41996b2e528a4a0800000000000000
+      internalID: -6581969199745657651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_20
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 905
+        width: 562
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171e247bea908d200800000000000000
+      internalID: 204924429048930673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_21
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 905
+        width: 570
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc1b02c89e7f5290800000000000000
+      internalID: -7899456026828923716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_22
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 905
+        width: 580
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2fb5464614d21dc0800000000000000
+      internalID: -3669637554220187862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_23
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 905
+        width: 590
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01d2667db16772d0800000000000000
+      internalID: -3281046337153216245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_24
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 453
+        width: 596
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869c4eee675ef5bb0800000000000000
+      internalID: -4944981566852642456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_25
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 453
+        width: 606
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d07786f6b98ba1f0800000000000000
+      internalID: -1032580270638272300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_26
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 453
+        width: 616
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f385318802d806620800000000000000
+      internalID: 2765365342066923583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_27
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 453
+        width: 621
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa0667ecc8d5fb330800000000000000
+      internalID: 3728801875826729130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_28
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 453
+        width: 635
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629c4b6da9e232d80800000000000000
+      internalID: -8276720447614826202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_29
+      rect:
+        serializedVersion: 2
+        x: 3719
+        y: 453
+        width: 649
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f71af93fb293860800000000000000
+      internalID: 7510082178972221235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_30
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1
+        width: 648
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6302593e7741fb310800000000000000
+      internalID: 1422878512424230966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_31
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1
+        width: 647
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43d5b776cc4b7100800000000000000
+      internalID: 106763431468979022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_32
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 2
+        width: 633
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c8555f2bcdd7570800000000000000
+      internalID: 8466165535704714295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_33
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2
+        width: 624
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3425d538c3e9c90800000000000000
+      internalID: -7161219822568455241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_34
+      rect:
+        serializedVersion: 2
+        x: 2991
+        y: 2
+        width: 615
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d19a8def22d0b70800000000000000
+      internalID: 8866781719314373941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kaminari_35
+      rect:
+        serializedVersion: 2
+        x: 3719
+        y: 2
+        width: 608
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b2d5c0a878d63d0800000000000000
+      internalID: -3211761932262626547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Kaminari_0: 4594440418360270736
+      Kaminari_1: 4553932780912057671
+      Kaminari_10: 311953032861423601
+      Kaminari_11: 1651421156737308342
+      Kaminari_12: -8809449871346527026
+      Kaminari_13: 843270500353929243
+      Kaminari_14: -6651122726982555013
+      Kaminari_15: -147966920705243502
+      Kaminari_16: 9033068670866968160
+      Kaminari_17: 484286971428397999
+      Kaminari_18: -7961342200518929346
+      Kaminari_19: -6581969199745657651
+      Kaminari_2: -412861652778419424
+      Kaminari_20: 204924429048930673
+      Kaminari_21: -7899456026828923716
+      Kaminari_22: -3669637554220187862
+      Kaminari_23: -3281046337153216245
+      Kaminari_24: -4944981566852642456
+      Kaminari_25: -1032580270638272300
+      Kaminari_26: 2765365342066923583
+      Kaminari_27: 3728801875826729130
+      Kaminari_28: -8276720447614826202
+      Kaminari_29: 7510082178972221235
+      Kaminari_3: 4743021942870010099
+      Kaminari_30: 1422878512424230966
+      Kaminari_31: 106763431468979022
+      Kaminari_32: 8466165535704714295
+      Kaminari_33: -7161219822568455241
+      Kaminari_34: 8866781719314373941
+      Kaminari_35: -3211761932262626547
+      Kaminari_4: 4432611303807584424
+      Kaminari_5: -8655054389177169910
+      Kaminari_6: -4839068052468173250
+      Kaminari_7: -5032269221878360513
+      Kaminari_8: 4527914173818277002
+      Kaminari_9: -5173619157044021835
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
