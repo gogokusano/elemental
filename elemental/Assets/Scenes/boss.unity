@@ -4048,7 +4048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2925927330595850501, guid: bf1efac7b3dafc340b9ef73c05c16f56, type: 3}
+  m_Sprite: {fileID: -1731233477802622841, guid: 317014064c5992047941671880ea8fa1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4212,9 +4212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetingArrow
   segmentCount: 20
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidthMultiplier: 1.3
-  outlineOffset: {x: 0, y: 0, z: 0.01}
 --- !u!120 &1538497048
 LineRenderer:
   serializedVersion: 2
