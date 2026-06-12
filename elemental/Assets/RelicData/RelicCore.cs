@@ -4,45 +4,64 @@ using UnityEngine;
 public class RelicCore : RelicData
 {
     [Header("【取得時効果】")]
-    public int maxHpBonus = 0;
+    public int maxHpBonus = 0;        // ★不滅のハート（10を設定）
     public int initialGoldBonus = 0;
 
     [Header("【戦闘開始時効果】")]
-    public int startBlock = 0;
-    public bool applyRandomElementOnStart = false; // ★4.妖精の胞子キノコ用
+    public int startBlock = 0;        // ★古びた地図（10を設定）
+    public bool applyRandomElementOnStart = false; 
+    public int preventDebuffCount = 0; // ★頑丈なロープ（1を設定）
+    
+    [Tooltip("戦闘開始時にすべての敵に特定の属性を付着するフラグ（★元素の魔導書用）")]
+    public bool applyWaterElementOnStart = false; 
 
     [Header("【毎ターン効果】")]
     public int turnStartHeal = 0;
-    public int turnStartBlock = 0;  // ★3.エメンタール用
+    public int turnStartBlock = 0;  
     public int turnEndBlock = 0;
-    public int turnEndHeal = 0;     // ★1.生命の赤リンゴ用
+    public int turnEndHeal = 0;     
 
-    [Header("【パッシブ効果】(ダメージ関連)")]
+    [Header("【パッシブ効果】(ダメージ・防御関連)")]
     public float flatDamageBonus = 0f;
     public float damageMultiplier = 1f;
     public int damageReduction = 0;
-    public int flatDamageTakenIncrease = 0; // ★5.諸刃の秘薬用（受けるダメージUP）
+    public int flatDamageTakenIncrease = 0; 
+
+    [Tooltip("火（炎）属性カードでの攻撃時に追加される固定ダメージ（★祈りのキャンドル用：3を設定）")]
+    public int fireCardDamageBonus = 0;
 
     [Header("【特殊条件パッシブ】")]
-    public float firstTurnDamageBonus = 0f; // ★2.豪傑の麦酒用
-    public float cost3DamageBonus = 0f;    // ★7.必中の古矢用
-    public int drawAmountBonus = 0;         // ★10.知識の巻物用
-    public int elementReactionBlock = 0;    // ★8.魔術師の古帽子用
-    public bool killEnemyManaRecover = false; // ★9.完熟の青リンゴ用
-    public bool doubleDiscard = false;      // ★6.幸運の古銭用（処理の予約用フラグ）
-    
+    public float firstTurnDamageBonus = 0f; 
+    public float cost3DamageBonus = 0f;    
+    public int drawAmountBonus = 0;         
+    public int elementReactionBlock = 0;    
+    public bool killEnemyManaRecover = false; 
+    public bool doubleDiscard = false;      
+
     [Header("【ゴールド関連パッシブ】")]
-    [Tooltip("ゴールド獲得量の倍率 (1.0でそのまま、1.2で+20%、0.8で-20%)")]
     public float goldGainMultiplier = 1.0f;
-    
-    [Tooltip("所持ゴールド n個 につきダメージ増加（0にすると無効）")]
     public int goldThresholdForDamage = 0;
-    
-    [Tooltip("n個満たす毎のダメージ増減率 (0.1で+10%、-0.1で-10%)")]
     public float damageBonusPerGoldRatio = 0f;
 
-    // 戦闘中の個別状態管理用（ScriptableObjectの一時変数）
+    [Header("【イベント/システム関連パッシブ】")]
+    public float eventHpLossMultiplier = 1.0f; // ★癒しのウール（0.5を設定）
+    public int hpHealOnDiscardCardEvent = 0;   // ★鍛冶屋のハンマー（1を設定）
+    public int maxHandSizeBonus = 0;           // ★冒険者のベルト（1を設定）
+
+    [Header("【戦闘終了/ボス関連】")]
+    public float bossGoldMultiplier = 1.0f;     // ★黄金の鍵（2.0を設定）
+    public int battleEndMaxHpBonus = 0;        // ★黄金の鍵（2を設定）
+    
+    [Tooltip("戦闘終了時に回復するHPの量（★黄金の鍵用：2を設定）")]
+    public int battleEndHealAmount = 0;        // ★黄金の鍵（2を設定）
+
+    [Header("【属性反応コスト回復】")]
+    [Range(0, 100)] public int elementReactionManaRecoverChance = 0; // ★導きのランタン（20を設定）
+    public int elementReactionManaRecoverAmount = 0;                 // ★導きのランタン（1を設定）
+
+    // 戦闘中やゲームプレイ中の個別状態管理用
     [System.NonSerialized] private bool isFirstTurn = true;
+    [System.NonSerialized] private int currentPreventDebuffCount = 0;
 
     public override void OnAcquire()
     {
@@ -52,6 +71,7 @@ public class RelicCore : RelicData
             {
                 PlayerDataManager.Instance.maxHp += maxHpBonus;
                 PlayerDataManager.Instance.currentHp += maxHpBonus;
+                Debug.Log($"{relicName} の効果: 最大HPが {maxHpBonus} 上昇しました。");
             }
             if (initialGoldBonus != 0)
             {
@@ -62,13 +82,44 @@ public class RelicCore : RelicData
 
     public override void OnBattleStart()
     {
-        isFirstTurn = true; // 戦闘開始時に最初のターンフラグをリセット
+        isFirstTurn = true; 
 
+        // ★古びた地図の効果
         if (startBlock > 0)
         {
             PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
-            if (pm != null) pm.AddBlock(startBlock);
+            if (pm != null)
+            {
+                pm.AddBlock(startBlock);
+                Debug.Log($"{relicName} の効果: 戦闘開始時にシールドを {startBlock} 獲得！");
+            }
         }
+
+        // ★頑丈なロープの効果
+        if (preventDebuffCount > 0)
+        {
+            currentPreventDebuffCount = preventDebuffCount;
+            Debug.Log($"{relicName} の効果: デバフ防御バリアを展開！");
+        }
+
+        // 📘 ★元素の魔導書の効果（すべての敵に水属性を付着）
+        if (applyWaterElementOnStart)
+        {
+            GameObject awaiter = new GameObject("WaterElementTriggerHelper");
+            var helper = awaiter.AddComponent<MushroomTriggerHelper>();
+            helper.Initialize(this, true); 
+        }
+    }
+
+    public bool TryPreventDebuff()
+    {
+        if (currentPreventDebuffCount > 0)
+        {
+            currentPreventDebuffCount--;
+            Debug.Log($"{relicName} の効果: デバフを防ぎました。（残り: {currentPreventDebuffCount}）");
+            return true;
+        }
+        return false;
     }
 
     public override void OnTurnStart()
@@ -79,7 +130,6 @@ public class RelicCore : RelicData
             {
                 PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp + turnStartHeal);
             }
-            // ★3.エメンタール効果
             if (turnStartBlock > 0)
             {
                 PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
@@ -87,64 +137,55 @@ public class RelicCore : RelicData
             }
         }
 
-        // 🍄 ★4.妖精の胞子キノコ効果
         if (applyRandomElementOnStart && isFirstTurn)
         {
             GameObject awaiter = new GameObject("MushroomElementTriggerHelper");
             var helper = awaiter.AddComponent<MushroomTriggerHelper>();
-            helper.Initialize(this);
+            helper.Initialize(this, false);
         }
     }
 
     public override void OnTurnEnd()
     {
         PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
-        if (pm != null && turnEndBlock > 0)
-        {
-            pm.AddBlock(turnEndBlock);
-        }
+        if (pm != null && turnEndBlock > 0) pm.AddBlock(turnEndBlock);
 
-        // ★1.生命の赤リンゴ効果
         if (turnEndHeal > 0 && PlayerDataManager.Instance != null)
         {
             PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp + turnEndHeal);
-            Debug.Log($"{relicName} の効果: ターン終了時にHPを {turnEndHeal} 回復！");
         }
-
-        isFirstTurn = false; // ターン終了時に最初のターンではなくなる
+        isFirstTurn = false; 
     }
 
     public override float OnModifyModifyDamage(float baseDamage, CardData card)
     {
         float finalDamage = baseDamage;
-
-        // 全カード共通の固定値と倍率
         finalDamage = (finalDamage + flatDamageBonus) * damageMultiplier;
 
-        // 所持ゴールドn個につきダメージ増加
-        if (goldThresholdForDamage > 0 && damageBonusPerGoldRatio != 0f && PlayerDataManager.Instance != null)
+        // 🕯️ ★祈りのキャンドルの効果
+        if (card != null && fireCardDamageBonus > 0)
         {
-            int goldCount = PlayerDataManager.Instance.gold / goldThresholdForDamage;
-            if (goldCount > 0)
+            if ((card.elementType == ElementType.Fire || card.elementType == ElementType.Thunder) && card.cardType == CardType.Attack)
             {
-                float bonusMultiplier = 1f + (goldCount * damageBonusPerGoldRatio);
-                finalDamage *= bonusMultiplier;
-                Debug.Log($"{relicName}の効果: 所持ゴールドによりダメージが {bonusMultiplier} 倍に！");
+                finalDamage += fireCardDamageBonus;
+                Debug.Log($"{relicName} の効果: 火属性攻撃のダメージが +{fireCardDamageBonus} されました！");
             }
         }
 
-        // ★2.豪傑の麦酒効果 (最初のターンかつ攻撃カードのみ)
+        if (goldThresholdForDamage > 0 && damageBonusPerGoldRatio != 0f && PlayerDataManager.Instance != null)
+        {
+            int goldCount = PlayerDataManager.Instance.gold / goldThresholdForDamage;
+            if (goldCount > 0) finalDamage *= (1f + (goldCount * damageBonusPerGoldRatio));
+        }
+
         if (isFirstTurn && card != null && card.cardType == CardType.Attack)
         {
             finalDamage += firstTurnDamageBonus;
-            Debug.Log($"{relicName} の効果(初ターン攻撃): ダメージが +{firstTurnDamageBonus} された！");
         }
 
-        // ★7.必中の古矢効果 (コスト3カードのみ)
         if (card != null && card.cost == 3)
         {
             finalDamage += cost3DamageBonus;
-            Debug.Log($"{relicName} の効果(コスト3): ダメージが +{cost3DamageBonus} された！");
         }
 
         return finalDamage;
@@ -153,37 +194,35 @@ public class RelicCore : RelicData
     public override int OnModifyTakeDamage(int incomingDamage)
     {
         int finalDamage = incomingDamage;
-
-        if (damageReduction > 0)
-        {
-            finalDamage = Mathf.Max(0, finalDamage - damageReduction);
-        }
-
-        // ★5.諸刃の秘薬効果 (受けるダメージ一律増加)
-        if (flatDamageTakenIncrease > 0)
-        {
-            finalDamage += flatDamageTakenIncrease;
-            Debug.Log($"{relicName} の効果(諸刃): 受けるダメージが +{flatDamageTakenIncrease} された！");
-        }
-
+        if (damageReduction > 0) finalDamage = Mathf.Max(0, finalDamage - damageReduction);
+        if (flatDamageTakenIncrease > 0) finalDamage += flatDamageTakenIncrease;
         return finalDamage;
     }
 
-    // ★8.魔術師の古帽子効果
     public override void OnElementReaction()
     {
         if (elementReactionBlock > 0)
         {
             PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
-            if (pm != null)
+            if (pm != null) pm.AddBlock(elementReactionBlock);
+        }
+
+        // ★導きのランタンの効果
+        if (elementReactionManaRecoverChance > 0 && elementReactionManaRecoverAmount > 0)
+        {
+            if (Random.Range(0, 100) < elementReactionManaRecoverChance)
             {
-                pm.AddBlock(elementReactionBlock);
-                Debug.Log($"{relicName} の効果: 属性反応によりシールドを {elementReactionBlock} 獲得！");
+                ManaManager mm = Object.FindFirstObjectByType<ManaManager>();
+                if (mm != null)
+                {
+                    mm.currentMana = Mathf.Min(mm.maxMana, mm.currentMana + elementReactionManaRecoverAmount);
+                    mm.UpdateManaUI();
+                    Debug.Log($"{relicName} の効果: コストが {elementReactionManaRecoverAmount} 回復！");
+                }
             }
         }
     }
 
-    // ★9.完熟の青リンゴ効果
     public override void OnEnemyKilled()
     {
         if (killEnemyManaRecover)
@@ -193,36 +232,77 @@ public class RelicCore : RelicData
             {
                 mm.currentMana = Mathf.Min(mm.maxMana, mm.currentMana + 1);
                 mm.UpdateManaUI();
-                Debug.Log($"{relicName} の効果: 敵撃破によりマナが 1 回復した！");
             }
         }
     }
 
-    // ★10.知識の巻物効果
     public override int OnModifyDrawAmount(int baseAmount)
     {
         return baseAmount + drawAmountBonus;
     }
 
+    public int OnModifyGainGoldAdvanced(int amount, bool isBossBattle)
+    {
+        if (isBossBattle && bossGoldMultiplier != 1.0f) amount = Mathf.RoundToInt(amount * bossGoldMultiplier);
+        if (goldGainMultiplier != 1.0f) amount = Mathf.RoundToInt(amount * goldGainMultiplier);
+        return amount;
+    }
+
     public override int OnModifyGainGold(int amount)
     {
-        if (goldGainMultiplier != 1.0f)
+        return OnModifyGainGoldAdvanced(amount, false);
+    }
+
+    /// <summary>
+    /// 戦闘終了時の処理（★黄金の鍵の効果用）
+    /// </summary>
+    public void OnBattleEnd()
+    {
+        if (PlayerDataManager.Instance != null)
         {
-            amount = Mathf.RoundToInt(amount * goldGainMultiplier);
-            Debug.Log($"{relicName}の効果: ゴールド獲得量が {amount}G に変化！");
+            // 1. 最大HPの上昇
+            if (battleEndMaxHpBonus > 0)
+            {
+                PlayerDataManager.Instance.maxHp += battleEndMaxHpBonus;
+                PlayerDataManager.Instance.currentHp += battleEndMaxHpBonus; // 最大HP増加分、現在値も引き上げ
+                Debug.Log($"{relicName} の効果: 最大HPが +{battleEndMaxHpBonus} されました！");
+            }
+
+            // 2. 体力の回復処理（追加部分）
+            if (battleEndHealAmount > 0)
+            {
+                // 最大HPを超えないように安全に回復して保存
+                int targetHp = Mathf.Min(PlayerDataManager.Instance.maxHp, PlayerDataManager.Instance.currentHp + battleEndHealAmount);
+                PlayerDataManager.Instance.SaveHp(targetHp);
+                Debug.Log($"{relicName} の効果: 戦闘終了により体力が {battleEndHealAmount} 回復しました！（現在HP: {PlayerDataManager.Instance.currentHp}/{PlayerDataManager.Instance.maxHp}）");
+            }
         }
-        return amount;
+    }
+
+    public int ModifyEventHpLoss(int originalLoss)
+    {
+        if (eventHpLossMultiplier != 1.0f) return Mathf.RoundToInt(originalLoss * eventHpLossMultiplier);
+        return originalLoss;
+    }
+
+    public void OnDiscardCardInEvent()
+    {
+        if (hpHealOnDiscardCardEvent > 0 && PlayerDataManager.Instance != null)
+        {
+            PlayerDataManager.Instance.SaveHp(PlayerDataManager.Instance.currentHp + hpHealOnDiscardCardEvent);
+        }
     }
 }
 
-// 🍏 敵の生成を安全に待機して、見つかり次第【すべての敵にそれぞれ】属性を付与するヘルパー
 public class MushroomTriggerHelper : MonoBehaviour
 {
     private RelicCore relic;
+    private bool forceWater;
 
-    public void Initialize(RelicCore relicCore)
+    public void Initialize(RelicCore relicCore, bool waterMode)
     {
         relic = relicCore;
+        forceWater = waterMode;
         StartCoroutine(WaitAndApplyElement());
     }
 
@@ -230,41 +310,33 @@ public class MushroomTriggerHelper : MonoBehaviour
     {
         EnemyManager[] enemies = null;
         int frameCount = 0;
-
-        // 最大30フレーム（約0.5秒）、敵が生成されるのを毎フレーム監視して待ちます
         while (frameCount < 30)
         {
             enemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
-            if (enemies != null && enemies.Length > 0)
-            {
-                break;
-            }
+            if (enemies != null && enemies.Length > 0) break;
             frameCount++;
             yield return null;
         }
-
-        // 敵が見つかったら【全員ループ】で個別にランダム属性を付与
         if (enemies != null && enemies.Length > 0)
         {
             System.Array elements = System.Enum.GetValues(typeof(ElementType));
-
             foreach (EnemyManager enemy in enemies)
             {
                 if (enemy == null) continue;
-
-                // 敵1体ごとにランダムな属性を決定（全員バラバラの属性になる可能性があります）
-                int randomIndex = UnityEngine.Random.Range(2, elements.Length);
-                ElementType randomElement = (ElementType)elements.GetValue(randomIndex);
-
-                enemy.SetElement(randomElement);
-                Debug.Log($"【大成功】{relic.relicName}: 敵の生成を待ってから {enemy.name} に {randomElement} 属性を付着しました！");
+                
+                if (forceWater)
+                {
+                    enemy.SetElement(ElementType.Water);
+                    Debug.Log($"{relic.relicName}: {enemy.name} に「水」属性を付着しました。");
+                }
+                else
+                {
+                    int randomIndex = UnityEngine.Random.Range(2, elements.Length);
+                    ElementType randomElement = (ElementType)elements.GetValue(randomIndex);
+                    enemy.SetElement(randomElement);
+                }
             }
         }
-        else
-        {
-            Debug.LogError($"【エラー】{relic.relicName}: 30フレーム待機しましたが敵が見つかりませんでした。");
-        }
-
-        Destroy(gameObject); // 用が済んだら自動削除
+        Destroy(gameObject);
     }
 }
