@@ -69,20 +69,6 @@ public class RelicCore : RelicData
             PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
             if (pm != null) pm.AddBlock(startBlock);
         }
-
-        // ★4.妖精の胞子キノコ効果
-        if (applyRandomElementOnStart)
-        {
-            EnemyManager em = Object.FindFirstObjectByType<EnemyManager>();
-            if (em != null)
-            {
-                // NoneとNormalを除いたランダムな属性を付与
-                ElementType randomElement = (ElementType)Random.Range(2, System.Enum.GetValues(typeof(ElementType)).Length);
-                em.SetElement(randomElement);
-                // EnemyManagerにUI更新メソッドがあれば呼ぶ（なければTakeDamage等で自動更新される想定）
-                Debug.Log($"{relicName} の効果: 敵に {randomElement} 属性を付着させた！");
-            }
-        }
     }
 
     public override void OnTurnStart()
@@ -99,6 +85,14 @@ public class RelicCore : RelicData
                 PlayerManager pm = Object.FindFirstObjectByType<PlayerManager>();
                 if (pm != null) pm.AddBlock(turnStartBlock);
             }
+        }
+
+        // 🍄 ★4.妖精の胞子キノコ効果
+        if (applyRandomElementOnStart && isFirstTurn)
+        {
+            GameObject awaiter = new GameObject("MushroomElementTriggerHelper");
+            var helper = awaiter.AddComponent<MushroomTriggerHelper>();
+            helper.Initialize(this);
         }
     }
 
@@ -117,7 +111,7 @@ public class RelicCore : RelicData
             Debug.Log($"{relicName} の効果: ターン終了時にHPを {turnEndHeal} 回復！");
         }
 
-        isFirstTurn = false; // ターン終了時に最初のターンではなくなる（★2.豪傑の麦酒用）
+        isFirstTurn = false; // ターン終了時に最初のターンではなくなる
     }
 
     public override float OnModifyModifyDamage(float baseDamage, CardData card)
@@ -127,14 +121,12 @@ public class RelicCore : RelicData
         // 全カード共通の固定値と倍率
         finalDamage = (finalDamage + flatDamageBonus) * damageMultiplier;
 
-        // ★追加：所持ゴールドn個につき、与えるダメージz％増加
+        // 所持ゴールドn個につきダメージ増加
         if (goldThresholdForDamage > 0 && damageBonusPerGoldRatio != 0f && PlayerDataManager.Instance != null)
         {
-            // (現在のゴールド / n個) で条件を何回満たしているか計算（切り捨て）
             int goldCount = PlayerDataManager.Instance.gold / goldThresholdForDamage;
             if (goldCount > 0)
             {
-                // 倍率を計算（例：2回満たしていて割合が0.1なら、1.0 + 0.2 = 1.2倍）
                 float bonusMultiplier = 1f + (goldCount * damageBonusPerGoldRatio);
                 finalDamage *= bonusMultiplier;
                 Debug.Log($"{relicName}の効果: 所持ゴールドによりダメージが {bonusMultiplier} 倍に！");
@@ -206,7 +198,7 @@ public class RelicCore : RelicData
         }
     }
 
-    // ★10.知識 of 巻物効果
+    // ★10.知識の巻物効果
     public override int OnModifyDrawAmount(int baseAmount)
     {
         return baseAmount + drawAmountBonus;
@@ -216,10 +208,63 @@ public class RelicCore : RelicData
     {
         if (goldGainMultiplier != 1.0f)
         {
-            // 倍率をかけて四捨五入（例：100G * 1.2 = 120G）
             amount = Mathf.RoundToInt(amount * goldGainMultiplier);
             Debug.Log($"{relicName}の効果: ゴールド獲得量が {amount}G に変化！");
         }
         return amount;
+    }
+}
+
+// 🍏 敵の生成を安全に待機して、見つかり次第【すべての敵にそれぞれ】属性を付与するヘルパー
+public class MushroomTriggerHelper : MonoBehaviour
+{
+    private RelicCore relic;
+
+    public void Initialize(RelicCore relicCore)
+    {
+        relic = relicCore;
+        StartCoroutine(WaitAndApplyElement());
+    }
+
+    private System.Collections.IEnumerator WaitAndApplyElement()
+    {
+        EnemyManager[] enemies = null;
+        int frameCount = 0;
+
+        // 最大30フレーム（約0.5秒）、敵が生成されるのを毎フレーム監視して待ちます
+        while (frameCount < 30)
+        {
+            enemies = Object.FindObjectsByType<EnemyManager>(FindObjectsSortMode.None);
+            if (enemies != null && enemies.Length > 0)
+            {
+                break;
+            }
+            frameCount++;
+            yield return null;
+        }
+
+        // 敵が見つかったら【全員ループ】で個別にランダム属性を付与
+        if (enemies != null && enemies.Length > 0)
+        {
+            System.Array elements = System.Enum.GetValues(typeof(ElementType));
+
+            foreach (EnemyManager enemy in enemies)
+            {
+                if (enemy == null) continue;
+
+                // 敵1体ごとにランダムな属性を決定（全員バラバラの属性になる可能性があります）
+                int randomIndex = UnityEngine.Random.Range(2, elements.Length);
+                ElementType randomElement = (ElementType)elements.GetValue(randomIndex);
+
+                enemy.SetElement(randomElement);
+                Debug.Log($"【大成功】{relic.relicName}: 敵の生成を待ってから {enemy.name} に {randomElement} 属性を付着しました！");
+            }
+        }
+        else
+        {
+            Debug.LogError($"【エラー】{relic.relicName}: 30フレーム待機しましたが敵が見つかりませんでした。");
+        }
+
+        Destroy(gameObject); // 用が済んだら自動削除
     }
 }

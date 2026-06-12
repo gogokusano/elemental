@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: kibutu3
   m_EditorClassIdentifier: Assembly-CSharp::RelicCore
   relicName: "\u5996\u7CBE\u306E\u80DE\u5B50\u30AD\u30CE\u30B3"
-  description: "\u6226\u95D8\u958B\u59CB\u6642\u3001\u6575\u306B\u30E9\u30F3\u30C0\u30E0\u306A\u5C5E\u6027\u3092\u4ED8\u7740\u3059\u308B\u3002"
+  description: "\u6226\u95D8\u958B\u59CB\u6642\u3001\u5168\u3066\u306E\u6575\u306B\u30E9\u30F3\u30C0\u30E0\u306A\u5C5E\u6027\u3092\u4ED8\u7740\u3059\u308B\u3002"
   relicIcon: {fileID: 8184775395216136658, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 4
   relicType: 3

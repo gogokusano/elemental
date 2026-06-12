@@ -54,15 +54,16 @@ public class EventOption
     public int maxHpChange;
     [Tooltip("最大HP割合変動 (例: 0.1で+10%, -0.1で-10%)")]
     public float maxHpPercentChange;
+    
     [Header("ゴールド変動 (通常時)")]
     [Tooltip("正の値で獲得、負の値で減少")]
     public int goldChange;
 
     [Header("奇物獲得 (固定指定)")]
-    public RelicData rewardRelic; 
+    public RelicData rewardRelic; // ⭕ Relic から RelicData に修正済み
 
     // ==========================================
-    // ★追加・修正：ランダム奇物獲得（枠1）
+    // ランダム奇物獲得（枠1）
     // ==========================================
     [Header("ランダム奇物獲得 (枠1)")]
     public bool giveRandomRelic = false;
@@ -72,7 +73,7 @@ public class EventOption
     [Tooltip("許可するレアリティ（空ならすべて許可）")]
     public List<Rarity> allowedRarities = new List<Rarity>();
 
-    [Tooltip("★許可するカテゴリー（Normal, Subtle, Negative）")]
+    [Tooltip("許可するカテゴリー（Normal, Subtle, Negative）")]
     public List<RelicCategory> allowedCategories = new List<RelicCategory>() { RelicCategory.Normal };
 
     [Header("絞り込み：タイプ")]
@@ -86,7 +87,7 @@ public class EventOption
     public Rarity upgradedRarity; 
 
     // ==========================================
-    // ★新規追加：ランダム奇物獲得（枠2・デメリット用など）
+    // ランダム奇物獲得（枠2・デメリット用など）
     // ==========================================
     [Header("追加のランダム奇物獲得 (枠2)")]
     public bool giveSecondaryRandomRelic = false;
@@ -96,9 +97,8 @@ public class EventOption
     [Tooltip("許可するレアリティ（空ならすべて許可）")]
     public List<Rarity> secondaryAllowedRarities = new List<Rarity>();
 
-    [Tooltip("★許可するカテゴリー（Negativeなどを指定）")]
+    [Tooltip("許可するカテゴリー（Negativeなどを指定）")]
     public List<RelicCategory> secondaryAllowedCategories = new List<RelicCategory>() { RelicCategory.Negative };
-
 
     [Header("奇物の喪失")]
     public int loseRelicCount = 0;
