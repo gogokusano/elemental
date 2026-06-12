@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a3053483bfdd4a874cd06dd9467b0, type: 3}
   m_Name: kibutu17
   m_EditorClassIdentifier: Assembly-CSharp::RelicCore
+  relicID: kibutu17
   relicName: "\u53E4\u3073\u305F\u5730\u56F3"
   description: "\u6226\u95D8\u958B\u59CB\u6642\u3001\u30B7\u30FC\u30EB\u30C9\u309210\u7372\u5F97\u3059\u308B\u3002"
   relicIcon: {fileID: 3700405464027715891, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 2
   relicType: 2
-  relicCategory: 2
+  relicCategory: 0
   maxHpBonus: 0
   initialGoldBonus: 0
   startBlock: 10
   applyRandomElementOnStart: 0
+  preventDebuffCount: 0
+  applyWaterElementOnStart: 0
   turnStartHeal: 0
   turnStartBlock: 0
   turnEndBlock: 0
@@ -30,6 +33,7 @@ MonoBehaviour:
   damageMultiplier: 1
   damageReduction: 0
   flatDamageTakenIncrease: 0
+  fireCardDamageBonus: 0
   firstTurnDamageBonus: 0
   cost3DamageBonus: 0
   drawAmountBonus: 0
@@ -39,3 +43,11 @@ MonoBehaviour:
   goldGainMultiplier: 1
   goldThresholdForDamage: 0
   damageBonusPerGoldRatio: 0
+  eventHpLossMultiplier: 1
+  hpHealOnDiscardCardEvent: 0
+  maxHandSizeBonus: 0
+  bossGoldMultiplier: 1
+  battleEndMaxHpBonus: 0
+  battleEndHealAmount: 0
+  elementReactionManaRecoverChance: 0
+  elementReactionManaRecoverAmount: 0

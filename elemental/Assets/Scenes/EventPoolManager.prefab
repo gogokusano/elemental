@@ -130,8 +130,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2bb3cf82aa15402489fc96fe4a554b10, type: 2}
   - {fileID: 11400000, guid: 26ee860e28753ab41981052ac4b65f95, type: 2}
   - {fileID: 11400000, guid: 2b386b4bc586f4946bf2ffae109eb393, type: 2}
-  - {fileID: 11400000, guid: 7c9e4d1c10864ce4cbc380b8801b026b, type: 2}
+  - {fileID: 11400000, guid: 61646187b2b6001478ec56b7be3db74f, type: 2}
+  - {fileID: 11400000, guid: 5a56b6d275dea894fb1b41817c6f8e58, type: 2}
+  - {fileID: 11400000, guid: 7f2e5dd6ef9683c4c996d77a13b2961c, type: 2}
+  - {fileID: 11400000, guid: 332c70b3fbe5e7847bc9833dd6f8eb05, type: 2}
+  - {fileID: 11400000, guid: 04aa0d5958f2b2a42a8a4b513b202920, type: 2}
+  - {fileID: 11400000, guid: 9496f8fc6d2e67c4aa03aac7ab5cced0, type: 2}
+  - {fileID: 11400000, guid: 7e584ea7fa68f6944aeb6c4d4ef6905e, type: 2}
+  - {fileID: 11400000, guid: 75468ef4bf7a17a4a85f243741f7ac99, type: 2}
+  - {fileID: 11400000, guid: 657f3c8891b128d44a8fdf7b476351f9, type: 2}
+  - {fileID: 11400000, guid: 602d4936602fdfe4a877375631c05a92, type: 2}
   - {fileID: 11400000, guid: e386cab26fe35954ba257d10c7313bba, type: 2}
+  - {fileID: 11400000, guid: 7c9e4d1c10864ce4cbc380b8801b026b, type: 2}
+  - {fileID: 11400000, guid: 9646886a317aa3b40bf8a4865d899db4, type: 2}
+  - {fileID: 11400000, guid: dab7dfd258b86524f89568b2e1be23ec, type: 2}
+  - {fileID: 11400000, guid: 64472656d8b4df3418874aa06a180ce6, type: 2}
   allAvailableCards:
   - {fileID: 11400000, guid: 7be1658040b9b174d9b65c369745b796, type: 2}
   - {fileID: 11400000, guid: c74a6f0db5ea7d44a9463a50fd222ce5, type: 2}
@@ -154,3 +167,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb0a7def210e14847b925b8ce9bfee9c, type: 2}
   - {fileID: 11400000, guid: da0df03f750e6ee49b0a1c81c4b4f702, type: 2}
   - {fileID: 11400000, guid: 6ceb529485e879a4890aba4794a42f22, type: 2}
+  gameStartTime: 0

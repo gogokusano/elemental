@@ -18,7 +18,7 @@ public class PlayerDataManager : MonoBehaviour
     [Header("所持奇物")]
     public List<RelicData> ownedRelics = new List<RelicData>();
 
-    [Header("奇物の山札（kibutu0～9をすべて登録してください）")]
+    [Header("奇物の山札（kibutuなどをすべて登録してください）")]
     public List<RelicData> allAvailableRelics = new List<RelicData>(); 
     private List<RelicData> unownedRelics = new List<RelicData>(); 
 
@@ -26,7 +26,7 @@ public class PlayerDataManager : MonoBehaviour
     public List<CardData> allAvailableCards = new List<CardData>();
 
     [Header("タイム計測（デバッグ用確認）")]
-    public float gameStartTime; // ★追加：ゲーム全体の開始時刻を記録する変数
+    public float gameStartTime; // ゲーム全体の開始時刻を記録する変数
 
     private int defaultMaxHp;
     private int defaultGold;
@@ -58,7 +58,23 @@ public class PlayerDataManager : MonoBehaviour
         currentHp = maxHp;
         deckCards = new List<CardData>(startingDeck);
         ownedRelics.Clear();
-        unownedRelics = new List<RelicData>(allAvailableRelics);
+
+        // 🛠️ 【重複エラー対策】
+        // インスペクターの「allAvailableRelics」に同じ奇物が重複して登録されていた場合、
+        // 重複を除外して一意なリストとして山札（unownedRelics）を構築します。
+        unownedRelics = new List<RelicData>();
+        foreach (RelicData relic in allAvailableRelics)
+        {
+            if (relic == null) continue;
+            
+            // すでにリストに追加済みの奇物、またはID（relicIDやファイル名）が同じものはスキップする
+            if (unownedRelics.Contains(relic) || unownedRelics.Exists(r => r.relicID == relic.relicID))
+            {
+                Debug.LogWarning($"[データ重複防止] 奇物 '{relic.name}' が多重登録されていたため、重複を除外しました。");
+                continue;
+            }
+            unownedRelics.Add(relic);
+        }
     }
 
     public void SaveHp(int hp)
@@ -88,10 +104,10 @@ public class PlayerDataManager : MonoBehaviour
         ownedRelics.Add(newRelic);
         Debug.Log($"<color=cyan>奇物獲得: {newRelic.relicName}</color>");
 
-        if (unownedRelics.Contains(newRelic))
-        {
-            unownedRelics.Remove(newRelic);
-        }
+        // 所持した奇物は未所持山札から安全に削除（ID一致でもチェック）
+        unownedRelics.Remove(newRelic);
+        unownedRelics.RemoveAll(r => r.relicID == newRelic.relicID);
+
         newRelic.OnAcquire();
     }
 
@@ -137,7 +153,11 @@ public class PlayerDataManager : MonoBehaviour
                 int idx = Random.Range(0, ownedRelics.Count);
                 RelicData relic = ownedRelics[idx];
                 ownedRelics.RemoveAt(idx);
-                unownedRelics.Add(relic); 
+                
+                if (!unownedRelics.Contains(relic))
+                {
+                    unownedRelics.Add(relic); 
+                }
                 Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
             }
         }
@@ -185,7 +205,10 @@ public class PlayerDataManager : MonoBehaviour
         if (ownedRelics.Contains(relic))
         {
             ownedRelics.Remove(relic);
-            unownedRelics.Add(relic); 
+            if (!unownedRelics.Contains(relic))
+            {
+                unownedRelics.Add(relic); 
+            }
             Debug.Log($"<color=red>奇物を失った: {relic.relicName}</color>");
         }
     }
@@ -232,23 +255,26 @@ public class PlayerDataManager : MonoBehaviour
     {
         Debug.Log("<color=red>すべてのプレイヤーデータとマップ進捗を初期化します。</color>");
 
-        // 1. ステータスとゴールドの初期化
         maxHp = defaultMaxHp;
         gold = defaultGold;
         currentHp = maxHp;
         hasCounter = false;
 
-        // ★追加：新しくゲームを開始（リセット）した瞬間を「タイマースタート」地点とする！
         gameStartTime = Time.time;
 
-        // 2. デッキを初期デッキの内容で再読み込み
         deckCards = new List<CardData>(startingDeck);
 
-        // 3. 所持奇物のクリアと山札の再構築
         ownedRelics.Clear();
-        unownedRelics = new List<RelicData>(allAvailableRelics);
+        
+        // リセット時も重複を除外して安全に再構築
+        unownedRelics = new List<RelicData>();
+        foreach (RelicData relic in allAvailableRelics)
+        {
+            if (relic == null) continue;
+            if (unownedRelics.Contains(relic) || unownedRelics.Exists(r => r.relicID == relic.relicID)) continue;
+            unownedRelics.Add(relic);
+        }
 
-        // 4. マップ進行度（PlayerPrefs）の完全削除
         PlayerPrefs.DeleteKey("LastClearedNode");
         PlayerPrefs.DeleteKey("CurrentChallengingNode");
         PlayerPrefs.DeleteKey("MapSavedX");

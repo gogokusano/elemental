@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a3053483bfdd4a874cd06dd9467b0, type: 3}
   m_Name: kibutu18
   m_EditorClassIdentifier: Assembly-CSharp::RelicCore
+  relicID: kibutu18
   relicName: "\u5143\u7D20\u306E\u9B54\u5C0E\u66F8"
   description: "\u6226\u95D8\u958B\u59CB\u6642\u3001\u3059\u3079\u3066\u306E\u6575\u306B\u300C\u6C34\u300D\u5C5E\u6027\u3092\u4ED8\u7740\u3059\u308B\u3002"
   relicIcon: {fileID: 4150126326892669510, guid: 01d964ae77a306a40ad25fa06e63f4e7, type: 3}
   rarity: 2
   relicType: 1
-  relicCategory: 2
+  relicCategory: 0
   maxHpBonus: 0
   initialGoldBonus: 0
   startBlock: 0
@@ -47,5 +48,6 @@ MonoBehaviour:
   maxHandSizeBonus: 0
   bossGoldMultiplier: 1
   battleEndMaxHpBonus: 0
+  battleEndHealAmount: 0
   elementReactionManaRecoverChance: 0
   elementReactionManaRecoverAmount: 0

@@ -5,6 +5,7 @@ public class RelicCore : RelicData
 {
     [Header("【取得時効果】")]
     public int maxHpBonus = 0;        // ★不滅のハート（10を設定）
+    public int currentHpBonus = 0;    // ➕【追加】取得時に現在HPを直接回復・上昇させるボーナス値
     public int initialGoldBonus = 0;
 
     [Header("【戦闘開始時効果】")]
@@ -63,16 +64,33 @@ public class RelicCore : RelicData
     [System.NonSerialized] private bool isFirstTurn = true;
     [System.NonSerialized] private int currentPreventDebuffCount = 0;
 
+    protected override void OnValidate()
+    {
+        base.OnValidate(); // 親クラスのID自動同期処理を呼び出す
+    }
+
     public override void OnAcquire()
     {
         if (PlayerDataManager.Instance != null)
         {
+            // 1. 最大HPボーナスがある場合、最大HPを引き上げる（ここは元の仕様通り）
             if (maxHpBonus != 0)
             {
                 PlayerDataManager.Instance.maxHp += maxHpBonus;
                 PlayerDataManager.Instance.currentHp += maxHpBonus;
                 Debug.Log($"{relicName} の効果: 最大HPが {maxHpBonus} 上昇しました。");
             }
+
+            // 2. ➕【新機能】現在HPボーナスがある場合、現在HPのみを直接回復・変動させる
+            if (currentHpBonus != 0)
+            {
+                int targetHp = PlayerDataManager.Instance.currentHp + currentHpBonus;
+                // SaveHpを通すことで、最大HPを超えないように安全にクランプされて保存されます
+                PlayerDataManager.Instance.SaveHp(targetHp);
+                Debug.Log($"{relicName} の効果: 現在HPが {currentHpBonus} 変動しました。現在のHP: {PlayerDataManager.Instance.currentHp}/{PlayerDataManager.Instance.maxHp}");
+            }
+
+            // 3. 初期ゴールドボーナス
             if (initialGoldBonus != 0)
             {
                 PlayerDataManager.Instance.gold += initialGoldBonus;
@@ -102,7 +120,7 @@ public class RelicCore : RelicData
             Debug.Log($"{relicName} の効果: デバフ防御バリアを展開！");
         }
 
-        // 📘 ★元素の魔導書の効果（すべての敵に水属性を付着）
+        // 📘 ★元素の魔導書の効果
         if (applyWaterElementOnStart)
         {
             GameObject awaiter = new GameObject("WaterElementTriggerHelper");
@@ -260,21 +278,18 @@ public class RelicCore : RelicData
     {
         if (PlayerDataManager.Instance != null)
         {
-            // 1. 最大HPの上昇
             if (battleEndMaxHpBonus > 0)
             {
                 PlayerDataManager.Instance.maxHp += battleEndMaxHpBonus;
-                PlayerDataManager.Instance.currentHp += battleEndMaxHpBonus; // 最大HP増加分、現在値も引き上げ
+                PlayerDataManager.Instance.currentHp += battleEndMaxHpBonus; 
                 Debug.Log($"{relicName} の効果: 最大HPが +{battleEndMaxHpBonus} されました！");
             }
 
-            // 2. 体力の回復処理（追加部分）
             if (battleEndHealAmount > 0)
             {
-                // 最大HPを超えないように安全に回復して保存
                 int targetHp = Mathf.Min(PlayerDataManager.Instance.maxHp, PlayerDataManager.Instance.currentHp + battleEndHealAmount);
                 PlayerDataManager.Instance.SaveHp(targetHp);
-                Debug.Log($"{relicName} の効果: 戦闘終了により体力が {battleEndHealAmount} 回復しました！（現在HP: {PlayerDataManager.Instance.currentHp}/{PlayerDataManager.Instance.maxHp}）");
+                Debug.Log($"{relicName} の効果: 戦闘終了により体力が {battleEndHealAmount} 回復しました！");
             }
         }
     }

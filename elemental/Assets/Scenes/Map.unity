@@ -6873,10 +6873,6 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
-      propertyPath: 'allAvailableRelics.Array.data[5]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 4e095cc349cf34940b1e51314c47096e, type: 2}
-    - target: {fileID: 496167374814708121, guid: 0b285597eed48e44b83ea7fd5e564970, type: 3}
       propertyPath: 'allAvailableRelics.Array.data[10]'
       value: 
       objectReference: {fileID: 11400000, guid: 61646187b2b6001478ec56b7be3db74f, type: 2}
